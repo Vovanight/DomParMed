@@ -1,0 +1,3 @@
+/* Copyright (C) YOOtheme GmbH, http://www.gnu.org/licenses/gpl.html GNU/GPL */
+
+!function(e,r,i){var t,d;e.onMediaQuery||(t={},d=r.matchMedia&&r.matchMedia("only all").matches,e(i).ready(function(){for(var i in t){e(t[i]).trigger("init");t[i].matches&&e(t[i]).trigger("valid")}}),e(r).bind("load",function(){for(var i in t)t[i].matches&&e(t[i]).trigger("valid")}),e.onMediaQuery=function(i,a){var n=i&&t[i];return n||((n=t[i]=r.matchMedia(i)).supported=d,n.addListener(function(){e(n).trigger(n.matches?"valid":"invalid")})),e(n).bind(a),n})}(jQuery,window,document);

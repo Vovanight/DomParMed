@@ -1,0 +1,3 @@
+/* Copyright (C) YOOtheme GmbH, http://www.gnu.org/licenses/gpl.html GNU/GPL */
+
+jQuery(function(t){t(".field .global").each(function(){var i=t(this).children("input:checkbox:first"),n=t(this).children("div.input:first");n.find("input, select").each(function(){t(this).data("name",t(this).attr("name"))}),i.bind("change",function(){i.is(":checked")?n.hide():n.slideDown(200),n.find("input, select").each(function(){t(this).attr("name",i.is(":checked")?"":t(this).data("name"))})}).trigger("change")})});
