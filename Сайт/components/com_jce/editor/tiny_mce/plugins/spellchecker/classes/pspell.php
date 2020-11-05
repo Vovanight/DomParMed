@@ -1,95 +1,82 @@
 <?php
-
-require_once __DIR__ . '/spellchecker.php';
-
 /**
  * @author Moxiecode
- * @copyright Copyright (c) 2004-2007, Moxiecode Systems AB, All rights reserved
+ * @copyright Copyright (c) 2004-2007, Moxiecode Systems AB, All rights reserved.
  */
-class Pspell extends SpellChecker
-{
-    /**
-     * Spellchecks an array of words.
-     *
-     * @param {String} $lang  Language code like sv or en
-     * @param {Array}  $words Array of words to spellcheck
-     *
-     * @return {Array} Array of misspelled words
-     */
-    public function checkWords($lang, $words)
-    {
-        $plink = $this->getPLink($lang);
 
-        $outWords = array();
-        foreach ($words as $word) {
-            if (!pspell_check($plink, trim($word))) {
-                $outWords[] = utf8_encode($word);
-            }
-        }
+class PSpell extends SpellChecker {
+	/**
+	 * Spellchecks an array of words.
+	 *
+	 * @param {String} $lang Language code like sv or en.
+	 * @param {Array} $words Array of words to spellcheck.
+	 * @return {Array} Array of misspelled words.
+	 */
+	function &checkWords($lang, $words) {
+		$plink = $this->_getPLink($lang);
 
-        return $outWords;
-    }
+		$outWords = array();
+		foreach ($words as $word) {
+			if (!pspell_check($plink, trim($word)))
+				$outWords[] = utf8_encode($word);
+		}
 
-    /**
-     * Returns suggestions of for a specific word.
-     *
-     * @param {String} $lang Language code like sv or en
-     * @param {String} $word Specific word to get suggestions for
-     *
-     * @return {Array} Array of suggestions for the specified word
-     */
-    public function getSuggestions($lang, $word)
-    {
-        $words = pspell_suggest($this->getPLink($lang), $word);
+		return $outWords;
+	}
 
-        for ($i = 0; $i < count($words); ++$i) {
-            $words[$i] = utf8_encode($words[$i]);
-        }
+	/**
+	 * Returns suggestions of for a specific word.
+	 *
+	 * @param {String} $lang Language code like sv or en.
+	 * @param {String} $word Specific word to get suggestions for.
+	 * @return {Array} Array of suggestions for the specified word.
+	 */
+	function &getSuggestions($lang, $word) {
+		$words = pspell_suggest($this->_getPLink($lang), $word);
 
-        return $words;
-    }
+		for ($i=0; $i<count($words); $i++)
+			$words[$i] = utf8_encode($words[$i]);
 
-    /**
-     * Opens a link for pspell.
-     */
-    private function getPLink($lang)
-    {
-        // Check for native PSpell support
-        if (!function_exists('pspell_new')) {
-            $this->throwError('PSpell support not found in PHP installation.');
-        }
+		return $words;
+	}
 
-        $pspell_config = pspell_config_create(
-            $lang,
-            $this->_config['PSpell.spelling'],
-            $this->_config['PSpell.jargon'],
-            $this->_config['PSpell.encoding']
-        );
+	/**
+	 * Opens a link for pspell.
+	 */
+	function &_getPLink($lang) {
+		// Check for native PSpell support
+		if (!function_exists("pspell_new"))
+			$this->throwError("PSpell support not found in PHP installation.");
 
-        pspell_config_personal($pspell_config, $this->_config['PSpell.dictionary']);
-        $plink = pspell_new_config($pspell_config);
+		$pspell_config = pspell_config_create (
+			$lang,
+			$this->_config['PSpell.spelling'],
+			$this->_config['PSpell.jargon'],
+			$this->_config['PSpell.encoding']
+		);
 
-        if (!$plink) {
-            $this->throwError('No PSpell link found opened.');
-        }
+		pspell_config_personal ($pspell_config, $this->_config['PSpell.dictionary']);
+		$plink = pspell_new_config ($pspell_config);
 
-        return $plink;
-    }
-    /**
-     * Add a word to the PSPell personal dictionary
-     * From http://slack5.com/blog/2008/12/tinymce-add-to-dictionary/.
-     *
-     * @param object $lang
-     * @param object $word
-     *
-     * @return
-     */
-    public function addToDictionary($lang, $word)
-    {
-        $plink = $this->getPLink($lang);
-        pspell_add_to_personal($plink, $word);
-        pspell_save_wordlist($plink);
+		if (!$plink)
+			$this->throwError("No PSpell link found opened.");
 
-        return true;
-    }
+		return $plink;
+	}
+	/**
+	 * Add a word to the PSPell personal dictionary
+	 * From http://slack5.com/blog/2008/12/tinymce-add-to-dictionary/
+	 * @param object $lang
+	 * @param object $word
+	 * @return 
+	 */
+	function &addToDictionary($lang, $word) {
+	  $plink = $this->_getPLink($lang);
+	  pspell_add_to_personal ($plink, $word);
+	  pspell_save_wordlist ($plink);
+	
+	  return true;
+	}
 }
+
+?>

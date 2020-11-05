@@ -1,2 +1,22 @@
-/* jce - 2.9.1 | 2020-10-29 | https://www.joomlacontenteditor.net | Copyright (C) 2006 - 2020 Ryan Demmer. All rights reserved | GNU/GPL Version 2 or later - http://www.gnu.org/licenses/gpl-2.0.html */
-!function($){function init(){$("#insert").on("click",function(e){e.preventDefault(),insert()}),$("#cancel").on("click",function(e){e.preventDefault(),tinyMCEPopup.close()});var src=tinyMCEPopup.getWindowArg("value");Wf.init(),/(:\/\/|www|index.php(.*)\?option)/gi.test(src)&&(src=""),src&&(src=tinyMCEPopup.editor.convertURL(src),$(".uk-button-text","#insert").text(tinyMCEPopup.getLang("update","Update",!0))),$("[data-filebrowser]").val(src).filebrowser().on("filebrowser:onfileclick",function(e,file,data){selectFile(data)})}function insert(){var win=tinyMCEPopup.getWindowArg("window"),callback=tinyMCEPopup.getWindowArg("callback");return callback?void $("[data-filebrowser]").trigger("filebrowser:insert",function(selected,data){data.length||(data=[{title:"",url:""}]),"string"==typeof callback&&(selectFile(data[0]),win.document.getElementById(callback).value=$("[data-filebrowser]").val()),"function"==typeof callback&&callback(selected,data),tinyMCEPopup.close()}):tinyMCEPopup.close()}function selectFile(file){var src=file.url||"";src=src.replace(/^\//,""),$("[data-filebrowser]").val(src)}$(document).ready(init)}(jQuery);
+/*  
+ * JCE Editor                 2.3.1
+ * @package                 JCE
+ * @url                     http://www.joomlacontenteditor.net
+ * @copyright               Copyright (C) 2006 - 2012 Ryan Demmer. All rights reserved
+ * @license                 GNU/GPL Version 2 or later - http://www.gnu.org/licenses/gpl-2.0.html
+ * @date                    10 December 2012
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * NOTE : Javascript files have been compressed for speed and can be uncompressed using http://jsbeautifier.org/
+ */
+var BrowserDialog={settings:{},init:function(ed){var action="insert";$('button#insert').click(function(e){BrowserDialog.insert();e.preventDefault();});tinyMCEPopup.resizeToInnerSize();var win=tinyMCEPopup.getWindowArg("window");var src=tinyMCEPopup.getWindowArg("url");if(src){src=tinyMCEPopup.editor.convertURL(src);action="update";}
+$.Plugin.init();$('#insert').button('option','label',tinyMCEPopup.getLang('lang_'+action,'Insert',true));if(/(:\/\/|www|index.php(.*)\?option)/gi.test(src)){src='';}
+$('<input type="hidden" id="src" value="'+src+'" />').appendTo(document.body);WFFileBrowser.init('#src',{onFileClick:function(e,file){BrowserDialog.selectFile(file);},onFileInsert:function(e,file){BrowserDialog.selectFile(file);},expandable:false});},insert:function(){var win=tinyMCEPopup.getWindowArg("window");win.document.getElementById(tinyMCEPopup.getWindowArg("input")).value=$('#src').val();tinyMCEPopup.close();},selectFile:function(file){var self=this;var name=file.title;var src=$.String.path(WFFileBrowser.get('getBaseDir'),file.id);src=src.charAt(0)=='/'?src.substring(1):src;$('#src').val(src);}};tinyMCEPopup.onInit.add(BrowserDialog.init,BrowserDialog);

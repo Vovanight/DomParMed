@@ -1,15 +1,15 @@
 <?php
 
 /**
- * @copyright     Copyright (c) 2009-2020 Ryan Demmer. All rights reserved
- * @license       GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ * @package   	JCE
+ * @copyright 	Copyright (c) 2009-2012 Ryan Demmer. All rights reserved.
+ * @license   	GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * JCE is free software. This version may have been modified pursuant
  * to the GNU General Public License, and as distributed it includes or
  * is derivative of works licensed under the GNU General Public License or
- * other free or open source software licenses
+ * other free or open source software licenses.
  */
-abstract class WFMimeType
-{
+abstract class WFMimeType {
     /*
      * @var Array Mimetype values by extension
      * From mimetype list maintained at http://svn.apache.org/viewvc/httpd/httpd/trunk/docs/conf/mime.types
@@ -46,20 +46,12 @@ abstract class WFMimeType
         'application/mbox' => 'mbox',
         'application/mediaservercontrol+xml' => 'mscml',
         'application/mp4' => 'mp4s',
-        'application/msword' => 'doc dot ppt xls xlsm dotx docx pptx xlsx ppsx sldx potx xltx',
-        'application/vnd.openxmlformats-officedocument.wordprocessingml.template' => 'dotx',
-        'application/vnd.openxmlformats-officedocument.wordprocessingml.document' => 'docx',
-        'application/vnd.openxmlformats-officedocument.presentationml.presentation' => 'pptx',
-        'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' => 'xlsx',
-        'application/vnd.openxmlformats-officedocument.presentationml.slideshow' => 'ppsx',
-        'application/vnd.openxmlformats-officedocument.presentationml.slide' => 'sldx',
-        'application/vnd.openxmlformats-officedocument.presentationml.template' => 'potx',
-        'application/vnd.openxmlformats-officedocument.spreadsheetml.template' => 'xltx',
+        'application/msword' => 'doc dot',
         'application/mxf' => 'mxf',
         'application/octet-stream' => 'bin dms lha lrf lzh so iso dmg dist distz pkg bpk dump elc deploy',
         'application/oda' => 'oda',
         'application/oebps-package+xml' => 'opf',
-        'application/ogg' => 'ogx ogg ogv oga',
+        'application/ogg' => 'ogx',
         'application/onenote' => 'onetoc onetoc2 onetmp onepkg',
         'application/patch-ops-error+xml' => 'xer',
         'application/pdf' => 'pdf',
@@ -273,7 +265,7 @@ abstract class WFMimeType
         'application/vnd.mozilla.xul+xml' => 'xul',
         'application/vnd.ms-artgalry' => 'cil',
         'application/vnd.ms-cab-compressed' => 'cab',
-        'application/vnd.ms-excel' => 'xls xlm xla xlc xlt xlw xlsx xlsm',
+        'application/vnd.ms-excel' => 'xls xlm xla xlc xlt xlw xlsx',
         'application/vnd.ms-excel.addin.macroenabled.12' => 'xlam',
         'application/vnd.ms-excel.sheet.binary.macroenabled.12' => 'xlsb',
         'application/vnd.ms-excel.sheet.macroenabled.12' => 'xlsm',
@@ -284,7 +276,7 @@ abstract class WFMimeType
         'application/vnd.ms-lrm' => 'lrm',
         'application/vnd.ms-pki.seccat' => 'cat',
         'application/vnd.ms-pki.stl' => 'stl',
-        'application/vnd.ms-powerpoint' => 'ppt pps pot pptx',
+        'application/vnd.ms-powerpoint' => 'ppt pps pot',
         'application/vnd.ms-powerpoint.addin.macroenabled.12' => 'ppam',
         'application/vnd.ms-powerpoint.presentation.macroenabled.12' => 'pptm',
         'application/vnd.ms-powerpoint.slide.macroenabled.12' => 'sldm',
@@ -336,7 +328,7 @@ abstract class WFMimeType
         'application/vnd.openxmlformats-officedocument.presentationml.template' => 'potx',
         'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' => 'xlsx',
         'application/vnd.openxmlformats-officedocument.spreadsheetml.template' => 'xltx',
-        'application/vnd.openxmlformats-officedocument.wordprocessingml.document' => 'docx dotx',
+        'application/vnd.openxmlformats-officedocument.wordprocessingml.document' => 'docx',
         'application/vnd.openxmlformats-officedocument.wordprocessingml.template' => 'dotx',
         'application/vnd.osgi.dp' => 'dp',
         'application/vnd.palm' => 'pdb pqa oprc',
@@ -377,7 +369,8 @@ abstract class WFMimeType
         'application/vnd.stardivision.draw' => 'sda',
         'application/vnd.stardivision.impress' => 'sdd',
         'application/vnd.stardivision.math' => 'smf',
-        'application/vnd.stardivision.writer' => 'sdw vor',
+        'application/vnd.stardivision.writer' => 'sdw',
+        'application/vnd.stardivision.writer' => 'vor',
         'application/vnd.stardivision.writer-global' => 'sgl',
         'application/vnd.sun.xml.calc' => 'sxc',
         'application/vnd.sun.xml.calc.template' => 'stc',
@@ -516,7 +509,7 @@ abstract class WFMimeType
         'application/xslt+xml' => 'xslt',
         'application/xspf+xml' => 'xspf',
         'application/xv+xml' => 'mxml xhvml xvml xvm',
-        'application/zip' => 'zip docx pptx ppsx xlsx sldx potx xltx dotx',
+        'application/zip' => 'zip',
         'audio/adpcm' => 'adp',
         'audio/basic' => 'au snd',
         'audio/midi' => 'mid midi kar rmi',
@@ -540,7 +533,6 @@ abstract class WFMimeType
         'audio/x-pn-realaudio' => 'ram ra',
         'audio/x-pn-realaudio-plugin' => 'rmp',
         'audio/x-wav' => 'wav',
-        'audio/webm' => 'webm',
         'chemical/x-cdx' => 'cdx',
         'chemical/x-cif' => 'cif',
         'chemical/x-cmdf' => 'cmdf',
@@ -635,7 +627,7 @@ abstract class WFMimeType
         'video/mj2' => 'mj2 mjp2',
         'video/mp4' => 'mp4 mp4v mpg4',
         'video/mpeg' => 'mpeg mpg mpe m1v m2v',
-        'video/ogg' => 'ogg ogv',
+        'video/ogg' => 'ogv',
         'video/quicktime' => 'qt mov',
         'video/vnd.fvt' => 'fvt',
         'video/vnd.mpegurl' => 'mxu m4u',
@@ -645,34 +637,32 @@ abstract class WFMimeType
         'video/x-fli' => 'fli',
         'video/x-flv' => 'flv',
         'video/x-m4v' => 'm4v',
-        'video/x-ms-asf' => 'asf asx wmv',
+        'video/x-ms-asf' => 'asf asx',
         'video/x-ms-wm' => 'wm',
         'video/x-ms-wmv' => 'wmv',
         'video/x-ms-wmx' => 'wmx',
         'video/x-ms-wvx' => 'wvx',
         'video/x-msvideo' => 'avi',
         'video/x-sgi-movie' => 'movie',
-        'video/webm' => 'webm',
-        'x-conference/x-cooltalk' => 'ice',
+        'x-conference/x-cooltalk' => 'ice'
     );
 
     /**
-     * $mimes getter - see $mimes.
+     * $mimes getter - see $mimes
+     * @access	private
      */
-    private static function getMimes()
-    {
+    private static function getMimes() {
         return self::$mimes;
     }
 
     /**
-     * Get the mime type from the $mimes array.
-     *
-     * @param string $type
-     *
-     * @return string
+     * 
+     * Get the mime type from the $mimes array
+     * @access	private
+     * @param 	string $type
+     * @return	string 
      */
-    private static function getMime($type)
-    {
+    private static function getMime($type) {
         // get mimetype array
         $mimes = self::getMimes();
 
@@ -683,62 +673,49 @@ abstract class WFMimeType
         return null;
     }
 
-    private static function isSupported($extension)
-    {
-        // get mimetype array
-        $mimes = self::getMimes();
-
-        $supported = false;
-
-        foreach(array_values($mimes) as $mime) {
-            if (in_array($extension, explode(' ', $mime))) {
-                $supported = true;
-                break;
-            }
-        };
-
-        return $supported;
-    }
-
     /**
-     * Check file mime type.
-     *
-     * @param string $name
-     * @param string $path
-     * @param string $type
-     *
-     * @return bool
+     * Check file mime type
+     * @access	public
+     * @param 	string $name
+     * @param 	string $path
+     * @param 	string $type
+     * @return 	bool
      */
-    public static function check($name, $path)
-    {
+    public function check($name, $path) {
         $extension = strtolower(substr($name, strrpos($name, '.') + 1));
-        $mimetype = null;
 
-        // if the extension is allowed, but no mimetype reference is found, let it through...
-        if (self::isSupported($extension) === false) {
-            return true;
-        }
+        $ms_x = array('docx', 'pptx', 'ppsx', 'xlsx', 'sldx', 'potx', 'xltx', 'dotx');
 
         if (function_exists('finfo_open')) {
-            if (!$finfo = new finfo(FILEINFO_MIME_TYPE)) {
-                return true;
+            if ($finfo = @finfo_open(FILEINFO_MIME_TYPE)) {
+                if ($mimetype = @finfo_file($finfo, $path)) {
+                    @finfo_close($finfo);
+
+                    // we can't validate these files...
+                    if ($mimetype === 'application/zip' && in_array($extension, $ms_x)) {
+                        return true;
+                    }
+
+                    if ($mime = self::getMime($mimetype)) {
+                        return in_array($extension, $mime);
+                    }
+                }
             }
-            $mimetype = $finfo->file($path);
-        } elseif (function_exists('mime_content_type')) {
-            $mimetype = @mime_content_type($path);
-        }
+        } else if (function_exists('mime_content_type')) {
+            if ($mimetype = @mime_content_type($path)) {
+                
+                // we can't validate these files...
+                if ($mimetype === 'application/zip' && in_array($extension, $ms_x)) {
+                    return true;
+                }
 
-        if ($mimetype) {
-            $mime = self::getMime($mimetype);
-
-            if ($mime) {
-                if (!in_array($extension, $mime)) {
-                    return false;
+                if ($mime = self::getMime($mimetype)) {
+                    return in_array($extension, $mime);
                 }
             }
         }
-
         // server doesn't support mime type check, let it through...
         return true;
     }
+
 }

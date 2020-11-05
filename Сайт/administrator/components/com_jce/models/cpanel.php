@@ -1,128 +1,86 @@
 <?php
-
 /**
- * @copyright     Copyright (c) 2009-2020 Ryan Demmer. All rights reserved
- * @license       GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ * @package   	JCE
+ * @copyright 	Copyright (c) 2009-2012 Ryan Demmer. All rights reserved.
+ * @license   	GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * JCE is free software. This version may have been modified pursuant
  * to the GNU General Public License, and as distributed it includes or
  * is derivative of works licensed under the GNU General Public License or
- * other free or open source software licenses
+ * other free or open source software licenses.
  */
-defined('JPATH_PLATFORM') or die;
+defined('_JEXEC') or die('RESTRICTED');
 
-require_once JPATH_ADMINISTRATOR . '/components/com_jce/includes/constants.php';
+// load base model
+require_once(dirname(__FILE__) . '/model.php');
 
-class JceModelCpanel extends JModelLegacy
-{
-    public function getIcons()
-    {
-        $user = JFactory::getUser();
+class WFModelCpanel extends WFModel {
 
-        $icons = array();
+    function iconButton($link, $image, $text, $description = '', $disabled = false) {
+        $lang = JFactory::getLanguage();
 
-        $views = array(
-            'config' => 'equalizer',
-            'profiles' => 'users',
-            'browser' => 'picture',
-            'mediabox' => 'pictures',
-        );
-
-        foreach ($views as $name => $icon) {
-
-            // if its mediabox, check the plugin is installed and enabled
-            if ($name === "mediabox" && !JPluginHelper::isEnabled('system', 'jcemediabox')) {
-                continue;
-            }
-
-            // check if its allowed...
-            if (!$user->authorise('jce.' . $name, 'com_jce')) {
-                continue;
-            }
-
-            $link = 'index.php?option=com_jce&amp;view=' . $name;
-            $title = JText::_('WF_' . strtoupper($name));
-
-            if ($name === "browser") {
-                if (!JPluginHelper::isEnabled('quickicon', 'jce')) {
-                    continue;
-                }
-                
-                $title = JText::_('WF_' . strtoupper($name) . '_TITLE');
-            }
-
-            $icons[] = '<li class="quickicon mb-3"><a title="' . JText::_('WF_' . strtoupper($name) . '_DESC') . '" href="' . $link . '" class="btn btn-default" role="button"><div class="quickicon-icon d-flex align-items-end" role="presentation"><span class="fa fa-' . $icon . ' icon-' . $icon . '" aria-hidden="true" role="presentation"></span></div><div class="quickicon-text d-flex align-items-center"><span class="j-links-link">' . $title . '</span></div></a></li>';
+        if ($disabled) {
+            $link = '#';
         }
 
-        return $icons;
+        $description = $description ? $text . '::' . $description : $text;
+        ?>
+        <li class="cpanel-icon tooltip ui-corner-all" title="<?php echo $description; ?>">
+            <a href="<?php echo $link; ?>"><?php echo JHTML::_('image.site', $image, '/components/com_jce/media/img/cpanel/', NULL, NULL, $text); ?><?php echo $text; ?></a>
+        </li>
+        <?php
     }
 
-    public function getFeeds()
-    {
+    function getVersion() {
+        $xml = WFXMLHelper::parseInstallManifest(JPATH_ADMINISTRATOR . '/components/com_jce/jce.xml');
+
+        return $xml['version'];
+    }
+
+    function getLicense() {
+        return '<a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.html" title="GNU General Public License, version 2" target="_blank">GNU General Public License, version 2</a>';
+    }
+
+    function getFeeds() {
         $app = JFactory::getApplication();
         $params = JComponentHelper::getParams('com_jce');
         $limit = $params->get('feed_limit', 2);
 
         $feeds = array();
         $options = array(
-            'rssUrl' => 'https://www.joomlacontenteditor.net/news?format=feed',
+            'rssUrl' => 'http://www.joomlacontenteditor.net/news/feed/rss/latest-news?format=feed',
+            'cache_time' => $params->get('feed_cachetime', 86400)
         );
 
-        $xml = simplexml_load_file($options['rssUrl']);
+        // use this directly instead of JFactory::getXMLParserto avoid the feed data error
+        jimport('simplepie.simplepie');
 
-        if (empty($xml)) {
-            return $feeds;
+        if (!is_writable(JPATH_BASE . '/cache')) {
+            $options['cache_time'] = 0;
         }
+        $rss = new SimplePie($options['rssUrl'], JPATH_BASE . '/cache', isset($options['cache_time']) ? $options['cache_time'] : 0);
+        $rss->force_feed(true);
+        $rss->handle_content_type();
 
-        jimport('joomla.filter.input');
-        $filter = JFilterInput::getInstance();
+        if ($rss->init()) {
+            $count = $rss->get_item_quantity();
 
-        $count = count($xml->channel->item);
+            if ($count) {
+                $count = ($count > $limit) ? $limit : $count;
+                for ($i = 0; $i < $count; $i++) {
+                    $feed = new StdClass();
+                    $item = $rss->get_item($i);
 
-        if ($count) {
-            $count = ($count > $limit) ? $limit : $count;
+                    $feed->link = $item->get_link();
+                    $feed->title = $item->get_title();
+                    $feed->description = $item->get_description();
 
-            for ($i = 0; $i < $count; ++$i) {
-                $feed = new StdClass();
-                $item = $xml->channel->item[$i];
-
-                $link = (string) $item->link;
-                $feed->link = htmlspecialchars($filter->clean($link));
-
-                $title = (string) $item->title;
-                $feed->title = htmlspecialchars($filter->clean($title));
-
-                $description = (string) $item->description;
-                $feed->description = htmlspecialchars($filter->clean($description));
-
-                $feeds[] = $feed;
+                    $feeds[] = $feed;
+                }
             }
         }
 
         return $feeds;
     }
 
-    /**
-     * Method to auto-populate the model state.
-     *
-     * Note. Calling getState in this method will result in recursion.
-     *
-     * @since   1.6
-     */
-    protected function populateState($ordering = null, $direction = null)
-    {
-        $licence = "";
-        $version = "";
-
-        if ($xml = simplexml_load_file(JPATH_ADMINISTRATOR . '/components/com_jce/jce.xml')) {
-            $licence = (string) $xml->license;
-            $version = (string) $xml->version;
-
-            if (WF_EDITOR_PRO) {
-                $version = '<span class="badge badge-info badge-primary">Pro</span>&nbsp;' . $version;
-            }
-        }
-
-        $this->setState('version', $version);
-        $this->setState('licence', $licence);
-    }
 }
+?>

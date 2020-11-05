@@ -1,56 +1,48 @@
 <?php
-
 /**
- * @copyright 	Copyright (c) 2009-2020 Ryan Demmer. All rights reserved
+ * @package   	JCE
+ * @copyright 	Copyright (c) 2009-2012 Ryan Demmer. All rights reserved.
  * @license   	GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * JCE is free software. This version may have been modified pursuant
  * to the GNU General Public License, and as distributed it includes or
  * is derivative of works licensed under the GNU General Public License or
- * other free or open source software licenses
+ * other free or open source software licenses.
  */
-defined('JPATH_PLATFORM') or die;
 
-class JceViewConfig extends JViewLegacy
+defined('_JEXEC') or die('RESTRICTED');
+
+wfimport('admin.classes.view');
+
+class WFViewConfig extends WFView
 {
-    public $form;
+    function display($tpl = null)
+    {        
+        $db =JFactory::getDBO();
+        
+        $language =JFactory::getLanguage();
+        $language->load('plg_editors_jce', JPATH_ADMINISTRATOR);
+        
+        $client = JRequest::getWord('client', 'site');
 
-    public function display($tpl = null)
-    {
-        $document = JFactory::getDocument();
+        $model =$this->getModel();
+        
+        $lists = array();
+        
+        $component 	= WFExtensionHelper::getComponent();        
+        $xml 		= WF_EDITOR_LIBRARIES.'/xml/config/editor.xml';
+        
+        // get params definitions
+        $params = new WFParameter($component->params, $xml, 'editor');      
+        $params->addElementPath(JPATH_COMPONENT.'/elements');
+        
+        $this->assignRef('model', 	$model);
+        $this->assignRef('params', 	$params);
+        $this->assignRef('client', 	$client);
 
-        $this->form = $this->get('Form');
-
-        $this->name = JText :: _('WF_CONFIG');
-        $this->fieldsname = "config";
-        $this->formclass = 'form-horizontal options-grid-form options-grid-form-full';
-
-        $this->addToolbar();
+        WFToolbarHelper::apply();
+        WFToolbarHelper::save();
+        WFToolbarHelper::help('config.about');
+        
         parent::display($tpl);
-
-        $document->addScript('components/com_jce/media/js/core.min.js?' . md5(WF_VERSION));
-    }
-
-    /**
-     * Add the page title and toolbar.
-     *
-     * @since   3.0
-     */
-    protected function addToolbar()
-    {
-        JFactory::getApplication()->input->set('hidemainmenu', true);
-
-        $user = JFactory::getUser();
-        JToolbarHelper::title('JCE - ' . JText::_('WF_CONFIGURATION'), 'equalizer');
-
-        // If not checked out, can save the item.
-        if ($user->authorise('jce.config', 'com_jce')) {
-            JToolbarHelper::apply('config.apply');
-            JToolbarHelper::save('config.save');
-        }
-
-        JToolbarHelper::cancel('config.cancel', 'JTOOLBAR_CLOSE');
-
-        JToolbarHelper::divider();
-        JToolbarHelper::help('WF_CONFIG_EDIT');
     }
 }

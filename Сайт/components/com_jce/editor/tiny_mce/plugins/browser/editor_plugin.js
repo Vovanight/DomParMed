@@ -1,2 +1,20 @@
-/* jce - 2.9.1 | 2020-10-29 | https://www.joomlacontenteditor.net | Copyright (C) 2006 - 2020 Ryan Demmer. All rights reserved | GNU/GPL Version 2 or later - http://www.gnu.org/licenses/gpl-2.0.html */
-!function(){tinymce.create("tinymce.plugins.Browser",{init:function(ed,url){var self=this;self.ed=ed,ed.addCommand("mceFileBrowser",function(ui,args,win){self.open(args,win)})},open:function(args,win){args=args||{};var ed=this.ed;return ed.windowManager.open({file:ed.getParam("site_url")+"index.php?option=com_jce&task=plugin.display&plugin=browser"+(args.caller?"."+args.caller:"")+(args.filter?"&filter="+args.filter:""),close_previous:"no",size:"mce-modal-landscape-full"},args),!1}}),tinymce.PluginManager.add("browser",tinymce.plugins.Browser)}();
+/*  
+ * JCE Editor                 2.3.1
+ * @package                 JCE
+ * @url                     http://www.joomlacontenteditor.net
+ * @copyright               Copyright (C) 2006 - 2012 Ryan Demmer. All rights reserved
+ * @license                 GNU/GPL Version 2 or later - http://www.gnu.org/licenses/gpl-2.0.html
+ * @date                    10 December 2012
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * NOTE : Javascript files have been compressed for speed and can be uncompressed using http://jsbeautifier.org/
+ */
+(function(){tinymce.create('tinymce.plugins.Browser',{init:function(ed,url){this.ed=ed;},browse:function(name,url,type,win){var ed=this.ed;ed.windowManager.open({file:ed.getParam('site_url')+'index.php?option=com_jce&view=editor&layout=plugin&plugin=browser&type='+type,width:780+ed.getLang('browser.delta_width',0),height:480+ed.getLang('browser.delta_height',0),resizable:"yes",inline:"yes",close_previous:"no",popup_css:false},{window:win,input:name,url:url,type:type});return false;},getInfo:function(){return{longname:'Browser',author:'Ryan Demmer',authorurl:'http://www.joomlacontenteditor.net',infourl:'http://www.joomlacontenteditor.net/index.php?option=com_content&amp;view=article&amp;task=findkey&amp;tmpl=component&amp;lang=en&amp;keyref=browser.about',version:'2.3.1'};}});tinymce.PluginManager.add('browser',tinymce.plugins.Browser);})();

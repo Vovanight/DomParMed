@@ -1,167 +1,153 @@
 <?php
 
 /**
- * @copyright     Copyright (c) 2009-2020 Ryan Demmer. All rights reserved
- * @license       GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ * @package   	JCE
+ * @copyright 	Copyright (c) 2009-2012 Ryan Demmer. All rights reserved.
+ * @license   	GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * JCE is free software. This version may have been modified pursuant
  * to the GNU General Public License, and as distributed it includes or
  * is derivative of works licensed under the GNU General Public License or
- * other free or open source software licenses
+ * other free or open source software licenses.
  */
-defined('JPATH_PLATFORM') or die;
+defined('_WF_EXT') or die('RESTRICTED');
 
-class JoomlalinksWeblinks extends JObject
-{
-    private $option = 'com_weblinks';
+class JoomlalinksWeblinks extends JObject {
+
+    var $_option = 'com_weblinks';
 
     /**
-     * Returns a reference to a editor object.
+     * Constructor activating the default information of the class
+     *
+     * @access	protected
+     */
+    function __construct($options = array()) {
+        
+    }
+
+    /**
+     * Returns a reference to a editor object
      *
      * This method must be invoked as:
-     *         <pre>  $browser =JContentEditor::getInstance();</pre>
+     * 		<pre>  $browser =JContentEditor::getInstance();</pre>
      *
-     * @return JCE The editor object
-     *
-     * @since    1.5
+     * @access	public
+     * @return	JCE  The editor object.
+     * @since	1.5
      */
-    public static function getInstance($options = array())
-    {
+    function & getInstance() {
         static $instance;
 
         if (!is_object($instance)) {
-            $instance = new self($options);
+            $instance = new JoomlalinksWeblinks();
         }
-
         return $instance;
     }
 
-    public function getOption()
-    {
-        return $this->option;
+    function getOption() {
+        return $this->_option;
     }
 
-    public function getList()
-    {
-        return '<li id="index.php?option=com_weblinks&view=categories" class="folder menu nolink"><div class="uk-tree-row"><a href="#"><span class="uk-tree-icon"></span><span class="uk-tree-text">' . JText::_('WF_LINKS_JOOMLALINKS_WEBLINKS') . '</span></a></div></li>';
-    }
-
-    public function getLinks($args)
-    {
+    function getList() {
         $wf = WFEditorPlugin::getInstance();
+
+        if ($wf->checkAccess('links.joomlalinks.weblinks', 1)) {
+            return '<li id="index.php?option=com_weblinks&view=categories"><div class="tree-row"><div class="tree-image"></div><span class="folder weblink nolink"><a href="javascript:;">' . WFText::_('WF_LINKS_JOOMLALINKS_WEBLINKS') . '</a></span></div></li>';
+        }
+    }
+
+    public function getLinks($args) {
+        $wf = WFEditorPlugin::getInstance();
+
         $items = array();
 
-        if (!defined('JPATH_PLATFORM')) {
-            require_once JPATH_SITE . '/includes/application.php';
-        }
-
-        require_once JPATH_SITE . '/components/com_weblinks/helpers/route.php';
-
-        $language = '';
+        require_once(JPATH_SITE . '/includes/application.php');
+        require_once(JPATH_SITE . '/components/com_weblinks/helpers/route.php');
 
         switch ($args->view) {
             // Get all WebLink categories
             default:
             case 'categories':
-                $categories = WFLinkBrowser::getCategory('com_weblinks', 1, $wf->getParam('links.joomlalinks.category_alias', 1));
+                $categories = WFLinkBrowser::getCategory('com_weblinks');
 
                 foreach ($categories as $category) {
+
                     $url = '';
 
-                    if (method_exists('WeblinksHelperRoute', 'getCategoryRoute')) {
-                        // language
-                        if (isset($category->language)) {
-                            $language = $category->language;
-                        }
+                    $itemid = WFLinkBrowser::getItemId('com_weblinks', array('categories' => null, 'category' => $category->id));
 
-                        $id = WeblinksHelperRoute::getCategoryRoute($category->id, $language);
+                    if (method_exists('WeblinksHelperRoute', 'getCategoryRoute')) {
+                        $id = WeblinksHelperRoute::getCategoryRoute($category->id);
 
                         if (strpos($id, 'index.php?Itemid=') !== false) {
                             $url = $id;
                             $id = 'index.php?option=com_weblinks&view=category&id=' . $category->id;
                         }
                     } else {
-                        $itemid = WFLinkBrowser::getItemId('com_weblinks', array('categories' => null, 'category' => $category->id));
                         $id = 'index.php?option=com_weblinks&view=category&id=' . $category->id . $itemid;
                     }
 
                     $items[] = array(
-                        'url' => self::route($url),
+                        'url' => $url,
                         'id' => $id,
                         'name' => $category->title . ' / ' . $category->alias,
-                        'class' => 'folder weblink',
+                        'class' => 'folder weblink'
                     );
                 }
                 break;
             // Get all links in the category
             case 'category':
-                $categories = WFLinkBrowser::getCategory('com_weblinks', $args->id, $wf->getParam('links.joomlalinks.category_alias', 1));
+                if (!WF_JOOMLA15) {
+                    $categories = WFLinkBrowser::getCategory('com_weblinks', $args->id);
 
-                if (count($categories)) {
-                    foreach ($categories as $category) {
-                        $children = WFLinkBrowser::getCategory('com_weblinks', $category->id, $wf->getParam('links.joomlalinks.category_alias', 1));
+                    if (count($categories)) {
+                        foreach ($categories as $category) {
+                            $children = WFLinkBrowser::getCategory('com_weblinks', $category->id);
 
-                        $url = '';
+                            $url = '';
 
-                        if ($children) {
-                            $id = 'index.php?option=com_weblinks&view=category&id=' . $category->id;
-                        } else {
-                            if (method_exists('WeblinksHelperRoute', 'getCategoryRoute')) {
-                                // language
-                                if (isset($category->language)) {
-                                    $language = $category->language;
-                                }
-
-                                $id = WeblinksHelperRoute::getCategoryRoute($category->id, $language);
-
-                                if (strpos($id, 'index.php?Itemid=') !== false) {
-                                    $url = $id;
-                                    $id = 'index.php?option=com_weblinks&view=category&id=' . $category->id;
-                                }
+                            if ($children) {
+                                $id = 'index.php?option=com_weblinks&view=category&id=' . $category->id;
                             } else {
                                 $itemid = WFLinkBrowser::getItemId('com_weblinks', array('categories' => null, 'category' => $category->id));
-                                $id = 'index.php?option=com_weblinks&view=category&id=' . $category->id . $itemid;
-                            }
-                        }
 
-                        $items[] = array(
-                            'url' => self::route($url),
-                            'id' => $id,
-                            'name' => $category->title . ' / ' . $category->alias,
-                            'class' => 'folder weblink',
-                        );
+                                if (method_exists('WeblinksHelperRoute', 'getCategoryRoute')) {
+                                    $id = WeblinksHelperRoute::getCategoryRoute($category->id);
+
+                                    if (strpos($id, 'index.php?Itemid=') !== false) {
+                                        $url = $id;
+                                        $id = 'index.php?option=com_weblinks&view=category&id=' . $category->id;
+                                    }
+                                } else {
+                                    $id = 'index.php?option=com_weblinks&view=category&id=' . $category->id . $itemid;
+                                }
+                            }
+
+                            $items[] = array(
+                                'url' => $url,
+                                'id' => $id,
+                                'name' => $category->title . ' / ' . $category->alias,
+                                'class' => 'folder weblink'
+                            );
+                        }
                     }
                 }
 
-                $weblinks = self::getWeblinks($args->id);
+                $weblinks = self::_weblinks($args->id);
 
                 foreach ($weblinks as $weblink) {
-                    // language
-                    if (isset($weblink->language)) {
-                        $language = $weblink->language;
-                    }
-
-                    $id = WeblinksHelperRoute::getWeblinkRoute($weblink->slug, $weblink->catslug, $language);
-
-                    if (defined('JPATH_PLATFORM')) {
-                        $id .= '&task=weblink.go';
-                    }
-
                     $items[] = array(
-                        'id' => self::route($id),
+                        'id' => WeblinksHelperRoute::getWeblinkRoute($weblink->slug, $weblink->catslug),
                         'name' => $weblink->title . ' / ' . $weblink->alias,
-                        'class' => 'file',
+                        'class' => 'file'
                     );
                 }
                 break;
         }
-
         return $items;
     }
 
-    public static function getWeblinks($id)
-    {
+    function _weblinks($id) {
         $wf = WFEditorPlugin::getInstance();
-        
         $db = JFactory::getDBO();
         $user = JFactory::getUser();
 
@@ -169,59 +155,54 @@ class JoomlalinksWeblinks extends JObject
 
         $section = JText::_('Web Links');
 
-        $query = $db->getQuery(true);
+        $query = 'SELECT a.id AS slug, b.id AS catslug, a.title AS title, a.description AS text, a.url, a.alias';
 
-        $case = '';
+        if ($wf->getParam('links.joomlalinks.weblinks_alias', 1) == 1) {
+            if (is_object($dbquery) && method_exists($dbquery, 'charLength')) {
+                //sqlsrv changes
+                $case_when1 = ' CASE WHEN ';
+                $case_when1 .= $dbquery->charLength('a.alias');
+                $case_when1 .= ' THEN ';
+                $a_id = $dbquery->castAsChar('a.id');
+                $case_when1 .= $dbquery->concatenate(array($a_id, 'a.alias'), ':');
+                $case_when1 .= ' ELSE ';
+                $case_when1 .= $a_id . ' END as slug';
 
-        if ((int) $wf->getParam('links.joomlalinks.weblinks_alias', 1)) {
-            //sqlsrv changes
-            $case_when1 = ' CASE WHEN ';
-            $case_when1 .= $dbquery->charLength('a.alias', '!=', '0');
-            $case_when1 .= ' THEN ';
-            $a_id = $dbquery->castAsChar('a.id');
-            $case_when1 .= $dbquery->concatenate(array($a_id, 'a.alias'), ':');
-            $case_when1 .= ' ELSE ';
-            $case_when1 .= $a_id . ' END as slug';
+                $case_when2 = ' CASE WHEN ';
+                $case_when2 .= $dbquery->charLength('b.alias');
+                $case_when2 .= ' THEN ';
+                $c_id = $dbquery->castAsChar('b.id');
+                $case_when2 .= $dbquery->concatenate(array($c_id, 'b.alias'), ':');
+                $case_when2 .= ' ELSE ';
+                $case_when2 .= $c_id . ' END as catslug';
+            } else {
+                $case_when1 = ' CASE WHEN CHAR_LENGTH(a.alias) THEN CONCAT_WS(\':\', a.id, a.alias) ELSE a.id END as slug';
+                $case_when2 = ' CASE WHEN CHAR_LENGTH(b.alias) THEN CONCAT_WS(\':\', b.id, b.alias) ELSE b.id END as catslug';
+            }
 
-            $case_when2 = ' CASE WHEN ';
-            $case_when2 .= $dbquery->charLength('b.alias', '!=', '0');
-            $case_when2 .= ' THEN ';
-            $c_id = $dbquery->castAsChar('b.id');
-            $case_when2 .= $dbquery->concatenate(array($c_id, 'b.alias'), ':');
-            $case_when2 .= ' ELSE ';
-            $case_when2 .= $c_id . ' END as catslug';
-
-            $case .= ',' . $case_when1 . ',' . $case_when2;
+            $query .= ',' . $case_when1 . ',' . $case_when2;
         }
 
-        $query->select('a.id AS slug, b.id AS catslug, a.title AS title, a.description AS text, a.url, a.alias, a.language' . $case);
-
-        $query->from('#__weblinks AS a');
-        $query->innerJoin('#__categories AS b ON b.id = ' . (int) $id);
-        $query->where('a.catid = ' . (int) $id);
-
-        $query->where('a.state = 1');
-        
-        if (!$user->authorise('core.admin')) {
-            $query->where('b.access IN (' . implode(',', $user->getAuthorisedViewLevels()) . ')');
+        if (method_exists('JUser', 'getAuthorisedViewLevels')) {
+            $where = ' AND a.state = 1';
+            $where .= ' AND b.access IN (' . implode(',', $user->getAuthorisedViewLevels()) . ')';
+        } else {
+            $where = ' AND a.published = 1';
+            $where .= ' AND b.access <= ' . (int) $user->get('aid');
         }
 
-        $query->where('b.published = 1');
-        $query->order('a.title');
+        $query .= ' FROM #__weblinks AS a'
+                . ' INNER JOIN #__categories AS b ON b.id = ' . (int) $id
+                . ' WHERE a.catid = ' . (int) $id
+                . $where
+                . ' AND b.published = 1'
+                . ' ORDER BY a.title'
+        ;
 
         $db->setQuery($query, 0);
-
         return $db->loadObjectList();
     }
 
-    private static function route($url)
-    {
-        $wf = WFEditorPlugin::getInstance();
-        
-        if ($wf->getParam('links.joomlalinks.sef_url', 0)) {
-            $url = WFLinkBrowser::route($url);
-        }
-
-        return $url;
-    }
 }
+
+?>

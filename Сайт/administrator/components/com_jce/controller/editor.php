@@ -1,34 +1,74 @@
 <?php
 
 /**
- * @copyright 	Copyright (c) 2009-2020 Ryan Demmer. All rights reserved
- * @license   	GNU/GPL 3 - http://www.gnu.org/copyleft/gpl.html
+ * @package   	JCE
+ * @copyright 	Copyright (c) 2009-2012 Ryan Demmer. All rights reserved.
+ * @license   	GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * JCE is free software. This version may have been modified pursuant
  * to the GNU General Public License, and as distributed it includes or
  * is derivative of works licensed under the GNU General Public License or
- * other free or open source software licenses
+ * other free or open source software licenses.
  */
-defined('JPATH_PLATFORM') or die;
+defined('_JEXEC') or die('RESTRICTED');
 
-require_once JPATH_SITE . '/components/com_jce/editor/libraries/classes/application.php';
+wfimport('admin.classes.controller');
+wfimport('admin.classes.error');
+wfimport('admin.helpers.xml');
+wfimport('admin.helpers.extension');
 
-class JceControllerEditor extends JControllerLegacy
-{
-    public function execute($task)
-    {
-        // check for session token
-        JSession::checkToken('get') or jexit(JText::_('JINVALID_TOKEN'));
+class WFControllerEditor extends WFControllerBase {
 
-        $editor = new WFEditor();
+    public function execute($task) {
+        // Load language
+        $language = JFactory::getLanguage();
+        $language->load('com_jce', JPATH_ADMINISTRATOR);
 
-        if (strpos($task, '.') !== false) {
-            list($name, $task) = explode('.', $task);
+        $layout = JRequest::getCmd('layout');
+        $plugin = JRequest::getCmd('plugin');
+
+        if ($layout) {
+            switch ($layout) {
+                case 'editor':
+                    if ($task == 'pack' || $task == 'loadlanguages') {
+                        wfimport('admin.models.editor');
+                        $model = new WFModelEditor();
+
+                        if ($task == 'loadlanguages') {
+                            $model->loadLanguages();
+                        } else {
+                            $model->pack();
+                        }
+                    }
+
+                    break;
+                case 'theme':
+                    $theme = JRequest::getWord('theme');
+
+                    if ($theme && is_dir(WF_EDITOR_THEMES . '/' . $theme)) {
+                        require_once(WF_EDITOR_THEMES . '/' . $theme . '/theme.php');
+                    } else {
+                        throw new InvalidArgumentException('Theme not found!');
+                    }
+
+                    break;
+                case 'plugin':
+                    $file = basename(JRequest::getCmd('file', $plugin));
+                    $path = WF_EDITOR_PLUGINS . '/' . $plugin;
+
+                    if (is_dir($path) && file_exists($path . '/' . $file . '.php')) {                        
+                        include_once($path . '/' . $file . '.php');
+                    } else {
+                        throw new InvalidArgumentException('File ' . $file . ' not found!');
+                    }
+
+                    break;
+            }
+            exit();
+        } else {
+            throw new InvalidArgumentException('No Layout');
         }
-
-        if (method_exists($editor, $task)) {
-            $editor->$task();
-        }
-
-        jexit();
     }
+
 }
+
+?>

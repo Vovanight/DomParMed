@@ -1,1 +1,30 @@
-.mceO2k7SkinSilver .mceLayout{border-left:1px solid #bbb;border-right:1px solid #bbb}.mceO2k7SkinSilver .mceIframeContainer{border-top:1px solid #bbb;border-bottom:1px solid #bbb}.mceO2k7SkinSilver .mceStatusbar,.mceO2k7SkinSilver .mceToolbar{background:#eee}.mceO2k7Skin .mceListBox,.mceO2k7SkinSilver .mceToolbarRow .mceButton,.mceO2k7SkinSilver .mceToolbarRow .mceButton.mceButtonDisabled:hover,.mceO2k7SkinSilver .mceToolbarRow .mceSplitButton{background:linear-gradient(to bottom,rgba(255,255,255,1) 0,rgba(221,221,221,1) 51%,rgba(255,255,255,1) 100%)}.mceO2k7SkinSilver.mceListBoxMenu .mceMenu{border-color:#bbb}.mceO2k7SkinSilver .mceToolbarRow .mceButton{border-color:#bbb #eee #bbb #bbb}.mceO2k7SkinSilver .mceToolbarRow .mceButton:active,.mceO2k7SkinSilver .mceToolbarRow .mceButton:hover,.mceO2k7SkinSilver .mceToolbarRow .mceButtonActive,.mceO2k7SkinSilver .mceToolbarRow .mceButtonSelected{border-color:#FFD24E}.mceO2k7SkinSilver .mceToolbarRow .mceButtonDisabled:hover{border-color:#bbb #eee #bbb #bbb}.mceO2k7Skin .mceLinkMenu .mceMenuHtml input,.mceO2k7SkinSilver .mcePanel,.mceO2k7SkinSilver .mcePanel::before,.mceO2k7SkinSilver .mceSeparator,.mceO2k7SkinSilver .mceToolbarEnd,.mceO2k7SkinSilver .mceToolbarRow .mceListBox .mceOpen,.mceO2k7SkinSilver .mceToolbarRow .mceListBox .mceText,.mceO2k7SkinSilver .mceToolbarRow .mceListBoxDisabled .mceListBox:hover .mceOpen,.mceO2k7SkinSilver .mceToolbarRow .mceListBoxDisabled .mceListBox:hover .mceText,.mceO2k7SkinSilver .mceToolbarRow .mceSplitButton .mceOpen,.mceO2k7SkinSilver .mceToolbarRow .mceSplitButton .mceText,.mceO2k7SkinSilver .mceToolbarRow .mceSplitButtonDisabled .mceSplitButton:hover .mceOpen,.mceO2k7SkinSilver .mceToolbarRow .mceSplitButtonDisabled .mceSplitButton:hover .mceText,.mceO2k7SkinSilver .mceToolbarRow .mceSplitButtonMenu,.mceO2k7SkinSilver .mceToolbarStart{border-color:#bbb}.mceO2k7SkinSilver .mceToolbarRow .mceToolbarItem:last-child .mceButton,.mceO2k7SkinSilver .mceToolbarRow .mceToolbarItem:last-child .mceButton:hover{border-right-width:1px;border-radius:0 2px 2px 0;border-right-color:#bbb}.mceO2k7SkinSilver .mceToolbarRow .mceToolbarItemEnd .mceButton,.mceO2k7SkinSilver .mceToolbarRow .mceToolbarItemEnd .mceSplitButton .mceOpen{border-right-color:#bbb}.mceO2k7SkinSilver .mceToolbarRow .mceToolbarItemStart .mceButton,.mceO2k7SkinSilver .mceToolbarRow .mceToolbarItemStart .mceSplitButton .mceText{border-left-color:#bbb}.mceO2k7SkinSilver .mceToolbarRow .mceToolbarItem:last-child .mceButton,.mceO2k7SkinSilver .mceToolbarRow .mceToolbarItem:last-child .mceButton:hover,.mceO2k7SkinSilver .mceToolbarRow>button:last-child,.mceO2k7SkinSilver .mceToolbarRow>button:last-child:hover{border-right-color:#bbb}.mceO2k7SkinSilver .mcePanel{background-color:#eee}.mceO2k7SkinSilver .mcePanel::before{background-color:#fff}
+/* Silver */
+.o2k7SkinSilver .mceToolbar .mceToolbarStart span, .o2k7SkinSilver .mceButton, .o2k7SkinSilver .mceSplitButton, .o2k7SkinSilver .mceSeparator, .o2k7SkinSilver .mceSplitButton a.mceOpen, .o2k7SkinSilver .mceListBox a.mceOpen {background-image:url(img/button_bg_silver.png)}
+.o2k7SkinSilver td.mceToolbar, .o2k7SkinSilver td.mceStatusbar, .o2k7SkinSilver .mceMenuItemTitle a {background:#eee}
+.o2k7SkinSilver .mceListBox .mceText {background:#FFF}
+.o2k7SkinSilver .mceExternalToolbar, .o2k7SkinSilver .mceListBox .mceText, .o2k7SkinSilver div.mceMenu, .o2k7SkinSilver table.mceLayout, .o2k7SkinSilver .mceMenuItemTitle a, .o2k7SkinSilver table.mceLayout tr.mceFirst td, .o2k7SkinSilver table.mceLayout, .o2k7SkinSilver .mceMenuItemTitle a, .o2k7SkinSilver table.mceLayout tr.mceLast td, .o2k7SkinSilver .mceIframeContainer {border-color: #bbb}
+
+#jce .o2k7SkinSilver .mceToolbar {
+	border :1px solid #bbb;
+	background:#eee;
+}
+
+#jce .o2k7SkinSilver .mceStatusbar {
+	border :1px solid #bbb;
+	background:#eee;
+}
+
+#jce .o2k7SkinSilver .mceToolbar li:first-child .mceButton {
+	border-left :1px solid #bbb;
+}
+
+#jce .o2k7SkinSilver .mceIframeContainer {
+    border: 1px solid #bbb;
+}
+
+/* Dialog */
+.o2k7SkinSilver .mceButtonDialog {border-color:#bbb; background-color : #eee;}
+.o2k7SkinSilver .mceButtonDialog input[type="text"] {border-color:#bbb}
+.o2k7SkinSilver .mceButtonDialog div.mceButtonDialogButtons a.mceDialogButton {border-color:#bbb}
+.o2k7SkinSilver .mceButtonDialog div.mceButtonDialogButtons a.mceDialogButton:hover {border-color:#bbb; background-color:#eee;}
+.o2k7SkinSilver .mceButtonDialog:before {background-color:#eee; border-color:#bbb;}

@@ -1,26 +1,24 @@
 <?php
 
 /**
- * @copyright     Copyright (c) 2009-2020 Ryan Demmer. All rights reserved
- * @license       GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ * @package   	JCE
+ * @copyright 	Copyright (c) 2009-2012 Ryan Demmer. All rights reserved.
+ * @license   	GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * JCE is free software. This version may have been modified pursuant
  * to the GNU General Public License, and as distributed it includes or
  * is derivative of works licensed under the GNU General Public License or
- * other free or open source software licenses
+ * other free or open source software licenses.
  */
-defined('JPATH_PLATFORM') or die;
-// set as an extension parent
-if (!defined('_WF_EXT')) {
-    define('_WF_EXT', 1);
-}
+defined('_JEXEC') or die('RESTRICTED');
 
-class WFExtension extends JObject
-{
+class WFExtension extends JObject {
+
     /**
-     * Constructor activating the default information of the class.
+     * Constructor activating the default information of the class
+     *
+     * @access public
      */
-    public function __construct($config = array())
-    {
+    public function __construct($config = array()) {
         parent::__construct();
 
         // set extension properties
@@ -28,41 +26,45 @@ class WFExtension extends JObject
     }
 
     /**
-     * Returns a reference to a WFExtension object.
+     * Returns a reference to a WFExtension object
      *
      * This method must be invoked as:
      *    <pre>  $extension = WFExtension::getInstance();</pre>
      *
-     * @return object WFExtension
+     * @access  public
+     * @return  object WFExtension
      */
     /* public static function getInstance()
-    {
-    static $instance;
+      {
+      static $instance;
 
-    if (!is_object($instance)) {
-    $instance = new WFExtension();
-    }
-    return $instance;
-    } */
+      if (!is_object($instance)) {
+      $instance = new WFExtension();
+      }
+      return $instance;
+      } */
 
     /**
-     * Display the extension.
+     * Display the extension
+     * @access $public
      */
-    public function display()
-    {
+    public function display() {
+        $document = WFDocument::getInstance();
+        // Load Extensions Object
+        $document->addScript(array(
+            'extensions'
+        ));
     }
 
     /**
-     * Load a plugin extension.
+     * Load a plugin extension
      *
-     * @return array
+     * @access  public
+     * @return 	array
      */
-    private static function _load($types = array(), $extension = null, $config = array())
-    {
+    private static function _load($types = array(), $extension = null, $config = array()) {
         jimport('joomla.filesystem.folder');
         jimport('joomla.filesystem.file');
-
-        $language = JFactory::getLanguage();
 
         $extensions = array();
 
@@ -76,130 +78,91 @@ class WFExtension extends JObject
         // cast as array
         $types = (array) $types;
 
-        // get all installed plugins
-        $installed = JPluginHelper::getPlugin('jce');
+        // get all types from core
+        if (empty($types)) {
+            $types = JFolder::folders(WF_EDITOR . '/extensions');
+        }
 
-        if (!empty($installed)) {
-            foreach ($installed as $p) {
+        if (JFolder::exists($path)) {
+            foreach ($types as $type) {
+                if ($extension) {
+                    if (JFile::exists($path . '/' . $type . '/' . $extension . '.xml') && JFile::exists($path . '/' . $type . '/' . $extension . '.php')) {
+                        $object = new stdClass();
+                        $object->folder = $type;
+                        $object->path = $path . '/' . $type;
+                        $object->extension = $extension;
 
-                // check for delimiter, only load "extensions"
-                if (strpos($p->name, '-') === false || strpos($p->name, 'editor-') !== false) {
-                    continue;
+                        $extensions[] = $object;
+                    }
+                } else {
+                    $files = JFolder::files($path . '/' . $type, '\.xml$', false, true);
+
+                    foreach ($files as $file) {
+                        $object = new stdClass();
+                        $object->folder = $type;
+                        $object->path = $path . '/' . $type;
+
+                        $name = JFile::stripExt(basename($file));
+
+                        if (JFile::exists(dirname($file) . '/' . $name . '.php')) {
+                            $object->extension = $name;
+                        }
+                        $extensions[] = $object;
+                    }
                 }
-
-                // set path
-                $p->path = JPATH_PLUGINS . '/jce/' . $p->name;
-
-                // get type and name
-                $parts = explode('-', $p->name);
-                $p->folder = $parts[0];
-                $p->extension = $parts[1];
-
-                // load the correct type if set
-                if (!empty($types) && !in_array($p->folder, $types)) {
-                    continue;
-                }
-
-                // specific extension
-                if ($extension && $p->extension !== $extension) {
-                    continue;
-                }
-
-                $language->load('plg_jce_' . $p->name, JPATH_ADMINISTRATOR);
-                $language->load('plg_jce_' . $p->name, $p->path);
-
-                // add to array
-                $extensions[$p->extension] = $p;
             }
         }
 
-        // get legacy extensions
-        $legacy = JFolder::folders(WF_EDITOR . '/extensions', '.', false, true);
+        // set default prefix
+        /*if (!array_key_exists('prefix', $config)) {
+            $config['prefix'] = 'jce-';
+        }
 
-        $core = array(
-            'aggregator' => array(
-                'dailymotion', 'vimeo', 'youtube',
-            ),
-            'filesystem' => array(
-                'joomla',
-            ),
-            'links' => array(
-                'joomlalinks',
-            ),
-            'popups' => array(
-                'jcemediabox',
-            ),
-            'search' => array(
-                'link',
-            ),
-        );
+        // get external extensions
+        jimport('joomla.plugin.helper');
 
-        foreach ($legacy as $item) {
-            $type = basename($item);
+        foreach ($types as $type) {
+            $installed = JPluginHelper::getPlugin($config['prefix'] . $type, $extension);
 
-            // unknown type
-            if (array_key_exists($type, $core) === false) {
-                continue;
-            }
-
-            // load the correct type if set
-            if (!empty($types) && !in_array($type, $types)) {
-                continue;
-            }
-
-            // specific extension
-            if ($extension && !JFile::exists($item . '/' . $extension . '.php')) {
-                continue;
-            }
-
-            if (!empty($extension)) {
-                // already loaded as Joomla plugin
-                if (isset($extensions[$extension])) {
-                    continue;
-                }
-
-                $files = array($item . '/' . $extension . '.xml');
-            } else {
-                $files = JFolder::files($item, '\.xml$', false, true);
-            }
-
-            foreach ($files as $file) {
-                $extension = basename($file, '.xml');
-
-                // unknown extension
-                if (!in_array($extension, $core[$type])) {
-                    continue;
-                }
-
+            foreach ($installed as $item) {
                 $object = new stdClass();
-                $object->folder = $type;
-                $object->path = dirname($file);
-                $object->extension = $extension;
+                $object->folder = $item->type;
+                $object->path = JPATH_PLUGINS . '/' . $item->type;
 
-                if (!isset($extensions[$extension])) {
-                    $extensions[$extension] = $object;
+                $name = $item->element;
+
+                if (JFile::exists(JPATH_PLUGINS . '/' . $item->type . '/' . $item->element . '.php')) {
+                    $object->extension = $name;
                 }
+
+                $extensions[] = $object;
             }
-        }
+        }*/
 
         return $extensions;
     }
 
     /**
-     * Load & Call an extension.
+     * Load & Call an extension
      *
-     * @param array $config
-     *
-     * @return mixed
+     * @access  public
+     * @param	array $config
+     * @return 	mixed
      */
-    public static function loadExtensions($type, $extension = null, $config = array())
-    {
+    public static function loadExtensions($type, $extension = null, $config = array()) {
         jimport('joomla.filesystem.folder');
         jimport('joomla.filesystem.file');
+
+        $language = JFactory::getLanguage();
 
         if (!isset($config['base_path'])) {
             $config['base_path'] = WF_EDITOR;
         }
+
+        // set default prefix
+        /*if (!array_key_exists('prefix', $config)) {
+            $config['prefix'] = 'jce-';
+        }*/
 
         // sanitize $type
         $type = preg_replace('#[^A-Z0-9\._-]#i', '', $type);
@@ -209,6 +172,9 @@ class WFExtension extends JObject
             $extension = preg_replace('#[^A-Z0-9\._-]#i', '', $extension);
         }
 
+        // Create extensions path
+        $base = $config['base_path'] . '/extensions';
+
         // Get all extensions
         $extensions = self::_load((array) $type, $extension, $config);
 
@@ -216,42 +182,36 @@ class WFExtension extends JObject
 
         if (!empty($extensions)) {
             foreach ($extensions as $item) {
-                $name = isset($item->extension) ? $item->extension : '';
+                $name   = $item->extension;
+                $folder = $item->folder;
+                $path   = $item->path;
 
-                $type = $item->folder;
-                $path = $item->path;
+                $root = $path . '/' . $name . '.php';
 
-                if ($name) {
-                    $root = $path . '/' . basename($path) . '.php';
+                if (file_exists($root)) {
+                    // Load root extension file
+                    require_once($root);
 
-                    // store name in item object
-                    $item->name = $name;
+                    // Load Extension language file
+                    $language->load('com_jce_' . $type . '_' . $name, JPATH_SITE);
 
-                    // legacy - clean defined path for Windows!!
-                    if (WFUtility::cleanPath(dirname($path)) === WFUtility::cleanPath(WF_EDITOR_EXTENSIONS)) {
-                        $root = $path . '/' . $name . '.php';
-                        // redefine path
-                        $item->path = $path . '/' . $name;
-                    }
+                    // remove prefix
+                    //$folder = str_replace($config['prefix'], '', $folder);
 
-                    if (file_exists($root)) {
-                        // Load root extension file
-                        require_once $root;
+                    // Return array of extension names
 
-                        // Return array of extension names
-                        $result[$type][] = $item;
+                    $result[$type][] = $name;
 
-                        // if we only want a named extension
-                        if ($extension && $extension == $name) {
-                            return $item;
-                        }
+                    // if we only want a named extension
+                    if ($extension && $extension == $name) {
+                        return $name;
                     }
                 }
             }
         }
-
+        
         // only return extension types requested
-        if ($type && array_key_exists($type, $result)) {
+        if ($type) {
             return $result[$type];
         }
 
@@ -260,22 +220,26 @@ class WFExtension extends JObject
     }
 
     /**
-     * Return a parameter for the current plugin / group.
-     *
-     * @param object $key   Parameter name
-     * @param object $default Default value
-     *
-     * @return string Parameter value
+     * Return a parameter for the current plugin / group
+     * @param 	object $param Parameter name
+     * @param 	object $default Default value
+     * @return 	string Parameter value
      */
-    public function getParam($key, $default = '')
-    {
-        $wf = WFApplication::getInstance();
+    public function getParam($param, $default = '') {
+        $wf = WFEditorPlugin::getInstance();
 
-        return $wf->getParam($key, $default);
+        return $wf->getParam($param, $default);
     }
 
-    public function getView($options = array())
-    {
-        return new WFView($options);
+    protected function getView($name, $layout) {
+        $view = new WFView(array(
+                    'name' => $name,
+                    'layout' => $layout
+                ));
+
+        return $view;
     }
+
 }
+
+?>

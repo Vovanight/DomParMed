@@ -1,1 +1,142 @@
-@import url(ui.css?v=9c838d2e45b2ad1094d42f4ef36764f6);@import url(ui_touch.css?v=9c838d2e45b2ad1094d42f4ef36764f6);.mceDefaultSkin .mceToolbar{border:0;padding:0}.mceDefaultSkin .mceLayout,.mceDefaultSkin .mceLayout .mceToolbar{border:0!important;background:#fff}.mceDefaultSkin .mceToolbarItem div{display:inline-block}.mceDefaultSkin .mceLayout .mceStatusbar{border:1px solid #ddd;border-top-width:0}.mceDefaultSkin .mceLayout .mceIframeContainer{background:#fff;width:100%;position:relative;padding:5px;box-sizing:border-box;white-space:pre-line;border:1px solid #ddd;margin:0}.mceToolbarRow .mceToolbarItem{font-size:0;vertical-align:top;line-height:1}.mceToolbarRow .mceToolbarItem .mceButton{display:inline-flex;align-items:center;justify-content:center;vertical-align:middle}.mceToolbarRow .mceToolbarItem .mceButton,.mceToolbarRow .mceToolbarItem .mceButton .mceIcon{cursor:move}.mceToolbarRow .mceToolbarItem .mceButton+.mceButton{margin-left:1px}.mceEditor .mceToolbarItem .mceSplitButton .mceButton+.mceButton{margin-left:inherit}.mceDefaultSkin .mceToolbar .mceToolbarRow{font-size:0;line-height:1;height:auto;min-height:38px;position:relative;background-color:#f5f5f5;border:1px solid #ddd;padding:1px;margin-bottom:2px;cursor:move;display:block}.mceEditor .mceToolbarItem .mceListBox,.mceEditor .mceToolbarItem .mceSplitButton{width:100%;padding:0;position:relative;display:inline-block}.mceEditor .mceToolbarItem .mceListBox .mceIcon{display:none}.mceEditor .mceToolbarItem .mceSplitButton .mceIcon{display:inline-block;margin:4px 5px}.mceEditor .mceToolbarItem .mceSplitButton{width:48px;height:32px;text-align:left;font-size:0}.mceEditor .mceToolbarItem .mceListBox{font-size:0;max-width:114px;margin:0}.mceEditor .mceToolbarItem .mceListBox:before{content:attr(title);display:inline-block;width:96px;background:#fff;font-size:14px;line-height:30px;padding:0 2px;box-sizing:border-box;overflow:hidden;text-overflow:ellipsis;text-align:left}.mceEditor .mceToolbarItem .mceListBox:after,.mceEditor .mceToolbarItem .mceSplitButton:after{content:"\25bc";display:inline-block;font-size:9px;line-height:30px;color:#444;width:16px;text-align:center;border-left:1px solid #ddd;box-sizing:border-box;background:#f5f5f5;vertical-align:top}.mceDefaultSkin .mceStatusbar{line-height:1}.mceDefaultSkinTouch .mceToolBarItem .mceListBox,.mceDefaultSkinTouch .mceToolBarItem .mceSplitButton{border-color:#dcdcdc;height:36px}.mceDefaultSkinTouch .mceLayout .mceToolbar .mceToolbarRow{min-height:38px}.mceDefaultSkinTouch .mceToolBarItem .mceButton{padding:7px;border-color:#dcdcdc;background-color:#fafafa}.mceDefaultSkinTouch .mceToolBarItem .mceListBox{width:112px;padding:0}.mceDefaultSkinTouch .mceToolBarItem .mceSplitButton{width:55px;padding:0;height:36px}.mceDefaultSkinTouch .mceToolBarItem .mceListBox .mceIcon{width:92px}.mceDefaultSkinTouch .mceToolBarItem .mceListBox .mceIcon:before{width:92px;line-height:34px}.mceDefaultSkinTouch .mceToolBarItem .mceListBox:after,.mceDefaultSkinTouch .mceToolBarItem .mceSplitButton:after{line-height:34px;width:20px;border-color:#dcdcdc}.mceDefaultSkinTouch .mceLayout .mceIframeContainer,.mceDefaultSkinTouch .mceLayout .mceStatusbar{border-color:#dcdcdc}.mceDefaultSkinTouch .mceLayout .mceToolbarRow{background-color:#fafafa;border-color:#dcdcdc}.mceDefaultSkinTouch .mceToolbar .sortableRowHandle{height:42px}.mceDefaultSkinTouch .mceToolbar .sortableRowHandle .uk-icon{margin:12px 0 0}.mceDefaultSkinTouch .mceToolBarItem .mceSeparator{height:34px;background:#dcdcdc}.mceDefaultSkinTouch .sortableList .mceToolbarRow.sortableListItem.ui-sortable-highlight{height:38px}.mceDefaultSkinTouch .sortableList .mceToolBarItem.sortableRowItem.ui-sortable-highlight{height:36px}.mceDefaultSkinTouch .mceLayout,.mceDefaultSkinTouch .mceLayout .mceToolbar{border:0!important;background:#fff}.mceDefaultSkinTouch .mceLayout .mceFirst,.mceDefaultSkinTouch .mceLayout .mceLast{background-color:#fff!important}.mceDefaultSkinTouch .mceLayout .mceStatusbar{background-color:#fafafa!important}.mceDefaultSkinTouch .mceToolBarItem .mceListBox::before{line-height:32px;width:90px}.mceDefaultSkinTouch .mceToolbarItem .mceSplitButton .mceIcon{margin:9px}.mceDefaultSkinTouch .mceToolbarItem .mceSplitButton{width:58px;height:40px}.mceDefaultSkinTouch .mceToolbarItem .mceListBox::before{line-height:38px}.mceDefaultSkinTouch .mceToolbarItem .mceListBox::after,.mceDefaultSkinTouch .mceToolbarItem .mceSplitButton::after{width:16px;line-height:38px}.checkboxes .mceButton .mceIcon{display:inline-block}.com_jce .nav-link .mce-toolbar .mce-btn,.com_jce .nav-link .mce-toolbar .mce-btn button{cursor:pointer}.mceLayout .mceStatusbar .mcePathRow{background:inherit}
+#jce span.mceIcon {
+	width: auto;
+	min-width: 20px;
+	cursor: move;
+}
+
+#jce div.mceToolbar span.plugin.focus span,
+#jce div.mceToolbar span.command.focus span,
+#jce div.mceToolbar span.plugin.focus span:after,
+#jce div.mceToolbar span.command.focus span:after {
+    background-color : #ADD8E6;
+}
+
+#jce span.mceButton, #jce span.mceSplitButton {
+	width: auto;
+	display: inline-block;
+}
+
+#jce .defaultSkin span.mceButton, #jce .defaultSkin span.mceSplitButton {
+        background: #F0F0EE;
+}
+
+#jce span.mceListBox {
+    display: inherit;
+}
+
+#jce span.mceIcon.mceButton {
+	width: auto;
+	min-width: 20px;
+}
+
+#jce span.spacer span.mceSeparator {
+    margin-top : -1px;
+}
+
+#jce span.plugin span.mceSeparator {
+    /*top : -7px;*/
+    margin-left: 2px;
+}
+
+#jce span.mceSeparator {
+    display: inline-block;
+    position: relative;
+    padding: 0 0 2px 0;
+    margin : 0 3px 0 1px;
+}
+
+#jce span.mceListBox {
+    height: 20px;
+    width : 84px;
+    text-align : left;
+}
+
+#jce span.mceIcon.mce_fontselect:after,
+#jce span.mceIcon.mce_styleselect:after,
+#jce span.mceIcon.mce_formatselect:after,
+#jce span.mceIcon.mce_fontsizeselect:after {
+    font-family: Tahoma,Verdana,Arial,Helvetica;
+    font-size: 11px !important;
+    line-height: 20px;
+    padding: 0 3px;
+}
+
+#jce .defaultSkin span.mceListBox {
+    background: #F0F0EE url('img/button_bg.png') no-repeat 75px 0;
+}
+
+#jce .defaultSkin span.mceListBox span.mceIcon:after {
+    border-right :1px solid #ccc;
+    width : 68px;
+    display: inline-block;
+    background: #FFF;
+}
+
+#jce span.mceIcon.mce_fontselect:after {
+    content: "Font Family";
+}
+#jce span.mceIcon.mce_styleselect:after {
+    content: "Styles";
+}
+#jce span.mceIcon.mce_fontsizeselect:after {
+    content: "Font Size";
+}
+#jce span.mceIcon.mce_formatselect:after {
+    content: "Format";
+}
+
+#jce .defaultSkin .mceListBox {
+    border : 1px solid #ccc;
+    margin: 0 1px 0 0;
+}
+
+#jce .defaultSkin .mceSplitButton {
+    border : 1px solid #ccc;
+}
+
+/* Admin Layout Edtior */
+#jce .defaultSkin .mceToolbar {
+    border :1px solid #CCC;
+    background:#F0F0EE;
+}
+#jce span.mceIcon.mce_paste, #jce span.mceIcon.mce_numlist, #jce span.mceIcon.mce_bullist, 
+#jce span.mceIcon.mce_forecolor, #jce span.mceIcon.mce_backcolor, #jce span.mceIcon.mce_spellchecker, #jce span.mceIcon.mce_textcase { 
+    width : 30px;
+}
+
+#jce.multiplebg span.mceSplitButton span.mceIcon {
+    background-image: url("../../img/icons.png");
+}
+
+#jce span.mceSplitButton {
+    position: relative;
+}
+
+#jce span.mceSplitButton span.mceIcon:after {
+    content : "";
+    display: inline-block;
+    position : absolute;
+    top : 0px;
+    right : -1px;
+    background: url("img/button_bg.png") no-repeat 0 0;
+    width : 10px;
+    height : 20px;
+}
+
+#jce .defaultSkin .mceStatusbar {
+    border :1px solid #CCC;
+    background:#F0F0EE;
+}
+
+#jce .defaultSkin .mceIframeContainer {
+    border: 1px solid #CCC;
+}
+
+#jce span.mceButton[style="display: none;"] + span.mceSeparator {
+    display: none;
+}
+
+#jce li.defaultSkin span.mceButton + span.tabs-label {
+    display: block;
+    font-size : 0.9em;
+}

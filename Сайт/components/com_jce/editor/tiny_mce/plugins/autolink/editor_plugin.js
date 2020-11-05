@@ -1,2 +1,38 @@
-/* jce - 2.9.1 | 2020-10-29 | https://www.joomlacontenteditor.net | Copyright (C) 2006 - 2020 Ryan Demmer. All rights reserved | GNU/GPL Version 2 or later - http://www.gnu.org/licenses/gpl-2.0.html */
-!function(){var AutoLinkPattern=/^(https?:\/\/|ssh:\/\/|ftp:\/\/|file:\/|www\.|(?:mailto:)?[A-Z0-9._%+\-]+@)(.+)$/i;tinymce.create("tinymce.plugins.AutolinkPlugin",{init:function(ed,url){var t=this;(ed.getParam("autolink_url",!0)||ed.getParam("autolink_email",!0))&&(ed.settings.autolink_pattern&&(AutoLinkPattern=ed.settings.autolink_pattern),ed.onAutoLink=new tinymce.util.Dispatcher(this),ed.onKeyDown.addToTop(function(ed,e){if(13==e.keyCode)return t.handleEnter(ed)}),tinyMCE.isIE||(ed.onKeyPress.add(function(ed,e){if(41==e.which)return t.handleEclipse(ed)}),ed.onKeyUp.add(function(ed,e){if(32==e.keyCode)return t.handleSpacebar(ed)})))},handleEclipse:function(ed){this.parseCurrentLine(ed,-1,"(",!0)},handleSpacebar:function(ed){this.parseCurrentLine(ed,0,"",!0)},handleEnter:function(ed){this.parseCurrentLine(ed,-1,"",!1)},parseCurrentLine:function(editor,endOffset,delimiter){function scopeIndex(container,index){if(index<0&&(index=0),3==container.nodeType){var len=container.data.length;index>len&&(index=len)}return index}function setStart(container,offset){1!=container.nodeType||container.hasChildNodes()?rng.setStart(container,scopeIndex(container,offset)):rng.setStartBefore(container)}function setEnd(container,offset){1!=container.nodeType||container.hasChildNodes()?rng.setEnd(container,scopeIndex(container,offset)):rng.setEndAfter(container)}var rng,end,start,endContainer,bookmark,text,matches,prev,len,rngText;if("A"!=editor.selection.getNode().tagName){if(rng=editor.selection.getRng(!0).cloneRange(),rng.startOffset<5){if(prev=rng.endContainer.previousSibling,!prev){if(!rng.endContainer.firstChild||!rng.endContainer.firstChild.nextSibling)return;prev=rng.endContainer.firstChild.nextSibling}if(len=prev.length,setStart(prev,len),setEnd(prev,len),rng.endOffset<5)return;end=rng.endOffset,endContainer=prev}else{if(endContainer=rng.endContainer,3!=endContainer.nodeType&&endContainer.firstChild){for(;3!=endContainer.nodeType&&endContainer.firstChild;)endContainer=endContainer.firstChild;3==endContainer.nodeType&&(setStart(endContainer,0),setEnd(endContainer,endContainer.nodeValue.length))}end=1==rng.endOffset?2:rng.endOffset-1-endOffset}start=end;do setStart(endContainer,end>=2?end-2:0),setEnd(endContainer,end>=1?end-1:0),end-=1,rngText=rng.toString();while(" "!=rngText&&""!==rngText&&160!=rngText.charCodeAt(0)&&end-2>=0&&rngText!=delimiter);if(rng.toString()==delimiter||160==rng.toString().charCodeAt(0)?(setStart(endContainer,end),setEnd(endContainer,start),end+=1):0===rng.startOffset?(setStart(endContainer,0),setEnd(endContainer,start)):(setStart(endContainer,end),setEnd(endContainer,start)),text=rng.toString(),"."==text.charAt(text.length-1)&&setEnd(endContainer,start-1),text=rng.toString(),matches=text.match(AutoLinkPattern)){if("www."==matches[1]?matches[1]="https://www.":/@$/.test(matches[1])&&!/^mailto:/.test(matches[1])&&(matches[1]="mailto:"+matches[1]),matches[1].indexOf("http")!==-1&&!editor.getParam("autolink_url",!0))return;if(matches[1].indexOf("mailto:")!==-1&&!editor.getParam("autolink_email",!0))return;bookmark=editor.selection.getBookmark(),editor.selection.setRng(rng),editor.execCommand("createlink",!1,matches[1]+matches[2]);var node=editor.selection.getNode();editor.settings.default_link_target&&editor.dom.setAttrib(node,"target",editor.settings.default_link_target),editor.onAutoLink.dispatch(editor,{node:node}),editor.selection.moveToBookmark(bookmark),editor.nodeChanged()}}}}),tinymce.PluginManager.add("autolink",tinymce.plugins.AutolinkPlugin)}();
+/*  
+ * JCE Editor                 2.3.1
+ * @package                 JCE
+ * @url                     http://www.joomlacontenteditor.net
+ * @copyright               Copyright (C) 2006 - 2012 Ryan Demmer. All rights reserved
+ * @license                 GNU/GPL Version 2 or later - http://www.gnu.org/licenses/gpl-2.0.html
+ * @date                    10 December 2012
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * NOTE : Javascript files have been compressed for speed and can be uncompressed using http://jsbeautifier.org/
+ */
+(function(){tinymce.create('tinymce.plugins.AutolinkPlugin',{init:function(ed,url){var t=this;if(!ed.getParam('autolink_url',true)&&!ed.getParam('autolink_email',true)){return;}
+ed.onKeyDown.addToTop(function(ed,e){if(e.keyCode==13)
+return t.handleEnter(ed);});if(tinyMCE.isIE)
+return;ed.onKeyPress.add(function(ed,e){if(e.which==41)
+return t.handleEclipse(ed);});ed.onKeyUp.add(function(ed,e){if(e.keyCode==32)
+return t.handleSpacebar(ed);});},handleEclipse:function(ed){this.parseCurrentLine(ed,-1,'(',true);},handleSpacebar:function(ed){this.parseCurrentLine(ed,0,'',true);},handleEnter:function(ed){this.parseCurrentLine(ed,-1,'',false);},parseCurrentLine:function(ed,end_offset,delimiter,goback){var r,end,start,endContainer,bookmark,text,matches,prev,len;r=ed.selection.getRng(true).cloneRange();if(r.startOffset<5){prev=r.endContainer.previousSibling;if(prev==null){if(r.endContainer.firstChild==null||r.endContainer.firstChild.nextSibling==null)
+return;prev=r.endContainer.firstChild.nextSibling;}
+len=prev.length;r.setStart(prev,len);r.setEnd(prev,len);if(r.endOffset<5)
+return;end=r.endOffset;endContainer=prev;}else{endContainer=r.endContainer;if(endContainer.nodeType!=3&&endContainer.firstChild){while(endContainer.nodeType!=3&&endContainer.firstChild)
+endContainer=endContainer.firstChild;if(endContainer.nodeType==3){r.setStart(endContainer,0);r.setEnd(endContainer,endContainer.nodeValue.length);}}
+if(r.endOffset==1)
+end=2;else
+end=r.endOffset-1-end_offset;}
+start=end;do
+{r.setStart(endContainer,end>=2?end-2:0);r.setEnd(endContainer,end>=1?end-1:0);end-=1;}while(r.toString()!=' '&&r.toString()!=''&&r.toString().charCodeAt(0)!=160&&(end-2)>=0&&r.toString()!=delimiter);if(r.toString()==delimiter||r.toString().charCodeAt(0)==160){r.setStart(endContainer,end);r.setEnd(endContainer,start);end+=1;}else if(r.startOffset==0){r.setStart(endContainer,0);r.setEnd(endContainer,start);}
+else{r.setStart(endContainer,end);r.setEnd(endContainer,start);}
+var text=r.toString();if(text.charAt(text.length-1)=='.'){r.setEnd(endContainer,start-1);}
+text=r.toString();matches=text.match(/^(https?:\/\/|ssh:\/\/|ftp:\/\/|file:\/|www\.|(?:mailto:)?[A-Z0-9._%+-]+@)(.+)$/i);if(matches){if(matches[1]=='www.'){matches[1]='http://www.';if(!ed.getParam('autolink_url',true)){return;}}else if(/@$/.test(matches[1])&&!/^mailto:/.test(matches[1])){matches[1]='mailto:'+matches[1];if(!ed.getParam('autolink_email',true)){return;}}else{if(!ed.getParam('autolink_url',true)){return;}}
+bookmark=ed.selection.getBookmark();ed.selection.setRng(r);tinyMCE.execCommand('createlink',false,matches[1]+matches[2]);ed.selection.moveToBookmark(bookmark);ed.nodeChanged();if(tinyMCE.isWebKit){ed.selection.collapse(false);var max=Math.min(endContainer.length,start+1);r.setStart(endContainer,max);r.setEnd(endContainer,max);ed.selection.setRng(r);}}},getInfo:function(){return{longname:'Autolink',author:'Moxiecode Systems AB',authorurl:'http://tinymce.moxiecode.com',infourl:'http://wiki.moxiecode.com/index.php/TinyMCE:Plugins/autolink',version:tinymce.majorVersion+"."+tinymce.minorVersion};}});tinymce.PluginManager.add('autolink',tinymce.plugins.AutolinkPlugin);})();

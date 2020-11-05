@@ -1,2 +1,20 @@
-/* jce - 2.9.1 | 2020-10-29 | https://www.joomlacontenteditor.net | Copyright (C) 2006 - 2020 Ryan Demmer. All rights reserved | GNU/GPL Version 2 or later - http://www.gnu.org/licenses/gpl-2.0.html */
-!function(){tinymce.create("tinymce.plugins.Nonbreaking",{init:function(ed,url){var t=this;t.editor=ed,ed.addCommand("mceNonBreaking",function(){ed.execCommand("mceInsertContent",!1,ed.plugins.visualchars&&ed.plugins.visualchars.state?'<span data-mce-bogus="1" class="mce-item-hidden mce-item-nbsp">&nbsp;</span>':"&nbsp;")}),ed.addButton("nonbreaking",{title:"nonbreaking.desc",cmd:"mceNonBreaking"}),ed.getParam("nonbreaking_force_tab")&&ed.onKeyDown.add(function(ed,e){9==e.keyCode&&(e.preventDefault(),ed.execCommand("mceNonBreaking"),ed.execCommand("mceNonBreaking"),ed.execCommand("mceNonBreaking"))}),ed.addShortcut("ctrl+shift+32","nonbreaking.desc","mceNonBreaking")}}),tinymce.PluginManager.add("nonbreaking",tinymce.plugins.Nonbreaking)}();
+/*  
+ * JCE Editor                 2.3.1
+ * @package                 JCE
+ * @url                     http://www.joomlacontenteditor.net
+ * @copyright               Copyright (C) 2006 - 2012 Ryan Demmer. All rights reserved
+ * @license                 GNU/GPL Version 2 or later - http://www.gnu.org/licenses/gpl-2.0.html
+ * @date                    10 December 2012
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * NOTE : Javascript files have been compressed for speed and can be uncompressed using http://jsbeautifier.org/
+ */
+(function(){tinymce.create("tinymce.plugins.Nonbreaking",{init:function(a,b){var c=this;c.editor=a;a.addCommand("mceNonBreaking",function(){a.execCommand("mceInsertContent",false,(a.plugins.visualchars&&a.plugins.visualchars.state)?'<span data-mce-bogus="1" class="mceItemHidden mceItemNbsp">&nbsp;</span>':"&nbsp;")});a.addButton("nonbreaking",{title:"nonbreaking.nonbreaking_desc",cmd:"mceNonBreaking"});if(a.getParam("nonbreaking_force_tab")){a.onKeyDown.add(function(d,f){if(f.keyCode==9){f.preventDefault();d.execCommand("mceNonBreaking");d.execCommand("mceNonBreaking");d.execCommand("mceNonBreaking")}})}},getInfo:function(){return{longname:"Nonbreaking space",author:"Moxiecode Systems AB",authorurl:"http://tinymce.moxiecode.com",infourl:"http://wiki.moxiecode.com/index.php/TinyMCE:Plugins/nonbreaking",version:tinymce.majorVersion+"."+tinymce.minorVersion}}});tinymce.PluginManager.add("nonbreaking",tinymce.plugins.Nonbreaking)})();
