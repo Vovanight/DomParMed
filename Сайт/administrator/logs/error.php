@@ -5,3 +5,4 @@
 
 #Fields: datetime	priority clientip	category	message
 2020-11-04T05:32:26+00:00	INFO 127.0.0.1	joomlafailure	Empty password not allowed.
+2020-11-04T17:55:15+00:00	INFO 127.0.0.1	joomlafailure	Username and password do not match or you do not have an account yet.
