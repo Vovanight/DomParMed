@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright     Copyright (c) 2009-2020 Ryan Demmer. All rights reserved
+ * @copyright     Copyright (c) 2009-2019 Ryan Demmer. All rights reserved
  * @license       GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * JCE is free software. This version may have been modified pursuant
  * to the GNU General Public License, and as distributed it includes or
@@ -12,11 +12,6 @@ class WFJoomlaPluginConfig
 {
     public static function getConfig(&$settings)
     {
-        // already set by editor display
-        if (isset($settings['joomla_xtd_buttons'])) {
-            return;
-        }
-
         $plugins = JPluginHelper::getPlugin('editors-xtd');
 
         $list = array();
@@ -32,44 +27,33 @@ class WFJoomlaPluginConfig
                 continue;
             }
 
-            // fully load plugin instance
-            JPluginHelper::importPlugin('editors-xtd', $plugin->name, true);
+            JPluginHelper::importPlugin('editors-xtd', $plugin->name, false);
 
-            // create the button class name
             $className = 'PlgEditorsXtd' . $plugin->name;
 
-            // or an alternative
             if (!class_exists($className)) {
                 $className = 'PlgButton' . $plugin->name;
             }
 
-            $instance = null;
-
             if (class_exists($className)) {
-                $dispatcher = is_subclass_of($editor, 'Joomla\Event\DispatcherAwareInterface', false) ? $editor->getDispatcher() : $editor;
-                $instance = new $className($dispatcher, (array) $plugin);
+                $plugin = new $className($editor, (array) $plugin);
             }
 
             // check that the button is valid
-            if (!$instance || !method_exists($instance, 'onDisplay')) {
+            if (!method_exists($plugin, 'onDisplay')) {
                 continue;
             }
 
-            $button = $instance->onDisplay('__jce__', null, null);
+            $button = $plugin->onDisplay('$jce', null, null);
 
-            if (empty($button) || !is_object($button)) {
-                continue;
-            }
-
-            // should be a CMSObject
-            if (!($button instanceof Joomla\CMS\Object\CMSObject)) {
+            if (empty($button)) {
                 continue;
             }
 
             // Set some vars
             $name = 'button-' . $i . '-' . str_replace(' ', '-', $button->get('text'));
             $title = $button->get('text');
-            $onclick = $button->get('onclick', '');
+            $onclick = $button->get('onclick') ?: '';
             $icon = $button->get('name');
 
             if ($button->get('link') !== '#') {

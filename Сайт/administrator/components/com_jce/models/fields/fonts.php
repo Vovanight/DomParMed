@@ -29,25 +29,7 @@ class JFormFieldFonts extends JFormFieldCheckboxes
      */
     protected $forceMultiple = false;
 
-    private static $fonts = array(
-        'Andale Mono' => 'andale mono,times',
-        'Arial' => 'arial,helvetica,sans-serif',
-        'Arial Black' => 'arial black,avant garde',
-        'Book Antiqua' => 'book antiqua,palatino',
-        'Comic Sans MS' => 'comic sans ms,sans-serif',
-        'Courier New' => 'courier new,courier',
-        'Georgia' => 'georgia,palatino',
-        'Helvetica' => 'helvetica',
-        'Impact' => 'impact,chicago',
-        'Symbol' => 'symbol',
-        'Tahoma' => 'tahoma,arial,helvetica,sans-serif',
-        'Terminal' => 'terminal,monaco',
-        'Times New Roman' => 'times new roman,times',
-        'Trebuchet MS' => 'trebuchet ms,geneva',
-        'Verdana' => 'verdana,geneva',
-        'Webdings' => 'webdings',
-        'Wingdings' => 'wingdings,zapf dingbats',
-    );
+    private static $fonts = array('Andale Mono' => 'andale mono,times', 'Arial' => 'arial,helvetica,sans-serif', 'Arial Black' => 'arial black,avant garde', 'Book Antiqua' => 'book antiqua,palatino', 'Comic Sans MS' => 'comic sans ms,sans-serif', 'Courier New' => 'courier new,courier', 'Georgia' => 'georgia,palatino', 'Helvetica' => 'helvetica', 'Impact' => 'impact,chicago', 'Symbol' => 'symbol', 'Tahoma' => 'tahoma,arial,helvetica,sans-serif', 'Terminal' => 'terminal,monaco', 'Times New Roman' => 'times new roman,times', 'Trebuchet MS' => 'trebuchet ms,geneva', 'Verdana' => 'verdana,geneva', 'Webdings' => 'webdings', 'Wingdings' => 'wingdings,zapf dingbats');
 
     /**
      * Allow to override renderer include paths in child fields
@@ -75,63 +57,31 @@ class JFormFieldFonts extends JFormFieldCheckboxes
 
         $fonts = array();
 
-        // map associative array to array of key value pairs
-        foreach ($this->value as $key => $value) {
-            if (is_numeric($key) && is_array($value)) {
-                $fonts[] = $value;
+        // map for new format, where fonts are saved as an array of an associative array, eg: [['Andale Mono' => 'andale mono,times', 'Arial' => 'arial,helvetica,sans-serif']]
+        foreach($this->value as $key => $value) {
+            if (is_numeric($key)) {
+                $fonts = $value;
             } else {
-                $fonts[] = array($key => $value);
+                $fonts[$key] = $value;
             }
         }
-        // array of font names to exclude from default list
-        $exclude = array();
-        // array of custom font key/value pairs
-        $custom = array();
 
-        foreach ($fonts as $font) {
-            list($text) = array_keys($font);
-            list($value) = array_values($font);
+        // the full font list, including custom fonts
+        $items = array_merge(self::$fonts, $fonts);
 
-            // add to $exclude array
-            $exclude[] = $text;
-            
+        foreach ($items as $text => $value) {
             $value = htmlspecialchars_decode($value, ENT_QUOTES);
 
-            $isCustom = !in_array($value, array_values(self::$fonts));
-
-            $item = array(
-                'value' => $value,
-                'text' => JText::alt($text, $fieldname),
-                'checked' => true,
-                'custom' => $isCustom,
-            );
-
-            $item = (object) $item;
-
-            if ($isCustom) {
-                $custom[] = $item;
-            } else {
-                $options[] = $item;
-            }
-        }
-
-        // assign empty (unchecked) options for unused fonts
-        foreach (self::$fonts as $text => $value) {
-
-            if (in_array($text, $exclude)) {
-                continue;
-            }
-
             $tmp = array(
-                'value' => $value,
-                'text' => JText::alt($text, $fieldname),
-                'checked' => false,
-                'custom' => false,
+                'value'     => $value,
+                'text'      => JText::alt($text, $fieldname),
+                'checked'   => empty($fonts) ? true : in_array($value, array_values($fonts)),
+                'custom'    => !in_array($value, array_values(self::$fonts)),
             );
 
             $options[] = (object) $tmp;
         }
 
-        return array_merge($options, $custom);
+        return $options;
     }
 }

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright     Copyright (c) 2009-2020 Ryan Demmer. All rights reserved
+ * @copyright     Copyright (c) 2009-2019 Ryan Demmer. All rights reserved
  * @license       GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * JCE is free software. This version may have been modified pursuant
  * to the GNU General Public License, and as distributed it includes or
@@ -117,13 +117,12 @@ class WFApplication extends JObject
         return 0;
     }
 
-    private function getProfileVars()
+    private function getProfileVars($plugin = '')
     {
         $app = JFactory::getApplication();
         $user = JFactory::getUser();
         $option = $this->getComponentOption();
 
-        // find the component if this is called from within the JCE component
         if ($option == 'com_jce') {
             $context = $app->input->getInt('context');
 
@@ -161,7 +160,8 @@ class WFApplication extends JObject
             'option' => $option,
             'area' => $area,
             'device' => $device,
-            'groups' => $groups
+            'groups' => $groups,
+            'plugin' => $plugin,
         );
     }
 
@@ -181,10 +181,9 @@ class WFApplication extends JObject
         }
 
         // get the profile variables for the current context
-        $options = $this->getProfileVars();
-
+        $options = $this->getProfileVars($plugin);
         // create a signature to store
-        $signature = md5(serialize($options));
+        $signature = serialize($options);
 
         if (!isset(self::$profile[$signature])) {
             $db = JFactory::getDBO();
@@ -201,15 +200,12 @@ class WFApplication extends JObject
             $db->setQuery($query);
             $profiles = $db->loadObjectList();
 
-            // nothing found...
-            if (empty($profiles)) {
-                return null;
-            }
+            if ($id && !empty($profiles)) {
+                // assign profile
+                self::$profile[$signature] = (object) $profiles[0];
 
-            // select and return a specific profile by id
-            if ($id) {
                 // return
-                return (object) $profiles[0];
+                return self::$profile[$signature];
             }
 
             foreach ($profiles as $item) {
@@ -251,8 +247,7 @@ class WFApplication extends JObject
                     continue;
                 }
 
-                // check against passed in plugin value
-                if ($plugin && in_array($plugin, explode(',', $item->plugins)) === false) {
+                if ($options['plugin'] && in_array($options['plugin'], explode(',', $item->plugins)) === false) {
                     continue;
                 }
 
@@ -327,26 +322,21 @@ class WFApplication extends JObject
         }
 
         // get plugin name
-        $plugin = $app->input->getCmd('plugin', '');
+        $plugin = $app->input->getCmd('plugin');
 
-        // reset the plugin value if this is not called from within the JCE component
-        if ($app->input->getCmd('option') !== 'com_jce') {
-            $plugin = '';
+        // optional caller, eg: Link
+        $caller = '';
+
+        // get name and caller from plugin name
+        if (strpos($plugin, '.') !== false) {
+            list($plugin, $caller) = explode('.', $plugin);
+
+            if ($caller) {
+                $options['caller'] = $caller;
+            }
         }
 
         if ($plugin) {
-            // optional caller, eg: Link
-            $caller = '';
-            
-            // get name and caller from plugin name
-            if (strpos($plugin, '.') !== false) {
-                list($plugin, $caller) = explode('.', $plugin);
-
-                if ($caller) {
-                    $options['caller'] = $caller;
-                }
-            }
-
             $options['plugin'] = $plugin;
         }
 
@@ -435,14 +425,14 @@ class WFApplication extends JObject
                 $value = $fallback;
 
                 // if fallback is empty, revert to system default if it is non-empty
-                if ($fallback == '' && $default != '') {
+                if ($fallback === '' && $default !== '') {
                     $value = $default;
 
                     // reset $default to prevent clearing
                     $default = '';
                 }
             // parameter is set, but is empty, but fallback is not (inherited values)
-            } else if ($fallback != '') {
+            } else if ($fallback !== '') {
                 $value = $fallback;
             }
         }

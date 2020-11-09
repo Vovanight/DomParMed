@@ -80,14 +80,13 @@ class JFormFieldUploadMaxSize extends JFormFieldNumber
         if (isset($matches[2])) {
             $prefix = $matches[2];
         }
-
         // get value
         if (isset($matches[1])) {
             $value = (int) $matches[1];
         }
 
         // Convert to bytes
-        switch (strtolower($prefix[0])) {
+        switch (strtolower($prefix)) {
             case 'g':
                 $value *= 1073741824;
                 break;
@@ -100,14 +99,17 @@ class JFormFieldUploadMaxSize extends JFormFieldNumber
         }
 
         // Convert to unit value
-        switch (strtolower($unit[0])) {
+        switch (strtolower($unit)) {
             case 'g':
+            case 'gb':
                 $value /= 1073741824;
                 break;
             case 'm':
+            case 'mb':
                 $value /= 1048576;
                 break;
             case 'k':
+            case 'kb':
                 $value /= 1024;
                 break;
         }

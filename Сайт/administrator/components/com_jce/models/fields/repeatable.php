@@ -4,7 +4,7 @@
  * @subpackage  Component
  *
  * @copyright   Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.
- * @copyright   Copyright (C) 2006 - 2020 Ryan Demmer. All rights reserved.
+ * @copyright   Copyright (C) 2006 - 2019 Ryan Demmer. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -57,7 +57,7 @@ class JFormFieldRepeatable extends JFormField
 
             // highlight grouped fields
             if (count($fields) > 1) {
-                $class = ' well well-small p-4 bg-light';
+                $class = ' well well-small p-2 bg-light';
             }
             
             $str[] = '<div class="form-field-repeatable-item">';
@@ -87,7 +87,7 @@ class JFormFieldRepeatable extends JFormField
                     $field->name .= '[]';
                 }
 
-                $str[] = $field->renderField(array('description' => $field->description));
+                $str[] = $field->renderField();
                 
                 $n++;
             }

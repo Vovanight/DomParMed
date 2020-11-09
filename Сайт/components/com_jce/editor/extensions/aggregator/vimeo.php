@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright 	Copyright (c) 2009-2020 Ryan Demmer. All rights reserved
+ * @copyright 	Copyright (c) 2009-2019 Ryan Demmer. All rights reserved
  * @license   	GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * JCE is free software. This version may have been modified pursuant
  * to the GNU General Public License, and as distributed it includes or
@@ -51,7 +51,6 @@ class WFAggregatorExtension_Vimeo extends WFAggregatorExtension
             'byline' => (int) $plugin->getParam('aggregator.vimeo.byline', 0),
             'portrait' => (int) $plugin->getParam('aggregator.vimeo.portrait', 0),
             'fullscreen' => (int) $plugin->getParam('aggregator.vimeo.fullscreen', 1),
-            'dnt' => (int) $plugin->getParam('aggregator.vimeo.dnt', 0),
         );
     }
 }

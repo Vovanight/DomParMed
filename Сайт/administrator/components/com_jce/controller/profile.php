@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright 	Copyright (c) 2009-2020 Ryan Demmer. All rights reserved
+ * @copyright 	Copyright (c) 2009-2019 Ryan Demmer. All rights reserved
  * @license   	GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * JCE is free software. This version may have been modified pursuant
  * to the GNU General Public License, and as distributed it includes or
@@ -13,24 +13,4 @@ defined('JPATH_PLATFORM') or die;
 
 class JceControllerProfile extends JControllerForm
 {
-    /**
-	 * The URL option for the component.
-	 *
-	 * @var    string
-	 */
-	protected $option = 'com_jce';
-    
-    /**
-	 * The URL view item variable.
-	 *
-	 * @var    string
-	 */
-    protected $view_item = 'profile';
-
-    /**
-	 * The URL view list variable.
-	 *
-	 * @var    string
-	 */
-    protected $view_list = 'profiles';
 }

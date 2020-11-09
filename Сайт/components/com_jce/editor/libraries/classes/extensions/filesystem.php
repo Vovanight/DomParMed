@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright     Copyright (c) 2009-2020 Ryan Demmer. All rights reserved
+ * @copyright     Copyright (c) 2009-2019 Ryan Demmer. All rights reserved
  * @license       GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * JCE is free software. This version may have been modified pursuant
  * to the GNU General Public License, and as distributed it includes or
@@ -21,13 +21,12 @@ class WFFileSystem extends WFExtension
 
         $this->setProperties(array_merge($config, array(
             'local' => true,
+            'upload' => array(
+                'stream' => false,
+                'chunking' => false,
+                'unique_filenames' => false,
+            ),
         )));
-
-        // get path variable properties
-        $vars = $this->getPathVariables();
-
-        // assign to instance
-        $this->setProperties($vars);
     }
 
     /**
@@ -42,9 +41,9 @@ class WFFileSystem extends WFExtension
      */
     public static function getInstance($type = 'joomla', $config = array())
     {
-        static $instance = array();
+        static $instance;
 
-        if (!isset($instance[$type])) {
+        if (!is_object($instance)) {
             $fs = parent::loadExtensions('filesystem', $type);
 
             // load the default...
@@ -60,13 +59,13 @@ class WFFileSystem extends WFExtension
             $classname = 'WF' . ucfirst($fs->name) . 'FileSystem';
 
             if (class_exists($classname)) {
-                $instance[$type] = new $classname($config);
+                $instance = new $classname($config);
             } else {
-                $instance[$type] = new self($config);
+                $instance = new self($config);
             }
         }
 
-        return $instance[$type];
+        return $instance;
     }
 
     public function updateOptions(&$options)
@@ -94,66 +93,51 @@ class WFFileSystem extends WFExtension
         return WFUtility::makePath(JURI::root(true), $this->getRootDir());
     }
 
-    private function getPathVariables()
-    {
-        static $variables;
-
-        if (!isset($variables)) {
-            $user = JFactory::getUser();
-            $wf = WFApplication::getInstance();
-            $profile = $wf->getProfile();
-
-            jimport('joomla.user.helper');
-
-            $groups = JUserHelper::getUserGroups($user->id);
-
-            // get keys only
-            $groups = array_keys($groups);
-
-            // get the first group
-            $group_id = array_shift($groups);
-
-            if (is_int($group_id)) {
-                // usergroup table
-                $group = JTable::getInstance('Usergroup');
-                $group->load($group_id);
-                // usertype
-                $usertype = $group->title;
-            } else {
-                $usertype = $group_id;
-            }
-
-            // Replace any path variables
-            $path_pattern = array('/\$id/', '/\$username/', '/\$name/', '/\$user(group|type)/', '/\$(group|profile)/', '/\$day/', '/\$month/', '/\$year/');
-            $path_replacement = array($user->id, $user->username, $user->name, $usertype, $profile->name, date('d'), date('m'), date('Y'));
-
-            $websafe_textcase = $wf->getParam('editor.websafe_textcase', '');
-
-            // implode textcase array to create string
-            if (is_array($websafe_textcase)) {
-                $websafe_textcase = implode(',', $websafe_textcase);
-            }
-
-            $websafe_mode = $wf->getParam('editor.websafe_mode', 'utf-8');
-            $websafe_allow_spaces = $wf->getParam('editor.websafe_allow_spaces', '_');
-
-            $variables = compact('path_pattern', 'path_replacement', 'websafe_textcase', 'websafe_mode', 'websafe_allow_spaces');
-        }
-
-        return $variables;
-    }
-
     public function processPath(&$path)
     {
-        $path = preg_replace($this->get('path_pattern', array()), $this->get('path_replacement', array()), $path);
+        $user = JFactory::getUser();
+        $wf = WFApplication::getInstance();
+        $profile = $wf->getProfile();
+
+        jimport('joomla.user.helper');
+
+        $groups = JUserHelper::getUserGroups($user->id);
+
+        // get keys only
+        $groups = array_keys($groups);
+
+        // get the first group
+        $group_id = array_shift($groups);
+
+        if (is_int($group_id)) {
+            // usergroup table
+            $group = JTable::getInstance('Usergroup');
+            $group->load($group_id);
+            // usertype
+            $usertype = $group->title;
+        } else {
+            $usertype = $group_id;
+        }
+
+        // Replace any path variables
+        $pattern = array('/\$id/', '/\$username/', '/\$user(group|type)/', '/\$(group|profile)/', '/\$day/', '/\$month/', '/\$year/');
+        $replace = array($user->id, $user->username, $usertype, $profile->name, date('d'), date('m'), date('Y'));
+        $path = preg_replace($pattern, $replace, $path);
 
         // split into path parts to preserve /
         $parts = explode('/', $path);
 
-        // clean path parts
-        $parts = WFUtility::makeSafe($parts, $this->get('websafe_mode', 'utf-8'), $this->get('websafe_allow_spaces', '_'), $this->get('websafe_textcase', ''));
+        $textcase = $wf->getParam('editor.websafe_textcase', '');
 
-        // join path parts
+        // implode textcase array to create string
+        if (is_array($textcase)) {
+            $textcase = implode(',', $textcase);
+        }
+
+        // clean path parts
+        $parts = WFUtility::makeSafe($parts, $wf->getParam('editor.websafe_mode', 'utf-8'), $wf->getParam('editor.websafe_allow_spaces', '_'), $textcase);
+
+        //join path parts
         $path = implode('/', $parts);
     }
 
@@ -178,12 +162,10 @@ class WFFileSystem extends WFExtension
             if (!empty($root)) {
                 // Convert slashes / Strip double slashes
                 $root = preg_replace('/[\\\\]+/', '/', $root);
-
                 // Remove first leading slash
                 $root = ltrim($root, '/');
-                
-                // Force default directory if base param is now empty or starts with a variable or a . eg $id
-                if (empty($root) || preg_match('/[\.\$]/', $root[0])) {
+                // Force default directory if base param starts with a variable or a . eg $id
+                if (preg_match('/[\.\$]/', $root[0])) {
                     $root = 'images';
                 }
 

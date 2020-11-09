@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright     Copyright (c) 2009-2020 Ryan Demmer. All rights reserved
+ * @copyright     Copyright (c) 2009-2019 Ryan Demmer. All rights reserved
  * @license       GNU/GPL 3 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * JCE is free software. This version may have been modified pursuant
  * to the GNU General Public License, and as distributed it includes or
@@ -93,20 +93,10 @@ class JceController extends JControllerLegacy
 
         // Get and render the view.
         if ($view) {
-            
-            if ($vName != "cpanel") {
-                // use "profiles" for validating "profile" view
-                if ($vName == "profile") {
-                    $vName = "profiles";
-                }
 
-                if (!$user->authorise('jce.' . $vName, 'com_jce')) {
-                    throw new JAccessExceptionNotallowed(JText::_('JERROR_ALERTNOAUTHOR'), 403);
-                }
+            if ($vName !== "cpanel" && !$user->authorise('jce.' . $vName, 'com_jce')) {
+                throw new JAccessExceptionNotallowed(JText::_('JERROR_ALERTNOAUTHOR'), 403);
             }
-            
-            // reset view name
-            $vName = $view->getName();
 
             // Get the model for the view.
             $model = $this->getModel($vName, 'JceModel', array('name' => $vName));

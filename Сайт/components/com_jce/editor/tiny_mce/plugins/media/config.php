@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright     Copyright (c) 2009-2020 Ryan Demmer. All rights reserved
+ * @copyright     Copyright (c) 2009-2019 Ryan Demmer. All rights reserved
  * @license       GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * JCE is free software. This version may have been modified pursuant
  * to the GNU General Public License, and as distributed it includes or
@@ -18,14 +18,6 @@ class WFMediaPluginConfig
 
         if ($wf->getParam('media.iframes', 0)) {
             $tags[] = 'iframe';
-
-            if ((int) $wf->getParam('media.iframes') == 2) {
-                $settings['iframes_allow_local'] = true;
-            }
-
-            if ((int) $wf->getParam('media.iframes') == 3) {
-                $settings['iframes_allow_supported'] = true;
-            }
         }
 
         if ($wf->getParam('media.audio', 1)) {

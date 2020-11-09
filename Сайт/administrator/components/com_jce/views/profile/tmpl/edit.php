@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright 	Copyright (c) 2009-2020 Ryan Demmer. All rights reserved
+ * @copyright 	Copyright (c) 2009-2019 Ryan Demmer. All rights reserved
  * @copyright   Copyright (C) 2005 - 2018 Open Source Matters, Inc. All rights reserved.
  * @license   	GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * JCE is free software. This version may have been modified pursuant
@@ -15,6 +15,7 @@ defined('JPATH_PLATFORM') or die;
 // Load tooltips behavior
 JHtml::_('behavior.formvalidator');
 JHtml::_('behavior.keepalive');
+JHtml::_('formbehavior.chosen', 'select');
 
 // Load JS message titles
 JText::script('ERROR');
@@ -24,7 +25,7 @@ JText::script('MESSAGE');
 ?>
 <div class="ui-jce loading">
 	<div class="donut"></div>
-	<form action="<?php echo JRoute::_('index.php?option=com_jce'); ?>" id="adminForm" method="post" name="adminForm" class="form-validate">
+	<form action="<?php echo JRoute::_('index.php?option=com_jce&view=profile&layout=edit&id=' . (int) $this->item->id); ?>" id="adminForm" method="post" name="adminForm" class="form-validate">
 		
 	<?php if (!empty( $this->sidebar)) : ?>
 		<div id="j-sidebar-container" class="span2">
@@ -54,7 +55,6 @@ JText::script('MESSAGE');
 					<!-- End Content -->
 			</div>
 			<input type="hidden" name="task" value="" />
-			<input type="hidden" name="id" value="<?php echo $this->item->id;?>" />
 			<?php echo JHtml::_('form.token'); ?>
 		</div>
 	</form>

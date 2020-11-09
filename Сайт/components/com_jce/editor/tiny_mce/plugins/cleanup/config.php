@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright     Copyright (c) 2009-2020 Ryan Demmer. All rights reserved
+ * @copyright     Copyright (c) 2009-2019 Ryan Demmer. All rights reserved
  * @license       GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * JCE is free software. This version may have been modified pursuant
  * to the GNU General Public License, and as distributed it includes or
@@ -47,7 +47,6 @@ class WFCleanupPluginConfig
 
         // Get Extended elements
         $settings['extended_valid_elements'] = $wf->getParam('editor.extended_elements', '', '');
-
         // Configuration list of invalid elements as array
         $settings['invalid_elements'] = explode(',', preg_replace('#\s+#', '', $wf->getParam('editor.invalid_elements', '', '')));
 
@@ -62,21 +61,14 @@ class WFCleanupPluginConfig
 
             // add wildcard attributes if none specified
             for ($i = 0; $i < count($extended_elements); ++$i) {
-                $value = $extended_elements[$i];
-
-                // clean up value
-                $value = preg_replace('#[^\w_\[\]\*@\|\/!=\:\?+\#]#', '', $value);
-
-                $pos = strpos($value, '[');
+                $pos = strpos($extended_elements[$i], '[');
 
                 if ($pos === false) {
-                    $elements[] = $value;
-                    $value .= '[*]';
+                    $elements[] = $extended_elements[$i];
+                    $extended_elements[$i] .= '[*]';
                 } else {
-                    $elements[] = substr($value, 0, $pos);
+                    $elements[] = substr($extended_elements[$i], 0, $pos);
                 }
-
-                $extended_elements[$i] = $value;
             }
 
             // restore settings to array
@@ -99,12 +91,5 @@ class WFCleanupPluginConfig
 
         $settings['invalid_attributes'] = $wf->getParam('editor.invalid_attributes', 'dynsrc,lowsrc', 'dynsrc,lowsrc', 'string', true);
         $settings['invalid_attribute_values'] = $wf->getParam('editor.invalid_attribute_values', '', '', 'string', true);
-
-        $allow_script = $wf->getParam('editor.allow_javascript', 0, 0, 'boolean');
-
-        // if scripts are allowed, then allow event attributes
-        if ($allow_script || (bool) $wf->getParam('editor.allow_event_attributes')) {
-            $settings['allow_event_attributes'] = true;
-        }
     }
 }

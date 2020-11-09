@@ -1,8 +1,8 @@
 <?php
 
 /**
- * @copyright     Copyright (c) 2009-2020 Ryan Demmer. All rights reserved
- * @license       GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ * @copyright 	Copyright (c) 2009-2019 Ryan Demmer. All rights reserved
+ * @license   	GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * JCE is free software. This version may have been modified pursuant
  * to the GNU General Public License, and as distributed it includes or
  * is derivative of works licensed under the GNU General Public License or
@@ -16,20 +16,16 @@ class WFFormatPluginConfig
 
         $settings['inline_styles'] = $wf->getParam('editor.inline_styles', 1, 1);
 
-        // Root block handling
+        // Paragraph handling
         $forced_root_block = $wf->getParam('editor.forced_root_block', 'p');
 
         // set as boolean if disabled
         if (is_numeric($forced_root_block)) {
             $settings['forced_root_block'] = (bool) intval($forced_root_block);
 
-            if ($settings['forced_root_block'] === false) {
-                $settings['force_block_newlines'] = false;
-            }
-
-            // legacy value
             if ($wf->getParam('editor.force_br_newlines', 0, 0, 'boolean') === false) {
-                $settings['force_block_newlines'] = $wf->getParam('editor.force_p_newlines', 1, 0, 'boolean');
+                // legacy
+                $settings['force_p_newlines'] = $wf->getParam('editor.force_p_newlines', 1, 0, 'boolean');
             }
         } else {
             if (strpos($forced_root_block, '|') !== false) {
@@ -37,49 +33,21 @@ class WFFormatPluginConfig
                 foreach (explode('|', $forced_root_block) as $option) {
                     list($key, $value) = explode(':', $option);
 
-                    // update legacy key
-                    if ($key === 'force_p_newlines') {
-                        $key = 'force_block_newlines';
-                    }
-
-                    $settings[$key] = is_numeric($value) ? (bool) $value : $value;
+                    $settings[$key] = (bool) $value;
                 }
             } else {
                 $settings['forced_root_block'] = $forced_root_block;
             }
         }
 
-        $convert_urls = $wf->getParam('editor.convert_urls');
+        //$settings['removeformat_selector'] = $wf->getParam('editor.removeformat_selector', 'span,b,strong,em,i,font,u,strike', 'span,b,strong,em,i,font,u,strike');
 
-        // Relative urls - legacy
-        $relative_urls = $wf->getParam('editor.relative_urls');
-
-        // if a legacy value is set as a numeric value, and convert_urls is not, then process legacy value
-        if (is_numeric($relative_urls) && empty($convert_urls)) {
-            $relative_urls = intval($relative_urls);
-
-            if ($relative_urls === 1) {
-                $convert_urls = 'relative';
-            }
-
-            if ($relative_urls === 0) {
-                $convert_urls = 'absolute';
-            }
-        }
-
-        switch ($convert_urls) {
-            default:
-            case 'relative':
-                $settings['relative_urls'] = true;
-                break;
-            case 'absolute':
-                $settings['relative_urls'] = false;
-                $settings['remove_script_host'] = false;
-                break;
-            case 'none':
-                $settings['mixed_urls'] = true;
-                $settings['remove_script_host'] = false;
-                break;
+        // Relative urls
+        $settings['relative_urls'] = $wf->getParam('editor.relative_urls', 1, 1, 'boolean');
+        
+        // set remove_script_host if relative_urls is disabled
+        if ($settings['relative_urls'] === false) {
+            $settings['remove_script_host'] = false;
         }
     }
 }

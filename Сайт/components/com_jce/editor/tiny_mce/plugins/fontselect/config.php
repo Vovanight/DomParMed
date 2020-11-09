@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright 	Copyright (c) 2009-2020 Ryan Demmer. All rights reserved
+ * @copyright 	Copyright (c) 2009-2019 Ryan Demmer. All rights reserved
  * @license   	GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * JCE is free software. This version may have been modified pursuant
  * to the GNU General Public License, and as distributed it includes or
@@ -40,17 +40,9 @@ class WFFontselectPluginConfig
 
         // map for new format, where fonts are saved as an array of an associative array, eg: [['Andale Mono' => 'andale mono,times', 'Arial' => 'arial,helvetica,sans-serif']]
         if (is_array($fonts)) {
-            $values = $fonts;
-
-            // reset array
-            $fonts = array();
-
-            // map associative array to array of key value pairs
-            foreach ($values as $key => $value) {
-                if (is_numeric($key) && is_array($value)) {
-                    $fonts = array_merge($fonts, $value);
-                } else {
-                    $fonts = array_merge($fonts, array($key => $value));
+            foreach($fonts as $key => $value) {
+                if (is_numeric($key)) {
+                    $fonts = $value;
                 }
             }
         }
@@ -78,7 +70,6 @@ class WFFontselectPluginConfig
                     }
                 }
             }
-
             foreach (explode(';', $add) as $new) {
                 // Add new font family
                 if (preg_match('/([^\=]+)(\=)([^\=]+)/', trim($new)) && !in_array($new, $fonts)) {

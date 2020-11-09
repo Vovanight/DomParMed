@@ -1,6 +1,6 @@
 <?php
 /**
- * @copyright     Copyright (c) 2009-2020 Ryan Demmer. All rights reserved
+ * @copyright     Copyright (c) 2009-2019 Ryan Demmer. All rights reserved
  * @license       GNU/GPL 2 or later - https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * JCE is free software. This version may have been modified pursuant
  * to the GNU General Public License, and as distributed it includes or
@@ -10,7 +10,7 @@
 defined('JPATH_PLATFORM') or die;
 ?>
 
-<form action="index.php" method="post" name="adminForm" id="adminForm" class="form-horizontal">
+<form action="index.php" method="post" name="adminForm" id="adminForm" class="form-validate form-horizontal">
     <div class="ui-jce container row-fluid">
         <?php if (!empty($this->sidebar)): ?>
             <div id="j-sidebar-container" class="span2 col-md-2">

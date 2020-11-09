@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright    Copyright (c) 2009-2020 Ryan Demmer. All rights reserved
+ * @copyright    Copyright (c) 2009-2019 Ryan Demmer. All rights reserved
  * @license    GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * JCE is free software. This version may have been modified pursuant
  * to the GNU General Public License, and as distributed it includes or
@@ -54,9 +54,5 @@ defined('_WF_EXT') or die('RESTRICTED');
     <input type="checkbox" id="vimeo_fullscreen" checked="checked"/>
     <label for="vimeo_fullscreen" title="<?php echo JText::_('WF_AGGREGATOR_VIMEO_FULLSCREEN_DESC') ?>"
            class="tooltip"><?php echo JText::_('WF_AGGREGATOR_VIMEO_FULLSCREEN') ?></label>
-
-        <input type="checkbox" id="vimeo_dnt" />
-    <label for="vimeo_dnt" title="<?php echo JText::_('WF_AGGREGATOR_VIMEO_DNT_DESC') ?>"
-           class="tooltip"><?php echo JText::_('WF_AGGREGATOR_VIMEO_DNT') ?></label>
         </div>
 </div>

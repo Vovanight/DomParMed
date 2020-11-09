@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright     Copyright (c) 2009-2020 Ryan Demmer. All rights reserved
+ * @copyright     Copyright (c) 2009-2019 Ryan Demmer. All rights reserved
  * @license       GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * JCE is free software. This version may have been modified pursuant
  * to the GNU General Public License, and as distributed it includes or
@@ -12,53 +12,12 @@ defined('JPATH_PLATFORM') or die;
 
 abstract class WfBrowserHelper
 {
-    public static function getBrowserLink($element = null, $mediatype = '', $callback = '')
+    public static function getBrowserLink($element = null, $filter = '', $callback = '')
     {
-        $options = self::getMediaFieldOptions(array(
-            'element'   => $element,
-            'mediatype'    => $mediatype,
-            'callback'  => $callback
-        ));
-
-        return $options['url'];
-    }
-
-    public static function getMediaFieldLink($element = null, $mediatype = 'images', $callback = '')
-    {
-        $options = self::getMediaFieldOptions(array(
-            'element'   => $element,
-            'mediatype' => $mediatype,
-            'callback'  => $callback
-        ));
-
-        return $options['url'];
-    }
-
-    public static function getMediaFieldOptions($options = array())
-    {
-        if (!isset($options['element'])) {
-            $options['element'] = null;
-        }
-
-        if (!isset($options['mediatype'])) {
-            $options['mediatype'] = 'images';
-        }
-
-        if (!isset($options['callback'])) {
-            $options['callback'] = '';
-        }
-
-        if (!isset($options['converted'])) {
-            $options['converted'] = false;
-        }
-
         $app = JFactory::getApplication();
 
         // set $url as empty string
-        $data = array(
-            'url' => '',
-            'upload' => 0
-        );
+        $url = '';
 
         // load editor class
         require_once JPATH_SITE . '/components/com_jce/editor/libraries/classes/application.php';
@@ -68,28 +27,31 @@ abstract class WfBrowserHelper
 
         // check the current user is in a profile
         if ($wf->getProfile('browser')) {
-            
-            // is conversion enabled?
-            if ($options['converted'] && (int) $wf->getParam('browser.mediafield_conversion', 1) === 0) {
-                return $data;
-            }
-
             $token = JFactory::getSession()->getFormToken();
 
-            $data['url'] = 'index.php?option=com_jce&task=plugin.display&plugin=browser&standalone=1&' . $token . '=1&client=' . $app->getClientId();
+            $url = 'index.php?option=com_jce&task=plugin.display&plugin=browser&standalone=1&' . $token . '=1&client=' . $app->getClientId();
 
             // add context
-            $data['url'] .= '&context=' . $wf->getContext();
+            $url .= '&context=' . $wf->getContext();
 
-            foreach ($options as $key => $value) {
-                if ($value) {
-                    $data['url'] .= '&' . $key . '=' . $value; 
-                }
+            if ($element) {
+                $url .= '&element=' . $element;
             }
 
-            $data['upload'] = (int) $wf->getParam('browser.mediafield_upload', 1);
+            if ($filter) {
+                $url .= '&filter=' . $filter;
+            }
+
+            if ($callback) {
+                $url .= '&callback=' . $callback;
+            }
         }
 
-        return $data;
+        return $url;
+    }
+
+    public static function getMediaFieldLink($element = null, $filter = 'images', $callback = '')
+    {
+        return self::getBrowserLink($element, $filter, $callback);
     }
 }

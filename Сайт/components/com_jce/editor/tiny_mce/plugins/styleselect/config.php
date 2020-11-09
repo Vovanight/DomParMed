@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright     Copyright (c) 2009-2020 Ryan Demmer. All rights reserved
+ * @copyright     Copyright (c) 2009-2019 Ryan Demmer. All rights reserved
  * @license       GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * JCE is free software. This version may have been modified pursuant
  * to the GNU General Public License, and as distributed it includes or
@@ -85,16 +85,16 @@ class WFStyleselectPluginConfig
                 $styles = array();
 
                 $blocks = array(
-                    'section', 'nav', 'article', 'aside', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'header', 'footer', 'address', 'main', 'p', 'pre', 'blockquote', 'figure', 'figcaption', 'div',
+                    'section', 'nav', 'article', 'aside', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'header', 'footer', 'address', 'main', 'p', 'pre', 'blockquote', 'figure', 'figcaption', 'div'
                 );
 
                 $wrapper = array(
-                    'section', 'nav', 'article', 'aside', 'header', 'footer', 'main', 'div',
+                    'section', 'nav', 'article', 'aside', 'header', 'footer', 'main', 'div'
                 );
 
-                foreach ((array) $custom_styles as $style) {
+                foreach ((array) $custom_styles as $style) {                    
                     $style = (object) $style;
-
+                    
                     // clean up title
                     if (isset($style->title)) {
                         $style->title = self::cleanString($style->title);
@@ -120,7 +120,7 @@ class WFStyleselectPluginConfig
 
                     if (isset($style->styles)) {
                         // replace comma with semi-colon and remove duplicates
-                        $style->styles = preg_replace('#[;]+#', ';', $style->styles);
+                        $style->styles = preg_replace('#[,;]+#', ';', $style->styles);
                     }
 
                     // set block or inline element
@@ -146,17 +146,18 @@ class WFStyleselectPluginConfig
                             $style->inline = 'span';
                             $style->selector = '*';
                         }
-                    } else {
+                    }/* else {
                         // match all if not set
                         if (!isset($style->selector)) {
                             $style->selector = '*';
 
+                            
                             // set to element
                             if (isset($style->element)) {
                                 $style->selector = $style->element;
                             }
                         }
-                    }
+                    }*/
 
                     // remove element
                     unset($style->element);
@@ -186,16 +187,16 @@ class WFStyleselectPluginConfig
                 $stylesheet = trim($stylesheet, '/');
                 $etag = '';
 
-                if (is_file(JPATH_SITE . '/' . $stylesheet)) {
+                if (is_file(JPATH_SITE.'/'.$stylesheet)) {
                     // create hash
-                    $etag = '?' . filemtime(JPATH_SITE . '/' . $stylesheet);
+                    $etag = '?'.filemtime(JPATH_SITE.'/'.$stylesheet);
 
                     // explode to array
                     $content_css = explode(',', $settings['content_css']);
-                    $content_css[] = JURI::root(true) . '/' . $stylesheet . $etag;
+                    $content_css[] = JURI::root(true).'/'.$stylesheet.$etag;
 
-                    // remove duplicates and empty values
-                    $content_css = array_unique(array_filter($content_css));
+                    // remove duplicates
+                    $content_css = array_unique($content_css);
 
                     // implode to string
                     $settings['content_css'] = implode(',', $content_css);
@@ -244,7 +245,7 @@ class WFStyleselectPluginConfig
         if (count($remove)) {
             foreach ($fonts as $key => $value) {
                 foreach ($remove as $gone) {
-                    if ($gone && preg_match('/^' . $gone . '=/i', $value)) {
+                    if ($gone && preg_match('/^'.$gone.'=/i', $value)) {
                         // Remove family
                         unset($fonts[$key]);
                     }

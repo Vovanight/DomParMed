@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright     Copyright (c) 2009-2020 Ryan Demmer. All rights reserved
+ * @copyright     Copyright (c) 2009-2019 Ryan Demmer. All rights reserved
  * @license       GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * JCE is free software. This version may have been modified pursuant
  * to the GNU General Public License, and as distributed it includes or
@@ -19,7 +19,7 @@ class WFXHTMLXtrasPlugin extends WFEditorPlugin
 
     public function isHTML5()
     {
-        return $this->getParam('editor.schema', 'mixed') != 'html4';
+        return $this->getParam('editor.schema', 'mixed') !== 'html4';
     }
 
     /**
@@ -43,7 +43,7 @@ class WFXHTMLXtrasPlugin extends WFEditorPlugin
 
         $tabs->addTab('standard', 1, array('plugin' => $this));
 
-        if ($element == 'attributes' && $this->allowEvents()) {
+        if ($element == 'attributes') {
             $tabs->addTab('events');
         }
     }
