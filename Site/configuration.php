@@ -57,7 +57,7 @@ class JConfig {
 	public $unicodeslugs = '0';
 	public $feed_limit = '10';
 	public $feed_email = 'none';
-	public $log_path = 'D:\\OSPanel\\domains\\DomParMed\\Сайт\\administrator\\logs';
+	public $log_path = 'D:\\OSPanel\\domains\\DomParMed\\Site\\administrator\\logs';
 	public $tmp_path = 'D:\\OSPanel\\domains\\DomParMed';
 	public $lifetime = '15';
 	public $session_handler = 'database';
