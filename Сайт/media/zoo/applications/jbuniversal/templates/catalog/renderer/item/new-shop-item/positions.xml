@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+    JBZoo Application
+
+    This file is part of the JBZoo CCK package.
+    For the full copyright and license information, please view the LICENSE
+    file that was distributed with this source code.
+
+    @package    Application
+    @license    GPL-2.0
+    @copyright  Copyright (C) JBZoo.com, All rights reserved.
+    @link       https://github.com/JBZoo/JBZoo
+-->
+<renderer>
+
+
+    <positions layout="full">
+        <position name="img">Фото препарата</position>
+        <position name="name_of_drugs">Наименование препарата</position>
+        <position name="manufacturer">Производитель</position>
+        <position name="form_release">Форма выпуска</position>
+        <position name="in_the_package">В упаковке</position>
+        <position name="JBZoo Price Plain">Цена</position>
+        
+    </positions>
+
+    <positions layout="teaser">
+        <position name="img">Фото препарата</position>
+        <position name="name_of_drugs">Наименование препарата</position>
+        <position name="manufacturer">Производитель</position>
+        <position name="form_release">Форма выпуска</position>
+        <position name="in_the_package">В упаковке</position>
+        <position name="JBZoo Price Plain">Цена</position>
+    </positions>
+   
+
+</renderer>

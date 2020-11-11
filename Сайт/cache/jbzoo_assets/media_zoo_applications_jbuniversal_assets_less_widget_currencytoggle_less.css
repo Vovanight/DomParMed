@@ -1,0 +1,225 @@
+/* cacheid:53981296d0c26bc97863c4ee5896f9070 */
+.jbzoo .currency-toggle {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  font-size: 0;
+  white-space: nowrap;
+}
+.jbzoo .currency-toggle .jbtooltip {
+  background: inherit;
+  width: inherit;
+  height: inherit;
+}
+.jbzoo .jbcurrency-label {
+  float: left;
+  display: inline-block;
+  padding: 3px 6px;
+  margin-bottom: 0;
+  cursor: pointer;
+  vertical-align: middle;
+  font-size: 0;
+  line-height: 0;
+  color: #333333;
+  text-align: center;
+  border: 1px solid #cccccc;
+  border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+  border-radius: 0;
+  transition: 0.5s;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  border-bottom-color: #b3b3b3;
+  opacity: 0.8;
+  filter: alpha(opacity= 80 );
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2) 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2) 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2) 0 1px 2px rgba(0, 0, 0, 0.05);
+  background-color: #f5f5f5;
+  background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+  background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
+}
+.jbzoo .jbcurrency-label.isFirst {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+.jbzoo .jbcurrency-label.isLast {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+.jbzoo .jbcurrency-label:nth-child(n+2) {
+  margin-left: -1px;
+}
+.jbzoo .jbcurrency-label:hover {
+  -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15) 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15) 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15) 0 1px 2px rgba(0, 0, 0, 0.05);
+  opacity: 0.8;
+  filter: alpha(opacity= 80 );
+}
+.jbzoo .jbcurrency-input {
+  position: absolute;
+  left: -9999px;
+}
+.jbzoo .jbcurrency-input:checked + .jbcurrency-label {
+  opacity: 1;
+  filter: alpha(opacity= 100 );
+  -webkit-box-shadow: inset 0 3px 5px #4d90fe;
+  -moz-box-shadow: inset 0 3px 5px #4d90fe;
+  box-shadow: inset 0 3px 5px #4d90fe;
+  -webkit-transition: background-position 0.1s linear;
+  transition: background-position 0.1s linear;
+  background-color: #e6e6e6;
+  text-decoration: none;
+  background-position: 0 -15px;
+}
+.jbzoo .jbcurrency-label .jbflag {
+  background: url('http://domparmed/media/zoo/applications/jbuniversal/assets/img/currency/flags.png') 0 0 no-repeat;
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  font-size: 32px;
+}
+.jbzoo .jbcurrency-label .jbflag-default_cur {
+  line-height: 32px;
+  font-size: 32px;
+  color: #333;
+  text-align: center;
+  background: none;
+}
+.jbzoo .jbcurrency-label .jbflag-eur {
+  background-position: 0 0em;
+}
+.jbzoo .jbcurrency-label .jbflag-usd {
+  background-position: 0 -1em;
+}
+.jbzoo .jbcurrency-label .jbflag-rub {
+  background-position: 0 -2em;
+}
+.jbzoo .jbcurrency-label .jbflag-uah {
+  background-position: 0 -3em;
+}
+.jbzoo .jbcurrency-label .jbflag-amd {
+  background-position: 0 -4em;
+}
+.jbzoo .jbcurrency-label .jbflag-aud {
+  background-position: 0 -5em;
+}
+.jbzoo .jbcurrency-label .jbflag-azn {
+  background-position: 0 -6em;
+}
+.jbzoo .jbcurrency-label .jbflag-bgn {
+  background-position: 0 -7em;
+}
+.jbzoo .jbcurrency-label .jbflag-brl {
+  background-position: 0 -8em;
+}
+.jbzoo .jbcurrency-label .jbflag-byr {
+  background-position: 0 -9em;
+}
+.jbzoo .jbcurrency-label .jbflag-byn {
+  background-position: 0 -9em;
+}
+.jbzoo .jbcurrency-label .jbflag-cad {
+  background-position: 0 -10em;
+}
+.jbzoo .jbcurrency-label .jbflag-chf {
+  background-position: 0 -11em;
+}
+.jbzoo .jbcurrency-label .jbflag-cny {
+  background-position: 0 -12em;
+}
+.jbzoo .jbcurrency-label .jbflag-czk {
+  background-position: 0 -13em;
+}
+.jbzoo .jbcurrency-label .jbflag-dkk {
+  background-position: 0 -14em;
+}
+.jbzoo .jbcurrency-label .jbflag-gbp {
+  background-position: 0 -15em;
+}
+.jbzoo .jbcurrency-label .jbflag-hkd {
+  background-position: 0 -16em;
+}
+.jbzoo .jbcurrency-label .jbflag-hrk {
+  background-position: 0 -17em;
+}
+.jbzoo .jbcurrency-label .jbflag-huf {
+  background-position: 0 -18em;
+}
+.jbzoo .jbcurrency-label .jbflag-idr {
+  background-position: 0 -19em;
+}
+.jbzoo .jbcurrency-label .jbflag-ils {
+  background-position: 0 -20em;
+}
+.jbzoo .jbcurrency-label .jbflag-jpy {
+  background-position: 0 -21em;
+}
+.jbzoo .jbcurrency-label .jbflag-kgs {
+  background-position: 0 -22em;
+}
+.jbzoo .jbcurrency-label .jbflag-krw {
+  background-position: 0 -23em;
+}
+.jbzoo .jbcurrency-label .jbflag-kzt {
+  background-position: 0 -24em;
+}
+.jbzoo .jbcurrency-label .jbflag-ltl {
+  background-position: 0 -25em;
+}
+.jbzoo .jbcurrency-label .jbflag-lvl {
+  background-position: 0 -26em;
+}
+.jbzoo .jbcurrency-label .jbflag-mdl {
+  background-position: 0 -27em;
+}
+.jbzoo .jbcurrency-label .jbflag-mxn {
+  background-position: 0 -28em;
+}
+.jbzoo .jbcurrency-label .jbflag-myr {
+  background-position: 0 -29em;
+}
+.jbzoo .jbcurrency-label .jbflag-nok {
+  background-position: 0 -30em;
+}
+.jbzoo .jbcurrency-label .jbflag-nzd {
+  background-position: 0 -31em;
+}
+.jbzoo .jbcurrency-label .jbflag-php {
+  background-position: 0 -32em;
+}
+.jbzoo .jbcurrency-label .jbflag-pln {
+  background-position: 0 -33em;
+}
+.jbzoo .jbcurrency-label .jbflag-ron {
+  background-position: 0 -34em;
+}
+.jbzoo .jbcurrency-label .jbflag-sek {
+  background-position: 0 -35em;
+}
+.jbzoo .jbcurrency-label .jbflag-sgd {
+  background-position: 0 -36em;
+}
+.jbzoo .jbcurrency-label .jbflag-thb {
+  background-position: 0 -37em;
+}
+.jbzoo .jbcurrency-label .jbflag-tjs {
+  background-position: 0 -38em;
+}
+.jbzoo .jbcurrency-label .jbflag-tmt {
+  background-position: 0 -39em;
+}
+.jbzoo .jbcurrency-label .jbflag-try {
+  background-position: 0 -40em;
+}
+.jbzoo .jbcurrency-label .jbflag-uzs {
+  background-position: 0 -41em;
+}
+.jbzoo .jbcurrency-label .jbflag-zar {
+  background-position: 0 -42em;
+}

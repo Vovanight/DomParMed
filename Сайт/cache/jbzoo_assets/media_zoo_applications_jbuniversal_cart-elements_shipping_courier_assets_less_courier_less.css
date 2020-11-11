@@ -1,0 +1,17 @@
+/* cacheid:fbf32fb86c58106206851e14ad4324700 */
+.jbzoo .jbcart-shipping-courier .shipping-courier {
+  position: relative;
+}
+.jbzoo .jbcart-shipping-courier .calendar-input {
+  display: block;
+  width: 100% !important;
+}
+.jbzoo .jbcart-shipping-courier .zoo-calendar {
+  top: 20%;
+  right: 8px;
+  cursor: pointer;
+  position: absolute;
+}
+.jbzoo .jbcart-shipping-courier select {
+  margin-bottom: 12px;
+}

@@ -1,0 +1,100 @@
+/* cacheid:da9d52cd6db7712b65e4da445a5290020 */
+.jbzoo .jbcart-shipping-full .jbcart-shipping-col,
+.jbzoo .jbcart-shipping-full .jbcart-shippingfield-col {
+  width: 48%;
+  float: left;
+  min-width: 300px;
+}
+.jbzoo .jbcart-shipping-full .jbcart-shipping-col {
+  margin-right: 16px;
+  border-right: 1px dashed #ddd;
+}
+.jbzoo .jbcart-shipping-row {
+  width: 90%;
+  margin-bottom: 4px;
+  background: #e7edee;
+  border: 1px solid #eee;
+}
+.jbzoo .jbcart-shipping-row:hover,
+.jbzoo .jbcart-shipping-row.active {
+  background: #f7fbfc;
+}
+.jbzoo .jbcart-shipping-row.active .jbcart-shipping-element {
+  display: block;
+}
+.jbzoo .jbcart-shipping-element {
+  display: none;
+  margin: 10px 0 0 0;
+  padding: 0 36px 0 36px;
+}
+.jbzoo .jbcart-shipping-element .chosen-container {
+  margin-bottom: 12px;
+}
+.jbzoo .jbcart-shipping-name {
+  height: 26px;
+  line-height: 26px;
+  cursor: pointer;
+}
+.jbzoo .jbcart-shipping-wrapper {
+  padding: 10px 10px 10px 5px;
+}
+.jbzoo .jbcart-shipping-error {
+  color: #f24949;
+  font-style: italic;
+  margin: 4px 0 8px 0;
+  line-height: 16px;
+  font-size: 12px;
+}
+.jbzoo .jbcart-shipping-price {
+  padding-left: 12px;
+  font-size: 14px;
+}
+.jbzoo .jbcart-shipping-price .jbcartvalue {
+  color: #666;
+}
+.jbzoo .jbcart-shipping-exception {
+  font-size: 0.8em;
+  line-height: 1em;
+  color: #a00;
+}
+.jbzoo .jbcart-shipping select,
+.jbzoo .jbcart-shipping textarea,
+.jbzoo .jbcart-shipping input[type=text] {
+  min-width: 120px;
+  max-width: 100%;
+}
+.jbzoo .jbcart-shipping textarea {
+  resize: vertical;
+  overflow: auto;
+  min-height: 100px;
+}
+.jbzoo .jbcart-shippingfield-empty {
+  color: #aaa;
+  font-style: italic;
+  display: none;
+}
+.jbzoo .jbcart-shippingfield-label {
+  color: #505050;
+  padding: 6px 0;
+  font-size: 14px;
+  margin-bottom: 4px;
+  display: block;
+}
+.jbzoo .jbcart-shippingfield-row {
+  padding: 12px;
+  margin: 0 0 12px 0;
+  background: #f7fbfc;
+  border: 1px solid #eee;
+}
+.jbzoo .jbcart-shippingfield-row input,
+.jbzoo .jbcart-shippingfield-row select,
+.jbzoo .jbcart-shippingfield-row textarea {
+  width: 100%;
+}
+.jbzoo .jbcart-shippingfield-error {
+  color: #f24949;
+  font-style: italic;
+  margin: 4px 0 8px 0;
+  line-height: 16px;
+  font-size: 12px;
+}

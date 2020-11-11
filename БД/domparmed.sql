@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Ноя 09 2020 г., 17:26
--- Версия сервера: 10.3.22-MariaDB
--- Версия PHP: 7.4.5
+-- Время создания: Ноя 11 2020 г., 14:45
+-- Версия сервера: 10.3.13-MariaDB-log
+-- Версия PHP: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -122,7 +123,65 @@ INSERT INTO `ga26l_action_logs` (`id`, `message_language_key`, `message`, `log_d
 (77, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MENU_ITEM\",\"id\":101,\"title\":\"Home\",\"itemlink\":\"index.php?option=com_menus&task=item.edit&id=101\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\"}', '2020-11-09 14:20:16', 'com_menus.item', 630, 101, 'COM_ACTIONLOGS_DISABLED'),
 (78, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"630\",\"title\":\"grafoman\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"table\":\"#__menu\"}', '2020-11-09 14:20:16', 'com_checkin', 630, 630, 'COM_ACTIONLOGS_DISABLED'),
 (79, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MENU_ITEM\",\"id\":101,\"title\":\"Home\",\"itemlink\":\"index.php?option=com_menus&task=item.edit&id=101\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\"}', '2020-11-09 14:20:19', 'com_menus.item', 630, 101, 'COM_ACTIONLOGS_DISABLED'),
-(80, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_ADDED', '{\"action\":\"add\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MENU_ITEM\",\"id\":119,\"title\":\"\\u0421\\u043a\\u043b\\u0430\\u0434\",\"itemlink\":\"index.php?option=com_menus&task=item.edit&id=119\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\"}', '2020-11-09 14:20:54', 'com_menus.item', 630, 119, 'COM_ACTIONLOGS_DISABLED');
+(80, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_ADDED', '{\"action\":\"add\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MENU_ITEM\",\"id\":119,\"title\":\"\\u0421\\u043a\\u043b\\u0430\\u0434\",\"itemlink\":\"index.php?option=com_menus&task=item.edit&id=119\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\"}', '2020-11-09 14:20:54', 'com_menus.item', 630, 119, 'COM_ACTIONLOGS_DISABLED'),
+(81, 'PLG_ACTIONLOG_JOOMLA_USER_LOGGED_IN', '{\"action\":\"login\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"app\":\"PLG_ACTIONLOG_JOOMLA_APPLICATION_ADMINISTRATOR\"}', '2020-11-10 09:01:22', 'com_users', 630, 0, 'COM_ACTIONLOGS_DISABLED'),
+(82, 'PLG_ACTIONLOG_JOOMLA_USER_LOGGED_IN', '{\"action\":\"login\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"app\":\"PLG_ACTIONLOG_JOOMLA_APPLICATION_ADMINISTRATOR\"}', '2020-11-10 09:48:08', 'com_users', 630, 0, 'COM_ACTIONLOGS_DISABLED'),
+(83, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MENU_ITEM\",\"id\":118,\"title\":\"\\u041c\\u0430\\u0433\\u0430\\u0437\\u0438\\u043d\",\"itemlink\":\"index.php?option=com_menus&task=item.edit&id=118\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\"}', '2020-11-10 10:18:14', 'com_menus.item', 630, 118, 'COM_ACTIONLOGS_DISABLED'),
+(84, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"630\",\"title\":\"grafoman\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"table\":\"#__menu\"}', '2020-11-10 10:18:14', 'com_checkin', 630, 630, 'COM_ACTIONLOGS_DISABLED'),
+(85, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"630\",\"title\":\"grafoman\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"table\":\"#__menu\"}', '2020-11-10 10:19:32', 'com_checkin', 630, 630, 'COM_ACTIONLOGS_DISABLED'),
+(86, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"630\",\"title\":\"grafoman\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"table\":\"#__menu\"}', '2020-11-10 10:19:49', 'com_checkin', 630, 630, 'COM_ACTIONLOGS_DISABLED'),
+(87, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_ADDED', '{\"action\":\"add\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MENU_ITEM\",\"id\":120,\"title\":\"\\u041b\\u0435\\u043a\\u0430\\u0440\\u0441\\u0442\\u0432\\u0435\\u043d\\u043d\\u044b\\u0435 \\u043f\\u0440\\u0435\\u043f\\u0430\\u0440\\u0430\\u0442\\u044b\",\"itemlink\":\"index.php?option=com_menus&task=item.edit&id=120\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\"}', '2020-11-10 10:20:56', 'com_menus.item', 630, 120, 'COM_ACTIONLOGS_DISABLED'),
+(88, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_ADDED', '{\"action\":\"add\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MENU_ITEM\",\"id\":121,\"title\":\"\\u041c\\u0435\\u0434\\u0438\\u0446\\u0438\\u043d\\u0441\\u043a\\u043e\\u0435 \\u043e\\u0431\\u043e\\u0440\\u0443\\u0434\\u043e\\u0432\\u0430\\u043d\\u0438\\u0435\",\"itemlink\":\"index.php?option=com_menus&task=item.edit&id=121\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\"}', '2020-11-10 10:21:22', 'com_menus.item', 630, 121, 'COM_ACTIONLOGS_DISABLED'),
+(89, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MENU_ITEM\",\"id\":120,\"title\":\"\\u041b\\u0435\\u043a\\u0430\\u0440\\u0441\\u0442\\u0432\\u0435\\u043d\\u043d\\u044b\\u0435 \\u043f\\u0440\\u0435\\u043f\\u0430\\u0440\\u0430\\u0442\\u044b\",\"itemlink\":\"index.php?option=com_menus&task=item.edit&id=120\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\"}', '2020-11-10 10:22:03', 'com_menus.item', 630, 120, 'COM_ACTIONLOGS_DISABLED'),
+(90, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"630\",\"title\":\"grafoman\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"table\":\"#__menu\"}', '2020-11-10 10:22:03', 'com_checkin', 630, 630, 'COM_ACTIONLOGS_DISABLED'),
+(91, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MENU_ITEM\",\"id\":121,\"title\":\"\\u041c\\u0435\\u0434\\u0438\\u0446\\u0438\\u043d\\u0441\\u043a\\u043e\\u0435 \\u043e\\u0431\\u043e\\u0440\\u0443\\u0434\\u043e\\u0432\\u0430\\u043d\\u0438\\u0435\",\"itemlink\":\"index.php?option=com_menus&task=item.edit&id=121\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\"}', '2020-11-10 10:22:15', 'com_menus.item', 630, 121, 'COM_ACTIONLOGS_DISABLED'),
+(92, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"630\",\"title\":\"grafoman\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"table\":\"#__menu\"}', '2020-11-10 10:22:15', 'com_checkin', 630, 630, 'COM_ACTIONLOGS_DISABLED'),
+(93, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MENU_ITEM\",\"id\":118,\"title\":\"\\u041c\\u0430\\u0433\\u0430\\u0437\\u0438\\u043d\",\"itemlink\":\"index.php?option=com_menus&task=item.edit&id=118\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\"}', '2020-11-10 10:25:43', 'com_menus.item', 630, 118, 'COM_ACTIONLOGS_DISABLED'),
+(94, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"630\",\"title\":\"grafoman\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"table\":\"#__menu\"}', '2020-11-10 10:25:43', 'com_checkin', 630, 630, 'COM_ACTIONLOGS_DISABLED'),
+(95, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MENU_ITEM\",\"id\":118,\"title\":\"\\u041c\\u0430\\u0433\\u0430\\u0437\\u0438\\u043d\",\"itemlink\":\"index.php?option=com_menus&task=item.edit&id=118\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\"}', '2020-11-10 10:25:55', 'com_menus.item', 630, 118, 'COM_ACTIONLOGS_DISABLED'),
+(96, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"630\",\"title\":\"grafoman\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"table\":\"#__menu\"}', '2020-11-10 10:28:58', 'com_checkin', 630, 630, 'COM_ACTIONLOGS_DISABLED'),
+(97, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"630\",\"title\":\"grafoman\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"table\":\"#__menu\"}', '2020-11-10 10:29:11', 'com_checkin', 630, 630, 'COM_ACTIONLOGS_DISABLED'),
+(98, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"630\",\"title\":\"grafoman\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"table\":\"#__menu\"}', '2020-11-10 10:29:11', 'com_checkin', 630, 630, 'COM_ACTIONLOGS_DISABLED'),
+(99, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_TRASHED', '{\"action\":\"trash\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MENU_ITEM\",\"id\":120,\"title\":\"\\u041b\\u0435\\u043a\\u0430\\u0440\\u0441\\u0442\\u0432\\u0435\\u043d\\u043d\\u044b\\u0435 \\u043f\\u0440\\u0435\\u043f\\u0430\\u0440\\u0430\\u0442\\u044b\",\"itemlink\":\"index.php?option=com_menus&task=item.edit&id=120\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\"}', '2020-11-10 10:29:11', 'com_menus.item', 630, 120, 'COM_ACTIONLOGS_DISABLED'),
+(100, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_TRASHED', '{\"action\":\"trash\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MENU_ITEM\",\"id\":121,\"title\":\"\\u041c\\u0435\\u0434\\u0438\\u0446\\u0438\\u043d\\u0441\\u043a\\u043e\\u0435 \\u043e\\u0431\\u043e\\u0440\\u0443\\u0434\\u043e\\u0432\\u0430\\u043d\\u0438\\u0435\",\"itemlink\":\"index.php?option=com_menus&task=item.edit&id=121\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\"}', '2020-11-10 10:29:11', 'com_menus.item', 630, 121, 'COM_ACTIONLOGS_DISABLED'),
+(101, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_ADDED', '{\"action\":\"add\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MENU_ITEM\",\"id\":122,\"title\":\"\\u041c\\u0435\\u0434\\u0438\\u0446\\u0438\\u043d\\u0441\\u043a\\u043e\\u0435 \\u043e\\u0431\\u043e\\u0440\\u0443\\u0434\\u043e\\u0432\\u0430\\u043d\\u0438\\u0435\",\"itemlink\":\"index.php?option=com_menus&task=item.edit&id=122\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\"}', '2020-11-10 10:33:38', 'com_menus.item', 630, 122, 'COM_ACTIONLOGS_DISABLED'),
+(102, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_ADDED', '{\"action\":\"add\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MENU_ITEM\",\"id\":123,\"title\":\"\\u041b\\u0435\\u043a\\u0430\\u0440\\u0441\\u0442\\u0432\\u0435\\u043d\\u043d\\u044b\\u0435 \\u043f\\u0440\\u0435\\u043f\\u0430\\u0440\\u0430\\u0442\\u044b\",\"itemlink\":\"index.php?option=com_menus&task=item.edit&id=123\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\"}', '2020-11-10 10:33:54', 'com_menus.item', 630, 123, 'COM_ACTIONLOGS_DISABLED'),
+(103, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MENU_ITEM\",\"id\":122,\"title\":\"\\u041c\\u0435\\u0434\\u0438\\u0446\\u0438\\u043d\\u0441\\u043a\\u043e\\u0435 \\u043e\\u0431\\u043e\\u0440\\u0443\\u0434\\u043e\\u0432\\u0430\\u043d\\u0438\\u0435\",\"itemlink\":\"index.php?option=com_menus&task=item.edit&id=122\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\"}', '2020-11-10 10:34:08', 'com_menus.item', 630, 122, 'COM_ACTIONLOGS_DISABLED'),
+(104, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"630\",\"title\":\"grafoman\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"table\":\"#__menu\"}', '2020-11-10 10:34:08', 'com_checkin', 630, 630, 'COM_ACTIONLOGS_DISABLED'),
+(105, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MENU_ITEM\",\"id\":123,\"title\":\"\\u041b\\u0435\\u043a\\u0430\\u0440\\u0441\\u0442\\u0432\\u0435\\u043d\\u043d\\u044b\\u0435 \\u043f\\u0440\\u0435\\u043f\\u0430\\u0440\\u0430\\u0442\\u044b\",\"itemlink\":\"index.php?option=com_menus&task=item.edit&id=123\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\"}', '2020-11-10 10:34:17', 'com_menus.item', 630, 123, 'COM_ACTIONLOGS_DISABLED'),
+(106, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"630\",\"title\":\"grafoman\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"table\":\"#__menu\"}', '2020-11-10 10:34:17', 'com_checkin', 630, 630, 'COM_ACTIONLOGS_DISABLED'),
+(107, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"630\",\"title\":\"grafoman\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"table\":\"#__menu\"}', '2020-11-10 10:34:48', 'com_checkin', 630, 630, 'COM_ACTIONLOGS_DISABLED'),
+(108, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MENU_ITEM\",\"id\":118,\"title\":\"\\u041c\\u0430\\u0433\\u0430\\u0437\\u0438\\u043d\",\"itemlink\":\"index.php?option=com_menus&task=item.edit&id=118\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\"}', '2020-11-10 10:35:35', 'com_menus.item', 630, 118, 'COM_ACTIONLOGS_DISABLED'),
+(109, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"630\",\"title\":\"grafoman\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"table\":\"#__menu\"}', '2020-11-10 10:35:35', 'com_checkin', 630, 630, 'COM_ACTIONLOGS_DISABLED'),
+(110, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MENU_ITEM\",\"id\":118,\"title\":\"\\u041c\\u0430\\u0433\\u0430\\u0437\\u0438\\u043d\",\"itemlink\":\"index.php?option=com_menus&task=item.edit&id=118\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\"}', '2020-11-10 10:38:49', 'com_menus.item', 630, 118, 'COM_ACTIONLOGS_DISABLED'),
+(111, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"630\",\"title\":\"grafoman\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"table\":\"#__menu\"}', '2020-11-10 10:38:49', 'com_checkin', 630, 630, 'COM_ACTIONLOGS_DISABLED'),
+(112, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"630\",\"title\":\"grafoman\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"table\":\"#__menu\"}', '2020-11-10 10:42:01', 'com_checkin', 630, 630, 'COM_ACTIONLOGS_DISABLED'),
+(113, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"630\",\"title\":\"grafoman\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"table\":\"#__modules\"}', '2020-11-10 10:44:38', 'com_checkin', 630, 630, 'COM_ACTIONLOGS_DISABLED'),
+(114, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MENU_ITEM\",\"id\":118,\"title\":\"\\u041c\\u0430\\u0433\\u0430\\u0437\\u0438\\u043d\",\"itemlink\":\"index.php?option=com_menus&task=item.edit&id=118\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\"}', '2020-11-10 10:45:49', 'com_menus.item', 630, 118, 'COM_ACTIONLOGS_DISABLED'),
+(115, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"630\",\"title\":\"grafoman\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"table\":\"#__menu\"}', '2020-11-10 10:45:49', 'com_checkin', 630, 630, 'COM_ACTIONLOGS_DISABLED'),
+(116, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"630\",\"title\":\"grafoman\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"table\":\"#__menu\"}', '2020-11-10 10:45:58', 'com_checkin', 630, 630, 'COM_ACTIONLOGS_DISABLED'),
+(117, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MODULE\",\"id\":1,\"title\":\"Main Menu\",\"extension_name\":\"Main Menu\",\"itemlink\":\"index.php?option=com_modules&task=module.edit&id=1\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\"}', '2020-11-10 10:48:57', 'com_modules.module', 630, 1, 'COM_ACTIONLOGS_DISABLED');
+INSERT INTO `ga26l_action_logs` (`id`, `message_language_key`, `message`, `log_date`, `extension`, `user_id`, `item_id`, `ip_address`) VALUES
+(118, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"630\",\"title\":\"grafoman\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"table\":\"#__modules\"}', '2020-11-10 10:48:57', 'com_checkin', 630, 630, 'COM_ACTIONLOGS_DISABLED'),
+(119, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"630\",\"title\":\"grafoman\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"table\":\"#__menu\"}', '2020-11-10 10:49:37', 'com_checkin', 630, 630, 'COM_ACTIONLOGS_DISABLED'),
+(120, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"630\",\"title\":\"grafoman\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"table\":\"#__menu\"}', '2020-11-10 10:49:39', 'com_checkin', 630, 630, 'COM_ACTIONLOGS_DISABLED'),
+(121, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"630\",\"title\":\"grafoman\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"table\":\"#__menu\"}', '2020-11-10 10:50:17', 'com_checkin', 630, 630, 'COM_ACTIONLOGS_DISABLED'),
+(122, 'PLG_ACTIONLOG_JOOMLA_USER_LOGGED_IN', '{\"action\":\"login\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"app\":\"PLG_ACTIONLOG_JOOMLA_APPLICATION_ADMINISTRATOR\"}', '2020-11-10 19:11:36', 'com_users', 630, 0, 'COM_ACTIONLOGS_DISABLED'),
+(123, 'PLG_ACTIONLOG_JOOMLA_USER_LOGGED_IN', '{\"action\":\"login\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"app\":\"PLG_ACTIONLOG_JOOMLA_APPLICATION_ADMINISTRATOR\"}', '2020-11-11 07:04:26', 'com_users', 630, 0, 'COM_ACTIONLOGS_DISABLED'),
+(124, 'PLG_ACTIONLOG_JOOMLA_USER_LOGGED_IN', '{\"action\":\"login\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"app\":\"PLG_ACTIONLOG_JOOMLA_APPLICATION_ADMINISTRATOR\"}', '2020-11-11 08:19:49', 'com_users', 630, 0, 'COM_ACTIONLOGS_DISABLED'),
+(125, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_ADDED', '{\"action\":\"add\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MODULE\",\"id\":101,\"title\":\"\\u041a\\u043e\\u0440\\u0437\\u0438\\u043d\\u0430\",\"extension_name\":\"\\u041a\\u043e\\u0440\\u0437\\u0438\\u043d\\u0430\",\"itemlink\":\"index.php?option=com_modules&task=module.edit&id=101\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\"}', '2020-11-11 08:28:34', 'com_modules.module', 630, 101, 'COM_ACTIONLOGS_DISABLED'),
+(126, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"630\",\"title\":\"grafoman\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"table\":\"#__modules\"}', '2020-11-11 08:28:57', 'com_checkin', 630, 630, 'COM_ACTIONLOGS_DISABLED'),
+(127, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_PUBLISHED', '{\"action\":\"publish\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MODULE\",\"id\":95,\"title\":\"JBZoo Cart\",\"itemlink\":\"index.php?option=com_modules&task=module.edit&id=95\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\"}', '2020-11-11 08:28:57', 'com_modules.module', 630, 95, 'COM_ACTIONLOGS_DISABLED'),
+(128, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MODULE\",\"id\":95,\"title\":\"JBZoo Cart\",\"extension_name\":\"JBZoo Cart\",\"itemlink\":\"index.php?option=com_modules&task=module.edit&id=95\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\"}', '2020-11-11 08:29:28', 'com_modules.module', 630, 95, 'COM_ACTIONLOGS_DISABLED'),
+(129, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"630\",\"title\":\"grafoman\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"table\":\"#__modules\"}', '2020-11-11 08:29:28', 'com_checkin', 630, 630, 'COM_ACTIONLOGS_DISABLED'),
+(130, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"630\",\"title\":\"grafoman\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"table\":\"#__modules\"}', '2020-11-11 08:29:45', 'com_checkin', 630, 630, 'COM_ACTIONLOGS_DISABLED'),
+(131, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UNPUBLISHED', '{\"action\":\"unpublish\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MODULE\",\"id\":101,\"title\":\"\\u041a\\u043e\\u0440\\u0437\\u0438\\u043d\\u0430\",\"itemlink\":\"index.php?option=com_modules&task=module.edit&id=101\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\"}', '2020-11-11 08:29:45', 'com_modules.module', 630, 101, 'COM_ACTIONLOGS_DISABLED'),
+(132, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MODULE\",\"id\":95,\"title\":\"JBZoo Cart\",\"extension_name\":\"JBZoo Cart\",\"itemlink\":\"index.php?option=com_modules&task=module.edit&id=95\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\"}', '2020-11-11 08:31:02', 'com_modules.module', 630, 95, 'COM_ACTIONLOGS_DISABLED'),
+(133, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"630\",\"title\":\"grafoman\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"table\":\"#__modules\"}', '2020-11-11 08:31:02', 'com_checkin', 630, 630, 'COM_ACTIONLOGS_DISABLED'),
+(134, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"630\",\"title\":\"grafoman\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"table\":\"#__modules\"}', '2020-11-11 08:31:26', 'com_checkin', 630, 630, 'COM_ACTIONLOGS_DISABLED'),
+(135, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UNPUBLISHED', '{\"action\":\"unpublish\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MODULE\",\"id\":95,\"title\":\"JBZoo Cart\",\"itemlink\":\"index.php?option=com_modules&task=module.edit&id=95\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\"}', '2020-11-11 08:31:26', 'com_modules.module', 630, 95, 'COM_ACTIONLOGS_DISABLED'),
+(136, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"630\",\"title\":\"grafoman\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\",\"table\":\"#__modules\"}', '2020-11-11 08:31:30', 'com_checkin', 630, 630, 'COM_ACTIONLOGS_DISABLED'),
+(137, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_PUBLISHED', '{\"action\":\"publish\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MODULE\",\"id\":101,\"title\":\"\\u041a\\u043e\\u0440\\u0437\\u0438\\u043d\\u0430\",\"itemlink\":\"index.php?option=com_modules&task=module.edit&id=101\",\"userid\":\"630\",\"username\":\"grafoman\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=630\"}', '2020-11-11 08:31:30', 'com_modules.module', 630, 101, 'COM_ACTIONLOGS_DISABLED');
 
 -- --------------------------------------------------------
 
@@ -325,7 +384,7 @@ CREATE TABLE `ga26l_assets` (
 --
 
 INSERT INTO `ga26l_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `title`, `rules`) VALUES
-(1, 0, 0, 149, 0, 'root.1', 'Root Asset', '{\"core.login.site\":{\"6\":1,\"2\":1},\"core.login.admin\":{\"6\":1},\"core.login.offline\":{\"6\":1},\"core.admin\":{\"8\":1},\"core.manage\":{\"7\":1},\"core.create\":{\"6\":1,\"3\":1},\"core.delete\":{\"6\":1},\"core.edit\":{\"6\":1,\"4\":1},\"core.edit.state\":{\"6\":1,\"5\":1},\"core.edit.own\":{\"6\":1,\"3\":1}}'),
+(1, 0, 0, 151, 0, 'root.1', 'Root Asset', '{\"core.login.site\":{\"6\":1,\"2\":1},\"core.login.admin\":{\"6\":1},\"core.login.offline\":{\"6\":1},\"core.admin\":{\"8\":1},\"core.manage\":{\"7\":1},\"core.create\":{\"6\":1,\"3\":1},\"core.delete\":{\"6\":1},\"core.edit\":{\"6\":1,\"4\":1},\"core.edit.state\":{\"6\":1,\"5\":1},\"core.edit.own\":{\"6\":1,\"3\":1}}'),
 (2, 1, 1, 2, 1, 'com_admin', 'com_admin', '{}'),
 (3, 1, 3, 6, 1, 'com_banners', 'com_banners', '{\"core.admin\":{\"7\":1},\"core.manage\":{\"6\":1}}'),
 (4, 1, 7, 8, 1, 'com_cache', 'com_cache', '{\"core.admin\":{\"7\":1},\"core.manage\":{\"7\":1}}'),
@@ -342,25 +401,25 @@ INSERT INTO `ga26l_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `t
 (15, 1, 41, 42, 1, 'com_media', 'com_media', '{\"core.admin\":{\"7\":1},\"core.manage\":{\"6\":1},\"core.create\":{\"3\":1},\"core.delete\":{\"5\":1}}'),
 (16, 1, 43, 46, 1, 'com_menus', 'com_menus', '{\"core.admin\":{\"7\":1}}'),
 (17, 1, 47, 48, 1, 'com_messages', 'com_messages', '{\"core.admin\":{\"7\":1},\"core.manage\":{\"7\":1}}'),
-(18, 1, 49, 108, 1, 'com_modules', 'com_modules', '{\"core.admin\":{\"7\":1}}'),
-(19, 1, 109, 112, 1, 'com_newsfeeds', 'com_newsfeeds', '{\"core.admin\":{\"7\":1},\"core.manage\":{\"6\":1}}'),
-(20, 1, 113, 114, 1, 'com_plugins', 'com_plugins', '{\"core.admin\":{\"7\":1}}'),
-(21, 1, 115, 116, 1, 'com_redirect', 'com_redirect', '{\"core.admin\":{\"7\":1}}'),
-(22, 1, 117, 118, 1, 'com_search', 'com_search', '{\"core.admin\":{\"7\":1},\"core.manage\":{\"6\":1}}'),
-(23, 1, 119, 120, 1, 'com_templates', 'com_templates', '{\"core.admin\":{\"7\":1}}'),
-(24, 1, 121, 124, 1, 'com_users', 'com_users', '{\"core.admin\":{\"7\":1}}'),
-(26, 1, 125, 126, 1, 'com_wrapper', 'com_wrapper', '{}'),
+(18, 1, 49, 110, 1, 'com_modules', 'com_modules', '{\"core.admin\":{\"7\":1}}'),
+(19, 1, 111, 114, 1, 'com_newsfeeds', 'com_newsfeeds', '{\"core.admin\":{\"7\":1},\"core.manage\":{\"6\":1}}'),
+(20, 1, 115, 116, 1, 'com_plugins', 'com_plugins', '{\"core.admin\":{\"7\":1}}'),
+(21, 1, 117, 118, 1, 'com_redirect', 'com_redirect', '{\"core.admin\":{\"7\":1}}'),
+(22, 1, 119, 120, 1, 'com_search', 'com_search', '{\"core.admin\":{\"7\":1},\"core.manage\":{\"6\":1}}'),
+(23, 1, 121, 122, 1, 'com_templates', 'com_templates', '{\"core.admin\":{\"7\":1}}'),
+(24, 1, 123, 126, 1, 'com_users', 'com_users', '{\"core.admin\":{\"7\":1}}'),
+(26, 1, 127, 128, 1, 'com_wrapper', 'com_wrapper', '{}'),
 (27, 8, 18, 25, 2, 'com_content.category.2', 'Uncategorised', '{}'),
 (28, 3, 4, 5, 2, 'com_banners.category.3', 'Uncategorised', '{}'),
 (29, 7, 14, 15, 2, 'com_contact.category.4', 'Uncategorised', '{}'),
-(30, 19, 110, 111, 2, 'com_newsfeeds.category.5', 'Uncategorised', '{}'),
-(32, 24, 122, 123, 2, 'com_users.category.7', 'Uncategorised', '{}'),
-(33, 1, 127, 128, 1, 'com_finder', 'com_finder', '{\"core.admin\":{\"7\":1},\"core.manage\":{\"6\":1}}'),
-(34, 1, 129, 130, 1, 'com_joomlaupdate', 'com_joomlaupdate', '{}'),
-(35, 1, 131, 132, 1, 'com_tags', 'com_tags', '{}'),
-(36, 1, 133, 134, 1, 'com_contenthistory', 'com_contenthistory', '{}'),
-(37, 1, 135, 136, 1, 'com_ajax', 'com_ajax', '{}'),
-(38, 1, 137, 138, 1, 'com_postinstall', 'com_postinstall', '{}'),
+(30, 19, 112, 113, 2, 'com_newsfeeds.category.5', 'Uncategorised', '{}'),
+(32, 24, 124, 125, 2, 'com_users.category.7', 'Uncategorised', '{}'),
+(33, 1, 129, 130, 1, 'com_finder', 'com_finder', '{\"core.admin\":{\"7\":1},\"core.manage\":{\"6\":1}}'),
+(34, 1, 131, 132, 1, 'com_joomlaupdate', 'com_joomlaupdate', '{}'),
+(35, 1, 133, 134, 1, 'com_tags', 'com_tags', '{}'),
+(36, 1, 135, 136, 1, 'com_contenthistory', 'com_contenthistory', '{}'),
+(37, 1, 137, 138, 1, 'com_ajax', 'com_ajax', '{}'),
+(38, 1, 139, 140, 1, 'com_postinstall', 'com_postinstall', '{}'),
 (39, 18, 50, 51, 2, 'com_modules.module.1', 'Main Menu', '{}'),
 (40, 18, 52, 53, 2, 'com_modules.module.2', 'Login', '{}'),
 (41, 18, 54, 55, 2, 'com_modules.module.3', 'Popular Articles', '{}'),
@@ -378,12 +437,12 @@ INSERT INTO `ga26l_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `t
 (53, 18, 78, 79, 2, 'com_modules.module.86', 'Joomla Version', '{}'),
 (54, 16, 44, 45, 2, 'com_menus.menu.1', 'Main Menu', '{}'),
 (55, 18, 80, 81, 2, 'com_modules.module.87', 'Sample Data', '{}'),
-(56, 1, 139, 140, 1, 'com_privacy', 'com_privacy', '{}'),
-(57, 1, 141, 142, 1, 'com_actionlogs', 'com_actionlogs', '{}'),
+(56, 1, 141, 142, 1, 'com_privacy', 'com_privacy', '{}'),
+(57, 1, 143, 144, 1, 'com_actionlogs', 'com_actionlogs', '{}'),
 (58, 18, 82, 83, 2, 'com_modules.module.88', 'Latest Actions', '{}'),
 (59, 18, 84, 85, 2, 'com_modules.module.89', 'Privacy Dashboard', '{}'),
 (60, 11, 32, 33, 2, 'com_languages.language.2', 'Russian (ru-RU)', '{}'),
-(61, 1, 143, 144, 1, 'com_zoo', 'com_zoo', '{}'),
+(61, 1, 145, 146, 1, 'com_zoo', 'com_zoo', '{}'),
 (62, 18, 86, 87, 2, 'com_modules.module.90', 'ZOO Category', '{}'),
 (63, 18, 88, 89, 2, 'com_modules.module.91', 'ZOO Comment', '{}'),
 (64, 18, 90, 91, 2, 'com_modules.module.92', 'ZOO Item', '{}'),
@@ -395,11 +454,13 @@ INSERT INTO `ga26l_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `t
 (70, 18, 102, 103, 2, 'com_modules.module.98', 'JBZoo Search List', '{}'),
 (71, 18, 104, 105, 2, 'com_modules.module.99', 'JBZoo Search', '{}'),
 (72, 18, 106, 107, 2, 'com_modules.module.100', 'JBZoo Item', '{}'),
-(74, 1, 145, 146, 1, 'com_akeeba', 'Akeeba', '{}'),
-(75, 1, 147, 148, 1, 'com_jce', 'COM_JCE', '{}'),
+(74, 1, 147, 148, 1, 'com_akeeba', 'Akeeba', '{}'),
+(75, 1, 149, 150, 1, 'com_jce', 'COM_JCE', '{}'),
 (76, 27, 19, 20, 3, 'com_content.article.1', 'Магазин', '{}'),
 (77, 27, 21, 22, 3, 'com_content.article.2', 'Склад', '{}'),
-(78, 27, 23, 24, 3, 'com_content.article.3', 'Главная страница', '{}');
+(78, 27, 23, 24, 3, 'com_content.article.3', 'Главная страница', '{}'),
+(79, 0, 152, 153, 0, 'com_zoo.application.1', 'Каталог товаров', '{}'),
+(80, 18, 108, 109, 2, 'com_modules.module.101', 'Корзина', '{}');
 
 -- --------------------------------------------------------
 
@@ -637,9 +698,9 @@ CREATE TABLE `ga26l_content` (
 --
 
 INSERT INTO `ga26l_content` (`id`, `asset_id`, `title`, `alias`, `introtext`, `fulltext`, `state`, `catid`, `created`, `created_by`, `created_by_alias`, `modified`, `modified_by`, `checked_out`, `checked_out_time`, `publish_up`, `publish_down`, `images`, `urls`, `attribs`, `version`, `ordering`, `metakey`, `metadesc`, `access`, `hits`, `metadata`, `featured`, `language`, `xreference`, `note`) VALUES
-(1, 76, 'Магазин', 'magazin', '<p>Здесь должны быть иконки с товаром и возможность заказа как в интернет магазине.</p>', '', 1, 2, '2020-11-09 14:11:50', 630, '', '2020-11-09 14:12:08', 630, 0, '0000-00-00 00:00:00', '2020-11-09 14:11:50', '0000-00-00 00:00:00', '{\"image_intro\":\"images\\/joomla_black.png\",\"float_intro\":\"\",\"image_intro_alt\":\"\",\"image_intro_caption\":\"\",\"image_fulltext\":\"\",\"float_fulltext\":\"\",\"image_fulltext_alt\":\"\",\"image_fulltext_caption\":\"\"}', '{\"urla\":false,\"urlatext\":\"\",\"targeta\":\"\",\"urlb\":false,\"urlbtext\":\"\",\"targetb\":\"\",\"urlc\":false,\"urlctext\":\"\",\"targetc\":\"\"}', '{\"article_layout\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_tags\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_vote\":\"\",\"show_hits\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"alternative_readmore\":\"\",\"article_page_title\":\"\",\"show_publishing_options\":\"\",\"show_article_options\":\"\",\"show_urls_images_backend\":\"\",\"show_urls_images_frontend\":\"\"}', 2, 2, '', '', 1, 6, '{\"robots\":\"\",\"author\":\"\",\"rights\":\"\",\"xreference\":\"\"}', 0, 'ru-RU', '', ''),
-(2, 77, 'Склад', 'sklad', '<p>Здесь нужно вводить имеющиеся продукты которые потом будут отображатся в магазине.</p>\r\n<p>На регистрацию пока что забейте. Это просто MVP версия</p>', '', 1, 2, '2020-11-09 14:16:13', 630, '', '2020-11-09 14:16:13', 0, 0, '0000-00-00 00:00:00', '2020-11-09 14:16:13', '0000-00-00 00:00:00', '{\"image_intro\":\"\",\"float_intro\":\"\",\"image_intro_alt\":\"\",\"image_intro_caption\":\"\",\"image_fulltext\":\"\",\"float_fulltext\":\"\",\"image_fulltext_alt\":\"\",\"image_fulltext_caption\":\"\"}', '{\"urla\":false,\"urlatext\":\"\",\"targeta\":\"\",\"urlb\":false,\"urlbtext\":\"\",\"targetb\":\"\",\"urlc\":false,\"urlctext\":\"\",\"targetc\":\"\"}', '{\"article_layout\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_tags\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_vote\":\"\",\"show_hits\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"alternative_readmore\":\"\",\"article_page_title\":\"\",\"show_publishing_options\":\"\",\"show_article_options\":\"\",\"show_urls_images_backend\":\"\",\"show_urls_images_frontend\":\"\"}', 1, 1, '', '', 1, 6, '{\"robots\":\"\",\"author\":\"\",\"rights\":\"\",\"xreference\":\"\"}', 0, '*', '', ''),
-(3, 78, 'Главная страница', 'glavnaya-stranitsa', '<p>На дизайн и т.д. пока забейте. Главное сейчас заставить работать функционал.<br />Артему работает с \"Материалы &gt; магазин\" и \"Меню &gt; Магазин\"<br />Ахтем и&nbsp;evilstoat как я понял займутся \"Материалы &gt; Склад\" и \"Меню &gt; Склад\"</p>', '', 1, 2, '2020-11-09 14:19:52', 630, '', '2020-11-09 14:19:56', 630, 0, '0000-00-00 00:00:00', '2020-11-09 14:19:52', '0000-00-00 00:00:00', '{\"image_intro\":\"\",\"float_intro\":\"\",\"image_intro_alt\":\"\",\"image_intro_caption\":\"\",\"image_fulltext\":\"\",\"float_fulltext\":\"\",\"image_fulltext_alt\":\"\",\"image_fulltext_caption\":\"\"}', '{\"urla\":false,\"urlatext\":\"\",\"targeta\":\"\",\"urlb\":false,\"urlbtext\":\"\",\"targetb\":\"\",\"urlc\":false,\"urlctext\":\"\",\"targetc\":\"\"}', '{\"article_layout\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_tags\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_vote\":\"\",\"show_hits\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"alternative_readmore\":\"\",\"article_page_title\":\"\",\"show_publishing_options\":\"\",\"show_article_options\":\"\",\"show_urls_images_backend\":\"\",\"show_urls_images_frontend\":\"\"}', 2, 0, '', '', 1, 3, '{\"robots\":\"\",\"author\":\"\",\"rights\":\"\",\"xreference\":\"\"}', 0, '*', '', '');
+(1, 76, 'Магазин', 'magazin', '<p>Здесь должны быть иконки с товаром и возможность заказа как в интернет магазине.</p>', '', 1, 2, '2020-11-09 14:11:50', 630, '', '2020-11-09 14:12:08', 630, 0, '0000-00-00 00:00:00', '2020-11-09 14:11:50', '0000-00-00 00:00:00', '{\"image_intro\":\"images\\/joomla_black.png\",\"float_intro\":\"\",\"image_intro_alt\":\"\",\"image_intro_caption\":\"\",\"image_fulltext\":\"\",\"float_fulltext\":\"\",\"image_fulltext_alt\":\"\",\"image_fulltext_caption\":\"\"}', '{\"urla\":false,\"urlatext\":\"\",\"targeta\":\"\",\"urlb\":false,\"urlbtext\":\"\",\"targetb\":\"\",\"urlc\":false,\"urlctext\":\"\",\"targetc\":\"\"}', '{\"article_layout\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_tags\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_vote\":\"\",\"show_hits\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"alternative_readmore\":\"\",\"article_page_title\":\"\",\"show_publishing_options\":\"\",\"show_article_options\":\"\",\"show_urls_images_backend\":\"\",\"show_urls_images_frontend\":\"\"}', 2, 2, '', '', 1, 14, '{\"robots\":\"\",\"author\":\"\",\"rights\":\"\",\"xreference\":\"\"}', 0, 'ru-RU', '', ''),
+(2, 77, 'Склад', 'sklad', '<p>Здесь нужно вводить имеющиеся продукты которые потом будут отображатся в магазине.</p>\r\n<p>На регистрацию пока что забейте. Это просто MVP версия</p>', '', 1, 2, '2020-11-09 14:16:13', 630, '', '2020-11-09 14:16:13', 0, 0, '0000-00-00 00:00:00', '2020-11-09 14:16:13', '0000-00-00 00:00:00', '{\"image_intro\":\"\",\"float_intro\":\"\",\"image_intro_alt\":\"\",\"image_intro_caption\":\"\",\"image_fulltext\":\"\",\"float_fulltext\":\"\",\"image_fulltext_alt\":\"\",\"image_fulltext_caption\":\"\"}', '{\"urla\":false,\"urlatext\":\"\",\"targeta\":\"\",\"urlb\":false,\"urlbtext\":\"\",\"targetb\":\"\",\"urlc\":false,\"urlctext\":\"\",\"targetc\":\"\"}', '{\"article_layout\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_tags\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_vote\":\"\",\"show_hits\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"alternative_readmore\":\"\",\"article_page_title\":\"\",\"show_publishing_options\":\"\",\"show_article_options\":\"\",\"show_urls_images_backend\":\"\",\"show_urls_images_frontend\":\"\"}', 1, 1, '', '', 1, 10, '{\"robots\":\"\",\"author\":\"\",\"rights\":\"\",\"xreference\":\"\"}', 0, '*', '', ''),
+(3, 78, 'Главная страница', 'glavnaya-stranitsa', '<p>На дизайн и т.д. пока забейте. Главное сейчас заставить работать функционал.<br />Артему работает с \"Материалы &gt; магазин\" и \"Меню &gt; Магазин\"<br />Ахтем и&nbsp;evilstoat как я понял займутся \"Материалы &gt; Склад\" и \"Меню &gt; Склад\"</p>', '', 1, 2, '2020-11-09 14:19:52', 630, '', '2020-11-09 14:19:56', 630, 0, '0000-00-00 00:00:00', '2020-11-09 14:19:52', '0000-00-00 00:00:00', '{\"image_intro\":\"\",\"float_intro\":\"\",\"image_intro_alt\":\"\",\"image_intro_caption\":\"\",\"image_fulltext\":\"\",\"float_fulltext\":\"\",\"image_fulltext_alt\":\"\",\"image_fulltext_caption\":\"\"}', '{\"urla\":false,\"urlatext\":\"\",\"targeta\":\"\",\"urlb\":false,\"urlbtext\":\"\",\"targetb\":\"\",\"urlc\":false,\"urlctext\":\"\",\"targetc\":\"\"}', '{\"article_layout\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_tags\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_vote\":\"\",\"show_hits\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"alternative_readmore\":\"\",\"article_page_title\":\"\",\"show_publishing_options\":\"\",\"show_article_options\":\"\",\"show_urls_images_backend\":\"\",\"show_urls_images_frontend\":\"\"}', 2, 0, '', '', 1, 28, '{\"robots\":\"\",\"author\":\"\",\"rights\":\"\",\"xreference\":\"\"}', 0, '*', '', '');
 
 -- --------------------------------------------------------
 
@@ -891,7 +952,7 @@ INSERT INTO `ga26l_extensions` (`extension_id`, `package_id`, `name`, `type`, `e
 (449, 0, 'plg_authentication_cookie', 'plugin', 'cookie', 'authentication', 0, 1, 1, 0, '{\"name\":\"plg_authentication_cookie\",\"type\":\"plugin\",\"creationDate\":\"July 2013\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2020 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.0.0\",\"description\":\"PLG_AUTH_COOKIE_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"cookie\"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (450, 0, 'plg_twofactorauth_yubikey', 'plugin', 'yubikey', 'twofactorauth', 0, 0, 1, 0, '{\"name\":\"plg_twofactorauth_yubikey\",\"type\":\"plugin\",\"creationDate\":\"September 2013\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2020 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.2.0\",\"description\":\"PLG_TWOFACTORAUTH_YUBIKEY_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"yubikey\"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (451, 0, 'plg_search_tags', 'plugin', 'tags', 'search', 0, 1, 1, 0, '{\"name\":\"plg_search_tags\",\"type\":\"plugin\",\"creationDate\":\"March 2014\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2020 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.0.0\",\"description\":\"PLG_SEARCH_TAGS_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"tags\"}', '{\"search_limit\":\"50\",\"show_tagged_items\":\"1\"}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
-(452, 0, 'plg_system_updatenotification', 'plugin', 'updatenotification', 'system', 0, 1, 1, 0, '{\"name\":\"plg_system_updatenotification\",\"type\":\"plugin\",\"creationDate\":\"May 2015\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2020 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.5.0\",\"description\":\"PLG_SYSTEM_UPDATENOTIFICATION_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"updatenotification\"}', '{\"lastrun\":1604923326}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(452, 0, 'plg_system_updatenotification', 'plugin', 'updatenotification', 'system', 0, 1, 1, 0, '{\"name\":\"plg_system_updatenotification\",\"type\":\"plugin\",\"creationDate\":\"May 2015\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2020 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.5.0\",\"description\":\"PLG_SYSTEM_UPDATENOTIFICATION_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"updatenotification\"}', '{\"lastrun\":1605074311}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (453, 0, 'plg_editors-xtd_module', 'plugin', 'module', 'editors-xtd', 0, 1, 1, 0, '{\"name\":\"plg_editors-xtd_module\",\"type\":\"plugin\",\"creationDate\":\"October 2015\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2020 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.5.0\",\"description\":\"PLG_MODULE_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"module\"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (454, 0, 'plg_system_stats', 'plugin', 'stats', 'system', 0, 1, 1, 0, '{\"name\":\"plg_system_stats\",\"type\":\"plugin\",\"creationDate\":\"November 2013\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2020 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.5.0\",\"description\":\"PLG_SYSTEM_STATS_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"stats\"}', '{\"mode\":3,\"lastrun\":1604578865,\"unique_id\":\"a6a58bb799e650dc5f94ae11caf90cb42884fbc0\",\"interval\":12}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (455, 0, 'plg_installer_packageinstaller', 'plugin', 'packageinstaller', 'installer', 0, 1, 1, 1, '{\"name\":\"plg_installer_packageinstaller\",\"type\":\"plugin\",\"creationDate\":\"May 2016\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2020 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.6.0\",\"description\":\"PLG_INSTALLER_PACKAGEINSTALLER_PLUGIN_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"packageinstaller\"}', '', '', '', 0, '0000-00-00 00:00:00', 1, 0),
@@ -1118,6 +1179,13 @@ CREATE TABLE `ga26l_finder_links` (
   `object` mediumblob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Дамп данных таблицы `ga26l_finder_links`
+--
+
+INSERT INTO `ga26l_finder_links` (`link_id`, `url`, `route`, `title`, `description`, `indexdate`, `md5sum`, `published`, `state`, `access`, `language`, `publish_start_date`, `publish_end_date`, `start_date`, `end_date`, `list_price`, `sale_price`, `type_id`, `object`) VALUES
+(12, 'index.php?option=com_zoo&view=item&id=3', 'index.php?option=com_zoo&task=item&item_id=3&Itemid=123', 'КОРТИМЕНТ', '', '2020-11-11 12:05:27', '653b84c4ec0d3b085ed114d994915fee', 1, 1, 1, '*', '2020-11-10 19:32:17', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 0, 1, 0x4f3a31393a2246696e646572496e6465786572526573756c74223a31393a7b733a31313a22002a00656c656d656e7473223b613a31323a7b733a323a226964223b733a313a2233223b733a353a22616c696173223b733a393a226b6f7274696d656e74223b733a31363a22637265617465645f62795f616c696173223b733a303a22223b733a383a226d6f646966696564223b733a31393a22323032302d31312d31312030393a30353a3234223b733a31313a226d6f6469666965645f6279223b733a333a22363330223b733a31303a2273656172636861626c65223b733a313a2231223b733a363a226c61796f7574223b733a343a226974656d223b733a383a226d65746164617461223b4f3a32343a224a6f6f6d6c615c52656769737472795c5265676973747279223a333a7b733a373a22002a0064617461223b4f3a383a22737464436c617373223a353a7b733a353a227469746c65223b733a303a22223b733a31313a226465736372697074696f6e223b733a303a22223b733a383a226b6579776f726473223b733a303a22223b733a363a22726f626f7473223b733a303a22223b733a363a22617574686f72223b733a303a22223b7d733a31343a22002a00696e697469616c697a6564223b623a313b733a393a22736570617261746f72223b733a313a222e223b7d733a31303a226d657461617574686f72223b733a303a22223b733a373a2273756d6d617279223b733a303a22223b733a343a2270617468223b733a36353a222f696e6465782e7068702f323032302d31312d30392d31342d31332d35352f323032302d31312d31302d31302d33332d35342f6974656d2f6b6f7274696d656e74223b733a31323a22656c656d656e745f64617461223b613a353a7b693a303b733a323a220a31223b693a313b733a323a223330223b693a323b733a31373a220a5f5f494d4147455f4558495354535f5f223b693a333b733a32303a22d09ad0bed181d0bcd0be20d0a12ed0bf2ed0902e223b693a343b733a3137343a22d182d0b0d0b1d0bbd0b5d182d0bad0b820d0bad0b8d188d0b5d187d0bdd0bed180d0b0d181d182d0b2d0bed180d0b8d0bcd18bd0b520d18120d0bfd180d0bed0bbd0bed0bdd0b3d0b8d180d0bed0b2d0b0d0bdd0bdd18bd0bc20d0b2d18bd181d0b2d0bed0b1d0bed0b6d0b4d0b5d0bdd0b8d0b5d0bc2c20d0bfd0bed0bad180d18bd182d0b8d0b520d0bfd0bbd0b5d0bdd0bed187d0bdd0bed0b920d0bed0b1d0bed0bbd0bed187d0bad0bed0b9223b7d7d733a31353a22002a00696e737472756374696f6e73223b613a353a7b693a313b613a333a7b693a303b733a353a227469746c65223b693a313b733a383a227375627469746c65223b693a323b733a323a226964223b7d693a323b613a323a7b693a303b733a373a2273756d6d617279223b693a313b733a343a22626f6479223b7d693a333b613a31303a7b693a303b733a343a226d657461223b693a313b733a31303a226c6973745f7072696365223b693a323b733a31303a2273616c655f7072696365223b693a333b733a343a226c696e6b223b693a343b733a373a226d6574616b6579223b693a353b733a383a226d65746164657363223b693a363b733a31303a226d657461617574686f72223b693a373b733a363a22617574686f72223b693a383b733a31363a22637265617465645f62795f616c696173223b693a393b733a31323a22656c656d656e745f64617461223b7d693a343b613a323a7b693a303b733a343a2270617468223b693a313b733a353a22616c696173223b7d693a353b613a313a7b693a303b733a383a22636f6d6d656e7473223b7d7d733a31313a22002a007461786f6e6f6d79223b613a323a7b733a343a2254797065223b613a313a7b733a31333a224e65772053686f70204974656d223b4f3a32373a224a6f6f6d6c615c434d535c4f626a6563745c434d534f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a31333a224e65772053686f70204974656d223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d733a383a2243617465676f7279223b613a313a7b733a34353a22d09bd0b5d0bad0b0d180d181d182d0b2d0b5d0bdd0bdd18bd0b520d0bfd180d0b5d0bfd0b0d180d0b0d182d18b223b4f3a32373a224a6f6f6d6c615c434d535c4f626a6563745c434d534f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a34353a22d09bd0b5d0bad0b0d180d181d182d0b2d0b5d0bdd0bdd18bd0b520d0bfd180d0b5d0bfd0b0d180d0b0d182d18b223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d7d733a333a2275726c223b733a33393a22696e6465782e7068703f6f7074696f6e3d636f6d5f7a6f6f26766965773d6974656d2669643d33223b733a353a22726f757465223b733a35353a22696e6465782e7068703f6f7074696f6e3d636f6d5f7a6f6f267461736b3d6974656d266974656d5f69643d33264974656d69643d313233223b733a353a227469746c65223b733a31383a22d09ad09ed0a0d0a2d098d09cd095d09dd0a2223b733a31313a226465736372697074696f6e223b733a303a22223b733a393a227075626c6973686564223b4e3b733a353a227374617465223b623a313b733a363a22616363657373223b733a313a2231223b733a383a226c616e6775616765223b733a313a222a223b733a31383a227075626c6973685f73746172745f64617465223b733a31393a22323032302d31312d31302031393a33323a3137223b733a31363a227075626c6973685f656e645f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a31303a2273746172745f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a383a22656e645f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a31303a226c6973745f7072696365223b4e3b733a31303a2273616c655f7072696365223b4e3b733a373a22747970655f6964223b693a313b733a31353a2264656661756c744c616e6775616765223b733a353a22656e2d4742223b7d);
+
 -- --------------------------------------------------------
 
 --
@@ -1190,6 +1258,22 @@ CREATE TABLE `ga26l_finder_links_terms5` (
   `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Дамп данных таблицы `ga26l_finder_links_terms5`
+--
+
+INSERT INTO `ga26l_finder_links_terms5` (`link_id`, `term_id`, `weight`) VALUES
+(12, 220, 1.2),
+(12, 221, 2.00004),
+(12, 222, 2.4),
+(12, 223, 1.02),
+(12, 224, 0.39996),
+(12, 225, 1.47996),
+(12, 226, 1.64004),
+(12, 241, 0.63996),
+(12, 242, 2.28),
+(12, 243, 2.36004);
+
 -- --------------------------------------------------------
 
 --
@@ -1214,6 +1298,21 @@ CREATE TABLE `ga26l_finder_links_terms7` (
   `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Дамп данных таблицы `ga26l_finder_links_terms7`
+--
+
+INSERT INTO `ga26l_finder_links_terms7` (`link_id`, `term_id`, `weight`) VALUES
+(12, 228, 0.24),
+(12, 229, 0.72),
+(12, 230, 1.95996),
+(12, 231, 0.63996),
+(12, 232, 1.92),
+(12, 233, 2.31996),
+(12, 234, 1.2),
+(12, 235, 2.4),
+(12, 236, 2.4);
+
 -- --------------------------------------------------------
 
 --
@@ -1226,6 +1325,17 @@ CREATE TABLE `ga26l_finder_links_terms8` (
   `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Дамп данных таблицы `ga26l_finder_links_terms8`
+--
+
+INSERT INTO `ga26l_finder_links_terms8` (`link_id`, `term_id`, `weight`) VALUES
+(5, 39, 0.6666),
+(12, 39, 0.6666),
+(12, 214, 0.39996),
+(12, 215, 1.68),
+(12, 216, 1.2);
+
 -- --------------------------------------------------------
 
 --
@@ -1237,6 +1347,17 @@ CREATE TABLE `ga26l_finder_links_terms9` (
   `term_id` int(10) UNSIGNED NOT NULL,
   `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Дамп данных таблицы `ga26l_finder_links_terms9`
+--
+
+INSERT INTO `ga26l_finder_links_terms9` (`link_id`, `term_id`, `weight`) VALUES
+(12, 227, 0.72),
+(12, 237, 0.16008),
+(12, 238, 1.40004),
+(12, 239, 1.92),
+(12, 240, 2.4);
 
 -- --------------------------------------------------------
 
@@ -1262,6 +1383,15 @@ CREATE TABLE `ga26l_finder_links_termsb` (
   `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Дамп данных таблицы `ga26l_finder_links_termsb`
+--
+
+INSERT INTO `ga26l_finder_links_termsb` (`link_id`, `term_id`, `weight`) VALUES
+(12, 217, 1.11996),
+(12, 218, 2.12004),
+(12, 219, 2.4);
+
 -- --------------------------------------------------------
 
 --
@@ -1273,6 +1403,13 @@ CREATE TABLE `ga26l_finder_links_termsc` (
   `term_id` int(10) UNSIGNED NOT NULL,
   `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Дамп данных таблицы `ga26l_finder_links_termsc`
+--
+
+INSERT INTO `ga26l_finder_links_termsc` (`link_id`, `term_id`, `weight`) VALUES
+(12, 38, 0.12);
 
 -- --------------------------------------------------------
 
@@ -1297,6 +1434,15 @@ CREATE TABLE `ga26l_finder_links_termse` (
   `term_id` int(10) UNSIGNED NOT NULL,
   `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Дамп данных таблицы `ga26l_finder_links_termse`
+--
+
+INSERT INTO `ga26l_finder_links_termse` (`link_id`, `term_id`, `weight`) VALUES
+(12, 211, 0.17),
+(12, 212, 0.24),
+(12, 213, 0.48);
 
 -- --------------------------------------------------------
 
@@ -1330,7 +1476,11 @@ CREATE TABLE `ga26l_finder_taxonomy` (
 --
 
 INSERT INTO `ga26l_finder_taxonomy` (`id`, `parent_id`, `title`, `state`, `access`, `ordering`) VALUES
-(1, 0, 'ROOT', 0, 0, 0);
+(1, 0, 'ROOT', 0, 0, 0),
+(2, 1, 'Type', 1, 1, 0),
+(5, 1, 'Category', 1, 1, 0),
+(23, 2, 'New Shop Item', 1, 1, 0),
+(24, 5, 'Лекарственные препараты', 1, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -1342,6 +1492,14 @@ CREATE TABLE `ga26l_finder_taxonomy_map` (
   `link_id` int(10) UNSIGNED NOT NULL,
   `node_id` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Дамп данных таблицы `ga26l_finder_taxonomy_map`
+--
+
+INSERT INTO `ga26l_finder_taxonomy_map` (`link_id`, `node_id`) VALUES
+(12, 23),
+(12, 24);
 
 -- --------------------------------------------------------
 
@@ -1360,6 +1518,49 @@ CREATE TABLE `ga26l_finder_terms` (
   `links` int(10) NOT NULL DEFAULT 0,
   `language` char(3) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Дамп данных таблицы `ga26l_finder_terms`
+--
+
+INSERT INTO `ga26l_finder_terms` (`term_id`, `term`, `stem`, `common`, `phrase`, `weight`, `soundex`, `links`, `language`) VALUES
+(37, '', '', 0, 0, 0, '', 1, '*'),
+(38, '1', '1', 0, 0, 0.1, '', 2, '*'),
+(39, 'index', 'index', 0, 0, 0.3333, 'I532', 2, '*'),
+(40, 'test', 'test', 0, 0, 0.2667, 'T230', 1, '*'),
+(211, '3', '3', 0, 0, 0.1, '', 1, '*'),
+(212, '30', '30', 0, 0, 0.2, '', 1, '*'),
+(213, 'exists', 'exists', 0, 0, 0.4, 'E232', 1, '*'),
+(214, 'image', 'image', 0, 0, 0.3333, 'I520', 1, '*'),
+(215, 'image exists', 'image exists', 0, 1, 1.4, 'I5232', 1, '*'),
+(216, 'kortiment', 'kortiment', 0, 0, 0.6, 'K6353', 1, '*'),
+(217, 'высвобождением', 'высвобождением', 0, 0, 0.9333, 'в000', 1, '*'),
+(218, 'высвобождением покрытие', 'высвобождением покрытие', 0, 1, 1.7667, 'в000', 1, '*'),
+(219, 'высвобождением покрытие пленочной', 'высвобождением покрытие пленочной', 0, 1, 2, 'в000', 1, '*'),
+(220, 'кишечнорастворимые', 'кишечнорастворимые', 0, 0, 1, 'к000', 1, '*'),
+(221, 'кишечнорастворимые с', 'кишечнорастворимые с', 0, 1, 1.6667, 'к000', 1, '*'),
+(222, 'кишечнорастворимые с пролонгированным', 'кишечнорастворимые с пролонгированным', 0, 1, 2, 'к000', 1, '*'),
+(223, 'кортимент', 'кортимент', 0, 0, 0.6, 'к000', 1, '*'),
+(224, 'космо', 'космо', 0, 0, 0.3333, 'к000', 1, '*'),
+(225, 'космо с', 'космо с', 0, 1, 1.2333, 'к000', 1, '*'),
+(226, 'космо с п.а', 'космо с п.а', 0, 1, 1.3667, 'к000', 1, '*'),
+(227, 'оболочкой', 'оболочкой', 0, 0, 0.6, 'о000', 1, '*'),
+(228, 'п.а', 'п.а', 0, 0, 0.2, 'п000', 1, '*'),
+(229, 'пленочной', 'пленочной', 0, 0, 0.6, 'п000', 1, '*'),
+(230, 'пленочной оболочкой', 'пленочной оболочкой', 0, 1, 1.6333, 'п000', 1, '*'),
+(231, 'покрытие', 'покрытие', 0, 0, 0.5333, 'п000', 1, '*'),
+(232, 'покрытие пленочной', 'покрытие пленочной', 0, 1, 1.6, 'п000', 1, '*'),
+(233, 'покрытие пленочной оболочкой', 'покрытие пленочной оболочкой', 0, 1, 1.9333, 'п000', 1, '*'),
+(234, 'пролонгированным', 'пролонгированным', 0, 0, 1, 'п000', 1, '*'),
+(235, 'пролонгированным высвобождением', 'пролонгированным высвобождением', 0, 1, 2, 'п000', 1, '*'),
+(236, 'пролонгированным высвобождением покрытие', 'пролонгированным высвобождением покрытие', 0, 1, 2, 'п000', 1, '*'),
+(237, 'с', 'с', 0, 0, 0.0667, 'с000', 1, '*'),
+(238, 'с п.а', 'с п.а', 0, 1, 1.1667, 'с000', 1, '*'),
+(239, 'с пролонгированным', 'с пролонгированным', 0, 1, 1.6, 'с000', 1, '*'),
+(240, 'с пролонгированным высвобождением', 'с пролонгированным высвобождением', 0, 1, 2, 'с000', 1, '*'),
+(241, 'таблетки', 'таблетки', 0, 0, 0.5333, 'т000', 1, '*'),
+(242, 'таблетки кишечнорастворимые', 'таблетки кишечнорастворимые', 0, 1, 1.9, 'т000', 1, '*'),
+(243, 'таблетки кишечнорастворимые с', 'таблетки кишечнорастворимые с', 0, 1, 1.9667, 'т000', 1, '*');
 
 -- --------------------------------------------------------
 
@@ -1536,6 +1737,18 @@ CREATE TABLE `ga26l_finder_types` (
   `mime` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Дамп данных таблицы `ga26l_finder_types`
+--
+
+INSERT INTO `ga26l_finder_types` (`id`, `title`, `mime`) VALUES
+(1, 'ZOO Item', ''),
+(2, 'Tag', ''),
+(3, 'Category', ''),
+(4, 'Contact', ''),
+(5, 'Article', ''),
+(6, 'News Feed', '');
+
 -- --------------------------------------------------------
 
 --
@@ -1605,36 +1818,40 @@ CREATE TABLE `ga26l_menu` (
 --
 
 INSERT INTO `ga26l_menu` (`id`, `menutype`, `title`, `alias`, `note`, `path`, `link`, `type`, `published`, `parent_id`, `level`, `component_id`, `checked_out`, `checked_out_time`, `browserNav`, `access`, `img`, `template_style_id`, `params`, `lft`, `rgt`, `home`, `language`, `client_id`) VALUES
-(1, '', 'Menu_Item_Root', 'root', '', '', '', '', 1, 0, 0, 0, 0, '0000-00-00 00:00:00', 0, 0, '', 0, '', 0, 59, 0, '*', 0),
+(1, '', 'Menu_Item_Root', 'root', '', '', '', '', 1, 0, 0, 0, 0, '0000-00-00 00:00:00', 0, 0, '', 0, '', 0, 67, 0, '*', 0),
 (2, 'main', 'com_banners', 'Banners', '', 'Banners', 'index.php?option=com_banners', 'component', 1, 1, 1, 4, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners', 0, '', 1, 10, 0, '*', 1),
 (3, 'main', 'com_banners', 'Banners', '', 'Banners/Banners', 'index.php?option=com_banners', 'component', 1, 2, 2, 4, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners', 0, '', 2, 3, 0, '*', 1),
 (4, 'main', 'com_banners_categories', 'Categories', '', 'Banners/Categories', 'index.php?option=com_categories&extension=com_banners', 'component', 1, 2, 2, 6, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners-cat', 0, '', 4, 5, 0, '*', 1),
 (5, 'main', 'com_banners_clients', 'Clients', '', 'Banners/Clients', 'index.php?option=com_banners&view=clients', 'component', 1, 2, 2, 4, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners-clients', 0, '', 6, 7, 0, '*', 1),
 (6, 'main', 'com_banners_tracks', 'Tracks', '', 'Banners/Tracks', 'index.php?option=com_banners&view=tracks', 'component', 1, 2, 2, 4, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners-tracks', 0, '', 8, 9, 0, '*', 1),
-(7, 'main', 'com_contact', 'Contacts', '', 'Contacts', 'index.php?option=com_contact', 'component', 1, 1, 1, 8, 0, '0000-00-00 00:00:00', 0, 0, 'class:contact', 0, '', 11, 16, 0, '*', 1),
-(8, 'main', 'com_contact_contacts', 'Contacts', '', 'Contacts/Contacts', 'index.php?option=com_contact', 'component', 1, 7, 2, 8, 0, '0000-00-00 00:00:00', 0, 0, 'class:contact', 0, '', 12, 13, 0, '*', 1),
-(9, 'main', 'com_contact_categories', 'Categories', '', 'Contacts/Categories', 'index.php?option=com_categories&extension=com_contact', 'component', 1, 7, 2, 6, 0, '0000-00-00 00:00:00', 0, 0, 'class:contact-cat', 0, '', 14, 15, 0, '*', 1),
-(10, 'main', 'com_messages', 'Messaging', '', 'Messaging', 'index.php?option=com_messages', 'component', 1, 1, 1, 15, 0, '0000-00-00 00:00:00', 0, 0, 'class:messages', 0, '', 17, 20, 0, '*', 1),
-(11, 'main', 'com_messages_add', 'New Private Message', '', 'Messaging/New Private Message', 'index.php?option=com_messages&task=message.add', 'component', 1, 10, 2, 15, 0, '0000-00-00 00:00:00', 0, 0, 'class:messages-add', 0, '', 18, 19, 0, '*', 1),
-(13, 'main', 'com_newsfeeds', 'News Feeds', '', 'News Feeds', 'index.php?option=com_newsfeeds', 'component', 1, 1, 1, 17, 0, '0000-00-00 00:00:00', 0, 0, 'class:newsfeeds', 0, '', 21, 26, 0, '*', 1),
-(14, 'main', 'com_newsfeeds_feeds', 'Feeds', '', 'News Feeds/Feeds', 'index.php?option=com_newsfeeds', 'component', 1, 13, 2, 17, 0, '0000-00-00 00:00:00', 0, 0, 'class:newsfeeds', 0, '', 22, 23, 0, '*', 1),
-(15, 'main', 'com_newsfeeds_categories', 'Categories', '', 'News Feeds/Categories', 'index.php?option=com_categories&extension=com_newsfeeds', 'component', 1, 13, 2, 6, 0, '0000-00-00 00:00:00', 0, 0, 'class:newsfeeds-cat', 0, '', 24, 25, 0, '*', 1),
-(16, 'main', 'com_redirect', 'Redirect', '', 'Redirect', 'index.php?option=com_redirect', 'component', 1, 1, 1, 24, 0, '0000-00-00 00:00:00', 0, 0, 'class:redirect', 0, '', 27, 28, 0, '*', 1),
-(17, 'main', 'com_search', 'Basic Search', '', 'Basic Search', 'index.php?option=com_search', 'component', 1, 1, 1, 19, 0, '0000-00-00 00:00:00', 0, 0, 'class:search', 0, '', 29, 30, 0, '*', 1),
-(18, 'main', 'com_finder', 'Smart Search', '', 'Smart Search', 'index.php?option=com_finder', 'component', 1, 1, 1, 27, 0, '0000-00-00 00:00:00', 0, 0, 'class:finder', 0, '', 31, 32, 0, '*', 1),
-(19, 'main', 'com_joomlaupdate', 'Joomla! Update', '', 'Joomla! Update', 'index.php?option=com_joomlaupdate', 'component', 1, 1, 1, 28, 0, '0000-00-00 00:00:00', 0, 0, 'class:joomlaupdate', 0, '', 33, 34, 0, '*', 1),
-(20, 'main', 'com_tags', 'Tags', '', 'Tags', 'index.php?option=com_tags', 'component', 1, 1, 1, 29, 0, '0000-00-00 00:00:00', 0, 1, 'class:tags', 0, '', 35, 36, 0, '', 1),
-(21, 'main', 'com_postinstall', 'Post-installation messages', '', 'Post-installation messages', 'index.php?option=com_postinstall', 'component', 1, 1, 1, 32, 0, '0000-00-00 00:00:00', 0, 1, 'class:postinstall', 0, '', 37, 38, 0, '*', 1),
-(22, 'main', 'com_associations', 'Multilingual Associations', '', 'Multilingual Associations', 'index.php?option=com_associations', 'component', 1, 1, 1, 34, 0, '0000-00-00 00:00:00', 0, 0, 'class:associations', 0, '', 39, 40, 0, '*', 1),
-(101, 'mainmenu', 'Home', 'home', '', 'home', 'index.php?option=com_content&view=article&id=3', 'component', 1, 1, 1, 22, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{\"show_title\":\"\",\"link_titles\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_vote\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_hits\":\"\",\"show_tags\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"menu-anchor_title\":\"\",\"menu-anchor_css\":\"\",\"menu_image\":\"\",\"menu_image_css\":\"\",\"menu_text\":1,\"menu_show\":1,\"page_title\":\"\",\"show_page_heading\":\"1\",\"page_heading\":\"\",\"pageclass_sfx\":\"\",\"menu-meta_description\":\"\",\"menu-meta_keywords\":\"\",\"robots\":\"\",\"secure\":0}', 41, 42, 1, '*', 0),
-(102, 'main', 'com_zoo', 'com-zoo', '', 'com-zoo', 'index.php?option=com_zoo', 'component', 1, 1, 1, 10004, 0, '0000-00-00 00:00:00', 0, 1, 'components/com_zoo/assets/images/zoo_16.png', 0, '{}', 43, 44, 0, '', 1),
-(113, 'main', 'COM_AKEEBA', 'com-akeeba', '', 'com-akeeba', 'index.php?option=com_akeeba', 'component', 1, 1, 1, 10028, 0, '0000-00-00 00:00:00', 0, 1, 'class:component', 0, '{}', 45, 46, 0, '', 1),
-(114, 'main', 'COM_JCE', 'com-jce', '', 'com-jce', 'index.php?option=com_jce&view=cpanel', 'component', 1, 1, 1, 10034, 0, '0000-00-00 00:00:00', 0, 1, 'components/com_jce/media/img/menu/logo.png', 0, '{}', 47, 54, 0, '', 1),
-(115, 'main', 'COM_JCE_MENU_CPANEL', 'com-jce-menu-cpanel', '', 'com-jce/com-jce-menu-cpanel', 'index.php?option=com_jce', 'component', 1, 114, 2, 10034, 0, '0000-00-00 00:00:00', 0, 1, 'class:component', 0, '{}', 48, 49, 0, '', 1),
-(116, 'main', 'COM_JCE_MENU_CONFIG', 'com-jce-menu-config', '', 'com-jce/com-jce-menu-config', 'index.php?option=com_jce&view=config', 'component', 1, 114, 2, 10034, 0, '0000-00-00 00:00:00', 0, 1, 'class:component', 0, '{}', 50, 51, 0, '', 1),
-(117, 'main', 'COM_JCE_MENU_PROFILES', 'com-jce-menu-profiles', '', 'com-jce/com-jce-menu-profiles', 'index.php?option=com_jce&view=profiles', 'component', 1, 114, 2, 10034, 0, '0000-00-00 00:00:00', 0, 1, 'class:component', 0, '{}', 52, 53, 0, '', 1),
-(118, 'mainmenu', 'Магазин', '2020-11-09-14-13-55', '', '2020-11-09-14-13-55', 'index.php?option=com_content&view=article&id=1', 'component', 1, 1, 1, 22, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{\"show_title\":\"\",\"link_titles\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_vote\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_hits\":\"\",\"show_tags\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"menu-anchor_title\":\"\",\"menu-anchor_css\":\"\",\"menu_image\":\"\",\"menu_image_css\":\"\",\"menu_text\":1,\"menu_show\":1,\"page_title\":\"\",\"show_page_heading\":\"\",\"page_heading\":\"\",\"pageclass_sfx\":\"\",\"menu-meta_description\":\"\",\"menu-meta_keywords\":\"\",\"robots\":\"\",\"secure\":0}', 55, 56, 0, '*', 0),
-(119, 'mainmenu', 'Склад', '2020-11-09-14-20-54', '', '2020-11-09-14-20-54', 'index.php?option=com_content&view=article&id=2', 'component', 1, 1, 1, 22, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{\"show_title\":\"\",\"link_titles\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_vote\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_hits\":\"\",\"show_tags\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"menu-anchor_title\":\"\",\"menu-anchor_css\":\"\",\"menu_image\":\"\",\"menu_image_css\":\"\",\"menu_text\":1,\"menu_show\":1,\"page_title\":\"\",\"show_page_heading\":\"\",\"page_heading\":\"\",\"pageclass_sfx\":\"\",\"menu-meta_description\":\"\",\"menu-meta_keywords\":\"\",\"robots\":\"\",\"secure\":0}', 57, 58, 0, '*', 0);
+(7, 'main', 'com_contact', 'Contacts', '', 'Contacts', 'index.php?option=com_contact', 'component', 1, 1, 1, 8, 0, '0000-00-00 00:00:00', 0, 0, 'class:contact', 0, '', 25, 30, 0, '*', 1),
+(8, 'main', 'com_contact_contacts', 'Contacts', '', 'Contacts/Contacts', 'index.php?option=com_contact', 'component', 1, 7, 2, 8, 0, '0000-00-00 00:00:00', 0, 0, 'class:contact', 0, '', 26, 27, 0, '*', 1),
+(9, 'main', 'com_contact_categories', 'Categories', '', 'Contacts/Categories', 'index.php?option=com_categories&extension=com_contact', 'component', 1, 7, 2, 6, 0, '0000-00-00 00:00:00', 0, 0, 'class:contact-cat', 0, '', 28, 29, 0, '*', 1),
+(10, 'main', 'com_messages', 'Messaging', '', 'Messaging', 'index.php?option=com_messages', 'component', 1, 1, 1, 15, 0, '0000-00-00 00:00:00', 0, 0, 'class:messages', 0, '', 31, 34, 0, '*', 1),
+(11, 'main', 'com_messages_add', 'New Private Message', '', 'Messaging/New Private Message', 'index.php?option=com_messages&task=message.add', 'component', 1, 10, 2, 15, 0, '0000-00-00 00:00:00', 0, 0, 'class:messages-add', 0, '', 32, 33, 0, '*', 1),
+(13, 'main', 'com_newsfeeds', 'News Feeds', '', 'News Feeds', 'index.php?option=com_newsfeeds', 'component', 1, 1, 1, 17, 0, '0000-00-00 00:00:00', 0, 0, 'class:newsfeeds', 0, '', 35, 40, 0, '*', 1),
+(14, 'main', 'com_newsfeeds_feeds', 'Feeds', '', 'News Feeds/Feeds', 'index.php?option=com_newsfeeds', 'component', 1, 13, 2, 17, 0, '0000-00-00 00:00:00', 0, 0, 'class:newsfeeds', 0, '', 36, 37, 0, '*', 1),
+(15, 'main', 'com_newsfeeds_categories', 'Categories', '', 'News Feeds/Categories', 'index.php?option=com_categories&extension=com_newsfeeds', 'component', 1, 13, 2, 6, 0, '0000-00-00 00:00:00', 0, 0, 'class:newsfeeds-cat', 0, '', 38, 39, 0, '*', 1),
+(16, 'main', 'com_redirect', 'Redirect', '', 'Redirect', 'index.php?option=com_redirect', 'component', 1, 1, 1, 24, 0, '0000-00-00 00:00:00', 0, 0, 'class:redirect', 0, '', 41, 42, 0, '*', 1),
+(17, 'main', 'com_search', 'Basic Search', '', 'Basic Search', 'index.php?option=com_search', 'component', 1, 1, 1, 19, 0, '0000-00-00 00:00:00', 0, 0, 'class:search', 0, '', 43, 44, 0, '*', 1),
+(18, 'main', 'com_finder', 'Smart Search', '', 'Smart Search', 'index.php?option=com_finder', 'component', 1, 1, 1, 27, 0, '0000-00-00 00:00:00', 0, 0, 'class:finder', 0, '', 45, 46, 0, '*', 1),
+(19, 'main', 'com_joomlaupdate', 'Joomla! Update', '', 'Joomla! Update', 'index.php?option=com_joomlaupdate', 'component', 1, 1, 1, 28, 0, '0000-00-00 00:00:00', 0, 0, 'class:joomlaupdate', 0, '', 47, 48, 0, '*', 1),
+(20, 'main', 'com_tags', 'Tags', '', 'Tags', 'index.php?option=com_tags', 'component', 1, 1, 1, 29, 0, '0000-00-00 00:00:00', 0, 1, 'class:tags', 0, '', 49, 50, 0, '', 1),
+(21, 'main', 'com_postinstall', 'Post-installation messages', '', 'Post-installation messages', 'index.php?option=com_postinstall', 'component', 1, 1, 1, 32, 0, '0000-00-00 00:00:00', 0, 1, 'class:postinstall', 0, '', 51, 52, 0, '*', 1),
+(22, 'main', 'com_associations', 'Multilingual Associations', '', 'Multilingual Associations', 'index.php?option=com_associations', 'component', 1, 1, 1, 34, 0, '0000-00-00 00:00:00', 0, 0, 'class:associations', 0, '', 53, 54, 0, '*', 1),
+(101, 'mainmenu', 'Home', 'home', '', 'home', 'index.php?option=com_content&view=article&id=3', 'component', 1, 1, 1, 22, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{\"show_title\":\"\",\"link_titles\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_vote\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_hits\":\"\",\"show_tags\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"menu-anchor_title\":\"\",\"menu-anchor_css\":\"\",\"menu_image\":\"\",\"menu_image_css\":\"\",\"menu_text\":1,\"menu_show\":1,\"page_title\":\"\",\"show_page_heading\":\"1\",\"page_heading\":\"\",\"pageclass_sfx\":\"\",\"menu-meta_description\":\"\",\"menu-meta_keywords\":\"\",\"robots\":\"\",\"secure\":0}', 11, 12, 1, '*', 0),
+(102, 'main', 'com_zoo', 'com-zoo', '', 'com-zoo', 'index.php?option=com_zoo', 'component', 1, 1, 1, 10004, 0, '0000-00-00 00:00:00', 0, 1, 'components/com_zoo/assets/images/zoo_16.png', 0, '{}', 55, 56, 0, '', 1),
+(113, 'main', 'COM_AKEEBA', 'com-akeeba', '', 'com-akeeba', 'index.php?option=com_akeeba', 'component', 1, 1, 1, 10028, 0, '0000-00-00 00:00:00', 0, 1, 'class:component', 0, '{}', 57, 58, 0, '', 1),
+(114, 'main', 'COM_JCE', 'com-jce', '', 'com-jce', 'index.php?option=com_jce&view=cpanel', 'component', 1, 1, 1, 10034, 0, '0000-00-00 00:00:00', 0, 1, 'components/com_jce/media/img/menu/logo.png', 0, '{}', 59, 66, 0, '', 1),
+(115, 'main', 'COM_JCE_MENU_CPANEL', 'com-jce-menu-cpanel', '', 'com-jce/com-jce-menu-cpanel', 'index.php?option=com_jce', 'component', 1, 114, 2, 10034, 0, '0000-00-00 00:00:00', 0, 1, 'class:component', 0, '{}', 60, 61, 0, '', 1),
+(116, 'main', 'COM_JCE_MENU_CONFIG', 'com-jce-menu-config', '', 'com-jce/com-jce-menu-config', 'index.php?option=com_jce&view=config', 'component', 1, 114, 2, 10034, 0, '0000-00-00 00:00:00', 0, 1, 'class:component', 0, '{}', 62, 63, 0, '', 1),
+(117, 'main', 'COM_JCE_MENU_PROFILES', 'com-jce-menu-profiles', '', 'com-jce/com-jce-menu-profiles', 'index.php?option=com_jce&view=profiles', 'component', 1, 114, 2, 10034, 0, '0000-00-00 00:00:00', 0, 1, 'class:component', 0, '{}', 64, 65, 0, '', 1),
+(118, 'mainmenu', 'Магазин', '2020-11-09-14-13-55', '', '2020-11-09-14-13-55', 'index.php?option=com_zoo&view=category&layout=category', 'component', 1, 1, 1, 10004, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{\"category\":\"3\",\"application\":\"1\",\"menu-anchor_title\":\"\",\"menu-anchor_css\":\"\",\"menu_image\":\"\",\"menu_image_css\":\"\",\"menu_text\":0,\"menu_show\":1,\"page_title\":\"\",\"show_page_heading\":\"\",\"page_heading\":\"\",\"pageclass_sfx\":\"\",\"menu-meta_description\":\"\",\"menu-meta_keywords\":\"\",\"robots\":\"\",\"secure\":0}', 13, 22, 0, '*', 0),
+(119, 'mainmenu', 'Склад', '2020-11-09-14-20-54', '', '2020-11-09-14-20-54', 'index.php?option=com_content&view=article&id=2', 'component', 1, 1, 1, 22, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{\"show_title\":\"\",\"link_titles\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_vote\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_hits\":\"\",\"show_tags\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"menu-anchor_title\":\"\",\"menu-anchor_css\":\"\",\"menu_image\":\"\",\"menu_image_css\":\"\",\"menu_text\":1,\"menu_show\":1,\"page_title\":\"\",\"show_page_heading\":\"\",\"page_heading\":\"\",\"pageclass_sfx\":\"\",\"menu-meta_description\":\"\",\"menu-meta_keywords\":\"\",\"robots\":\"\",\"secure\":0}', 23, 24, 0, '*', 0),
+(120, 'mainmenu', 'Лекарственные препараты', '2020-11-10-10-20-56', '', '2020-11-09-14-13-55/2020-11-10-10-20-56', 'index.php?option=com_zoo&view=category&layout=category', 'component', -2, 118, 2, 10004, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{\"category\":\"1\",\"application\":\"1\",\"menu-anchor_title\":\"\",\"menu-anchor_css\":\"\",\"menu_image\":\"\",\"menu_image_css\":\"\",\"menu_text\":1,\"menu_show\":1,\"page_title\":\"\",\"show_page_heading\":\"\",\"page_heading\":\"\",\"pageclass_sfx\":\"\",\"menu-meta_description\":\"\",\"menu-meta_keywords\":\"\",\"robots\":\"\",\"secure\":0}', 14, 15, 0, '*', 0),
+(121, 'mainmenu', 'Медицинское оборудование', '2020-11-10-10-21-22', '', '2020-11-09-14-13-55/2020-11-10-10-21-22', 'index.php?option=com_zoo&view=category&layout=category', 'component', -2, 118, 2, 10004, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{\"category\":\"2\",\"application\":\"1\",\"menu-anchor_title\":\"\",\"menu-anchor_css\":\"\",\"menu_image\":\"\",\"menu_image_css\":\"\",\"menu_text\":1,\"menu_show\":1,\"page_title\":\"\",\"show_page_heading\":\"\",\"page_heading\":\"\",\"pageclass_sfx\":\"\",\"menu-meta_description\":\"\",\"menu-meta_keywords\":\"\",\"robots\":\"\",\"secure\":0}', 16, 17, 0, '*', 0),
+(122, 'mainmenu', 'Медицинское оборудование', '2020-11-10-10-33-38', '', '2020-11-09-14-13-55/2020-11-10-10-33-38', 'index.php?option=com_zoo&view=category&layout=category', 'component', 1, 118, 2, 10004, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{\"category\":\"2\",\"application\":\"1\",\"menu-anchor_title\":\"\",\"menu-anchor_css\":\"\",\"menu_image\":\"\",\"menu_image_css\":\"\",\"menu_text\":1,\"menu_show\":1,\"page_title\":\"\",\"show_page_heading\":\"\",\"page_heading\":\"\",\"pageclass_sfx\":\"\",\"menu-meta_description\":\"\",\"menu-meta_keywords\":\"\",\"robots\":\"\",\"secure\":0}', 18, 19, 0, '*', 0),
+(123, 'mainmenu', 'Лекарственные препараты', '2020-11-10-10-33-54', '', '2020-11-09-14-13-55/2020-11-10-10-33-54', 'index.php?option=com_zoo&view=category&layout=category', 'component', 1, 118, 2, 10004, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{\"category\":\"1\",\"application\":\"1\",\"menu-anchor_title\":\"\",\"menu-anchor_css\":\"\",\"menu_image\":\"\",\"menu_image_css\":\"\",\"menu_text\":1,\"menu_show\":1,\"page_title\":\"\",\"show_page_heading\":\"\",\"page_heading\":\"\",\"pageclass_sfx\":\"\",\"menu-meta_description\":\"\",\"menu-meta_keywords\":\"\",\"robots\":\"\",\"secure\":0}', 20, 21, 0, '*', 0);
 
 -- --------------------------------------------------------
 
@@ -1720,7 +1937,7 @@ CREATE TABLE `ga26l_modules` (
 --
 
 INSERT INTO `ga26l_modules` (`id`, `asset_id`, `title`, `note`, `content`, `ordering`, `position`, `checked_out`, `checked_out_time`, `publish_up`, `publish_down`, `published`, `module`, `access`, `showtitle`, `params`, `client_id`, `language`) VALUES
-(1, 39, 'Main Menu', '', '', 1, 'position-7', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_menu', 1, 1, '{\"menutype\":\"mainmenu\",\"startLevel\":\"0\",\"endLevel\":\"0\",\"showAllChildren\":\"1\",\"tag_id\":\"\",\"class_sfx\":\"\",\"window_open\":\"\",\"layout\":\"\",\"moduleclass_sfx\":\"_menu\",\"cache\":\"1\",\"cache_time\":\"900\",\"cachemode\":\"itemid\"}', 0, '*'),
+(1, 39, 'Main Menu', '', '', 1, 'position-7', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_menu', 1, 1, '{\"menutype\":\"mainmenu\",\"base\":\"\",\"startLevel\":1,\"endLevel\":0,\"showAllChildren\":1,\"tag_id\":\"\",\"class_sfx\":\"nav nav-pills\",\"window_open\":\"\",\"layout\":\"_:default\",\"moduleclass_sfx\":\"_menu\",\"cache\":1,\"cache_time\":900,\"cachemode\":\"itemid\",\"module_tag\":\"div\",\"bootstrap_size\":\"0\",\"header_tag\":\"h3\",\"header_class\":\"\",\"style\":\"0\"}', 0, '*'),
 (2, 40, 'Login', '', '', 1, 'login', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_login', 1, 1, '', 1, '*'),
 (3, 41, 'Popular Articles', '', '', 3, 'cpanel', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_popular', 3, 1, '{\"count\":\"5\",\"catid\":\"\",\"user_id\":\"0\",\"layout\":\"_:default\",\"moduleclass_sfx\":\"\",\"cache\":\"0\"}', 1, '*'),
 (4, 42, 'Recently Added Articles', '', '', 4, 'cpanel', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_latest', 3, 1, '{\"count\":\"5\",\"ordering\":\"c_dsc\",\"catid\":\"\",\"user_id\":\"0\",\"layout\":\"_:default\",\"moduleclass_sfx\":\"\",\"cache\":\"0\"}', 1, '*'),
@@ -1743,12 +1960,13 @@ INSERT INTO `ga26l_modules` (`id`, `asset_id`, `title`, `note`, `content`, `orde
 (92, 64, 'ZOO Item', '', '', 0, '', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'mod_zooitem', 1, 1, '', 0, '*'),
 (93, 65, 'ZOO Quick Icons', '', '', 2, 'icon', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_zooquickicon', 1, 1, '', 1, '*'),
 (94, 66, 'ZOO Tag', '', '', 0, '', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'mod_zootag', 1, 1, '', 0, '*'),
-(95, 67, 'JBZoo Cart', '', '', 0, '', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'mod_jbzoo_basket', 1, 1, '', 0, '*'),
+(95, 67, 'JBZoo Cart', '', '', 1, 'position-7', 0, '0000-00-00 00:00:00', '2020-11-11 08:28:57', '0000-00-00 00:00:00', 0, 'mod_jbzoo_basket', 1, 1, '{\"layout\":\"_:bootstrap\",\"currency\":\"643\",\"jbcart_items\":\"1\",\"jbcart_item_delete\":\"1\",\"jbcart_item_link\":\"1\",\"jbcart_item_image\":\"1\",\"jbcart_item_image_link\":\"1\",\"jbcart_item_image_width\":\"75\",\"jbcart_item_image_height\":\"75\",\"jbcart_item_price\":\"1\",\"jbcart_item_total\":\"0\",\"jbcart_item_quantity\":\"1\",\"jbcart_item_params\":\"1\",\"jbcart_count_items\":\"1\",\"jbcart_count_sku\":\"1\",\"jbcart_totalsum\":\"1\",\"jbcart_button_empty\":\"1\",\"jbcart_button_gotocart\":\"1\",\"moduleclass_sfx\":\"\",\"cache\":\"0\",\"owncache\":\"0\",\"cache_time\":\"0\",\"cachemode\":\"itemid\",\"module_tag\":\"div\",\"bootstrap_size\":\"0\",\"header_tag\":\"h3\",\"header_class\":\"\",\"style\":\"0\"}', 0, '*'),
 (96, 68, 'JBZoo Category List', '', '', 0, '', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'mod_jbzoo_category', 1, 1, '', 0, '*'),
 (97, 69, 'JBZoo Currency', '', '', 0, '', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'mod_jbzoo_currency', 1, 1, '', 0, '*'),
 (98, 70, 'JBZoo Search List', '', '', 0, '', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'mod_jbzoo_props', 1, 1, '', 0, '*'),
 (99, 71, 'JBZoo Search', '', '', 0, '', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'mod_jbzoo_search', 1, 1, '', 0, '*'),
-(100, 72, 'JBZoo Item', '', '', 0, '', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'mod_jbzoo_item', 1, 1, '', 0, '*');
+(100, 72, 'JBZoo Item', '', '', 0, '', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'mod_jbzoo_item', 1, 1, '', 0, '*'),
+(101, 80, 'Корзина', '', NULL, 1, 'position-7', 0, '0000-00-00 00:00:00', '2020-11-11 08:31:30', '0000-00-00 00:00:00', 1, 'mod_jbzoo_basket', 1, 1, '{\"layout\":\"_:bootstrap\",\"currency\":\"643\",\"jbcart_items\":\"1\",\"jbcart_item_delete\":\"1\",\"jbcart_item_link\":\"1\",\"jbcart_item_image\":\"1\",\"jbcart_item_image_link\":\"1\",\"jbcart_item_image_width\":\"75\",\"jbcart_item_image_height\":\"75\",\"jbcart_item_price\":\"1\",\"jbcart_item_total\":\"1\",\"jbcart_item_quantity\":\"1\",\"jbcart_item_params\":\"1\",\"jbcart_count_items\":\"1\",\"jbcart_count_sku\":\"1\",\"jbcart_totalsum\":\"1\",\"jbcart_button_empty\":\"1\",\"jbcart_button_gotocart\":\"1\",\"moduleclass_sfx\":\"\",\"cache\":\"0\",\"owncache\":\"0\",\"cache_time\":\"0\",\"cachemode\":\"itemid\",\"module_tag\":\"div\",\"bootstrap_size\":\"0\",\"header_tag\":\"h3\",\"header_class\":\"\",\"style\":\"0\"}', 0, '*');
 
 -- --------------------------------------------------------
 
@@ -1786,7 +2004,8 @@ INSERT INTO `ga26l_modules_menu` (`moduleid`, `menuid`) VALUES
 (87, 0),
 (88, 0),
 (89, 0),
-(93, 0);
+(93, 0),
+(101, 0);
 
 -- --------------------------------------------------------
 
@@ -1969,8 +2188,8 @@ CREATE TABLE `ga26l_session` (
 --
 
 INSERT INTO `ga26l_session` (`session_id`, `client_id`, `guest`, `time`, `data`, `userid`, `username`) VALUES
-(0x3764373374396c373771347568747268376d72327076707336306d32616a6363, 1, 0, 1604931654, 'joomla|s:2124:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjE6e3M6OToiX19kZWZhdWx0IjtPOjg6InN0ZENsYXNzIjo0OntzOjc6InNlc3Npb24iO086ODoic3RkQ2xhc3MiOjM6e3M6NzoiY291bnRlciI7aTo5MztzOjU6InRva2VuIjtzOjMyOiJqRDcxbzRHaDB1SUxZaG1mTWFyVkpUcElNOWFFbTZVRCI7czo1OiJ0aW1lciI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo1OiJzdGFydCI7aToxNjA0OTMwMDg3O3M6NDoibGFzdCI7aToxNjA0OTMxNjU0O3M6Mzoibm93IjtpOjE2MDQ5MzE2NTQ7fX1zOjg6InJlZ2lzdHJ5IjtPOjI0OiJKb29tbGFcUmVnaXN0cnlcUmVnaXN0cnkiOjM6e3M6NzoiACoAZGF0YSI7Tzo4OiJzdGRDbGFzcyI6NTp7czoxNDoiY29tX2NhdGVnb3JpZXMiO086ODoic3RkQ2xhc3MiOjE6e3M6MTA6ImNhdGVnb3JpZXMiO086ODoic3RkQ2xhc3MiOjE6e3M6NzoiY29udGVudCI7Tzo4OiJzdGRDbGFzcyI6Mjp7czo2OiJmaWx0ZXIiO086ODoic3RkQ2xhc3MiOjE6e3M6OToiZXh0ZW5zaW9uIjtzOjExOiJjb21fY29udGVudCI7fXM6NDoibGlzdCI7YTo0OntzOjk6ImRpcmVjdGlvbiI7czozOiJhc2MiO3M6NToibGltaXQiO3M6MjoiMjAiO3M6ODoib3JkZXJpbmciO3M6NToiYS5sZnQiO3M6NToic3RhcnQiO2Q6MDt9fX19czoxMzoiY29tX2luc3RhbGxlciI7Tzo4OiJzdGRDbGFzcyI6Mjp7czo3OiJtZXNzYWdlIjtzOjA6IiI7czoxNzoiZXh0ZW5zaW9uX21lc3NhZ2UiO3M6MDoiIjt9czoxMDoiY29tX2NvbmZpZyI7Tzo4OiJzdGRDbGFzcyI6MTp7czo2OiJjb25maWciO086ODoic3RkQ2xhc3MiOjE6e3M6NjoiZ2xvYmFsIjtPOjg6InN0ZENsYXNzIjoxOntzOjQ6ImRhdGEiO047fX19czo5OiJjb21fbWVudXMiO086ODoic3RkQ2xhc3MiOjI6e3M6NToiaXRlbXMiO086ODoic3RkQ2xhc3MiOjQ6e3M6ODoibWVudXR5cGUiO3M6ODoibWFpbm1lbnUiO3M6OToiY2xpZW50X2lkIjtpOjA7czoxMDoibGltaXRzdGFydCI7aTowO3M6NDoibGlzdCI7YTo0OntzOjk6ImRpcmVjdGlvbiI7czozOiJhc2MiO3M6NToibGltaXQiO3M6MjoiMjAiO3M6ODoib3JkZXJpbmciO3M6NToiYS5sZnQiO3M6NToic3RhcnQiO2Q6MDt9fXM6NDoiZWRpdCI7Tzo4OiJzdGRDbGFzcyI6MTp7czo0OiJpdGVtIjtPOjg6InN0ZENsYXNzIjo0OntzOjQ6ImRhdGEiO047czo0OiJ0eXBlIjtOO3M6NDoibGluayI7TjtzOjI6ImlkIjthOjA6e319fX1zOjExOiJjb21fY29udGVudCI7Tzo4OiJzdGRDbGFzcyI6MTp7czo0OiJlZGl0IjtPOjg6InN0ZENsYXNzIjoxOntzOjc6ImFydGljbGUiO086ODoic3RkQ2xhc3MiOjI6e3M6NDoiZGF0YSI7TjtzOjI6ImlkIjthOjA6e319fX19czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjk6InNlcGFyYXRvciI7czoxOiIuIjt9czo0OiJ1c2VyIjtPOjIwOiJKb29tbGFcQ01TXFVzZXJcVXNlciI6MTp7czoyOiJpZCI7czozOiI2MzAiO31zOjExOiJhcHBsaWNhdGlvbiI7Tzo4OiJzdGRDbGFzcyI6MTp7czo1OiJxdWV1ZSI7YTowOnt9fX19czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjk6InNlcGFyYXRvciI7czoxOiIuIjt9\";', 630, 'grafoman'),
-(0x61736b6c677374347067306b33747437366f76726f353364693574323763316d, 0, 1, 1604931683, 'joomla|s:736:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjE6e3M6OToiX19kZWZhdWx0IjtPOjg6InN0ZENsYXNzIjozOntzOjc6InNlc3Npb24iO086ODoic3RkQ2xhc3MiOjM6e3M6NzoiY291bnRlciI7aToxODtzOjU6InRva2VuIjtzOjMyOiJteG1wUEUwaHR1b2FVU251NHhLM2dpQkRYeDBwYzY4ciI7czo1OiJ0aW1lciI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo1OiJzdGFydCI7aToxNjA0OTMxMTY4O3M6NDoibGFzdCI7aToxNjA0OTMxNjgxO3M6Mzoibm93IjtpOjE2MDQ5MzE2ODI7fX1zOjg6InJlZ2lzdHJ5IjtPOjI0OiJKb29tbGFcUmVnaXN0cnlcUmVnaXN0cnkiOjM6e3M6NzoiACoAZGF0YSI7Tzo4OiJzdGRDbGFzcyI6MDp7fXM6MTQ6IgAqAGluaXRpYWxpemVkIjtiOjA7czo5OiJzZXBhcmF0b3IiO3M6MToiLiI7fXM6NDoidXNlciI7TzoyMDoiSm9vbWxhXENNU1xVc2VyXFVzZXIiOjE6e3M6MjoiaWQiO2k6MDt9fX1zOjE0OiIAKgBpbml0aWFsaXplZCI7YjowO3M6OToic2VwYXJhdG9yIjtzOjE6Ii4iO30=\";', 0, '');
+(0x62376935337131356f6a6f3574616a706e756e386f6530376472736935616c30, 1, 0, 1605094313, 'joomla|s:2572:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjE6e3M6OToiX19kZWZhdWx0IjtPOjg6InN0ZENsYXNzIjo0OntzOjc6InNlc3Npb24iO086ODoic3RkQ2xhc3MiOjM6e3M6NzoiY291bnRlciI7aToyNjE7czo1OiJ0b2tlbiI7czozMjoiOFRFUXhyQ1Q0YXJ5cFlRMFhIelkxVEpNUUN4SWdLOHYiO3M6NToidGltZXIiO086ODoic3RkQ2xhc3MiOjM6e3M6NToic3RhcnQiO2k6MTYwNTA4Mjc4OTtzOjQ6Imxhc3QiO2k6MTYwNTA5NDMwOTtzOjM6Im5vdyI7aToxNjA1MDk0MzEyO319czo4OiJyZWdpc3RyeSI7TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjQ6e3M6MTM6ImNvbV9pbnN0YWxsZXIiO086ODoic3RkQ2xhc3MiOjI6e3M6NzoibWVzc2FnZSI7czowOiIiO3M6MTc6ImV4dGVuc2lvbl9tZXNzYWdlIjtzOjA6IiI7fXM6MTE6ImNvbV9tb2R1bGVzIjtPOjg6InN0ZENsYXNzIjoyOntzOjQ6ImVkaXQiO086ODoic3RkQ2xhc3MiOjE6e3M6NjoibW9kdWxlIjtPOjg6InN0ZENsYXNzIjoyOntzOjQ6ImRhdGEiO047czoyOiJpZCI7YTowOnt9fX1zOjM6ImFkZCI7Tzo4OiJzdGRDbGFzcyI6MTp7czo2OiJtb2R1bGUiO086ODoic3RkQ2xhc3MiOjI6e3M6MTI6ImV4dGVuc2lvbl9pZCI7TjtzOjY6InBhcmFtcyI7Tjt9fX1zOjY6ImpiY2FydCI7Tzo4OiJzdGRDbGFzcyI6ODp7czoxMzoic2F2ZXBvc2l0aW9ucyI7Tzo4OiJzdGRDbGFzcyI6Mjp7czo3OiJlbGVtZW50IjtzOjA6IiI7czo2OiJsYXlvdXQiO3M6MDoiIjt9czo5OiJwcmljZXRtcGwiO086ODoic3RkQ2xhc3MiOjI6e3M6NzoiZWxlbWVudCI7czozNjoiMDhhMGJiZGEtY2VmYS00MDZhLWEwMmEtYTdkY2IxYWRkNDNiIjtzOjY6ImxheW91dCI7czo2OiJ0ZWFzZXIiO31zOjM4OiJqYmNhcnRqYnVuaXZlcnNhbGNvbnRyb2xsZXI6OnByaWNldG1wbCI7Tzo4OiJzdGRDbGFzcyI6Mjp7czo3OiJlbGVtZW50IjtzOjM2OiIwOGEwYmJkYS1jZWZhLTQwNmEtYTAyYS1hN2RjYjFhZGQ0M2IiO3M6NjoibGF5b3V0IjtzOjY6InRlYXNlciI7fXM6MTg6InNhdmVwcmljZXBvc2l0aW9ucyI7Tzo4OiJzdGRDbGFzcyI6Mjp7czo3OiJlbGVtZW50IjtzOjM2OiIzY2NkNzI2Yi00ZGY3LTQ3NDEtODE1My1mYWEwZmNjOTEzMGYiO3M6NjoibGF5b3V0IjtzOjY6InRlYXNlciI7fXM6OToiZW1haWx0bXBsIjtPOjg6InN0ZENsYXNzIjoyOntzOjc6ImVsZW1lbnQiO3M6MDoiIjtzOjY6ImxheW91dCI7czo3OiJkZWZhdWx0Ijt9czoxNToicHJpY2VmaWx0ZXJ0bXBsIjtPOjg6InN0ZENsYXNzIjoyOntzOjc6ImVsZW1lbnQiO3M6MzY6IjA4YTBiYmRhLWNlZmEtNDA2YS1hMDJhLWE3ZGNiMWFkZDQzYiI7czo2OiJsYXlvdXQiO3M6NzoiZGVmYXVsdCI7fXM6NDQ6ImpiY2FydGpidW5pdmVyc2FsY29udHJvbGxlcjo6cHJpY2VmaWx0ZXJ0bXBsIjtPOjg6InN0ZENsYXNzIjoyOntzOjc6ImVsZW1lbnQiO3M6MzY6IjA4YTBiYmRhLWNlZmEtNDA2YS1hMDJhLWE3ZGNiMWFkZDQzYiI7czo2OiJsYXlvdXQiO3M6NzoiZGVmYXVsdCI7fXM6NToicHJpY2UiO086ODoic3RkQ2xhc3MiOjE6e3M6NzoiZWxlbWVudCI7czozNjoiM2NjZDcyNmItNGRmNy00NzQxLTgxNTMtZmFhMGZjYzkxMzBmIjt9fXM6MTg6ImNvbV96b29hcHBsaWNhdGlvbiI7aToxO31zOjE0OiIAKgBpbml0aWFsaXplZCI7YjowO3M6OToic2VwYXJhdG9yIjtzOjE6Ii4iO31zOjQ6InVzZXIiO086MjA6Ikpvb21sYVxDTVNcVXNlclxVc2VyIjoxOntzOjI6ImlkIjtzOjM6IjYzMCI7fXM6MTE6ImFwcGxpY2F0aW9uIjtPOjg6InN0ZENsYXNzIjoxOntzOjU6InF1ZXVlIjthOjA6e319fX1zOjE0OiIAKgBpbml0aWFsaXplZCI7YjowO3M6OToic2VwYXJhdG9yIjtzOjE6Ii4iO30=\";', 630, 'grafoman'),
+(0x6f6932343138676a39323464663375736e3330766a626f75746d337031686c63, 0, 1, 1605094212, 'joomla|s:1168:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjI6e3M6OToiX19kZWZhdWx0IjtPOjg6InN0ZENsYXNzIjo0OntzOjc6InNlc3Npb24iO086ODoic3RkQ2xhc3MiOjM6e3M6NzoiY291bnRlciI7aToxMDtzOjU6InRva2VuIjtzOjMyOiJWRWtrbHVjdGJjQlliUTJlM2xOZWlGUTA5MzRLZWhiTCI7czo1OiJ0aW1lciI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo1OiJzdGFydCI7aToxNjA1MDk0MTc2O3M6NDoibGFzdCI7aToxNjA1MDk0MjAwO3M6Mzoibm93IjtpOjE2MDUwOTQyMTA7fX1zOjg6InJlZ2lzdHJ5IjtPOjI0OiJKb29tbGFcUmVnaXN0cnlcUmVnaXN0cnkiOjM6e3M6NzoiACoAZGF0YSI7Tzo4OiJzdGRDbGFzcyI6MDp7fXM6MTQ6IgAqAGluaXRpYWxpemVkIjtiOjA7czo5OiJzZXBhcmF0b3IiO3M6MToiLiI7fXM6NDoidXNlciI7TzoyMDoiSm9vbWxhXENNU1xVc2VyXFVzZXIiOjE6e3M6MjoiaWQiO2k6MDt9czoxMToiYXBwbGljYXRpb24iO086ODoic3RkQ2xhc3MiOjE6e3M6NToicXVldWUiO2E6MDp7fX19czo3OiJfX2piem9vIjtPOjg6InN0ZENsYXNzIjoxOntzOjY6ImpiY2FydCI7YToyOntzOjU6Iml0ZW1zIjthOjA6e31zOjg6InNoaXBwaW5nIjthOjI6e3M6MTI6Il9zaGlwcGluZ19pZCI7czozNjoiNGM0ZTc0NTUtNjBlNy00MjlhLTg3NDktY2ZjZWIzNzZiMjBjIjtzOjM2OiI0YzRlNzQ1NS02MGU3LTQyOWEtODc0OS1jZmNlYjM3NmIyMGMiO2E6MTp7czoxMDoiZWxlbWVudF9pZCI7czozNjoiNGM0ZTc0NTUtNjBlNy00MjlhLTg3NDktY2ZjZWIzNzZiMjBjIjt9fX19fXM6MTQ6IgAqAGluaXRpYWxpemVkIjtiOjA7czo5OiJzZXBhcmF0b3IiO3M6MToiLiI7fQ==\";', 0, '');
 
 -- --------------------------------------------------------
 
@@ -2153,85 +2372,85 @@ CREATE TABLE `ga26l_updates` (
 --
 
 INSERT INTO `ga26l_updates` (`update_id`, `update_site_id`, `extension_id`, `name`, `description`, `element`, `type`, `folder`, `client_id`, `version`, `data`, `detailsurl`, `infourl`, `extra_query`) VALUES
-(80, 2, 0, 'Armenian', '', 'pkg_hy-AM', 'package', '', 0, '3.4.4.1', '', 'https://update.joomla.org/language/details3/hy-AM_details.xml', '', ''),
-(81, 2, 0, 'Malay', '', 'pkg_ms-MY', 'package', '', 0, '3.4.1.2', '', 'https://update.joomla.org/language/details3/ms-MY_details.xml', '', ''),
-(82, 2, 0, 'Romanian', '', 'pkg_ro-RO', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/ro-RO_details.xml', '', ''),
-(83, 2, 0, 'Flemish', '', 'pkg_nl-BE', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/nl-BE_details.xml', '', ''),
-(84, 2, 0, 'Chinese Traditional', '', 'pkg_zh-TW', 'package', '', 0, '3.8.0.1', '', 'https://update.joomla.org/language/details3/zh-TW_details.xml', '', ''),
-(85, 2, 0, 'French', '', 'pkg_fr-FR', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/fr-FR_details.xml', '', ''),
-(86, 2, 0, 'Galician', '', 'pkg_gl-ES', 'package', '', 0, '3.3.1.2', '', 'https://update.joomla.org/language/details3/gl-ES_details.xml', '', ''),
-(87, 2, 0, 'Georgian', '', 'pkg_ka-GE', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/ka-GE_details.xml', '', ''),
-(88, 2, 0, 'Greek', '', 'pkg_el-GR', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/el-GR_details.xml', '', ''),
-(89, 2, 0, 'Japanese', '', 'pkg_ja-JP', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/ja-JP_details.xml', '', ''),
-(90, 2, 0, 'Hebrew', '', 'pkg_he-IL', 'package', '', 0, '3.1.1.2', '', 'https://update.joomla.org/language/details3/he-IL_details.xml', '', ''),
-(91, 2, 0, 'Bengali', '', 'pkg_bn-BD', 'package', '', 0, '3.8.10.1', '', 'https://update.joomla.org/language/details3/bn-BD_details.xml', '', ''),
-(92, 2, 0, 'Hungarian', '', 'pkg_hu-HU', 'package', '', 0, '3.9.19.1', '', 'https://update.joomla.org/language/details3/hu-HU_details.xml', '', ''),
-(93, 2, 0, 'Afrikaans', '', 'pkg_af-ZA', 'package', '', 0, '3.9.16.1', '', 'https://update.joomla.org/language/details3/af-ZA_details.xml', '', ''),
-(94, 2, 0, 'Arabic Unitag', '', 'pkg_ar-AA', 'package', '', 0, '3.9.21.1', '', 'https://update.joomla.org/language/details3/ar-AA_details.xml', '', ''),
-(95, 2, 0, 'Belarusian', '', 'pkg_be-BY', 'package', '', 0, '3.2.1.2', '', 'https://update.joomla.org/language/details3/be-BY_details.xml', '', ''),
-(96, 2, 0, 'Bulgarian', '', 'pkg_bg-BG', 'package', '', 0, '3.6.5.2', '', 'https://update.joomla.org/language/details3/bg-BG_details.xml', '', ''),
-(97, 2, 0, 'Catalan', '', 'pkg_ca-ES', 'package', '', 0, '3.9.23.1', '', 'https://update.joomla.org/language/details3/ca-ES_details.xml', '', ''),
-(98, 2, 0, 'Chinese Simplified', '', 'pkg_zh-CN', 'package', '', 0, '3.9.22.2', '', 'https://update.joomla.org/language/details3/zh-CN_details.xml', '', ''),
-(99, 2, 0, 'Croatian', '', 'pkg_hr-HR', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/hr-HR_details.xml', '', ''),
-(100, 2, 0, 'Czech', '', 'pkg_cs-CZ', 'package', '', 0, '3.9.22.2', '', 'https://update.joomla.org/language/details3/cs-CZ_details.xml', '', ''),
-(101, 2, 0, 'Danish', '', 'pkg_da-DK', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/da-DK_details.xml', '', ''),
-(102, 2, 0, 'Dutch', '', 'pkg_nl-NL', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/nl-NL_details.xml', '', ''),
-(103, 2, 0, 'Esperanto', '', 'pkg_eo-XX', 'package', '', 0, '3.8.11.1', '', 'https://update.joomla.org/language/details3/eo-XX_details.xml', '', ''),
-(104, 2, 0, 'Estonian', '', 'pkg_et-EE', 'package', '', 0, '3.9.21.1', '', 'https://update.joomla.org/language/details3/et-EE_details.xml', '', ''),
-(105, 2, 0, 'Italian', '', 'pkg_it-IT', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/it-IT_details.xml', '', ''),
-(106, 2, 0, 'Khmer', '', 'pkg_km-KH', 'package', '', 0, '3.4.5.1', '', 'https://update.joomla.org/language/details3/km-KH_details.xml', '', ''),
-(107, 2, 0, 'Korean', '', 'pkg_ko-KR', 'package', '', 0, '3.8.9.1', '', 'https://update.joomla.org/language/details3/ko-KR_details.xml', '', ''),
-(108, 2, 0, 'Latvian', '', 'pkg_lv-LV', 'package', '', 0, '3.7.3.1', '', 'https://update.joomla.org/language/details3/lv-LV_details.xml', '', ''),
-(109, 2, 0, 'Lithuanian', '', 'pkg_lt-LT', 'package', '', 0, '3.9.16.1', '', 'https://update.joomla.org/language/details3/lt-LT_details.xml', '', ''),
-(110, 2, 0, 'Macedonian', '', 'pkg_mk-MK', 'package', '', 0, '3.6.5.1', '', 'https://update.joomla.org/language/details3/mk-MK_details.xml', '', ''),
-(111, 2, 0, 'Norwegian Bokmal', '', 'pkg_nb-NO', 'package', '', 0, '3.8.11.1', '', 'https://update.joomla.org/language/details3/nb-NO_details.xml', '', ''),
-(112, 2, 0, 'Norwegian Nynorsk', '', 'pkg_nn-NO', 'package', '', 0, '3.4.2.1', '', 'https://update.joomla.org/language/details3/nn-NO_details.xml', '', ''),
-(113, 2, 0, 'Persian', '', 'pkg_fa-IR', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/fa-IR_details.xml', '', ''),
-(114, 2, 0, 'Polish', '', 'pkg_pl-PL', 'package', '', 0, '3.9.13.1', '', 'https://update.joomla.org/language/details3/pl-PL_details.xml', '', ''),
-(115, 2, 0, 'Portuguese', '', 'pkg_pt-PT', 'package', '', 0, '3.9.15.1', '', 'https://update.joomla.org/language/details3/pt-PT_details.xml', '', ''),
-(116, 2, 0, 'English AU', '', 'pkg_en-AU', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/en-AU_details.xml', '', ''),
-(117, 2, 0, 'Slovak', '', 'pkg_sk-SK', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/sk-SK_details.xml', '', ''),
-(118, 2, 0, 'English US', '', 'pkg_en-US', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/en-US_details.xml', '', ''),
-(119, 2, 0, 'Swedish', '', 'pkg_sv-SE', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/sv-SE_details.xml', '', ''),
-(120, 2, 0, 'Syriac', '', 'pkg_sy-IQ', 'package', '', 0, '3.4.5.1', '', 'https://update.joomla.org/language/details3/sy-IQ_details.xml', '', ''),
-(121, 2, 0, 'Tamil', '', 'pkg_ta-IN', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/ta-IN_details.xml', '', ''),
-(122, 2, 0, 'Thai', '', 'pkg_th-TH', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/th-TH_details.xml', '', ''),
-(123, 2, 0, 'Turkish', '', 'pkg_tr-TR', 'package', '', 0, '3.9.4.1', '', 'https://update.joomla.org/language/details3/tr-TR_details.xml', '', ''),
-(124, 2, 0, 'Ukrainian', '', 'pkg_uk-UA', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/uk-UA_details.xml', '', ''),
-(125, 2, 0, 'Uyghur', '', 'pkg_ug-CN', 'package', '', 0, '3.7.5.2', '', 'https://update.joomla.org/language/details3/ug-CN_details.xml', '', ''),
-(126, 2, 0, 'Albanian', '', 'pkg_sq-AL', 'package', '', 0, '3.1.1.2', '', 'https://update.joomla.org/language/details3/sq-AL_details.xml', '', ''),
-(127, 2, 0, 'Basque', '', 'pkg_eu-ES', 'package', '', 0, '3.7.5.1', '', 'https://update.joomla.org/language/details3/eu-ES_details.xml', '', ''),
-(128, 2, 0, 'Hindi', '', 'pkg_hi-IN', 'package', '', 0, '3.3.6.2', '', 'https://update.joomla.org/language/details3/hi-IN_details.xml', '', ''),
-(129, 2, 0, 'German DE', '', 'pkg_de-DE', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/de-DE_details.xml', '', ''),
-(130, 2, 0, 'Portuguese Brazil', '', 'pkg_pt-BR', 'package', '', 0, '3.9.21.1', '', 'https://update.joomla.org/language/details3/pt-BR_details.xml', '', ''),
-(131, 2, 0, 'Serbian Latin', '', 'pkg_sr-YU', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/sr-YU_details.xml', '', ''),
-(132, 2, 0, 'Spanish', '', 'pkg_es-ES', 'package', '', 0, '3.9.18.1', '', 'https://update.joomla.org/language/details3/es-ES_details.xml', '', ''),
-(133, 2, 0, 'Bosnian', '', 'pkg_bs-BA', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/bs-BA_details.xml', '', ''),
-(134, 2, 0, 'Serbian Cyrillic', '', 'pkg_sr-RS', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/sr-RS_details.xml', '', ''),
-(135, 2, 0, 'Vietnamese', '', 'pkg_vi-VN', 'package', '', 0, '3.2.1.2', '', 'https://update.joomla.org/language/details3/vi-VN_details.xml', '', ''),
-(136, 2, 0, 'Bahasa Indonesia', '', 'pkg_id-ID', 'package', '', 0, '3.6.2.1', '', 'https://update.joomla.org/language/details3/id-ID_details.xml', '', ''),
-(137, 2, 0, 'Finnish', '', 'pkg_fi-FI', 'package', '', 0, '3.9.16.1', '', 'https://update.joomla.org/language/details3/fi-FI_details.xml', '', ''),
-(138, 2, 0, 'Swahili', '', 'pkg_sw-KE', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/sw-KE_details.xml', '', ''),
-(139, 2, 0, 'Montenegrin', '', 'pkg_srp-ME', 'package', '', 0, '3.3.1.2', '', 'https://update.joomla.org/language/details3/srp-ME_details.xml', '', ''),
-(140, 2, 0, 'English CA', '', 'pkg_en-CA', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/en-CA_details.xml', '', ''),
-(141, 2, 0, 'French CA', '', 'pkg_fr-CA', 'package', '', 0, '3.6.5.1', '', 'https://update.joomla.org/language/details3/fr-CA_details.xml', '', ''),
-(142, 2, 0, 'Welsh', '', 'pkg_cy-GB', 'package', '', 0, '3.9.21.1', '', 'https://update.joomla.org/language/details3/cy-GB_details.xml', '', ''),
-(143, 2, 0, 'Sinhala', '', 'pkg_si-LK', 'package', '', 0, '3.3.1.2', '', 'https://update.joomla.org/language/details3/si-LK_details.xml', '', ''),
-(144, 2, 0, 'Dari Persian', '', 'pkg_prs-AF', 'package', '', 0, '3.4.4.3', '', 'https://update.joomla.org/language/details3/prs-AF_details.xml', '', ''),
-(145, 2, 0, 'Turkmen', '', 'pkg_tk-TM', 'package', '', 0, '3.5.0.2', '', 'https://update.joomla.org/language/details3/tk-TM_details.xml', '', ''),
-(146, 2, 0, 'Irish', '', 'pkg_ga-IE', 'package', '', 0, '3.8.13.1', '', 'https://update.joomla.org/language/details3/ga-IE_details.xml', '', ''),
-(147, 2, 0, 'Dzongkha', '', 'pkg_dz-BT', 'package', '', 0, '3.6.2.1', '', 'https://update.joomla.org/language/details3/dz-BT_details.xml', '', ''),
-(148, 2, 0, 'Slovenian', '', 'pkg_sl-SI', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/sl-SI_details.xml', '', ''),
-(149, 2, 0, 'Spanish CO', '', 'pkg_es-CO', 'package', '', 0, '3.9.15.1', '', 'https://update.joomla.org/language/details3/es-CO_details.xml', '', ''),
-(150, 2, 0, 'German CH', '', 'pkg_de-CH', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/de-CH_details.xml', '', ''),
-(151, 2, 0, 'German AT', '', 'pkg_de-AT', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/de-AT_details.xml', '', ''),
-(152, 2, 0, 'German LI', '', 'pkg_de-LI', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/de-LI_details.xml', '', ''),
-(153, 2, 0, 'German LU', '', 'pkg_de-LU', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/de-LU_details.xml', '', ''),
-(154, 2, 0, 'English NZ', '', 'pkg_en-NZ', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/en-NZ_details.xml', '', ''),
-(155, 2, 0, 'Kazakh', '', 'pkg_kk-KZ', 'package', '', 0, '3.9.21.1', '', 'https://update.joomla.org/language/details3/kk-KZ_details.xml', '', ''),
-(156, 8, 0, 'FOF 3.x Stable', '', 'lib_fof30', 'library', '', 1, '3.6.2', '', 'http://cdn.akeeba.com/updates/fof3_file.xml', 'https://www.akeebabackup.com/download/fof3/3-6-2.html', ''),
-(157, 9, 0, 'Akeeba Frontend Framework (FEF)', '', 'file_fef', 'file', '', 1, '1.1.0', '', 'http://cdn.akeeba.com/updates/fef.xml', 'https://www.akeeba.com/download/fef/1-1-0.html', ''),
-(158, 11, 10042, 'JCE 2.9.1', 'Installation package for Joomla! 3.x and 4.x', 'pkg_jce', 'package', '', 0, '2.9.1', '', 'https://cdn.joomlacontenteditor.net/updates/xml/editor/pkg_jce.xml', 'https://www.joomlacontenteditor.net/news/jce-pro-2-9-0-released', '');
+(317, 2, 0, 'Armenian', '', 'pkg_hy-AM', 'package', '', 0, '3.4.4.1', '', 'https://update.joomla.org/language/details3/hy-AM_details.xml', '', ''),
+(318, 2, 0, 'Malay', '', 'pkg_ms-MY', 'package', '', 0, '3.4.1.2', '', 'https://update.joomla.org/language/details3/ms-MY_details.xml', '', ''),
+(319, 2, 0, 'Romanian', '', 'pkg_ro-RO', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/ro-RO_details.xml', '', ''),
+(320, 2, 0, 'Flemish', '', 'pkg_nl-BE', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/nl-BE_details.xml', '', ''),
+(321, 2, 0, 'Chinese Traditional', '', 'pkg_zh-TW', 'package', '', 0, '3.8.0.1', '', 'https://update.joomla.org/language/details3/zh-TW_details.xml', '', ''),
+(322, 2, 0, 'French', '', 'pkg_fr-FR', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/fr-FR_details.xml', '', ''),
+(323, 2, 0, 'Galician', '', 'pkg_gl-ES', 'package', '', 0, '3.3.1.2', '', 'https://update.joomla.org/language/details3/gl-ES_details.xml', '', ''),
+(324, 2, 0, 'Georgian', '', 'pkg_ka-GE', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/ka-GE_details.xml', '', ''),
+(325, 2, 0, 'Greek', '', 'pkg_el-GR', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/el-GR_details.xml', '', ''),
+(326, 2, 0, 'Japanese', '', 'pkg_ja-JP', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/ja-JP_details.xml', '', ''),
+(327, 2, 0, 'Hebrew', '', 'pkg_he-IL', 'package', '', 0, '3.1.1.2', '', 'https://update.joomla.org/language/details3/he-IL_details.xml', '', ''),
+(328, 2, 0, 'Bengali', '', 'pkg_bn-BD', 'package', '', 0, '3.8.10.1', '', 'https://update.joomla.org/language/details3/bn-BD_details.xml', '', ''),
+(329, 2, 0, 'Hungarian', '', 'pkg_hu-HU', 'package', '', 0, '3.9.19.1', '', 'https://update.joomla.org/language/details3/hu-HU_details.xml', '', ''),
+(330, 2, 0, 'Afrikaans', '', 'pkg_af-ZA', 'package', '', 0, '3.9.16.1', '', 'https://update.joomla.org/language/details3/af-ZA_details.xml', '', ''),
+(331, 2, 0, 'Arabic Unitag', '', 'pkg_ar-AA', 'package', '', 0, '3.9.21.1', '', 'https://update.joomla.org/language/details3/ar-AA_details.xml', '', ''),
+(332, 2, 0, 'Belarusian', '', 'pkg_be-BY', 'package', '', 0, '3.2.1.2', '', 'https://update.joomla.org/language/details3/be-BY_details.xml', '', ''),
+(333, 2, 0, 'Bulgarian', '', 'pkg_bg-BG', 'package', '', 0, '3.6.5.2', '', 'https://update.joomla.org/language/details3/bg-BG_details.xml', '', ''),
+(334, 2, 0, 'Catalan', '', 'pkg_ca-ES', 'package', '', 0, '3.9.23.1', '', 'https://update.joomla.org/language/details3/ca-ES_details.xml', '', ''),
+(335, 2, 0, 'Chinese Simplified', '', 'pkg_zh-CN', 'package', '', 0, '3.9.22.2', '', 'https://update.joomla.org/language/details3/zh-CN_details.xml', '', ''),
+(336, 2, 0, 'Croatian', '', 'pkg_hr-HR', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/hr-HR_details.xml', '', ''),
+(337, 2, 0, 'Czech', '', 'pkg_cs-CZ', 'package', '', 0, '3.9.22.2', '', 'https://update.joomla.org/language/details3/cs-CZ_details.xml', '', ''),
+(338, 2, 0, 'Danish', '', 'pkg_da-DK', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/da-DK_details.xml', '', ''),
+(339, 2, 0, 'Dutch', '', 'pkg_nl-NL', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/nl-NL_details.xml', '', ''),
+(340, 2, 0, 'Esperanto', '', 'pkg_eo-XX', 'package', '', 0, '3.8.11.1', '', 'https://update.joomla.org/language/details3/eo-XX_details.xml', '', ''),
+(341, 2, 0, 'Estonian', '', 'pkg_et-EE', 'package', '', 0, '3.9.21.1', '', 'https://update.joomla.org/language/details3/et-EE_details.xml', '', ''),
+(342, 2, 0, 'Italian', '', 'pkg_it-IT', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/it-IT_details.xml', '', ''),
+(343, 2, 0, 'Khmer', '', 'pkg_km-KH', 'package', '', 0, '3.4.5.1', '', 'https://update.joomla.org/language/details3/km-KH_details.xml', '', ''),
+(344, 2, 0, 'Korean', '', 'pkg_ko-KR', 'package', '', 0, '3.8.9.1', '', 'https://update.joomla.org/language/details3/ko-KR_details.xml', '', ''),
+(345, 2, 0, 'Latvian', '', 'pkg_lv-LV', 'package', '', 0, '3.7.3.1', '', 'https://update.joomla.org/language/details3/lv-LV_details.xml', '', ''),
+(346, 2, 0, 'Lithuanian', '', 'pkg_lt-LT', 'package', '', 0, '3.9.16.1', '', 'https://update.joomla.org/language/details3/lt-LT_details.xml', '', ''),
+(347, 2, 0, 'Macedonian', '', 'pkg_mk-MK', 'package', '', 0, '3.6.5.1', '', 'https://update.joomla.org/language/details3/mk-MK_details.xml', '', ''),
+(348, 2, 0, 'Norwegian Bokmal', '', 'pkg_nb-NO', 'package', '', 0, '3.8.11.1', '', 'https://update.joomla.org/language/details3/nb-NO_details.xml', '', ''),
+(349, 2, 0, 'Norwegian Nynorsk', '', 'pkg_nn-NO', 'package', '', 0, '3.4.2.1', '', 'https://update.joomla.org/language/details3/nn-NO_details.xml', '', ''),
+(350, 2, 0, 'Persian', '', 'pkg_fa-IR', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/fa-IR_details.xml', '', ''),
+(351, 2, 0, 'Polish', '', 'pkg_pl-PL', 'package', '', 0, '3.9.13.1', '', 'https://update.joomla.org/language/details3/pl-PL_details.xml', '', ''),
+(352, 2, 0, 'Portuguese', '', 'pkg_pt-PT', 'package', '', 0, '3.9.15.1', '', 'https://update.joomla.org/language/details3/pt-PT_details.xml', '', ''),
+(353, 2, 0, 'English AU', '', 'pkg_en-AU', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/en-AU_details.xml', '', ''),
+(354, 2, 0, 'Slovak', '', 'pkg_sk-SK', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/sk-SK_details.xml', '', ''),
+(355, 2, 0, 'English US', '', 'pkg_en-US', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/en-US_details.xml', '', ''),
+(356, 2, 0, 'Swedish', '', 'pkg_sv-SE', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/sv-SE_details.xml', '', ''),
+(357, 2, 0, 'Syriac', '', 'pkg_sy-IQ', 'package', '', 0, '3.4.5.1', '', 'https://update.joomla.org/language/details3/sy-IQ_details.xml', '', ''),
+(358, 2, 0, 'Tamil', '', 'pkg_ta-IN', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/ta-IN_details.xml', '', ''),
+(359, 2, 0, 'Thai', '', 'pkg_th-TH', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/th-TH_details.xml', '', ''),
+(360, 2, 0, 'Turkish', '', 'pkg_tr-TR', 'package', '', 0, '3.9.4.1', '', 'https://update.joomla.org/language/details3/tr-TR_details.xml', '', ''),
+(361, 2, 0, 'Ukrainian', '', 'pkg_uk-UA', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/uk-UA_details.xml', '', ''),
+(362, 2, 0, 'Uyghur', '', 'pkg_ug-CN', 'package', '', 0, '3.7.5.2', '', 'https://update.joomla.org/language/details3/ug-CN_details.xml', '', ''),
+(363, 2, 0, 'Albanian', '', 'pkg_sq-AL', 'package', '', 0, '3.1.1.2', '', 'https://update.joomla.org/language/details3/sq-AL_details.xml', '', ''),
+(364, 2, 0, 'Basque', '', 'pkg_eu-ES', 'package', '', 0, '3.7.5.1', '', 'https://update.joomla.org/language/details3/eu-ES_details.xml', '', ''),
+(365, 2, 0, 'Hindi', '', 'pkg_hi-IN', 'package', '', 0, '3.3.6.2', '', 'https://update.joomla.org/language/details3/hi-IN_details.xml', '', ''),
+(366, 2, 0, 'German DE', '', 'pkg_de-DE', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/de-DE_details.xml', '', ''),
+(367, 2, 0, 'Portuguese Brazil', '', 'pkg_pt-BR', 'package', '', 0, '3.9.21.1', '', 'https://update.joomla.org/language/details3/pt-BR_details.xml', '', ''),
+(368, 2, 0, 'Serbian Latin', '', 'pkg_sr-YU', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/sr-YU_details.xml', '', ''),
+(369, 2, 0, 'Spanish', '', 'pkg_es-ES', 'package', '', 0, '3.9.18.1', '', 'https://update.joomla.org/language/details3/es-ES_details.xml', '', ''),
+(370, 2, 0, 'Bosnian', '', 'pkg_bs-BA', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/bs-BA_details.xml', '', ''),
+(371, 2, 0, 'Serbian Cyrillic', '', 'pkg_sr-RS', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/sr-RS_details.xml', '', ''),
+(372, 2, 0, 'Vietnamese', '', 'pkg_vi-VN', 'package', '', 0, '3.2.1.2', '', 'https://update.joomla.org/language/details3/vi-VN_details.xml', '', ''),
+(373, 2, 0, 'Bahasa Indonesia', '', 'pkg_id-ID', 'package', '', 0, '3.6.2.1', '', 'https://update.joomla.org/language/details3/id-ID_details.xml', '', ''),
+(374, 2, 0, 'Finnish', '', 'pkg_fi-FI', 'package', '', 0, '3.9.16.1', '', 'https://update.joomla.org/language/details3/fi-FI_details.xml', '', ''),
+(375, 2, 0, 'Swahili', '', 'pkg_sw-KE', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/sw-KE_details.xml', '', ''),
+(376, 2, 0, 'Montenegrin', '', 'pkg_srp-ME', 'package', '', 0, '3.3.1.2', '', 'https://update.joomla.org/language/details3/srp-ME_details.xml', '', ''),
+(377, 2, 0, 'English CA', '', 'pkg_en-CA', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/en-CA_details.xml', '', ''),
+(378, 2, 0, 'French CA', '', 'pkg_fr-CA', 'package', '', 0, '3.6.5.1', '', 'https://update.joomla.org/language/details3/fr-CA_details.xml', '', ''),
+(379, 2, 0, 'Welsh', '', 'pkg_cy-GB', 'package', '', 0, '3.9.21.1', '', 'https://update.joomla.org/language/details3/cy-GB_details.xml', '', ''),
+(380, 2, 0, 'Sinhala', '', 'pkg_si-LK', 'package', '', 0, '3.3.1.2', '', 'https://update.joomla.org/language/details3/si-LK_details.xml', '', ''),
+(381, 2, 0, 'Dari Persian', '', 'pkg_prs-AF', 'package', '', 0, '3.4.4.3', '', 'https://update.joomla.org/language/details3/prs-AF_details.xml', '', ''),
+(382, 2, 0, 'Turkmen', '', 'pkg_tk-TM', 'package', '', 0, '3.5.0.2', '', 'https://update.joomla.org/language/details3/tk-TM_details.xml', '', ''),
+(383, 2, 0, 'Irish', '', 'pkg_ga-IE', 'package', '', 0, '3.8.13.1', '', 'https://update.joomla.org/language/details3/ga-IE_details.xml', '', ''),
+(384, 2, 0, 'Dzongkha', '', 'pkg_dz-BT', 'package', '', 0, '3.6.2.1', '', 'https://update.joomla.org/language/details3/dz-BT_details.xml', '', ''),
+(385, 2, 0, 'Slovenian', '', 'pkg_sl-SI', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/sl-SI_details.xml', '', ''),
+(386, 2, 0, 'Spanish CO', '', 'pkg_es-CO', 'package', '', 0, '3.9.15.1', '', 'https://update.joomla.org/language/details3/es-CO_details.xml', '', ''),
+(387, 2, 0, 'German CH', '', 'pkg_de-CH', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/de-CH_details.xml', '', ''),
+(388, 2, 0, 'German AT', '', 'pkg_de-AT', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/de-AT_details.xml', '', ''),
+(389, 2, 0, 'German LI', '', 'pkg_de-LI', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/de-LI_details.xml', '', ''),
+(390, 2, 0, 'German LU', '', 'pkg_de-LU', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/de-LU_details.xml', '', ''),
+(391, 2, 0, 'English NZ', '', 'pkg_en-NZ', 'package', '', 0, '3.9.22.1', '', 'https://update.joomla.org/language/details3/en-NZ_details.xml', '', ''),
+(392, 2, 0, 'Kazakh', '', 'pkg_kk-KZ', 'package', '', 0, '3.9.21.1', '', 'https://update.joomla.org/language/details3/kk-KZ_details.xml', '', ''),
+(393, 8, 0, 'FOF 3.x Stable', '', 'lib_fof30', 'library', '', 1, '3.6.2', '', 'http://cdn.akeeba.com/updates/fof3_file.xml', 'https://www.akeebabackup.com/download/fof3/3-6-2.html', ''),
+(394, 9, 0, 'Akeeba Frontend Framework (FEF)', '', 'file_fef', 'file', '', 1, '1.1.0', '', 'http://cdn.akeeba.com/updates/fef.xml', 'https://www.akeeba.com/download/fef/1-1-0.html', ''),
+(395, 11, 10042, 'JCE 2.9.1', 'Installation package for Joomla! 3.x and 4.x', 'pkg_jce', 'package', '', 0, '2.9.1', '', 'https://cdn.joomlacontenteditor.net/updates/xml/editor/pkg_jce.xml', 'https://www.joomlacontenteditor.net/news/jce-pro-2-9-0-released', '');
 
 -- --------------------------------------------------------
 
@@ -2254,16 +2473,16 @@ CREATE TABLE `ga26l_update_sites` (
 --
 
 INSERT INTO `ga26l_update_sites` (`update_site_id`, `name`, `type`, `location`, `enabled`, `last_check_timestamp`, `extra_query`) VALUES
-(1, 'Joomla! Core', 'collection', 'https://update.joomla.org/core/list.xml', 1, 1604930135, ''),
-(2, 'Accredited Joomla! Translations', 'collection', 'https://update.joomla.org/language/translationlist_3.xml', 1, 1604923355, ''),
-(3, 'Joomla! Update Component Update Site', 'extension', 'https://update.joomla.org/core/extensions/com_joomlaupdate.xml', 1, 1604923355, ''),
-(4, 'WebInstaller Update Site', 'extension', 'https://appscdn.joomla.org/webapps/jedapps/webinstaller.xml', 1, 1604923355, ''),
-(5, 'ZOO', 'extension', 'http://yootheme.com/api/update/zoo_j33.xml', 1, 1604923356, ''),
-(6, 'JBZoo App', 'package', 'https://raw.githubusercontent.com/JBZoo/JBZoo/master/update.xml', 1, 1604923356, ''),
-(8, 'FOF 3.x', 'extension', 'http://cdn.akeeba.com/updates/fof3_file.xml', 1, 1604923357, ''),
-(9, 'Akeeba FEF', 'extension', 'http://cdn.akeeba.com/updates/fef.xml', 1, 1604923357, ''),
-(10, 'Akeeba Backup Core', 'extension', 'https://cdn.akeeba.com/updates/pkgakeebacore.xml', 1, 1604923358, ''),
-(11, 'JCE Editor Package', 'extension', 'https://cdn.joomlacontenteditor.net/updates/xml/editor/pkg_jce.xml', 1, 1604930134, '');
+(1, 'Joomla! Core', 'collection', 'https://update.joomla.org/core/list.xml', 1, 1605082808, ''),
+(2, 'Accredited Joomla! Translations', 'collection', 'https://update.joomla.org/language/translationlist_3.xml', 1, 1605078282, ''),
+(3, 'Joomla! Update Component Update Site', 'extension', 'https://update.joomla.org/core/extensions/com_joomlaupdate.xml', 1, 1605078282, ''),
+(4, 'WebInstaller Update Site', 'extension', 'https://appscdn.joomla.org/webapps/jedapps/webinstaller.xml', 1, 1605078283, ''),
+(5, 'ZOO', 'extension', 'http://yootheme.com/api/update/zoo_j33.xml', 1, 1605078284, ''),
+(6, 'JBZoo App', 'package', 'https://raw.githubusercontent.com/JBZoo/JBZoo/master/update.xml', 1, 1605078284, ''),
+(8, 'FOF 3.x', 'extension', 'http://cdn.akeeba.com/updates/fof3_file.xml', 1, 1605078285, ''),
+(9, 'Akeeba FEF', 'extension', 'http://cdn.akeeba.com/updates/fef.xml', 1, 1605078286, ''),
+(10, 'Akeeba Backup Core', 'extension', 'https://cdn.akeeba.com/updates/pkgakeebacore.xml', 1, 1605078287, ''),
+(11, 'JCE Editor Package', 'extension', 'https://cdn.joomlacontenteditor.net/updates/xml/editor/pkg_jce.xml', 1, 1605078288, '');
 
 -- --------------------------------------------------------
 
@@ -2352,7 +2571,7 @@ CREATE TABLE `ga26l_users` (
 --
 
 INSERT INTO `ga26l_users` (`id`, `name`, `username`, `email`, `password`, `block`, `sendEmail`, `registerDate`, `lastvisitDate`, `activation`, `params`, `lastResetTime`, `resetCount`, `otpKey`, `otep`, `requireReset`) VALUES
-(630, 'Super User', 'grafoman', 'Manworldgrafo@gmail.com', '$2y$10$hNQH0mAhNSRdYwQq9UPoteUiGSk8tfHdr4iO7.tczBu6nWooJj6w6', 0, 1, '2020-11-03 04:41:11', '2020-11-09 13:54:48', '0', '', '0000-00-00 00:00:00', 0, '', '', 0);
+(630, 'Super User', 'grafoman', 'Manworldgrafo@gmail.com', '$2y$10$hNQH0mAhNSRdYwQq9UPoteUiGSk8tfHdr4iO7.tczBu6nWooJj6w6', 0, 1, '2020-11-03 04:41:11', '2020-11-11 08:19:50', '0', '', '0000-00-00 00:00:00', 0, '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -2516,6 +2735,13 @@ CREATE TABLE `ga26l_zoo_application` (
   `params` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Дамп данных таблицы `ga26l_zoo_application`
+--
+
+INSERT INTO `ga26l_zoo_application` (`id`, `asset_id`, `name`, `alias`, `application_group`, `description`, `params`) VALUES
+(1, 79, 'Каталог товаров', 'katalog-tovarov', 'jbuniversal', '', '{\n	\"group\": \"jbuniversal\",\n	\"template\": \"catalog\",\n	\"global.config.rborder\": \"1\",\n	\"global.config.column_heightfix\": \"1\",\n	\"global.config.wrap_item_style\": \"div\",\n	\"global.config.category_image_height\": \"150\",\n	\"global.config.category_image_width\": \"150\",\n	\"global.config.show_feed_link\": \"0\",\n	\"global.config.feed_title\": \"\",\n	\"global.config.alternate_feed_link\": \"\",\n	\"global.config.category_teaser_image_height\": \"50\",\n	\"global.config.category_teaser_image_width\": \"50\",\n	\"global.config.items_per_page\": \"20\",\n	\"global.config.item_order\": {\n		\"0\": \"_jbzoo_0_field__none\",\n		\"1\": \"_jbzoo_0_mode_s\",\n		\"2\": \"_jbzoo_0_order_asc\"\n	},\n	\"global.config.alpha_index\": \"0\",\n	\"global.config.alpha_chars\": \"0\",\n	\"global.config.layout_frontpage\": \"__auto__\",\n	\"global.config.layout_category\": \"__auto__\",\n	\"global.config.layout_subcategory\": \"__auto__\",\n	\"global.config.layout_subcategory_columns\": \"__auto__\",\n	\"global.config.layout_subcategories\": \"__auto__\",\n	\"global.config.layout_items\": \"__auto__\",\n	\"global.config.layout_item_columns\": \"__auto__\",\n	\"global.config.layout_alphaindex\": \"__auto__\",\n	\"global.config.layout_pagination\": \"__auto__\",\n	\"global.config.layout_tag\": \"__auto__\",\n	\"global.config.layout_comments\": \"__auto__\",\n	\"global.config.layout_comment\": \"__auto__\",\n	\"global.config.layout_respond\": \"__auto__\",\n	\"global.config.layout_mysubmissions\": \"__auto__\",\n	\"global.config.layout_administration\": \"__auto__\",\n	\"global.config.layout_submission\": \"__auto__\",\n	\"global.config.lastmodified\": \"1605001995\",\n	\"global.template.show_alpha_index\": \"0\",\n	\"global.template.category_title_show\": \"1\",\n	\"global.template.category_show\": \"1\",\n	\"global.template.category_subtitle\": \"1\",\n	\"global.template.category_teaser_text\": \"1\",\n	\"global.template.category_image\": \"1\",\n	\"global.template.category_image_align\": \"left\",\n	\"global.template.category_text\": \"1\",\n	\"global.template.subcategory_show\": \"1\",\n	\"global.template.subcategory_teaser_text\": \"1\",\n	\"global.template.subcategory_teaser_image\": \"1\",\n	\"global.template.subcategory_teaser_image_align\": \"left\",\n	\"global.template.subcategory_empty\": \"1\",\n	\"global.template.subcategory_cols\": \"1\",\n	\"global.template.subcategory_order\": \"0\",\n	\"global.template.subcategory_items_count_show\": \"1\",\n	\"global.template.subcategory_items_count\": \"5\",\n	\"global.template.item_cols\": \"1\",\n	\"global.template.item_order\": \"0\",\n	\"global.template.item_pagination\": \"1\",\n	\"global.template.lastmodified\": \"1605001995\",\n	\"global.template.item_full_image_align\": \"left\",\n	\"global.template.item_teaser_image_align\": \"left\",\n	\"global.template.item_related_image_align\": \"left\",\n	\"global.template.item_subcategory_item_image_align\": \"left\",\n	\"global.comments.enable_comments\": \"1\",\n	\"global.comments.require_name_and_mail\": \"1\",\n	\"global.comments.registered_users_only\": \"0\",\n	\"global.comments.approved\": \"0\",\n	\"global.comments.time_between_user_posts\": \"120\",\n	\"global.comments.email_notification\": \"\",\n	\"global.comments.email_reply_notification\": \"0\",\n	\"global.comments.avatar\": \"1\",\n	\"global.comments.order\": \"ASC\",\n	\"global.comments.max_depth\": \"5\",\n	\"global.comments.facebook_enable\": \"0\",\n	\"global.comments.facebook_app_id\": \"\",\n	\"global.comments.facebook_app_secret\": \"\",\n	\"global.comments.twitter_enable\": \"0\",\n	\"global.comments.twitter_consumer_key\": \"\",\n	\"global.comments.twitter_consumer_secret\": \"\",\n	\"global.comments.akismet_enable\": \"0\",\n	\"global.comments.akismet_api_key\": \"\",\n	\"global.comments.mollom_enable\": \"0\",\n	\"global.comments.mollom_public_key\": \"\",\n	\"global.comments.mollom_private_key\": \"\",\n	\"global.comments.captcha_guest_only\": \"1\",\n	\"global.comments.blacklist\": \"\"\n}');
+
 -- --------------------------------------------------------
 
 --
@@ -2534,6 +2760,15 @@ CREATE TABLE `ga26l_zoo_category` (
   `params` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Дамп данных таблицы `ga26l_zoo_category`
+--
+
+INSERT INTO `ga26l_zoo_category` (`id`, `application_id`, `name`, `alias`, `description`, `parent`, `ordering`, `published`, `params`) VALUES
+(1, 1, 'Лекарственные препараты', 'lekarstvennye-preparaty', '<p>&nbsp;</p>\r\n<div>&nbsp;</div>\r\n<div>&nbsp;</div>', 3, 2, 1, '{\n	\"content.category_title\": \"\",\n	\"content.category_subtitle\": \"\",\n	\"content.category_teaser_text\": \"\",\n	\"content.category_image\": \"\",\n	\"content.category_image_width\": \"\",\n	\"content.category_image_height\": \"\",\n	\"content.category_teaser_image\": \"\",\n	\"content.category_teaser_image_width\": \"\",\n	\"content.category_teaser_image_height\": \"\",\n	\"config.lastmodified\": \"1605005508\",\n	\"template.category_title_show\": \"0\",\n	\"template.category_show\": \"0\",\n	\"template.lastmodified\": \"1605005508\",\n	\"metadata.title\": \"\",\n	\"metadata.description\": \"\",\n	\"metadata.keywords\": \"\",\n	\"metadata.robots\": \"\",\n	\"metadata.author\": \"\"\n}'),
+(2, 1, 'Медицинское оборудование', 'medicinskoe-oborudovanie', '<p>&nbsp;</p>\r\n<div>&nbsp;</div>\r\n<div>&nbsp;</div>', 3, 1, 1, '{\n	\"content.category_title\": \"\",\n	\"content.category_subtitle\": \"\",\n	\"content.category_teaser_text\": \"\",\n	\"content.category_image\": \"\",\n	\"content.category_image_width\": \"\",\n	\"content.category_image_height\": \"\",\n	\"content.category_teaser_image\": \"\",\n	\"content.category_teaser_image_width\": \"\",\n	\"content.category_teaser_image_height\": \"\",\n	\"config.lastmodified\": \"1605005555\",\n	\"template.category_title_show\": \"0\",\n	\"template.category_show\": \"0\",\n	\"template.lastmodified\": \"1605005555\",\n	\"metadata.title\": \"\",\n	\"metadata.description\": \"\",\n	\"metadata.keywords\": \"\",\n	\"metadata.robots\": \"\",\n	\"metadata.author\": \"\"\n}'),
+(3, 1, 'Список разделов магазина', 'spisok', '<p>&nbsp;</p>\r\n<div>&nbsp;</div>\r\n<div>&nbsp;</div>\r\n<div>&nbsp;</div>\r\n<div>&nbsp;</div>', 0, 1, 1, '{\n	\"content.category_title\": \"\",\n	\"content.category_subtitle\": \"\",\n	\"content.category_teaser_text\": \"\",\n	\"content.category_image\": \"\",\n	\"content.category_image_width\": \"\",\n	\"content.category_image_height\": \"\",\n	\"content.category_teaser_image\": \"\",\n	\"content.category_teaser_image_width\": \"\",\n	\"content.category_teaser_image_height\": \"\",\n	\"config.lastmodified\": \"1605005488\",\n	\"template.category_title_show\": \"0\",\n	\"template.category_show\": \"0\",\n	\"template.lastmodified\": \"1605005488\",\n	\"metadata.title\": \"\",\n	\"metadata.description\": \"\",\n	\"metadata.keywords\": \"\",\n	\"metadata.robots\": \"\",\n	\"metadata.author\": \"\"\n}');
+
 -- --------------------------------------------------------
 
 --
@@ -2544,6 +2779,13 @@ CREATE TABLE `ga26l_zoo_category_item` (
   `category_id` int(11) NOT NULL,
   `item_id` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `ga26l_zoo_category_item`
+--
+
+INSERT INTO `ga26l_zoo_category_item` (`category_id`, `item_id`) VALUES
+(1, 3);
 
 -- --------------------------------------------------------
 
@@ -2594,6 +2836,13 @@ CREATE TABLE `ga26l_zoo_item` (
   `params` longtext NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Дамп данных таблицы `ga26l_zoo_item`
+--
+
+INSERT INTO `ga26l_zoo_item` (`id`, `application_id`, `type`, `name`, `alias`, `created`, `modified`, `modified_by`, `publish_up`, `publish_down`, `priority`, `hits`, `state`, `access`, `created_by`, `created_by_alias`, `searchable`, `elements`, `params`) VALUES
+(3, 1, 'new-shop-item', 'КОРТИМЕНТ', 'kortiment', '2020-11-10 19:32:17', '2020-11-11 09:05:24', 630, '2020-11-10 19:32:17', '0000-00-00 00:00:00', 0, 20, 1, 1, 630, '', 1, '{\n	\"10c62283-82c0-4803-8810-a0fcef2ced2d\": {\n		\"value\": \"1\"\n	},\n	\"920e0c68-98e0-4153-ae0d-8a666eabe22c\": {\n		\"0\": {\n			\"file\": \"images\\/Drugs\\/original_2c606a48-ef9e-4b2e-ae9d-a32b6e5dd9de.jpeg\",\n			\"title\": \"\",\n			\"link\": \"\",\n			\"target\": \"0\",\n			\"rel\": \"\"\n		}\n	},\n	\"bc4ff384-7975-424b-b878-31b6e6780461\": {\n		\"0\": {\n			\"value\": \"\"\n		}\n	},\n	\"e5b7fe30-2a3f-4025-b8c7-edf6421ba359\": {\n		\"0\": {\n			\"value\": \"\\u041a\\u043e\\u0441\\u043c\\u043e \\u0421.\\u043f.\\u0410.\"\n		}\n	},\n	\"293b41b1-de97-44a3-9608-01015728edd4\": {\n		\"0\": {\n			\"value\": \"\\u0442\\u0430\\u0431\\u043b\\u0435\\u0442\\u043a\\u0438 \\u043a\\u0438\\u0448\\u0435\\u0447\\u043d\\u043e\\u0440\\u0430\\u0441\\u0442\\u0432\\u043e\\u0440\\u0438\\u043c\\u044b\\u0435 \\u0441 \\u043f\\u0440\\u043e\\u043b\\u043e\\u043d\\u0433\\u0438\\u0440\\u043e\\u0432\\u0430\\u043d\\u043d\\u044b\\u043c \\u0432\\u044b\\u0441\\u0432\\u043e\\u0431\\u043e\\u0436\\u0434\\u0435\\u043d\\u0438\\u0435\\u043c, \\u043f\\u043e\\u043a\\u0440\\u044b\\u0442\\u0438\\u0435 \\u043f\\u043b\\u0435\\u043d\\u043e\\u0447\\u043d\\u043e\\u0439 \\u043e\\u0431\\u043e\\u043b\\u043e\\u0447\\u043a\\u043e\\u0439\"\n		}\n	},\n	\"b1dfc9e0-af89-466d-b1fd-b75ae1f9bf61\": {\n		\"0\": {\n			\"value\": \"30\"\n		}\n	},\n	\"3ccd726b-4df7-4741-8153-faa0fcc9130f\": {\n		\"variations\": {\n			\"0\": {\n				\"_sku\": {\n					\"value\": \"1\"\n				},\n				\"_value\": {\n					\"value\": \"3000\"\n				}\n			}\n		},\n		\"selected\": {\n\n		},\n		\"values\": {\n			\"0\": {\n\n			}\n		},\n		\"default_variant\": \"0\"\n	}\n}', '{\n	\"metadata.title\": \"\",\n	\"metadata.description\": \"\",\n	\"metadata.keywords\": \"\",\n	\"metadata.robots\": \"\",\n	\"metadata.author\": \"\",\n	\"config.enable_comments\": \"1\",\n	\"config.primary_category\": \"1\"\n}');
+
 -- --------------------------------------------------------
 
 --
@@ -2606,6 +2855,176 @@ CREATE TABLE `ga26l_zoo_jbzoo_config` (
   `value` text DEFAULT NULL,
   `type` varchar(10) DEFAULT 'string'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `ga26l_zoo_jbzoo_config`
+--
+
+INSERT INTO `ga26l_zoo_jbzoo_config` (`group`, `key`, `value`, `type`) VALUES
+('cart.price.c070ce8e-2716-445c-a887-25af8cb85026', 'list', '{\n	\"_value\": {\n		\"name\": \"\\u0426\\u0435\\u043d\\u0430\",\n		\"description\": \"\",\n		\"access\": \"1\",\n		\"type\": \"value\",\n		\"group\": \"price\",\n		\"identifier\": \"_value\",\n		\"system\": \"0\"\n	},\n	\"_balance\": {\n		\"name\": \"\\u041e\\u0441\\u0442\\u0430\\u0442\\u043e\\u043a\",\n		\"description\": \"\",\n		\"access\": \"1\",\n		\"usestock\": \"1\",\n		\"type\": \"balance\",\n		\"group\": \"price\",\n		\"identifier\": \"_balance\",\n		\"system\": \"0\"\n	}\n}', 'data'),
+('cart.price_tmpl.c070ce8e-2716-445c-a887-25af8cb85026.teaser', 'list', '{\n	\"0\": {\n		\"showlabel\": \"0\",\n		\"altlabel\": \"\",\n		\"layout\": \"price\",\n		\"empty_show\": \"0\",\n		\"empty_text\": \"\",\n		\"type\": \"value\",\n		\"group\": \"price\",\n		\"identifier\": \"_value\",\n		\"system\": \"0\"\n	}\n}', 'data'),
+('cart.price_tmpl_filter.c070ce8e-2716-445c-a887-25af8cb85026.default', 'list', '{\n	\"0\": {\n		\"showlabel\": \"1\",\n		\"altlabel\": \"\",\n		\"jbzoo_filter_render\": \"value-slider-input\",\n		\"jbzoo_filter_currency_default\": \"default_cur\",\n		\"jbzoo_filter_slider_auto\": \"0\",\n		\"jbzoo_filter_slider_min\": \"0\",\n		\"jbzoo_filter_slider_max\": \"10000\",\n		\"jbzoo_filter_slider_step\": \"100\",\n		\"jbzoo_filter_default\": \"\",\n		\"jbzoo_filter_placeholder\": \"\",\n		\"type\": \"value\",\n		\"group\": \"price\",\n		\"identifier\": \"_value\",\n		\"system\": \"0\"\n	}\n}', 'data'),
+('cart.price_tmpl.c070ce8e-2716-445c-a887-25af8cb85026.default', 'list', '{\n	\"0\": {\n		\"showlabel\": \"1\",\n		\"altlabel\": \"price\",\n		\"layout\": \"price\",\n		\"empty_show\": \"0\",\n		\"empty_text\": \"\",\n		\"type\": \"value\",\n		\"group\": \"price\",\n		\"identifier\": \"_value\",\n		\"system\": \"0\"\n	}\n}', 'data'),
+('cart.payment', 'list', '{\n	\"58e4fc48-c93c-463f-9845-38e9b304d072\": {\n		\"name\": \"PayPal\",\n		\"debug\": \"0\",\n		\"currency\": \"eur\",\n		\"modifytotal\": \"0\",\n		\"description\": \"\",\n		\"email\": \"\",\n		\"type\": \"paypal\",\n		\"group\": \"payment\",\n		\"identifier\": \"58e4fc48-c93c-463f-9845-38e9b304d072\"\n	},\n	\"eb9fb746-1bf8-4cd3-8531-152fb47e0564\": {\n		\"name\": \"Qiwi\",\n		\"debug\": \"0\",\n		\"currency\": \"eur\",\n		\"modifytotal\": \"0\",\n		\"description\": \"\",\n		\"shop_id\": \"\",\n		\"rest_id\": \"\",\n		\"psw\": \"\",\n		\"sign_psw\": \"\",\n		\"type\": \"qiwi\",\n		\"group\": \"payment\",\n		\"identifier\": \"eb9fb746-1bf8-4cd3-8531-152fb47e0564\"\n	}\n}', 'data'),
+('cart.price.08a0bbda-cefa-406a-a02a-a7dcb1add43b', 'list', '{\n	\"_value\": {\n		\"name\": \"\\u0426\\u0435\\u043d\\u0430\",\n		\"description\": \"\",\n		\"access\": \"1\",\n		\"type\": \"value\",\n		\"group\": \"price\",\n		\"identifier\": \"_value\",\n		\"system\": \"0\"\n	},\n	\"_balance\": {\n		\"name\": \"\\u041e\\u0441\\u0442\\u0430\\u0442\\u043e\\u043a\",\n		\"description\": \"\",\n		\"access\": \"1\",\n		\"usestock\": \"1\",\n		\"type\": \"balance\",\n		\"group\": \"price\",\n		\"identifier\": \"_balance\",\n		\"system\": \"0\"\n	},\n	\"_image\": {\n		\"name\": \"\\u041a\\u0430\\u0440\\u0442\\u0438\\u043d\\u043a\\u0430\",\n		\"description\": \"\",\n		\"access\": \"1\",\n		\"image\": \"920e0c68-98e0-4153-ae0d-8a666eabe22c\",\n		\"type\": \"image\",\n		\"group\": \"price\",\n		\"identifier\": \"_image\",\n		\"system\": \"0\"\n	}\n}', 'data'),
+('cart.currency', 'list', '{\n	\"3795f2c8-242e-49e6-8e4a-d362442286bc\": {\n		\"name\": \"\\u0420\\u0443\\u0431\\u043b\\u044c\",\n		\"description\": \"\\u20bd\",\n		\"code\": \"643\",\n		\"symbol\": \"\\u20bd\",\n		\"round_type\": \"none\",\n		\"round_value\": \"2\",\n		\"format_positive\": \"%v %s\",\n		\"format_negative\": \"-%v %s\",\n		\"num_decimals\": \"0\",\n		\"decimal_sep\": \".\",\n		\"thousands_sep\": \" \",\n		\"rate\": \"90,36\",\n		\"fallback_rate\": \"1\",\n		\"current_rate\": \"1\",\n		\"type\": \"manual\",\n		\"group\": \"currency\",\n		\"identifier\": \"3795f2c8-242e-49e6-8e4a-d362442286bc\"\n	}\n}', 'data'),
+('cart.price_tmpl.08a0bbda-cefa-406a-a02a-a7dcb1add43b.teaser', 'list', '{\n	\"0\": {\n		\"showlabel\": \"0\",\n		\"altlabel\": \"\",\n		\"layout\": \"price\",\n		\"empty_show\": \"0\",\n		\"empty_text\": \"\",\n		\"type\": \"value\",\n		\"group\": \"price\",\n		\"identifier\": \"_value\",\n		\"system\": \"0\"\n	},\n	\"1\": {\n		\"showlabel\": \"0\",\n		\"altlabel\": \"\",\n		\"add_show\": \"1\",\n		\"add_label\": \"\\u0412 \\u043a\\u043e\\u0440\\u0437\\u0438\\u043d\\u0443!\",\n		\"add_alert\": \"1\",\n		\"add_alert_timeout\": \"3\",\n		\"add_alert_text\": \"\\u0422\\u043e\\u0432\\u0430\\u0440 \\u0434\\u043e\\u0431\\u0430\\u0432\\u043b\\u0435\\u043d \\u0432 \\u043a\\u043e\\u0440\\u0437\\u0438\\u043d\\u0443!\",\n		\"oneclick_show\": \"0\",\n		\"oneclick_label\": \"\\u041a\\u0443\\u043f\\u0438\\u0442\\u044c \\u0441\\u0435\\u0439\\u0447\\u0430\\u0441!\",\n		\"modal_show\": \"1\",\n		\"modal_label\": \"\\u041a\\u0443\\u043f\\u0438\\u0442\\u044c\",\n		\"modal_layout\": \"modal\",\n		\"goto_show\": \"1\",\n		\"goto_label\": \"\\u041f\\u0435\\u0440\\u0435\\u0439\\u0442\\u0438 \\u0432 \\u043a\\u043e\\u0440\\u0437\\u0438\\u043d\\u0443\",\n		\"remove_show\": \"1\",\n		\"remove_label\": \"\\u0423\\u0434\\u0430\\u043b\\u0438\\u0442\\u044c \\u0438\\u0437 \\u043a\\u043e\\u0440\\u0437\\u0438\\u043d\\u044b\",\n		\"type\": \"buttons\",\n		\"group\": \"price\",\n		\"identifier\": \"_buttons\",\n		\"system\": \"1\"\n	},\n	\"2\": {\n		\"showlabel\": \"0\",\n		\"altlabel\": \"\",\n		\"min\": \"1\",\n		\"max\": \"999\",\n		\"step\": \"1\",\n		\"default\": \"1\",\n		\"decimals\": \"0\",\n		\"type\": \"quantity\",\n		\"group\": \"price\",\n		\"identifier\": \"_quantity\",\n		\"system\": \"1\"\n	}\n}', 'data'),
+('cart.config', 'enable', '1', 'number'),
+('cart.config', 'menuitem', '101', 'number'),
+('cart.config', 'access', '1', 'number'),
+('cart.config', 'default_order_status', '', 'string'),
+('cart.config', 'freeorder', '0', 'number'),
+('cart.config', 'default_currency', '643', 'number'),
+('cart.config', 'undefined_currency', 'default', 'string'),
+('cart.config', 'currency_ttl', '1440', 'number'),
+('cart.config', 'tmpl_name', 'uikit', 'string'),
+('cart.config', 'tmpl_item_link', '1', 'number'),
+('cart.config', 'tmpl_image_show', '1', 'number'),
+('cart.config', 'tmpl_image_link', '1', 'number'),
+('cart.config', 'tmpl_image_width', '75', 'number'),
+('cart.config', 'tmpl_image_height', '75', 'number'),
+('cart.config', 'tmpl_sku_show', '1', 'number'),
+('cart.config', 'tmpl_price4one', '1', 'number'),
+('cart.config', 'tmpl_quntity', '1', 'number'),
+('cart.config', 'tmpl_subtotal', '1', 'number'),
+('cart.config', 'tmpl_button_create', '1', 'number'),
+('cart.config', 'tmpl_button_payment', '1', 'number'),
+('cart.config', 'shop_name', '', 'string'),
+('cart.config', 'shop_details', '', 'string'),
+('cart.config', 'default_shipping', '', 'string'),
+('cart.config', 'default_shipping_status', '', 'string'),
+('cart.config', 'default_shipping_country', '', 'string'),
+('cart.config', 'default_shipping_city', '', 'string'),
+('cart.config', 'default_shipping_address', '', 'string'),
+('cart.config', 'default_shipping_zip', '', 'string'),
+('cart.config', 'default_payment', '', 'string'),
+('cart.config', 'default_payment_status', '', 'string'),
+('cart.config', 'default_payment_status_success', '', 'string'),
+('cart.config', 'default_payment_status_error', '', 'string'),
+('cart.price_tmpl_filter.08a0bbda-cefa-406a-a02a-a7dcb1add43b.default', 'list', '{\n	\"0\": {\n		\"showlabel\": \"0\",\n		\"altlabel\": \"\",\n		\"jbzoo_filter_render\": \"value-slider-input\",\n		\"jbzoo_filter_currency_default\": \"643\",\n		\"jbzoo_filter_slider_auto\": \"0\",\n		\"jbzoo_filter_slider_min\": \"0\",\n		\"jbzoo_filter_slider_max\": \"10000\",\n		\"jbzoo_filter_slider_step\": \"100\",\n		\"jbzoo_filter_default\": \"\",\n		\"jbzoo_filter_placeholder\": \"\",\n		\"type\": \"value\",\n		\"group\": \"price\",\n		\"identifier\": \"_value\",\n		\"system\": \"0\"\n	},\n	\"1\": {\n		\"showlabel\": \"0\",\n		\"altlabel\": \"\",\n		\"jbzoo_filter_render\": \"balance-jqueryui\",\n		\"jbzoo_filter_default\": \"\",\n		\"jbzoo_filter_count\": \"1\",\n		\"type\": \"balance\",\n		\"group\": \"price\",\n		\"identifier\": \"_balance\",\n		\"system\": \"0\"\n	},\n	\"2\": {\n		\"showlabel\": \"0\",\n		\"altlabel\": \"\",\n		\"jbzoo_filter_render\": \"imageexists-jqueryui\",\n		\"jbzoo_filter_default\": \"\",\n		\"type\": \"image\",\n		\"group\": \"price\",\n		\"identifier\": \"_image\",\n		\"system\": \"0\"\n	}\n}', 'data'),
+('cart.price_tmpl.08a0bbda-cefa-406a-a02a-a7dcb1add43b.full', 'list', '{\n	\"0\": {\n		\"showlabel\": \"0\",\n		\"altlabel\": \"\",\n		\"layout\": \"full-div\",\n		\"empty_show\": \"0\",\n		\"empty_text\": \"\",\n		\"type\": \"value\",\n		\"group\": \"price\",\n		\"identifier\": \"_value\",\n		\"system\": \"0\"\n	},\n	\"1\": {\n		\"showlabel\": \"0\",\n		\"altlabel\": \"\",\n		\"layout\": \"simple\",\n		\"type\": \"balance\",\n		\"group\": \"price\",\n		\"identifier\": \"_balance\",\n		\"system\": \"0\"\n	},\n	\"2\": {\n		\"showlabel\": \"0\",\n		\"altlabel\": \"\",\n		\"width\": \"400\",\n		\"height\": \"300\",\n		\"width_popup\": \"1280\",\n		\"height_popup\": \"800\",\n		\"type\": \"image\",\n		\"group\": \"price\",\n		\"identifier\": \"_image\",\n		\"system\": \"0\"\n	}\n}', 'data'),
+('cart.status', 'order', '{\n	\"51bb27ee-fe3e-403b-a9b2-df1d02dbb6a0\": {\n		\"name\": \"\\u0417\\u0430\\u043a\\u0430\\u0437 \\u0441\\u043e\\u0437\\u0434\\u0430\\u043d \\u0438 \\u043e\\u0436\\u0438\\u0434\\u0430\\u0435\\u0442 \\u043e\\u043f\\u043b\\u0430\\u0442\\u044b\",\n		\"description\": \"\",\n		\"code\": \"51bb27ee-fe3e-403b-a9b2-df1d02dbb6a0\",\n		\"type\": \"custom\",\n		\"group\": \"status\",\n		\"identifier\": \"51bb27ee-fe3e-403b-a9b2-df1d02dbb6a0\"\n	},\n	\"cdb5ed18-8933-485a-a4d6-0a3a2dbd707e\": {\n		\"name\": \"\\u041e\\u043f\\u043b\\u0430\\u0447\\u0435\\u043d\\u043e\",\n		\"description\": \"\",\n		\"code\": \"cdb5ed18-8933-485a-a4d6-0a3a2dbd707e\",\n		\"type\": \"custom\",\n		\"group\": \"status\",\n		\"identifier\": \"cdb5ed18-8933-485a-a4d6-0a3a2dbd707e\"\n	},\n	\"48748662-14ad-467b-ac6d-086e0f33a58b\": {\n		\"name\": \"\\u0414\\u043e\\u0441\\u0442\\u0430\\u0432\\u043b\\u0435\\u043d\\u043e\",\n		\"description\": \"\",\n		\"code\": \"48748662-14ad-467b-ac6d-086e0f33a58b\",\n		\"type\": \"custom\",\n		\"group\": \"status\",\n		\"identifier\": \"48748662-14ad-467b-ac6d-086e0f33a58b\"\n	}\n}', 'data'),
+('cart.shippingfield', 'list', '{\n	\"66a912f8-0102-4ad2-aad9-ea4fd72e362e\": {\n		\"name\": \"\\u0413\\u043e\\u0440\\u043e\\u0434\",\n		\"description\": \"\",\n		\"required\": \"1\",\n		\"type\": \"text\",\n		\"group\": \"shippingfield\",\n		\"identifier\": \"66a912f8-0102-4ad2-aad9-ea4fd72e362e\"\n	},\n	\"3f8b84c8-f8e8-440b-b71c-4e9ba4e9ba70\": {\n		\"name\": \"\\u0423\\u043b\\u0438\\u0446\\u0430\",\n		\"description\": \"\",\n		\"required\": \"1\",\n		\"type\": \"text\",\n		\"group\": \"shippingfield\",\n		\"identifier\": \"3f8b84c8-f8e8-440b-b71c-4e9ba4e9ba70\"\n	},\n	\"03617001-2a63-4f52-8cee-c7895b77b5cd\": {\n		\"name\": \"\\u0414\\u043e\\u043c \\u0438 \\u043d\\u043e\\u043c\\u0435\\u0440 \\u043a\\u0432\\u0430\\u0440\\u0442\\u0438\\u0440\\u044b\",\n		\"description\": \"\",\n		\"required\": \"1\",\n		\"type\": \"text\",\n		\"group\": \"shippingfield\",\n		\"identifier\": \"03617001-2a63-4f52-8cee-c7895b77b5cd\"\n	},\n	\"534d65a5-2e6c-4124-8421-1cc5d5c4ed64\": {\n		\"name\": \"\\u0412\\u0430\\u0448 \\u043a\\u043e\\u043c\\u0435\\u043d\\u0442\\u0430\\u0440\\u0438\\u0439\",\n		\"description\": \"\",\n		\"required\": \"0\",\n		\"type\": \"textarea\",\n		\"group\": \"shippingfield\",\n		\"identifier\": \"534d65a5-2e6c-4124-8421-1cc5d5c4ed64\"\n	}\n}', 'data'),
+('cart.notification', 'order_saved', '{\n	\"279bb5bb-c545-4a7f-810d-890ab18ccc99\": {\n		\"name\": \"\\u041e\\u0442\\u043f\\u0440\\u0430\\u0432\\u0438\\u0442\\u044c SMS (sms-uslugi.ru)\",\n		\"description\": \"\",\n		\"sms_login\": \"\",\n		\"sms_password\": \"\",\n		\"https\": \"0\",\n		\"message\": \"\",\n		\"phones\": \"\",\n		\"type\": \"smsuslugiru\",\n		\"group\": \"notification\",\n		\"identifier\": \"279bb5bb-c545-4a7f-810d-890ab18ccc99\"\n	}\n}', 'data'),
+('cart.notification', 'order_beforesave', '{\n	\"c6cd8679-8465-4305-8f23-16ec555fcc16\": {\n		\"name\": \"\\u041e\\u0442\\u043f\\u0440\\u0430\\u0432\\u0438\\u0442\\u044c SMS (sms-uslugi.ru)\",\n		\"description\": \"\",\n		\"sms_login\": \"\",\n		\"sms_password\": \"\",\n		\"https\": \"0\",\n		\"message\": \"\",\n		\"phones\": \"\",\n		\"type\": \"smsuslugiru\",\n		\"group\": \"notification\",\n		\"identifier\": \"c6cd8679-8465-4305-8f23-16ec555fcc16\"\n	}\n}', 'data'),
+('cart.price.3ccd726b-4df7-4741-8153-faa0fcc9130f', 'list', '{\n	\"_sku\": {\n		\"name\": \"\\u0410\\u0440\\u0442\\u0438\\u043a\\u0443\\u043b\",\n		\"description\": \"\",\n		\"access\": \"1\",\n		\"type\": \"sku\",\n		\"group\": \"price\",\n		\"identifier\": \"_sku\",\n		\"system\": \"0\"\n	},\n	\"_value\": {\n		\"name\": \"\\u0426\\u0435\\u043d\\u0430\",\n		\"description\": \"\",\n		\"access\": \"1\",\n		\"type\": \"value\",\n		\"group\": \"price\",\n		\"identifier\": \"_value\",\n		\"system\": \"0\"\n	}\n}', 'data'),
+('cart.price_tmpl.3ccd726b-4df7-4741-8153-faa0fcc9130f.teaser', 'list', '{\n	\"0\": {\n		\"showlabel\": \"0\",\n		\"altlabel\": \"\",\n		\"layout\": \"price\",\n		\"empty_show\": \"0\",\n		\"empty_text\": \"\",\n		\"type\": \"value\",\n		\"group\": \"price\",\n		\"identifier\": \"_value\",\n		\"system\": \"0\"\n	},\n	\"1\": {\n		\"showlabel\": \"0\",\n		\"altlabel\": \"\",\n		\"add_show\": \"1\",\n		\"add_label\": \"\\u0412 \\u043a\\u043e\\u0440\\u0437\\u0438\\u043d\\u0443!\",\n		\"add_alert\": \"1\",\n		\"add_alert_timeout\": \"3\",\n		\"add_alert_text\": \"\\u0422\\u043e\\u0432\\u0430\\u0440 \\u0434\\u043e\\u0431\\u0430\\u0432\\u043b\\u0435\\u043d \\u0432 \\u043a\\u043e\\u0440\\u0437\\u0438\\u043d\\u0443!\",\n		\"oneclick_show\": \"0\",\n		\"oneclick_label\": \"\\u041a\\u0443\\u043f\\u0438\\u0442\\u044c \\u0441\\u0435\\u0439\\u0447\\u0430\\u0441!\",\n		\"modal_show\": \"1\",\n		\"modal_label\": \"\\u041a\\u0443\\u043f\\u0438\\u0442\\u044c\",\n		\"modal_layout\": \"modal\",\n		\"goto_show\": \"1\",\n		\"goto_label\": \"\\u041f\\u0435\\u0440\\u0435\\u0439\\u0442\\u0438 \\u0432 \\u043a\\u043e\\u0440\\u0437\\u0438\\u043d\\u0443\",\n		\"remove_show\": \"1\",\n		\"remove_label\": \"\\u0423\\u0434\\u0430\\u043b\\u0438\\u0442\\u044c \\u0438\\u0437 \\u043a\\u043e\\u0440\\u0437\\u0438\\u043d\\u044b\",\n		\"type\": \"buttons\",\n		\"group\": \"price\",\n		\"identifier\": \"_buttons\",\n		\"system\": \"1\"\n	}\n}', 'data'),
+('cart.price_tmpl_filter.3ccd726b-4df7-4741-8153-faa0fcc9130f.default', 'list', '{\n	\"0\": {\n		\"showlabel\": \"0\",\n		\"altlabel\": \"\",\n		\"jbzoo_filter_render\": \"value-slider-input\",\n		\"jbzoo_filter_currency_default\": \"643\",\n		\"jbzoo_filter_slider_auto\": \"0\",\n		\"jbzoo_filter_slider_min\": \"0\",\n		\"jbzoo_filter_slider_max\": \"10000\",\n		\"jbzoo_filter_slider_step\": \"100\",\n		\"jbzoo_filter_default\": \"\",\n		\"jbzoo_filter_placeholder\": \"\",\n		\"type\": \"value\",\n		\"group\": \"price\",\n		\"identifier\": \"_value\",\n		\"system\": \"0\"\n	}\n}', 'data'),
+('cart.shipping', 'list', '{\n	\"091bd4d7-93ed-4bd9-a8bb-2295dc3b8f9c\": {\n		\"name\": \"\\u041a\\u0443\\u0440\\u044c\\u0435\\u0440\",\n		\"description\": \"\",\n		\"access\": \"1\",\n		\"modifytotal\": \"1\",\n		\"limit_for_free\": \"\",\n		\"cost\": \"500\",\n		\"fulldate\": \"1\",\n		\"weekday\": \"weekdays\",\n		\"hour\": \"daytime\",\n		\"type\": \"courier\",\n		\"group\": \"shipping\",\n		\"identifier\": \"091bd4d7-93ed-4bd9-a8bb-2295dc3b8f9c\"\n	},\n	\"4c4e7455-60e7-429a-8749-cfceb376b20c\": {\n		\"name\": \"\\u0421\\u0430\\u043c\\u043e\\u0432\\u044b\\u0432\\u043e\\u0437\",\n		\"description\": \"\",\n		\"access\": \"1\",\n		\"modifytotal\": \"0\",\n		\"limit_for_free\": \"\",\n		\"address\": \"\\u0421\\u0438\\u043c\\u0444\\u0435\\u0440\\u043e\\u043f\\u043e\\u043b\\u044c, \\u0443\\u043b. \\u041a\\u0440\\u044b\\u043c\\u0441\\u043a\\u0430\\u044f, 7\\r\\n\\u043f\\u0433\\u0442 \\u041c\\u043e\\u043b\\u043e\\u0434\\u0435\\u0436\\u043d\\u043e\\u0435 ........\\r\\n\",\n		\"type\": \"pickup\",\n		\"group\": \"shipping\",\n		\"identifier\": \"4c4e7455-60e7-429a-8749-cfceb376b20c\"\n	}\n}', 'data'),
+('cart.status', 'payment', '{\n	\"454b81bb-03cd-4072-a6ea-623c42c9ab5e\": {\n		\"name\": \"\\u0417\\u0430\\u043a\\u0430\\u0437 \\u0442\\u043e\\u043b\\u044c\\u043a\\u043e \\u0447\\u0442\\u043e \\u0441\\u043e\\u0437\\u0434\\u0430\\u043d\",\n		\"description\": \"\",\n		\"code\": \"454b81bb-03cd-4072-a6ea-623c42c9ab5e\",\n		\"type\": \"custom\",\n		\"group\": \"status\",\n		\"identifier\": \"454b81bb-03cd-4072-a6ea-623c42c9ab5e\"\n	},\n	\"80cdecf0-8c47-4212-87ff-9a767209fa61\": {\n		\"name\": \"\\u041e\\u0442\\u043c\\u0435\\u043d\\u0435\\u043d\",\n		\"description\": \"\",\n		\"code\": \"80cdecf0-8c47-4212-87ff-9a767209fa61\",\n		\"type\": \"custom\",\n		\"group\": \"status\",\n		\"identifier\": \"80cdecf0-8c47-4212-87ff-9a767209fa61\"\n	},\n	\"ba2ef9ad-2b85-41a7-82bb-65c4d9b7b450\": {\n		\"name\": \"\\u0423\\u0441\\u043f\\u0435\\u0448\\u043d\\u043e \\u043e\\u043f\\u043b\\u0430\\u0447\\u0435\\u043d\",\n		\"description\": \"\",\n		\"code\": \"ba2ef9ad-2b85-41a7-82bb-65c4d9b7b450\",\n		\"type\": \"custom\",\n		\"group\": \"status\",\n		\"identifier\": \"ba2ef9ad-2b85-41a7-82bb-65c4d9b7b450\"\n	}\n}', 'data'),
+('cart.status', 'shipping', '{\n	\"5f5f2a51-0e27-4b14-8053-83a58c2bb016\": {\n		\"name\": \"\\u0417\\u0430\\u043a\\u0430\\u0437 \\u0442\\u043e\\u043b\\u044c\\u043a\\u043e \\u0447\\u0442\\u043e \\u0441\\u043e\\u0437\\u0434\\u0430\\u043d\",\n		\"description\": \"\",\n		\"code\": \"5f5f2a51-0e27-4b14-8053-83a58c2bb016\",\n		\"type\": \"custom\",\n		\"group\": \"status\",\n		\"identifier\": \"5f5f2a51-0e27-4b14-8053-83a58c2bb016\"\n	},\n	\"b2e4ddcc-8323-47a2-8b0c-9e04eced6c25\": {\n		\"name\": \"\\u041e\\u043f\\u043b\\u0430\\u0447\\u0435\\u043d\\u043e\",\n		\"description\": \"\",\n		\"code\": \"b2e4ddcc-8323-47a2-8b0c-9e04eced6c25\",\n		\"type\": \"custom\",\n		\"group\": \"status\",\n		\"identifier\": \"b2e4ddcc-8323-47a2-8b0c-9e04eced6c25\"\n	}\n}', 'data'),
+('cart.status_events', 'order__51bb27ee-fe3e-403b-a9b2-df1d02dbb6a0', '{\n	\"ac5fea29-9922-45d4-8027-1833e4047c41\": {\n		\"name\": \"Email\",\n		\"description\": \"\",\n		\"layout_email\": \"default\",\n		\"subject\": \"{order_id},{order_name},{order_status}\",\n		\"fromemail\": \"\",\n		\"fromname\": \"\",\n		\"recipients\": {\n			\"orderform\": {\n				\"0\": \"sitemail\"\n			},\n			\"custom\": \"\"\n		},\n		\"ishtml\": \"1\",\n		\"issleep\": \"0\",\n		\"type\": \"sendemail\",\n		\"group\": \"notification\",\n		\"identifier\": \"ac5fea29-9922-45d4-8027-1833e4047c41\"\n	}\n}', 'data'),
+('cart.status_events', 'order__cdb5ed18-8933-485a-a4d6-0a3a2dbd707e', '{\n	\"90a22b3e-bff8-4357-85b9-69ea3a47211d\": {\n		\"name\": \"\\u041e\\u0442\\u043f\\u0440\\u0430\\u0432\\u0438\\u0442\\u044c SMS (sms-uslugi.ru)\",\n		\"description\": \"\",\n		\"sms_login\": \"\",\n		\"sms_password\": \"\",\n		\"https\": \"0\",\n		\"message\": \"\\u0444\\u0441\\u0444\\u0441\\u0444\\u0441\\u0447\\u0444\\u0441\\u0444\\u0447\",\n		\"phones\": \"\",\n		\"type\": \"smsuslugiru\",\n		\"group\": \"notification\",\n		\"identifier\": \"90a22b3e-bff8-4357-85b9-69ea3a47211d\"\n	}\n}', 'data'),
+('cart.status_events', 'order__48748662-14ad-467b-ac6d-086e0f33a58b', '{\n	\"6c3315e2-d40f-4615-a34f-57b3f09e1131\": {\n		\"name\": \"\\u041e\\u0442\\u043f\\u0440\\u0430\\u0432\\u0438\\u0442\\u044c SMS (sms-uslugi.ru)\",\n		\"description\": \"\",\n		\"sms_login\": \"\",\n		\"sms_password\": \"\",\n		\"https\": \"0\",\n		\"message\": \"\\u0444\\u0441\\u0444\\u0447\\u0441\\u0444\\u0447\\u0441\\u0444\\u0447\\u0441\",\n		\"phones\": \"\",\n		\"type\": \"smsuslugiru\",\n		\"group\": \"notification\",\n		\"identifier\": \"6c3315e2-d40f-4615-a34f-57b3f09e1131\"\n	}\n}', 'data'),
+('cart.status_events', 'payment__454b81bb-03cd-4072-a6ea-623c42c9ab5e', '{\n	\"c88c88d5-a9b5-4f63-be47-f27e953d06c2\": {\n		\"name\": \"\\u041e\\u0442\\u043f\\u0440\\u0430\\u0432\\u0438\\u0442\\u044c SMS (sms-uslugi.ru)\",\n		\"description\": \"\",\n		\"sms_login\": \"\",\n		\"sms_password\": \"\",\n		\"https\": \"0\",\n		\"message\": \"\\u0444\\u0441\\u0444\\u0447\\u0441\\u0444\\u0447\\u0441\",\n		\"phones\": \"\\u0444\\u0447\\u0441\\u0444\\u0441\\u0444\\u0447\\u0441\\u0444\\u0441\",\n		\"type\": \"smsuslugiru\",\n		\"group\": \"notification\",\n		\"identifier\": \"c88c88d5-a9b5-4f63-be47-f27e953d06c2\"\n	}\n}', 'data'),
+('cart.status_events', 'shipping__b2e4ddcc-8323-47a2-8b0c-9e04eced6c25', '{\n	\"3b0b5836-9093-4d5f-b4a9-79eda87865ed\": {\n		\"name\": \"Email\",\n		\"description\": \"\",\n		\"layout_email\": \"default\",\n		\"subject\": \"\\u0444\\u0447\\u0441\\u0444\\u0447\\u0441\\u0444\\u0447\\u0441\",\n		\"fromemail\": \"\",\n		\"fromname\": \"\",\n		\"recipients\": {\n			\"orderform\": {\n				\"0\": \"sitemail\"\n			},\n			\"custom\": \"\"\n		},\n		\"ishtml\": \"1\",\n		\"issleep\": \"0\",\n		\"type\": \"sendemail\",\n		\"group\": \"notification\",\n		\"identifier\": \"3b0b5836-9093-4d5f-b4a9-79eda87865ed\"\n	}\n}', 'data');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `ga26l_zoo_jbzoo_index_new_shop_item`
+--
+
+CREATE TABLE `ga26l_zoo_jbzoo_index_new_shop_item` (
+  `item_id` int(11) UNSIGNED NOT NULL,
+  `e_itemcategory_s` varchar(50) DEFAULT NULL,
+  `e_itemcategory_n` double DEFAULT NULL,
+  `e_itemcategory_d` datetime DEFAULT NULL,
+  `e_itemfrontpage_s` varchar(50) DEFAULT NULL,
+  `e_itemfrontpage_n` double DEFAULT NULL,
+  `e_itemfrontpage_d` datetime DEFAULT NULL,
+  `e_itemname_s` varchar(50) DEFAULT NULL,
+  `e_itemname_n` double DEFAULT NULL,
+  `e_itemname_d` datetime DEFAULT NULL,
+  `e_itemtag_s` varchar(50) DEFAULT NULL,
+  `e_itemtag_n` double DEFAULT NULL,
+  `e_itemtag_d` datetime DEFAULT NULL,
+  `e_b1dfc9e0af89466db1fdb75ae1f9bf61_s` varchar(50) DEFAULT NULL,
+  `e_b1dfc9e0af89466db1fdb75ae1f9bf61_n` double DEFAULT 0,
+  `e_b1dfc9e0af89466db1fdb75ae1f9bf61_d` datetime DEFAULT NULL,
+  `e_293b41b1de9744a3960801015728edd4_s` varchar(50) DEFAULT NULL,
+  `e_293b41b1de9744a3960801015728edd4_n` double DEFAULT 0,
+  `e_293b41b1de9744a3960801015728edd4_d` datetime DEFAULT NULL,
+  `e_e5b7fe302a3f4025b8c7edf6421ba359_s` varchar(50) DEFAULT NULL,
+  `e_e5b7fe302a3f4025b8c7edf6421ba359_n` double DEFAULT 0,
+  `e_e5b7fe302a3f4025b8c7edf6421ba359_d` datetime DEFAULT NULL,
+  `e_bc4ff3847975424bb87831b6e6780461_s` varchar(50) DEFAULT NULL,
+  `e_bc4ff3847975424bb87831b6e6780461_n` double DEFAULT 0,
+  `e_bc4ff3847975424bb87831b6e6780461_d` datetime DEFAULT NULL,
+  `e_920e0c6898e04153ae0d8a666eabe22c_s` varchar(50) DEFAULT NULL,
+  `e_920e0c6898e04153ae0d8a666eabe22c_n` double DEFAULT 0,
+  `e_920e0c6898e04153ae0d8a666eabe22c_d` datetime DEFAULT NULL,
+  `e_3ccd726b4df747418153faa0fcc9130f_s` varchar(50) DEFAULT NULL,
+  `e_3ccd726b4df747418153faa0fcc9130f_n` double DEFAULT 0,
+  `e_3ccd726b4df747418153faa0fcc9130f_d` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `ga26l_zoo_jbzoo_index_new_shop_item`
+--
+
+INSERT INTO `ga26l_zoo_jbzoo_index_new_shop_item` (`item_id`, `e_itemcategory_s`, `e_itemcategory_n`, `e_itemcategory_d`, `e_itemfrontpage_s`, `e_itemfrontpage_n`, `e_itemfrontpage_d`, `e_itemname_s`, `e_itemname_n`, `e_itemname_d`, `e_itemtag_s`, `e_itemtag_n`, `e_itemtag_d`, `e_b1dfc9e0af89466db1fdb75ae1f9bf61_s`, `e_b1dfc9e0af89466db1fdb75ae1f9bf61_n`, `e_b1dfc9e0af89466db1fdb75ae1f9bf61_d`, `e_293b41b1de9744a3960801015728edd4_s`, `e_293b41b1de9744a3960801015728edd4_n`, `e_293b41b1de9744a3960801015728edd4_d`, `e_e5b7fe302a3f4025b8c7edf6421ba359_s`, `e_e5b7fe302a3f4025b8c7edf6421ba359_n`, `e_e5b7fe302a3f4025b8c7edf6421ba359_d`, `e_bc4ff3847975424bb87831b6e6780461_s`, `e_bc4ff3847975424bb87831b6e6780461_n`, `e_bc4ff3847975424bb87831b6e6780461_d`, `e_920e0c6898e04153ae0d8a666eabe22c_s`, `e_920e0c6898e04153ae0d8a666eabe22c_n`, `e_920e0c6898e04153ae0d8a666eabe22c_d`, `e_3ccd726b4df747418153faa0fcc9130f_s`, `e_3ccd726b4df747418153faa0fcc9130f_n`, `e_3ccd726b4df747418153faa0fcc9130f_d`) VALUES
+(3, 'Лекарственные препараты', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, '30', 30, NULL, 'таблетки кишечнорастворимые с пролонгированным выс', 0, NULL, 'Космо С.п.А.', 0, NULL, '', NULL, NULL, '__IMAGE_EXISTS__', 0, NULL, '1', 1, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `ga26l_zoo_jbzoo_orders`
+--
+
+CREATE TABLE `ga26l_zoo_jbzoo_orders` (
+  `id` int(11) NOT NULL,
+  `status` varchar(100) DEFAULT '0',
+  `status_payment` varchar(100) DEFAULT '0',
+  `status_shipping` varchar(100) DEFAULT '0',
+  `created` datetime DEFAULT NULL,
+  `created_by` int(11) DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  `total` float DEFAULT NULL,
+  `items` longtext DEFAULT NULL,
+  `fields` text DEFAULT NULL,
+  `shipping` text DEFAULT NULL,
+  `shippingfields` text DEFAULT NULL,
+  `track` text DEFAULT NULL,
+  `modifiers` text DEFAULT NULL,
+  `payment` text DEFAULT NULL,
+  `params` text DEFAULT NULL,
+  `comment` text DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `ga26l_zoo_jbzoo_orders`
+--
+
+INSERT INTO `ga26l_zoo_jbzoo_orders` (`id`, `status`, `status_payment`, `status_shipping`, `created`, `created_by`, `modified`, `total`, `items`, `fields`, `shipping`, `shippingfields`, `track`, `modifiers`, `payment`, `params`, `comment`) VALUES
+(2, 'undefined', 'undefined', 'undefined', '2020-11-11 09:25:18', 0, NULL, 3000, '{\n	\"743d8fa762147705bdfa0d3be5b80218\": {\n		\"key\": \"743d8fa762147705bdfa0d3be5b80218\",\n		\"item_id\": \"3\",\n		\"item_name\": \"\\u041a\\u041e\\u0420\\u0422\\u0418\\u041c\\u0415\\u041d\\u0422\",\n		\"element_id\": \"3ccd726b-4df7-4741-8153-faa0fcc9130f\",\n		\"total\": \"3000 643\",\n		\"quantity\": 1,\n		\"template\": {\n			\"78bd9fb2fc32e9b7aa8fe996e87ce59a\": \"teaser\"\n		},\n		\"values\": {\n\n		},\n		\"selected\": {\n\n		},\n		\"elements\": {\n			\"_sku\": \"1\",\n			\"_value\": \"3000\",\n			\"_buttons\": null,\n			\"_discount\": null,\n			\"_margin\": null\n		},\n		\"params\": {\n			\"value\": {\n\n			},\n			\"buttons\": {\n				\"hash\": null,\n				\"item_id\": \"3\",\n				\"element_id\": \"3ccd726b-4df7-4741-8153-faa0fcc9130f\",\n				\"key\": \"743d8fa762147705bdfa0d3be5b80218\",\n				\"basket\": \"http:\\/\\/domparmed\\/index.php?option=com_zoo&controller=basket&task=index&Itemid=101&nc=7952\",\n				\"isModal\": false,\n				\"isInCart\": 0,\n				\"addAlert\": 1,\n				\"addAlertText\": \"\\u0422\\u043e\\u0432\\u0430\\u0440 \\u0434\\u043e\\u0431\\u0430\\u0432\\u043b\\u0435\\u043d \\u0432 \\u043a\\u043e\\u0440\\u0437\\u0438\\u043d\\u0443!\",\n				\"addAlertTimeout\": 3000,\n				\"remove\": \"http:\\/\\/domparmed\\/?option=com_zoo&controller=default&task=callelement&element=3ccd726b-4df7-4741-8153-faa0fcc9130f&method=ajaxRemoveFromCart&item_id=3\",\n				\"add\": \"http:\\/\\/domparmed\\/?option=com_zoo&controller=default&task=callelement&element=3ccd726b-4df7-4741-8153-faa0fcc9130f&method=ajaxAddToCart&item_id=3\",\n				\"modal\": \"http:\\/\\/domparmed\\/?option=com_zoo&controller=default&task=callelement&element=3ccd726b-4df7-4741-8153-faa0fcc9130f&method=ajaxModalWindow&item_id=3&args%5Btemplate%5D=modal&tmpl=component&modal=1\"\n			}\n		},\n		\"modifiers\": {\n\n		},\n		\"variant\": 0,\n		\"variations\": {\n			\"0\": {\n				\"_sku\": {\n					\"value\": \"1\"\n				},\n				\"_value\": {\n					\"value\": \"3000\"\n				}\n			}\n		},\n		\"isOverlay\": false\n	}\n}', '{\n\n}', '{\n	\"element_id\": \"4c4e7455-60e7-429a-8749-cfceb376b20c\",\n	\"rate\": \"0 643\"\n}', '{\n	\"66a912f8-0102-4ad2-aad9-ea4fd72e362e\": {\n\n	},\n	\"3f8b84c8-f8e8-440b-b71c-4e9ba4e9ba70\": {\n\n	},\n	\"03617001-2a63-4f52-8cee-c7895b77b5cd\": {\n\n	},\n	\"534d65a5-2e6c-4124-8421-1cc5d5c4ed64\": {\n\n	}\n}', NULL, '{\n\n}', '{\n	\"value\": \"\"\n}', '{\n	\"modifierorderprice\": {\n\n	},\n	\"modifieritemprice\": {\n\n	},\n	\"shipping\": {\n		\"4c4e7455-60e7-429a-8749-cfceb376b20c\": {\n			\"identifier\": \"4c4e7455-60e7-429a-8749-cfceb376b20c\",\n			\"type\": \"pickup\",\n			\"group\": \"shipping\",\n			\"name\": \"\\u0421\\u0430\\u043c\\u043e\\u0432\\u044b\\u0432\\u043e\\u0437\",\n			\"description\": \"\",\n			\"access\": \"1\",\n			\"modifytotal\": \"0\",\n			\"limit_for_free\": \"\",\n			\"address\": \"\\u0421\\u0438\\u043c\\u0444\\u0435\\u0440\\u043e\\u043f\\u043e\\u043b\\u044c, \\u0443\\u043b. \\u041a\\u0440\\u044b\\u043c\\u0441\\u043a\\u0430\\u044f, 7\\r\\n\\u043f\\u0433\\u0442 \\u041c\\u043e\\u043b\\u043e\\u0434\\u0435\\u0436\\u043d\\u043e\\u0435 ........\\r\\n\"\n		}\n	},\n	\"shippingfield\": {\n		\"66a912f8-0102-4ad2-aad9-ea4fd72e362e\": {\n			\"identifier\": \"66a912f8-0102-4ad2-aad9-ea4fd72e362e\",\n			\"type\": \"text\",\n			\"group\": \"shippingfield\",\n			\"name\": \"\\u0413\\u043e\\u0440\\u043e\\u0434\",\n			\"description\": \"\",\n			\"access\": \"1\",\n			\"required\": \"1\"\n		},\n		\"3f8b84c8-f8e8-440b-b71c-4e9ba4e9ba70\": {\n			\"identifier\": \"3f8b84c8-f8e8-440b-b71c-4e9ba4e9ba70\",\n			\"type\": \"text\",\n			\"group\": \"shippingfield\",\n			\"name\": \"\\u0423\\u043b\\u0438\\u0446\\u0430\",\n			\"description\": \"\",\n			\"access\": \"1\",\n			\"required\": \"1\"\n		},\n		\"03617001-2a63-4f52-8cee-c7895b77b5cd\": {\n			\"identifier\": \"03617001-2a63-4f52-8cee-c7895b77b5cd\",\n			\"type\": \"text\",\n			\"group\": \"shippingfield\",\n			\"name\": \"\\u0414\\u043e\\u043c \\u0438 \\u043d\\u043e\\u043c\\u0435\\u0440 \\u043a\\u0432\\u0430\\u0440\\u0442\\u0438\\u0440\\u044b\",\n			\"description\": \"\",\n			\"access\": \"1\",\n			\"required\": \"1\"\n		},\n		\"534d65a5-2e6c-4124-8421-1cc5d5c4ed64\": {\n			\"identifier\": \"534d65a5-2e6c-4124-8421-1cc5d5c4ed64\",\n			\"type\": \"textarea\",\n			\"group\": \"shippingfield\",\n			\"name\": \"\\u0412\\u0430\\u0448 \\u043a\\u043e\\u043c\\u0435\\u043d\\u0442\\u0430\\u0440\\u0438\\u0439\",\n			\"description\": \"\",\n			\"access\": \"1\",\n			\"required\": \"0\"\n		}\n	},\n	\"payment\": {\n		\"58e4fc48-c93c-463f-9845-38e9b304d072\": {\n			\"identifier\": \"58e4fc48-c93c-463f-9845-38e9b304d072\",\n			\"type\": \"paypal\",\n			\"group\": \"payment\",\n			\"name\": \"PayPal\",\n			\"description\": \"\",\n			\"access\": \"1\",\n			\"debug\": \"0\",\n			\"currency\": \"eur\",\n			\"modifytotal\": \"0\",\n			\"email\": \"\"\n		}\n	},\n	\"currency\": {\n		\"default_cur\": {\n			\"code\": \"default_cur\",\n			\"value\": 1,\n			\"name\": \"Default\",\n			\"format\": {\n				\"symbol\": \"\",\n				\"round_type\": \"none\",\n				\"round_value\": \"2\",\n				\"num_decimals\": \"2\",\n				\"decimal_sep\": \".\",\n				\"thousands_sep\": \" \",\n				\"format_positive\": \"%v%s\",\n				\"format_negative\": \"-%v%s\"\n			}\n		},\n		\"%\": {\n			\"code\": \"%\",\n			\"value\": 1,\n			\"name\": \"Percents\",\n			\"format\": {\n				\"symbol\": \"%\",\n				\"round_type\": \"none\",\n				\"round_value\": \"2\",\n				\"num_decimals\": \"2\",\n				\"decimal_sep\": \".\",\n				\"thousands_sep\": \" \",\n				\"format_positive\": \"%v%s\",\n				\"format_negative\": \"-%v%s\"\n			}\n		},\n		\"643\": {\n			\"code\": \"643\",\n			\"value\": 90.36,\n			\"name\": \"\\u0420\\u0443\\u0431\\u043b\\u044c\",\n			\"format\": {\n				\"symbol\": \"\\u20bd\",\n				\"round_type\": \"none\",\n				\"round_value\": 2,\n				\"num_decimals\": 0,\n				\"decimal_sep\": \".\",\n				\"thousands_sep\": \" \",\n				\"format_positive\": \"%v %s\",\n				\"format_negative\": \"-%v %s\"\n			}\n		},\n		\"eur\": {\n			\"code\": \"default_cur\",\n			\"value\": 1,\n			\"name\": \"Default\",\n			\"format\": {\n				\"symbol\": \"\",\n				\"round_type\": \"none\",\n				\"round_value\": \"2\",\n				\"num_decimals\": \"2\",\n				\"decimal_sep\": \".\",\n				\"thousands_sep\": \" \",\n				\"format_positive\": \"%v%s\",\n				\"format_negative\": \"-%v%s\"\n			}\n		}\n	},\n	\"config\": {\n		\"enable\": 1,\n		\"menuitem\": 101,\n		\"access\": 1,\n		\"default_order_status\": \"\",\n		\"freeorder\": 0,\n		\"default_currency\": 643,\n		\"undefined_currency\": \"default\",\n		\"currency_ttl\": 1440,\n		\"tmpl_name\": \"uikit\",\n		\"tmpl_item_link\": 1,\n		\"tmpl_image_show\": 1,\n		\"tmpl_image_link\": 1,\n		\"tmpl_image_width\": 75,\n		\"tmpl_image_height\": 75,\n		\"tmpl_sku_show\": 1,\n		\"tmpl_price4one\": 1,\n		\"tmpl_quntity\": 1,\n		\"tmpl_subtotal\": 1,\n		\"tmpl_button_create\": 1,\n		\"tmpl_button_payment\": 1,\n		\"shop_name\": \"\",\n		\"shop_details\": \"\",\n		\"default_shipping\": \"\",\n		\"default_shipping_status\": \"\",\n		\"default_shipping_country\": \"\",\n		\"default_shipping_city\": \"\",\n		\"default_shipping_address\": \"\",\n		\"default_shipping_zip\": \"\",\n		\"default_payment\": \"\",\n		\"default_payment_status\": \"\",\n		\"default_payment_status_success\": \"\",\n		\"default_payment_status_error\": \"\"\n	}\n}', NULL),
+(3, 'cdb5ed18-8933-485a-a4d6-0a3a2dbd707e', 'undefined', 'undefined', '2020-11-11 11:30:00', 0, '2020-11-11 11:31:34', 3000, '{\n	\"743d8fa762147705bdfa0d3be5b80218\": {\n		\"key\": \"743d8fa762147705bdfa0d3be5b80218\",\n		\"item_id\": \"3\",\n		\"item_name\": \"\\u041a\\u041e\\u0420\\u0422\\u0418\\u041c\\u0415\\u041d\\u0422\",\n		\"element_id\": \"3ccd726b-4df7-4741-8153-faa0fcc9130f\",\n		\"total\": \"3000 643\",\n		\"quantity\": 1,\n		\"template\": {\n			\"78bd9fb2fc32e9b7aa8fe996e87ce59a\": \"teaser\"\n		},\n		\"values\": {\n\n		},\n		\"selected\": {\n\n		},\n		\"elements\": {\n			\"_sku\": \"1\",\n			\"_value\": \"3000\",\n			\"_buttons\": null,\n			\"_discount\": null,\n			\"_margin\": null\n		},\n		\"params\": {\n			\"value\": {\n\n			},\n			\"buttons\": {\n				\"hash\": null,\n				\"item_id\": \"3\",\n				\"element_id\": \"3ccd726b-4df7-4741-8153-faa0fcc9130f\",\n				\"key\": \"743d8fa762147705bdfa0d3be5b80218\",\n				\"basket\": \"http:\\/\\/domparmed\\/index.phpoption=com_zoo&controller=basket&task=index&Itemid=101&nc=5485\",\n				\"isModal\": false,\n				\"isInCart\": 0,\n				\"addAlert\": 1,\n				\"addAlertText\": \"\\u0422\\u043e\\u0432\\u0430\\u0440 \\u0434\\u043e\\u0431\\u0430\\u0432\\u043b\\u0435\\u043d \\u0432 \\u043a\\u043e\\u0440\\u0437\\u0438\\u043d\\u0443!\",\n				\"addAlertTimeout\": 3000,\n				\"remove\": \"http:\\/\\/domparmed\\/option=com_zoo&controller=default&task=callelement&element=3ccd726b-4df7-4741-8153-faa0fcc9130f&method=ajaxRemoveFromCart&item_id=3\",\n				\"add\": \"http:\\/\\/domparmed\\/option=com_zoo&controller=default&task=callelement&element=3ccd726b-4df7-4741-8153-faa0fcc9130f&method=ajaxAddToCart&item_id=3\",\n				\"modal\": \"http:\\/\\/domparmed\\/option=com_zoo&controller=default&task=callelement&element=3ccd726b-4df7-4741-8153-faa0fcc9130f&method=ajaxModalWindow&item_id=3&args%5Btemplate%5D=modal&tmpl=component&modal=1\"\n			}\n		},\n		\"modifiers\": {\n\n		},\n		\"variant\": 0,\n		\"variations\": {\n			\"0\": {\n				\"_sku\": {\n					\"value\": \"1\"\n				},\n				\"_value\": {\n					\"value\": \"3000\"\n				}\n			}\n		},\n		\"isOverlay\": false\n	}\n}', '{\n\n}', '{\n	\"element_id\": \"4c4e7455-60e7-429a-8749-cfceb376b20c\",\n	\"rate\": \"0 643\",\n	\"status\": \"undefined\"\n}', '{\n	\"66a912f8-0102-4ad2-aad9-ea4fd72e362e\": {\n\n	},\n	\"3f8b84c8-f8e8-440b-b71c-4e9ba4e9ba70\": {\n\n	},\n	\"03617001-2a63-4f52-8cee-c7895b77b5cd\": {\n\n	},\n	\"534d65a5-2e6c-4124-8421-1cc5d5c4ed64\": {\n\n	}\n}', '', '{\n\n}', '{\n	\"value\": \"\",\n	\"status\": \"undefined\"\n}', '{\n	\"modifierorderprice\": {\n\n	},\n	\"modifieritemprice\": {\n\n	},\n	\"shipping\": {\n		\"4c4e7455-60e7-429a-8749-cfceb376b20c\": {\n			\"identifier\": \"4c4e7455-60e7-429a-8749-cfceb376b20c\",\n			\"type\": \"pickup\",\n			\"group\": \"shipping\",\n			\"name\": \"\\u0421\\u0430\\u043c\\u043e\\u0432\\u044b\\u0432\\u043e\\u0437\",\n			\"description\": \"\",\n			\"access\": \"1\",\n			\"modifytotal\": \"0\",\n			\"limit_for_free\": \"\",\n			\"address\": \"\\u0421\\u0438\\u043c\\u0444\\u0435\\u0440\\u043e\\u043f\\u043e\\u043b\\u044c, \\u0443\\u043b. \\u041a\\u0440\\u044b\\u043c\\u0441\\u043a\\u0430\\u044f, 7\\r\\n\\u043f\\u0433\\u0442 \\u041c\\u043e\\u043b\\u043e\\u0434\\u0435\\u0436\\u043d\\u043e\\u0435 ........\\r\\n\"\n		}\n	},\n	\"shippingfield\": {\n		\"66a912f8-0102-4ad2-aad9-ea4fd72e362e\": {\n			\"identifier\": \"66a912f8-0102-4ad2-aad9-ea4fd72e362e\",\n			\"type\": \"text\",\n			\"group\": \"shippingfield\",\n			\"name\": \"\\u0413\\u043e\\u0440\\u043e\\u0434\",\n			\"description\": \"\",\n			\"access\": \"1\",\n			\"required\": \"1\"\n		},\n		\"3f8b84c8-f8e8-440b-b71c-4e9ba4e9ba70\": {\n			\"identifier\": \"3f8b84c8-f8e8-440b-b71c-4e9ba4e9ba70\",\n			\"type\": \"text\",\n			\"group\": \"shippingfield\",\n			\"name\": \"\\u0423\\u043b\\u0438\\u0446\\u0430\",\n			\"description\": \"\",\n			\"access\": \"1\",\n			\"required\": \"1\"\n		},\n		\"03617001-2a63-4f52-8cee-c7895b77b5cd\": {\n			\"identifier\": \"03617001-2a63-4f52-8cee-c7895b77b5cd\",\n			\"type\": \"text\",\n			\"group\": \"shippingfield\",\n			\"name\": \"\\u0414\\u043e\\u043c \\u0438 \\u043d\\u043e\\u043c\\u0435\\u0440 \\u043a\\u0432\\u0430\\u0440\\u0442\\u0438\\u0440\\u044b\",\n			\"description\": \"\",\n			\"access\": \"1\",\n			\"required\": \"1\"\n		},\n		\"534d65a5-2e6c-4124-8421-1cc5d5c4ed64\": {\n			\"identifier\": \"534d65a5-2e6c-4124-8421-1cc5d5c4ed64\",\n			\"type\": \"textarea\",\n			\"group\": \"shippingfield\",\n			\"name\": \"\\u0412\\u0430\\u0448 \\u043a\\u043e\\u043c\\u0435\\u043d\\u0442\\u0430\\u0440\\u0438\\u0439\",\n			\"description\": \"\",\n			\"access\": \"1\",\n			\"required\": \"0\"\n		}\n	},\n	\"payment\": {\n		\"eb9fb746-1bf8-4cd3-8531-152fb47e0564\": {\n			\"identifier\": \"eb9fb746-1bf8-4cd3-8531-152fb47e0564\",\n			\"type\": \"qiwi\",\n			\"group\": \"payment\",\n			\"name\": \"Qiwi\",\n			\"description\": \"\",\n			\"access\": \"1\",\n			\"debug\": \"0\",\n			\"currency\": \"eur\",\n			\"modifytotal\": \"0\",\n			\"shop_id\": \"\",\n			\"rest_id\": \"\",\n			\"psw\": \"\",\n			\"sign_psw\": \"\"\n		}\n	},\n	\"currency\": {\n		\"default_cur\": {\n			\"code\": \"default_cur\",\n			\"value\": 1,\n			\"name\": \"Default\",\n			\"format\": {\n				\"symbol\": \"\",\n				\"round_type\": \"none\",\n				\"round_value\": \"2\",\n				\"num_decimals\": \"2\",\n				\"decimal_sep\": \".\",\n				\"thousands_sep\": \" \",\n				\"format_positive\": \"%v%s\",\n				\"format_negative\": \"-%v%s\"\n			}\n		},\n		\"%\": {\n			\"code\": \"%\",\n			\"value\": 1,\n			\"name\": \"Percents\",\n			\"format\": {\n				\"symbol\": \"%\",\n				\"round_type\": \"none\",\n				\"round_value\": \"2\",\n				\"num_decimals\": \"2\",\n				\"decimal_sep\": \".\",\n				\"thousands_sep\": \" \",\n				\"format_positive\": \"%v%s\",\n				\"format_negative\": \"-%v%s\"\n			}\n		},\n		\"643\": {\n			\"code\": \"643\",\n			\"value\": 90.36,\n			\"name\": \"\\u0420\\u0443\\u0431\\u043b\\u044c\",\n			\"format\": {\n				\"symbol\": \"\\u20bd\",\n				\"round_type\": \"none\",\n				\"round_value\": 2,\n				\"num_decimals\": 0,\n				\"decimal_sep\": \".\",\n				\"thousands_sep\": \" \",\n				\"format_positive\": \"%v %s\",\n				\"format_negative\": \"-%v %s\"\n			}\n		},\n		\"eur\": {\n			\"code\": \"default_cur\",\n			\"value\": 1,\n			\"name\": \"Default\",\n			\"format\": {\n				\"symbol\": \"\",\n				\"round_type\": \"none\",\n				\"round_value\": \"2\",\n				\"num_decimals\": \"2\",\n				\"decimal_sep\": \".\",\n				\"thousands_sep\": \" \",\n				\"format_positive\": \"%v%s\",\n				\"format_negative\": \"-%v%s\"\n			}\n		}\n	},\n	\"config\": {\n		\"enable\": 1,\n		\"menuitem\": 101,\n		\"access\": 1,\n		\"default_order_status\": \"\",\n		\"freeorder\": 0,\n		\"default_currency\": 643,\n		\"undefined_currency\": \"default\",\n		\"currency_ttl\": 1440,\n		\"tmpl_name\": \"uikit\",\n		\"tmpl_item_link\": 1,\n		\"tmpl_image_show\": 1,\n		\"tmpl_image_link\": 1,\n		\"tmpl_image_width\": 75,\n		\"tmpl_image_height\": 75,\n		\"tmpl_sku_show\": 1,\n		\"tmpl_price4one\": 1,\n		\"tmpl_quntity\": 1,\n		\"tmpl_subtotal\": 1,\n		\"tmpl_button_create\": 1,\n		\"tmpl_button_payment\": 1,\n		\"shop_name\": \"\",\n		\"shop_details\": \"\",\n		\"default_shipping\": \"\",\n		\"default_shipping_status\": \"\",\n		\"default_shipping_country\": \"\",\n		\"default_shipping_city\": \"\",\n		\"default_shipping_address\": \"\",\n		\"default_shipping_zip\": \"\",\n		\"default_payment\": \"\",\n		\"default_payment_status\": \"\",\n		\"default_payment_status_success\": \"\",\n		\"default_payment_status_error\": \"\"\n	}\n}', '');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `ga26l_zoo_jbzoo_sku`
+--
+
+CREATE TABLE `ga26l_zoo_jbzoo_sku` (
+  `item_id` int(11) UNSIGNED NOT NULL,
+  `element_id` varchar(36) NOT NULL,
+  `param_id` varchar(36) NOT NULL,
+  `value_s` varchar(150) NOT NULL,
+  `value_n` double NOT NULL,
+  `value_d` datetime DEFAULT NULL,
+  `variant` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `ga26l_zoo_jbzoo_sku`
+--
+
+INSERT INTO `ga26l_zoo_jbzoo_sku` (`item_id`, `element_id`, `param_id`, `value_s`, `value_n`, `value_d`, `variant`) VALUES
+(3, '3ccd726b-4df7-4741-8153-faa0fcc9130f', '_value', '3000', 3000, '3000-11-11 12:05:30', -1),
+(3, '3ccd726b-4df7-4741-8153-faa0fcc9130f', '_sku', '1', 1, NULL, 0),
+(3, '3ccd726b-4df7-4741-8153-faa0fcc9130f', '_value', '3000', 3000, '3000-11-11 12:05:30', 0),
+(3, '3ccd726b-4df7-4741-8153-faa0fcc9130f', '_sku', '1', 1, NULL, -1);
 
 -- --------------------------------------------------------
 
@@ -2634,6 +3053,17 @@ CREATE TABLE `ga26l_zoo_search_index` (
   `element_id` varchar(255) NOT NULL,
   `value` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `ga26l_zoo_search_index`
+--
+
+INSERT INTO `ga26l_zoo_search_index` (`item_id`, `element_id`, `value`) VALUES
+(3, '3ccd726b-4df7-4741-8153-faa0fcc9130f', '\n1'),
+(3, 'b1dfc9e0-af89-466d-b1fd-b75ae1f9bf61', '30'),
+(3, '920e0c68-98e0-4153-ae0d-8a666eabe22c', '\n__IMAGE_EXISTS__'),
+(3, 'e5b7fe30-2a3f-4025-b8c7-edf6421ba359', 'Космо С.п.А.'),
+(3, '293b41b1-de97-44a3-9608-01015728edd4', 'таблетки кишечнорастворимые с пролонгированным высвобождением, покрытие пленочной оболочкой');
 
 -- --------------------------------------------------------
 
@@ -3418,6 +3848,68 @@ ALTER TABLE `ga26l_zoo_jbzoo_config`
   ADD KEY `key` (`key`);
 
 --
+-- Индексы таблицы `ga26l_zoo_jbzoo_index_new_shop_item`
+--
+ALTER TABLE `ga26l_zoo_jbzoo_index_new_shop_item`
+  ADD KEY `item_id` (`item_id`),
+  ADD KEY `e_itemcategory_s` (`e_itemcategory_s`),
+  ADD KEY `e_itemcategory_n` (`e_itemcategory_n`),
+  ADD KEY `e_itemfrontpage_s` (`e_itemfrontpage_s`),
+  ADD KEY `e_itemfrontpage_n` (`e_itemfrontpage_n`),
+  ADD KEY `e_itemname_s` (`e_itemname_s`),
+  ADD KEY `e_itemname_n` (`e_itemname_n`),
+  ADD KEY `e_itemtag_s` (`e_itemtag_s`),
+  ADD KEY `e_itemtag_n` (`e_itemtag_n`),
+  ADD KEY `e_itemcategory_d` (`e_itemcategory_d`),
+  ADD KEY `e_itemfrontpage_d` (`e_itemfrontpage_d`),
+  ADD KEY `e_itemname_d` (`e_itemname_d`),
+  ADD KEY `e_itemtag_d` (`e_itemtag_d`),
+  ADD KEY `e_b1dfc9e0af89466db1fdb75ae1f9bf61_s` (`e_b1dfc9e0af89466db1fdb75ae1f9bf61_s`),
+  ADD KEY `e_b1dfc9e0af89466db1fdb75ae1f9bf61_n` (`e_b1dfc9e0af89466db1fdb75ae1f9bf61_n`),
+  ADD KEY `e_b1dfc9e0af89466db1fdb75ae1f9bf61_d` (`e_b1dfc9e0af89466db1fdb75ae1f9bf61_d`),
+  ADD KEY `e_293b41b1de9744a3960801015728edd4_s` (`e_293b41b1de9744a3960801015728edd4_s`),
+  ADD KEY `e_293b41b1de9744a3960801015728edd4_n` (`e_293b41b1de9744a3960801015728edd4_n`),
+  ADD KEY `e_293b41b1de9744a3960801015728edd4_d` (`e_293b41b1de9744a3960801015728edd4_d`),
+  ADD KEY `e_e5b7fe302a3f4025b8c7edf6421ba359_s` (`e_e5b7fe302a3f4025b8c7edf6421ba359_s`),
+  ADD KEY `e_e5b7fe302a3f4025b8c7edf6421ba359_n` (`e_e5b7fe302a3f4025b8c7edf6421ba359_n`),
+  ADD KEY `e_e5b7fe302a3f4025b8c7edf6421ba359_d` (`e_e5b7fe302a3f4025b8c7edf6421ba359_d`),
+  ADD KEY `e_bc4ff3847975424bb87831b6e6780461_s` (`e_bc4ff3847975424bb87831b6e6780461_s`),
+  ADD KEY `e_bc4ff3847975424bb87831b6e6780461_n` (`e_bc4ff3847975424bb87831b6e6780461_n`),
+  ADD KEY `e_bc4ff3847975424bb87831b6e6780461_d` (`e_bc4ff3847975424bb87831b6e6780461_d`),
+  ADD KEY `e_920e0c6898e04153ae0d8a666eabe22c_s` (`e_920e0c6898e04153ae0d8a666eabe22c_s`),
+  ADD KEY `e_920e0c6898e04153ae0d8a666eabe22c_n` (`e_920e0c6898e04153ae0d8a666eabe22c_n`),
+  ADD KEY `e_920e0c6898e04153ae0d8a666eabe22c_d` (`e_920e0c6898e04153ae0d8a666eabe22c_d`),
+  ADD KEY `e_3ccd726b4df747418153faa0fcc9130f_s` (`e_3ccd726b4df747418153faa0fcc9130f_s`),
+  ADD KEY `e_3ccd726b4df747418153faa0fcc9130f_n` (`e_3ccd726b4df747418153faa0fcc9130f_n`),
+  ADD KEY `e_3ccd726b4df747418153faa0fcc9130f_d` (`e_3ccd726b4df747418153faa0fcc9130f_d`);
+
+--
+-- Индексы таблицы `ga26l_zoo_jbzoo_orders`
+--
+ALTER TABLE `ga26l_zoo_jbzoo_orders`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `status` (`status`),
+  ADD KEY `status_payment` (`status_payment`),
+  ADD KEY `status_shipping` (`status_shipping`),
+  ADD KEY `created` (`created`),
+  ADD KEY `created_by` (`created_by`),
+  ADD KEY `modified` (`modified`),
+  ADD KEY `total` (`total`);
+ALTER TABLE `ga26l_zoo_jbzoo_orders` ADD FULLTEXT KEY `comment` (`comment`);
+
+--
+-- Индексы таблицы `ga26l_zoo_jbzoo_sku`
+--
+ALTER TABLE `ga26l_zoo_jbzoo_sku`
+  ADD KEY `item_id` (`item_id`),
+  ADD KEY `element_id` (`element_id`),
+  ADD KEY `param_id` (`param_id`),
+  ADD KEY `value_s` (`value_s`),
+  ADD KEY `value_n` (`value_n`),
+  ADD KEY `value_d` (`value_d`),
+  ADD KEY `variant` (`variant`);
+
+--
 -- Индексы таблицы `ga26l_zoo_rating`
 --
 ALTER TABLE `ga26l_zoo_rating`
@@ -3452,7 +3944,7 @@ ALTER TABLE `ga26l_zoo_tag`
 -- AUTO_INCREMENT для таблицы `ga26l_action_logs`
 --
 ALTER TABLE `ga26l_action_logs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=138;
 
 --
 -- AUTO_INCREMENT для таблицы `ga26l_action_logs_extensions`
@@ -3482,7 +3974,7 @@ ALTER TABLE `ga26l_ak_stats`
 -- AUTO_INCREMENT для таблицы `ga26l_assets`
 --
 ALTER TABLE `ga26l_assets`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Primary Key', AUTO_INCREMENT=79;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Primary Key', AUTO_INCREMENT=81;
 
 --
 -- AUTO_INCREMENT для таблицы `ga26l_banners`
@@ -3548,25 +4040,25 @@ ALTER TABLE `ga26l_finder_filters`
 -- AUTO_INCREMENT для таблицы `ga26l_finder_links`
 --
 ALTER TABLE `ga26l_finder_links`
-  MODIFY `link_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `link_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT для таблицы `ga26l_finder_taxonomy`
 --
 ALTER TABLE `ga26l_finder_taxonomy`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT для таблицы `ga26l_finder_terms`
 --
 ALTER TABLE `ga26l_finder_terms`
-  MODIFY `term_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `term_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=244;
 
 --
 -- AUTO_INCREMENT для таблицы `ga26l_finder_types`
 --
 ALTER TABLE `ga26l_finder_types`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT для таблицы `ga26l_languages`
@@ -3578,7 +4070,7 @@ ALTER TABLE `ga26l_languages`
 -- AUTO_INCREMENT для таблицы `ga26l_menu`
 --
 ALTER TABLE `ga26l_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=120;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=124;
 
 --
 -- AUTO_INCREMENT для таблицы `ga26l_menu_types`
@@ -3596,7 +4088,7 @@ ALTER TABLE `ga26l_messages`
 -- AUTO_INCREMENT для таблицы `ga26l_modules`
 --
 ALTER TABLE `ga26l_modules`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 
 --
 -- AUTO_INCREMENT для таблицы `ga26l_newsfeeds`
@@ -3662,7 +4154,7 @@ ALTER TABLE `ga26l_ucm_history`
 -- AUTO_INCREMENT для таблицы `ga26l_updates`
 --
 ALTER TABLE `ga26l_updates`
-  MODIFY `update_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=159;
+  MODIFY `update_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=396;
 
 --
 -- AUTO_INCREMENT для таблицы `ga26l_update_sites`
@@ -3710,13 +4202,13 @@ ALTER TABLE `ga26l_wf_profiles`
 -- AUTO_INCREMENT для таблицы `ga26l_zoo_application`
 --
 ALTER TABLE `ga26l_zoo_application`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT для таблицы `ga26l_zoo_category`
 --
 ALTER TABLE `ga26l_zoo_category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT для таблицы `ga26l_zoo_comment`
@@ -3728,7 +4220,13 @@ ALTER TABLE `ga26l_zoo_comment`
 -- AUTO_INCREMENT для таблицы `ga26l_zoo_item`
 --
 ALTER TABLE `ga26l_zoo_item`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT для таблицы `ga26l_zoo_jbzoo_orders`
+--
+ALTER TABLE `ga26l_zoo_jbzoo_orders`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT для таблицы `ga26l_zoo_rating`

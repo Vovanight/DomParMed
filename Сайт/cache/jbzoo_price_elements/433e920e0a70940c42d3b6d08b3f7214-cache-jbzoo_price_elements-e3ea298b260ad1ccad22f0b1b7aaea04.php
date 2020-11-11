@@ -1,0 +1,6 @@
+<?php die("Access Denied"); ?>#x#s:1170:"<script type="text/javascript">JBZoo.mergeVar("3c070ce8e-2716-445c-a887-25af8cb85026.elements", {"value":[]})</script><script type="text/javascript">JBZoo.mergeVar("3c070ce8e-2716-445c-a887-25af8cb85026.template", {"fcf48ba65d15f9e23ef907917ce8dd9e":"default"})</script><div id="jbprice-637709" class="jsPrice-3-c070ce8e-2716-445c-a887-25af8cb85026 jsPrice jsJBPrice jsJBPrice-c070ce8e-2716-445c-a887-25af8cb85026-3 fcf48ba65d15f9e23ef907917ce8dd9e jbprice jbprice-tmpl-default jbprice-type-calc">
+<span class="element-label">price</span><div data-identifier="_value" data-template="default" data-index="0" data-position="list" class="jbprice-value jsElement jsPriceElement jsValue jsCore jselementdefaultlist0"></div>
+<script type="text/javascript">
+	jQuery(function($){ setTimeout(function(){$(".jsPrice-3-c070ce8e-2716-445c-a887-25af8cb85026").JBZooPrice({"hash":"fcf48ba65d15f9e23ef907917ce8dd9e","itemId":"3","identifier":"c070ce8e-2716-445c-a887-25af8cb85026","variantUrl":"http:\/\/domparmed\/?option=com_zoo&controller=default&task=callelement&element=c070ce8e-2716-445c-a887-25af8cb85026&method=ajaxChangeVariant&item_id=3"}, 1);}, 0); });
+</script>
+</div>";
