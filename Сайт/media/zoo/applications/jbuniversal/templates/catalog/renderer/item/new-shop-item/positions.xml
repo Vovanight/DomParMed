@@ -12,26 +12,41 @@
     @link       https://github.com/JBZoo/JBZoo
 -->
 <renderer>
-
+    <positions layout="feed">
+        <position name="description">Description</position>
+    </positions>
 
     <positions layout="full">
-        <position name="img">Фото препарата</position>
-        <position name="name_of_drugs">Наименование препарата</position>
-        <position name="manufacturer">Производитель</position>
-        <position name="form_release">Форма выпуска</position>
-        <position name="in_the_package">В упаковке</position>
-        <position name="JBZoo Price Plain">Цена</position>
-        
+        <position name="title">Title</position>
+        <position name="image">Image</position>
+        <position name="price">Price</position>
+        <position name="social">Social</position>
+        <position name="text">Tab: Text</position>
+        <position name="properties">Tab: Properties</position>
+        <position name="gallery">Tab: Gallery</position>
+        <position name="comments">Tab: Comments</position>
+        <position name="related">Related items</position>
     </positions>
 
     <positions layout="teaser">
-        <position name="img">Фото препарата</position>
-        <position name="name_of_drugs">Наименование препарата</position>
-        <position name="manufacturer">Производитель</position>
-        <position name="form_release">Форма выпуска</position>
-        <position name="in_the_package">В упаковке</position>
-        <position name="JBZoo Price Plain">Цена</position>
+        <position name="title">Наименование препарата</position>
+        <position name="image">Картинка</position>
+        <position name="text">Производитель</position>
+        <position name="price">Цена</position>
+        <position name="social">Соц сети</position>
     </positions>
-   
+
+
+    <positions layout="related">
+        <position name="title">Title</position>
+        <position name="image">Image</position>
+        <position name="properties">Properties</position>
+        <position name="text">Text</position>
+        <position name="meta">Meta</position>
+    </positions>
+
+   <positions layout="list">
+        <position name="list">List</position>
+    </positions>
 
 </renderer>

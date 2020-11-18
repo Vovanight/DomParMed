@@ -1,4 +1,4 @@
-/* cacheid:50c84148d35444d40e0e0679ec4184510 */
+/* cacheid:2331b5f6d6205ae36257bd65c3255b8f0 */
 /* media/zoo/applications/jbuniversal/assets/js/widget/goto.js */
 /**
  * JBZoo Application
