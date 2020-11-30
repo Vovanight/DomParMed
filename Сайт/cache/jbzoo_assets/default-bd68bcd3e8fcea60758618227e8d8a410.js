@@ -1,4 +1,4 @@
-/* cacheid:d53d94aa512e4fce368857229bd604cc0 */
+/* cacheid:c32740fbca761f6f2df1f2c6ed7f2af40 */
 /* media/zoo/applications/jbuniversal/assets/js/widget/goto.js */
 /**
  * JBZoo Application
@@ -1443,7 +1443,7 @@
     });
 
 })(jQuery, window, document);
-/* media/zoo/applications/jbuniversal/cart-elements/order/option/assets/option.js */
+/* media/zoo/applications/jbuniversal/assets/js/admin/validator.js */
 /**
  * JBZoo Application
  *
@@ -1460,171 +1460,895 @@
 ;
 (function ($, window, document, undefined) {
 
-    JBZoo.widget('JBZoo.ElementSelect', {
-        element : null,
-        variable: null,
-        url     : ""
-    }, {
-        hidden: null,
-        list  : null,
+    JBZoo.widget('JBZoo.PriceValidator', {
+            'isOverlay': false,
 
-        init: function ($this) {
-
-            $this.list = $this.$(' > ul');
-            $this.hidden = $this.$("li.hidden").detach();
-
-            $this.list.sortable({
-                handle     : ".sort-handle",
-                containment: $this.list.parent().parent(),
-                placeholder: "dragging",
-                axis       : "y",
-                opacity    : 1,
-                revert     : 75,
-                delay      : 100,
-                tolerance  : "pointer",
-                zIndex     : 99,
-
-                start: function (event, ui) {
-                    ui.placeholder.height(ui.helper.height());
-                    $this.list.sortable("refreshPositions")
-                },
-
-                stop: function (event, ui) {
-                    $this._orderOptions()
-                }
-            });
-
+            'message_variant_invalid' : 'The variant is invalid',
+            'message_duplicate_values': 'Values duplicates in other variant'
         },
+        {
+            init: function () {
 
-        _setOptionValue: function ($option) {
-            var $this = this,
-                text = $option.find(".panel input:text"),
-                alias = text.val();
+                var $this = this;
+                this.$('.jbprice-variation-row').each(function (i, row) {
+                    $this.addOptions($(row));
+                });
+            },
+            'change .simple-param .jsElement input, .simple-param .jsElement select, .simple-param .jsElement textarea': function (e, $this) {
 
-            if (alias == "") {
-                alias = $option.find(".name-input input").val()
-            }
+                var $row = $(this).closest('.jbprice-variation-row');
+                $this
+                    .clear()
+                    .addOptions($row)
+                    .getErrors();
+            },
 
-            $this._getAlias(alias, function (data) {
-                alias = data ? data : "42";
-                text.val(alias);
-                $option.find("a.trigger").text(alias);
-                $this._removeOptionPanel($option)
-            })
-        },
+            selected: function () {
 
-        _removeOptionPanel: function (option) {
-            option.find(".panel input:text").val(option.find("a.trigger").show().text());
-            option.find(".panel").removeClass("active");
-            this._orderOptions();
-        },
+                var $this = this,
+                    result = {};
 
-        _orderOptions: function () {
-            var pattern = /^(\S+\[option\])\[\d+\](\[name\]|\[value\])$/;
+                this.$('.jbprice-variation-row').each(function (i, row) {
+                    var data = {};
+                    $('.simple-param .jsElement', row).each(function (j, param) {
 
-            this.list.children("li").each(function (i) {
+                        var value = $this._simpleData(param);
+                        if (!JBZoo.empty(value)) {
+                            value.index = j;
+                            data[j] = value;
+                        }
+                    });
 
-                $(this).find("input").each(function () {
-
-                    var name = $(this).attr("name");
-                    if (name) {
-                        name = name.replace(pattern, "$1[" + i + "]$2");
-                        name = name.replace(/^tmp/, 'positions');
-                        name = name.replace(/-\d*\]\[/, '][');
-                        $(this).attr("name", name);
+                    if (!JBZoo.empty(data)) {
+                        result[i] = data;
                     }
                 });
 
-            })
-        },
+                return result;
+            },
 
-        _getAlias: function (name, callback) {
+            duplicates: function () {
 
-            var $this = this;
+                var selected = this.selected(),
+                    duplicates = {};
+                $.each(selected, function (i) {
+                    var subject = selected[i];
+                    $.each(selected, function (j, row) {
+                        if ((Object.keys(row).length === Object.keys(subject).length) && i != j) {
+                            var errors = {};
+                            $.each(row, function (k, param) {
+                                if ((!JBZoo.empty(param)) && (!JBZoo.empty(subject[k]))) {
+                                    if (param.value == subject[k].value && param.index == subject[k].index) {
+                                        errors[subject[k].index] = {
+                                            'index': subject[k].index,
+                                            'value': subject[k].value
+                                        };
+                                    }
+                                }
+                            });
+                            if (Object.keys(subject).length == Object.keys(errors).length && !JBZoo.empty(errors)) {
+                                duplicates[i + j] = {
+                                    'variant': i,
+                                    'index'  : errors
+                                };
+                            }
+                        }
+                    });
+                });
 
-            $this.ajax({
-                url     : $this.options.url,
-                dataType: 'html',
-                data    : {
-                    name: name
-                },
-                success : function (data) {
-                    data = $.parseJSON(data);
-                    callback(data);
+                return duplicates;
+            },
+
+            addOptions: function ($row) {
+
+                var $this = this,
+                    $options = $('.variation-label .options', $row),
+                    $overflow = $('.overflow', $options),
+                    $price = $('.jsVariantPrice', $options),
+                    core = {};
+
+                $overflow.html('');
+                $('.core-param', $row).each(function (i, param) {
+
+                    var option = $this._coreData(param);
+                    if (!JBZoo.empty(option)) {
+                        core[i] = option;
+                    }
+                });
+
+                $.each(core, function (index, data) {
+
+                    if (index === 0) {
+                        $price.html()
+                    }
+                });
+
+                $('.simple-param .jsElement', $row).each(function (i, param) {
+
+                    var option = $this._simpleData($(param));
+                    if (!JBZoo.empty(option)) {
+
+                        $overflow.append(
+                            '<div class="option">' +
+                            '<span title=\"' + option.label + '\" class="key">' + option.value + '</span></div>');
+                    }
+                });
+
+                $('.option .key', $options).tooltip();
+
+                return this;
+            },
+
+            clearOptions: function (row) {
+                $('.overflow', row).html('');
+
+                return this;
+            },
+
+            message: function (parent, message) {
+
+                $('.jsMessage', parent)
+                    .attr('title', message)
+                    .addClass('error')
+                    .tooltip();
+
+                return this;
+            },
+
+            clearMessages: function (row) {
+
+                $('.jsMessage', row)
+                    .removeClass('error lock')
+                    .removeAttr('title data-original-title')
+                    .tooltip()
+                    .tooltip('destroy');
+
+                return this;
+            },
+
+            _simpleData: function (simple) {
+
+                var $field = $('input, select, textarea', simple),
+                    data = {},
+                    value = $field.val(),
+                    label = $('.label', simple);
+
+                if ($field.attr('type') == 'radio') {
+                    $field = $('input[type="radio"]:checked', simple);
+                    value = $field.val();
                 }
-            });
-        },
 
-        'click .delete': function (e, $this) {
-            $(this)
-                .parent("li")
-                .slideUp(400, function () {
-                    $(this).remove();
-                    $this._orderOptions()
-                })
-        },
+                value = $.trim(value);
+                if (value.length > 0) {
+                    data = {
+                        'value': value,
+                        'label': $.trim(label.text())
+                    }
+                }
 
-        'blur .name-input input': function (e, $this) {
+                return data;
+            },
 
-            var option = $(this).closest("li"),
-                text = option.find(".panel input:text");
+            _coreData: function (core) {
 
-            if ($(this).val() != "" && text.val() == "") {
+                var $field = $('input, select, textarea', core),
+                    data = {},
+                    value = $field.val(),
+                    label = $('.label', core);
 
-                var alias = "";
+                if ($field.attr('type') == 'radio') {
+                    $field = $('input[type="radio"]:checked', core);
+                    value = $field.val();
+                }
 
-                $this._getAlias($(this).val(), function (data) {
-                    alias = data ? data : "42";
-                    text.val(alias);
-                    option.find("a.trigger").text(alias);
-                    $this._orderOptions();
-                })
-            }
-        },
+                value = $.trim(value);
+                if (!JBZoo.empty(value)) {
+                    data = {
+                        'value': value,
+                        'label': $.trim(label.text())
+                    }
+                }
 
-        'keydown .panel input:text': function (e, $this) {
-            event.stopPropagation();
-
-            if (event.which == 13) {
-                $this._setOptionValue($(this).closest("li"))
+                return data;
             }
 
-            if (event.which == 27) {
-                $this._removeOptionPanel($(this).closest("li"))
-            }
-        },
-
-        'click input.accept': function (e, $this) {
-            $this._setOptionValue($(this).closest("li"))
-        },
-
-        'click a.cancel': function (e, $this) {
-            $this._removeOptionPanel($(this).closest("li"))
-        },
-
-        'click a.trigger': function (e, $this) {
-            $(this)
-                .hide()
-                .closest("li")
-                .find(".panel")
-                .addClass("active")
-                .find("input:text")
-                .focus();
-        },
-
-        'click .add': function (e, $this) {
-            $this
-                .hidden.clone()
-                .removeClass("hidden")
-                .appendTo($this.list)
-                .slideDown(200)
-                .effect("highlight", {}, 1e3)
-                .find("input:first")
-                .focus();
-
-            $this._orderOptions()
         }
+    );
 
-    });
+})(jQuery, window, document);
+/* media/zoo/applications/jbuniversal/elements/jbprice/assets/js/edit.js */
+/**
+ * JBZoo Application
+ *
+ * This file is part of the JBZoo CCK package.
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @package    Application
+ * @license    GPL-2.0
+ * @copyright  Copyright (C) JBZoo.com, All rights reserved.
+ * @link       https://github.com/JBZoo/JBZoo
+ */
+
+;
+(function ($, window, document, undefined) {
+
+    JBZoo.widget('JBZoo.PriceEdit', {
+            // options
+            'isAdvance'                 : true,
+            'isOverlay'                 : false,
+            'isValid'                   : false,
+            'text_hide'                 : 'Hide variations',
+            'text_show'                 : 'Show variations',
+            'validator_variant_invalid' : 'The variant is invalid',
+            'validator_duplicate_values': 'Values duplicates in other variant',
+            'validator_choice_limiting' : 'In this mode you can choose only one parameter',
+            'duration'                  : 300
+        },
+        {
+            'validator': {},
+
+            init: function () {
+                var _options = {
+                    'message_variant_invalid' : this.options.validator_variant_invalid,
+                    'message_duplicate_values': this.options.validator_duplicate_values,
+                    'message_choice_limiting' : this.options.validator_choice_limiting
+                };
+                this.$('.jbprice-variation-row:first .jsJBRemove').hide();
+                this.sortable();
+
+                //create validator if variations is on
+                if (this.options.isAdvance) {
+                    if (!!this.options.isOverlay) {
+                        this.validator = this.el.JBZooPriceValidatorCalc(_options).data('JBZooPriceValidatorCalc');
+                    } else {
+                        this.validator = this.el.JBZooPriceValidatorPlain(_options).data('JBZooPriceValidatorPlain');
+                    }
+                }
+            },
+
+            'click .jsShowVariations': function (e, $this) {
+                var variations = $this.getVariations();
+                if (variations.is(':hidden')) {
+
+                    $(this).text($this.options.text_hide);
+                    variations.slideDown();
+                    return;
+                }
+
+                $(this).text($this.options.text_show);
+                variations.slideUp();
+            },
+
+            'click .jsToggleVariation': function () {
+
+                var $row = $(this).closest('fieldset');
+                $row
+                    .toggleClass('fieldset-hidden')
+                    .siblings()
+                    .addClass('fieldset-hidden');
+            },
+
+            'click .jsJBRemove': function (e, $this) {
+
+                var $row = $(this).closest('.jbprice-variation-row');
+
+                $row.slideUp(300, function () {
+                    $row.remove();
+                    $this.validator.clear().fill();
+                    $this.reBuild();
+                });
+            },
+
+            'click .jsNewPrice': function (e, $this) {
+
+                var row = $this.$('.jbprice-variation-row:first'),
+                    clone = row.clone().hide();
+
+                $('*', clone)
+                    .removeAttr('id checked selected');
+
+                $('input[type="text"], textarea', clone).val("");
+
+                //Init JBZooColors.
+                var colors = $('.variant-color-wrap', row);
+                if (colors.length > 0) {
+                    var oldColor = $('.jbzoo-colors', colors).data('JBZooColors'),
+                        newColor = $('.variant-color-wrap .jbzoo-colors', clone);
+
+                    $('.jbcolor-label, .jbcolor-input', newColor).removeClass('checked')
+                    newColor.JBZooColors(oldColor.options);
+                }
+                //Init JBZooMedia.
+                var image = $('.variant-image-wrap', row);
+                if (image.length > 0) {
+                    var oldMedia = $('.jsMedia', image).data('JBZooMedia'),
+                        newMedia = $('.variant-image-wrap .jsMedia', clone);
+                    $('.jsMediaCancel, .jsMediaButton', newMedia).remove();
+
+                    if (oldMedia && oldMedia.options) {
+                        newMedia.JBZooMedia(oldMedia.options);
+                    }
+                }
+
+                //Init JBZooBalance. Helper for radio input.
+                var balance = $('.variant-balance-wrap', row);
+                if (balance.length > 0) {
+                    var oldBalance = $('.jsBalance', balance).data('JBZooPriceBalance'),
+                        newBalance = $('.variant-balance-wrap .jsBalance', clone);
+
+                    newBalance.JBZooPriceBalance(oldBalance.options);
+                }
+                //Init JBZooPriceEditElement_descriptionEdit.
+                var description = $('.jsDescription', row);
+                if (description.length > 0) {
+                    var newDesc = $('.jsDescription .jsField', clone);
+                    newDesc.JBZooPriceEditElement_descriptionEdit();
+                }
+
+                // Tips
+                $('.hasTip', clone).each(function() {
+                    var $tip = $(this),
+                        forAttr = $tip.attr('for');
+
+                    if (forAttr) {
+                        var $colorElem = $('#' + forAttr);
+                        if ($colorElem.length) {
+                            var title = $colorElem.attr('title');
+                            $tip.attr('title', title);
+
+                            var parts = title.split('::', 2);
+                            var mtelement = document.id(this);
+                            mtelement.store('tip:title', title);
+                        }
+                    }
+                });
+                var JTooltips = new Tips($('.hasTip', clone).get(), {"maxTitleChars": 50,"fixed": false});
+
+                $('.variant-param', clone).each(function (i, param) {
+                    var $param = $(param),
+                        id = parseInt(new Date().getTime() + i);
+
+                    $('.jsElement label', $param).each(function (n, label) {
+
+                        var $label = $(label),
+                            random = Math.floor((Math.random() * 999999) + 1);
+
+                        id += n + random;
+
+                        $label.attr('for', id);
+
+                        $('input', $label).attr('id', id);
+                        $label.prev('input').attr('id', id);
+                    });
+                });
+
+                $this.$('.variations-list').append(clone);
+
+                $this
+                    .reBuild()
+                    .sortable();
+                $this.validator
+                    .clearRow(clone)
+                    .clearOptions(clone);
+
+                clone.slideDown();
+                return false;
+            },
+
+            sortable: function () {
+
+                var $this = this,
+                    rows = this.$('.jbprice-variation-row');
+
+                rows.delegate('.jsJBMove', 'mousedown', function () {
+                    rows
+                        .siblings()
+                        .addClass('fieldset-hidden')
+                });
+
+                this.$('.jsJBMove').sortable({
+                    'forcePlaceholderSize': true,
+                    'items'               : rows,
+                    'placeholder'         : "ui-state-highlight",
+                    'stop'                : function () {
+                        $this.reBuild();
+                        $this.validator.getErrors();
+                    }
+                });
+            },
+
+            reBuild: function () {
+
+                this.$('.jbprice-variation-row:first .jsJBRemove').hide();
+
+                this.$('.jbprice-variation-row').each(function (n) {
+
+                    var $row = $(this);
+                    $('input[type="radio"]', $row).each(function () {
+
+                        var field = $(this),
+                            name = field.attr('name'),
+                            random = Math.floor((Math.random() * 999999) + 1);
+
+                        field.attr('name', field.attr('name')
+                            .replace(/\[variations\]\[\d*\]/i, '[variations-' + random + '][' + n + ']'));
+                    });
+                });
+
+                this.$('.jbprice-variation-row').each(function (i) {
+                    i++;
+                    var row = $(this);
+                    if (!row.is(':first-child')) {
+                        $('.jsJBRemove', row).show();
+                    }
+
+                    $('.list-num', row).text(i);
+
+                    $('input:not([type="radio"]), select, textarea', row).each(function () {
+
+                        var field = $(this),
+                            name = field.attr('name');
+
+                        field.attr('name', field.attr('name').replace(/\[variations\]\[\d*\]/i, '[variations][' + i + ']'));
+                    });
+
+                    $('input[type="radio"]', row).each(function () {
+
+                        var field = $(this),
+                            name = field.attr('name');
+                        field.attr('name', field.attr('name').replace(/(\[variations-\d*\]\[\d*\])/i, '[variations][' + i + ']'));
+
+                        if (field.is(':checked') == true) {
+                            field.attr('checked', 'checked');
+                        }
+                    });
+                });
+
+                return this;
+            },
+
+            isValid: function () {
+
+                if (!!this.options.isAdvance === false) {
+                    return true;
+                }
+
+                var errors = this.validator.clear().fill().getErrors();
+                if (!JBZoo.empty(errors)) {
+                    var $this = this,
+                        variations = this.$('.jbprice-variation-row');
+
+                    $.each(errors, function (key, data) {
+                        $this.scrollTo(variations.get(data.variant));
+                    });
+                }
+
+                return !!JBZoo.empty(errors);
+
+            },
+
+            scrollTo: function (row) {
+
+                var $body = $('body');
+                row = $(row);
+                if (!$body.is(':animated')) {
+
+                    $body.stop(true).animate({
+                        scrollTop: row.offset().top
+                    }, 500);
+                }
+
+                if (this.$('.variations').is(':hidden')) {
+                    this.$('.jsShowVariations').trigger('click');
+                }
+
+                if (row.hasClass('fieldset-hidden')) {
+                    row.toggleClass('fieldset-hidden');
+                }
+            },
+
+            getVariations: function () {
+                return this.$('.variations');
+            }
+
+        }
+    );
+
+})(jQuery, window, document);
+/* media/zoo/applications/jbuniversal/assets/js/admin/validator/plain.js */
+/**
+ * JBZoo Application
+ *
+ * This file is part of the JBZoo CCK package.
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @package    Application
+ * @license    GPL-2.0
+ * @copyright  Copyright (C) JBZoo.com, All rights reserved.
+ * @link       https://github.com/JBZoo/JBZoo
+ */
+
+;
+(function ($, window, document, undefined) {
+
+    JBZoo.widget('JBZoo.PriceValidator.Plain', {
+            'message_duplicate_values': 'Values duplicates in other variant',
+            'message_variant_invalid' : 'The variant is invalid'
+        },
+        {
+            errors: {},
+
+            init: function ($this) {
+
+                this.constructor.parent.init.apply($this);
+            },
+
+            validate: function () {
+                this.errors = {};
+                this.errors = this.duplicates();
+
+                return this.errors;
+            },
+
+            clear: function () {
+
+                var $this = this;
+                this.$('.jbprice-variation-row').each(function (i, row) {
+                    $this.clearRow(row);
+                });
+
+                return this;
+            },
+
+            clearRow: function (row) {
+                var $row = $(row);
+                this.clearMessages($row);
+
+                return this;
+            },
+
+            fill: function () {
+                var $this = this;
+                this.$('.jbprice-variation-row').each(function (i, row) {
+                    var $row = $(row);
+                    $this.addOptions($row);
+                });
+
+                return this;
+            },
+
+            getErrors: function () {
+
+                this.validate();
+                if (JBZoo.empty(this.errors)) {
+                    return false;
+                }
+
+                var $this = this,
+                    variations = this.$('.jbprice-variation-row');
+                $.each(this.errors, function (key, error) {
+                    var variants = $(variations.get(error.variant)),
+                        params = $('.simple-param', variants),
+                        label = $('.jsVariantLabel', variants);
+
+                    $this.message(label, $this.options.message_variant_invalid);
+                    $.each(error.index, function (index) {
+                        var param = params.get(index);
+
+                        $this.message(param, $this.options.message_duplicate_values);
+                    });
+                });
+
+                return this.errors;
+            }
+
+        }
+    );
+
+})(jQuery, window, document);
+/* media/zoo/applications/jbuniversal/cart-elements/price/balance/assets/js/edit.js */
+/**
+ * JBZoo Application
+ *
+ * This file is part of the JBZoo CCK package.
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @package    Application
+ * @license    GPL-2.0
+ * @copyright  Copyright (C) JBZoo.com, All rights reserved.
+ * @link       https://github.com/JBZoo/JBZoo
+ */
+
+;
+(function ($, window, document, undefined) {
+
+    JBZoo.widget('JBZoo.PriceBalance',
+        {},
+        {
+            init: function () {
+                this.change(this.value());
+            },
+
+            'change .jsBalanceRadio': function (e, $this) {
+                var value = $(this).val();
+                $this.change(value);
+            },
+
+            value: function () {
+                return this.$('input[type="radio"]:checked').val();
+            },
+
+            change: function (value) {
+                if (value == 1) {
+                    this.$('.jsBalanceInput').removeAttr('disabled').focus();
+                } else {
+                    this.$('.jsBalanceInput').val('').attr('disabled', 'disabled');
+
+                }
+            }
+        }
+    );
+
+})(jQuery, window, document);
+/* media/zoo/applications/jbuniversal/elements/jbprice/assets/js/jbprice.js */
+/**
+ * JBZoo Application
+ *
+ * This file is part of the JBZoo CCK package.
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @package    Application
+ * @license    GPL-2.0
+ * @copyright  Copyright (C) JBZoo.com, All rights reserved.
+ * @link       https://github.com/JBZoo/JBZoo
+ */
+
+;
+(function ($, window, document, undefined) {
+
+    JBZoo.widget('JBZoo.Price',
+        {
+            // options
+            'variantUrl': '',
+            'isInCart'  : false,
+            'itemId'    : 0,
+            'identifier': '',
+            'hash'      : ''
+        },
+        {
+            'template'  : '',
+            'elements'  : {},
+            'cache'     : {},
+            '_namespace': 'JBZooPriceElement',
+
+            init: function ($this) {
+                this.elements = {};
+                this.cache    = {};
+
+                var _key = this.options.itemId + this.options.identifier;
+                var elements  = JBZoo.getVar(_key + '.elements', {});
+                this.template = JBZoo.getVar(_key + '.template', {});
+
+                $.each(elements, function (_type, params) {
+
+                    var type        = _type.charAt(0).toUpperCase() + _type.substr(1),
+                        element     = $('.js' + type, $this.el),
+                        plugName    = $this._namespace + type,
+                        defaultName = $this._namespace,
+                        widget      = {};
+
+                    if (JBZoo.empty(params)) {
+                        params = {};
+                    }
+
+                    if ($this.jbzoo.isWidgetExists(plugName)) {
+                        widget = element[plugName](params).data(plugName);
+                    } else {
+                        widget = element[defaultName](params).data(defaultName);
+                    }
+
+                    $this.elements[_type] = widget;
+                });
+            },
+
+            'change .jsSimple :input': function (e, $this) {
+                $this.rePaint();
+            },
+
+            getHash: function () {
+
+                var values = this._getValues();
+                return this._buildHash(values);
+            },
+
+            getTemplate: function() {
+                return this.template;
+            },
+
+            rePaint: function () {
+
+                var hash = this.getHash();
+
+                if (JBZoo.empty(this.cache[hash])) {
+                    return this.getVariant();
+                }
+
+                return this._rePaint(this.cache[hash]);
+            },
+
+            getVariant: function () {
+                var $this = this;
+                this.ajax({
+                    'url'    : $this.options.variantUrl,
+                    'data'   : {
+                        'args': {
+                            'template': this.template,
+                            'values'  : $this._getValues()
+                        }
+                    },
+                    'success': function (data) {
+                        $this.cache[$this.getHash()] = data;
+                        $this._rePaint(data);
+                    },
+                    'error'  : function (error) {
+                        if (error.message) {
+                            $this.alert(error.message);
+                        }
+                    }
+                });
+            },
+
+            getValue: function () {
+                return this._getValues();
+            },
+
+            get: function (identifier, defValue) {
+                if (!JBZoo.empty(this.elements[identifier])) {
+                    var element = this.elements[identifier];
+                    if ($.isFunction(element["getValue"])) {
+                        return element.getValue();
+                    }
+                }
+
+                return defValue;
+            },
+
+            _getValues: function () {
+
+                var values = {};
+
+                $('.jsSimple', this.el).each(function () {
+                    var $param = $(this);
+
+                    $('input, select, textarea', $param).each(function () {
+
+                        var $field = $(this),
+                            id = $param.data('identifier'),
+                            value = '';
+
+                        if ($field.attr('type') == 'radio') {
+                            if ($field.is(':checked')) {
+                                value = $.trim($field.val());
+                                if (!JBZoo.empty(value) || value.length > 0) {
+                                    values[id] = {'value': value};
+                                }
+                            }
+                        } else {
+                            value = $.trim($field.val());
+                            if (!JBZoo.empty(value) || value.length > 0) {
+                                values[id] = {'value': value};
+                            }
+                        }
+
+                    });
+                });
+
+                return values;
+            },
+
+            _rePaint: function (data) {
+                var $this = this;
+                $.each(data, function (_type, data) {
+                    var element = $this.elements[_type];
+                    if ((!JBZoo.empty(element)) && ($.isFunction(element["rePaint"]))) {
+                        element.rePaint(data);
+                    }
+                });
+            },
+
+            _buildHash: function (values) {
+                var hash = [];
+
+                for (var key in values) {
+                    if (values.hasOwnProperty(key)) {
+                        var val = values[key];
+                    }
+                    hash.push(key + val.value);
+                }
+
+                return hash.join('_');
+            },
+
+            _updateCache: function (key, data) {
+
+                var neW = {};
+                neW[key] = data;
+
+                this.cache[this.getHash()] = neW;
+            }
+        }
+    );
+
+})(jQuery, window, document);
+/* media/zoo/applications/jbuniversal/cart-elements/core/price/assets/js/price.js */
+/**
+ * JBZoo Application
+ *
+ * This file is part of the JBZoo CCK package.
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @package    Application
+ * @license    GPL-2.0
+ * @copyright  Copyright (C) JBZoo.com, All rights reserved.
+ * @link       https://github.com/JBZoo/JBZoo
+ */
+
+;
+(function ($, window, document, undefined) {
+
+    JBZoo.widget('JBZoo.PriceElement', {},
+        {
+            rePaint: function (data) {
+                var $this = this;
+                if (typeof data == 'array' || typeof data == 'object') {
+                    $.each(data, function (i, html) {
+                        $this._rePaint(html, $.trim(i));
+                    });
+                }
+                else {
+                    $this._rePaint(data);
+                }
+            },
+
+            _rePaint: function (data, selector) {
+                var container = JBZoo.empty(selector) ? this.el : $('.' + selector, this.el.closest('.jsPrice'));+
+
+                container.empty().prepend($(data).contents());
+            },
+
+            _format: function (name) {
+
+                var value = this.el.data(name.toLowerCase());
+                value = this._ucfirst(value);
+
+                return value;
+            },
+
+            _ucfirst: function (string) {
+                string = "" + string;
+
+                string = string.charAt(0).toUpperCase() + string.substr(1);
+
+                return string;
+            },
+
+            /**
+             * @returns JBZooPrice|boolean
+             * @private
+             */
+            _getPriceWidget: function() {
+                if(this.isWidgetExists('JBZooPrice')) {
+                    return this.el.closest('.jsPrice').data('JBZooPrice');
+                }
+
+                return false;
+            }
+        }
+    );
 
 })(jQuery, window, document);

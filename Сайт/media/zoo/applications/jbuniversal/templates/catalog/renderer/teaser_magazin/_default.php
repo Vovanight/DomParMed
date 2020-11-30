@@ -16,5 +16,12 @@
 // no direct access
 defined('_JEXEC') or die('Restricted access');
 
-include dirname(__FILE__) . '/category.php';
-//include dirname(__FILE__) . '/teaser_magazin.php';
+if ((int)$this->getView()->application->params->get('global.config.column_heightfix', 0)) {
+    $this->app->jbassets->heightFix();
+}
+
+$this->app->jbdebug->mark('layout::items::start');
+
+echo $this->columnsFront('item', $vars['objects'], true);
+
+$this->app->jbdebug->mark('layout::items::finish');

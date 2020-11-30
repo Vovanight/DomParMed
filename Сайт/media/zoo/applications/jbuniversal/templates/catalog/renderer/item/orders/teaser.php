@@ -16,5 +16,19 @@
 // no direct access
 defined('_JEXEC') or die('Restricted access');
 
-include dirname(__FILE__) . '/category.php';
-//include dirname(__FILE__) . '/teaser_magazin.php';
+$align = $this->app->jbitem->getMediaAlign($item, $layout);
+
+
+?>
+    <tr class="table-row item_<?php echo $item->id;?>">
+    <td><?php echo $item->id; ?></td>
+    <td><?php echo $this->renderPosition('title'); ?></td>
+    <td><?php echo $this->renderPosition('image'); ?></td>
+    <td><?php echo $this->renderPosition('text'); ?></td>
+    <td><?php echo $this->renderPosition('price'); ?></td>
+    <td><?php echo $this->renderPosition('count'); ?></td>
+    </tr>
+
+    
+
+
