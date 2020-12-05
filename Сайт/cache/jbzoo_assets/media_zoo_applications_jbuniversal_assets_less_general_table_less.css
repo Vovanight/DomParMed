@@ -1,0 +1,50 @@
+/* cacheid:49eec970d82ec9ec796592390b88d40d0 */
+.jbzoo .jbtable {
+  width: 100%;
+  margin-bottom: 20px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: 1em;
+}
+.jbzoo .jbtable th {
+  text-align: left;
+}
+.jbzoo .jbtable td {
+  vertical-align: top;
+  padding: 8px 8px;
+  border-bottom: 1px solid #ddd;
+}
+.jbzoo .jbtable td.element-label {
+  width: 30%;
+  font-weight: bold;
+}
+.jbzoo .jbtable thead th {
+  vertical-align: bottom;
+}
+.jbzoo .jbtable caption {
+  text-align: left;
+  color: #999;
+}
+.jbzoo .jbtable caption,
+.jbzoo .jbtable tfoot {
+  font-style: italic;
+}
+.jbzoo .jbtable tr:nth-of-type(odd),
+.jbzoo .jbtable tr:nth-of-type(odd) td,
+.jbzoo .jbtable tbody tr:nth-of-type(odd),
+.jbzoo .jbtable tbody tr:nth-of-type(odd) td {
+  background: #f5f6f7;
+}
+.jbzoo .jbtable tr:hover,
+.jbzoo .jbtable tr:hover td,
+.jbzoo .jbtable tbody tr:hover,
+.jbzoo .jbtable tbody tr:hover td {
+  background: #f0f0f0;
+}
+.jbzoo .jbtable tr:first-child td,
+.jbzoo .jbtable tbody tr:first-child td {
+  border-top: 1px solid #ddd;
+}
+* + .jbzoo .jbtable {
+  margin-top: 20px;
+}

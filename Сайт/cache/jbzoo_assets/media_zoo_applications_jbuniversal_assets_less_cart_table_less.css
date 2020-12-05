@@ -1,0 +1,107 @@
+/* cacheid:529c0281e3451c563c43bfa26f2159660 */
+.jbzoo .jbcart-table {
+  width: 100%;
+  font-size: 1em;
+  border-spacing: 0;
+  border: none !important;
+  border-collapse: collapse;
+}
+.jbzoo .jbcart-table tr,
+.jbzoo .jbcart-table td {
+  border: none;
+}
+.jbzoo .jbcart-col {
+  color: #999;
+  text-align: right;
+  font-weight: normal;
+  padding: 16px 0 24px 0;
+  border-bottom: 1px dashed #ccc;
+}
+.jbzoo .jbcart-col-name {
+  text-align: left;
+}
+.jbzoo .jbcart-col-price,
+.jbzoo .jbcart-col-subtotal,
+.jbzoo .jbcart-col-quantity {
+  width: 150px;
+}
+.jbzoo .jbcart-col-delete {
+  width: 50px;
+}
+.jbzoo .jbcart-row {
+  border-left: 1px solid #eaeaea;
+  border-right: 1px solid #eaeaea;
+}
+.jbzoo .jbcart-row > td {
+  padding: 8px 0 8px 8px;
+}
+.jbzoo .jbcart-row:hover,
+.jbzoo .jbcart-row:hover td {
+  background: #f7f7f7;
+}
+.jbzoo .jbcart-row-empty td {
+  border: 0;
+  padding: 16px 0;
+}
+.jbzoo .jbcart-row-remove td {
+  text-align: right;
+  padding: 16px 0;
+}
+.jbzoo .jbcart-row-total td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 16px 8px 16px 0;
+  border-bottom: 1px dashed #ccc;
+}
+.jbzoo .jbcart-image {
+  vertical-align: top;
+}
+.jbzoo .jbcart-name {
+  padding-left: 12px;
+  vertical-align: top;
+}
+.jbzoo .jbcart-url {
+  font-weight: bold;
+}
+.jbzoo .jbcart-price,
+.jbzoo .jbcart-subtotal {
+  text-align: right;
+  vertical-align: middle;
+}
+.jbzoo .jbcart-quantity {
+  text-align: right;
+  vertical-align: middle;
+}
+.jbzoo .jbcart-quantity .quantity-wrapper {
+  float: right;
+}
+.jbzoo .jbcart-delete {
+  text-align: center;
+}
+.jbzoo .jbcart-value {
+  font-size: 1.25em;
+  font-weight: bold;
+}
+.jbzoo .jbcart-label {
+  color: #999;
+}
+.jbzoo .jbcart-param-key {
+  font-weight: bold;
+}
+.jbzoo .jbcart-item-sku-key,
+.jbzoo .jbcart-item-param-key,
+.jbzoo .jbcart-item-itemid-key {
+  font-weight: bold;
+}
+.jbzoo .jbcart-item-sku,
+.jbzoo .jbcart-item-name,
+.jbzoo .jbcart-item-params {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 200px;
+}
+.jbzoo .jbcart-item-sku,
+.jbzoo .jbcart-item-params {
+  font-size: 0.8em;
+}

@@ -1,0 +1,56 @@
+/* cacheid:5c37e614712edf3d95f98a076c519bdb0 */
+.jbzoo .jbcart-payment-row .column:last-child {
+  margin-right: 0;
+}
+.jbzoo .jbcart-payment-desc {
+  color: #9ea7af;
+  font-size: 14px;
+  min-height: 60px;
+  margin: 12px 0 0 0;
+  font-style: italic;
+  display: inline-block;
+}
+.jbzoo .jbcart-payment-element {
+  float: left;
+  max-width: 170px;
+  min-height: 50px;
+}
+.jbzoo .jbcart-payment-element-name {
+  font-size: 16px;
+}
+.jbzoo .jbcart-payment-element a,
+.jbzoo .jbcart-payment-element a:hover {
+  background: none !important;
+}
+.jbzoo .jbcart-payment-element img {
+  max-width: 136px;
+}
+.jbzoo .jbcart-payment-debug {
+  color: #e00;
+  font-size: 14px;
+  font-style: italic;
+  margin: 16px 0 8px 0;
+}
+.jbzoo .jbcart-payment-radio + .jbcart-payment-label img {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  opacity: 0.6;
+  filter: alpha(opacity= 60 );
+}
+.jbzoo .jbcart-payment-radio:checked + .jbcart-payment-label img,
+.jbzoo .jbcart-payment .jbcart-payment-label:hover img {
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+  opacity: 1;
+  filter: alpha(opacity= 100 );
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+}
+.jbzoo .jbcart-payment .jbcart-radio-label {
+  padding: 10px;
+  display: block;
+}
+.jbzoo .jbcart-payment .rborder {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}

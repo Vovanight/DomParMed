@@ -57,8 +57,8 @@ class JConfig {
 	public $unicodeslugs = '0';
 	public $feed_limit = '10';
 	public $feed_email = 'none';
-	public $log_path = 'C:\\OSPanel\\domains\\DomParMed\\administrator\\logs';
-	public $tmp_path = 'C:\\OSPanel\\domains\\DomParMed';
+	public $log_path = 'C:\\OpenServer\\domains\\DomParMed\\Site\\administrator\\logs';
+	public $tmp_path = 'C:\\OpenServer\\domains\\DomParMed';
 	public $lifetime = '15';
 	public $session_handler = 'database';
 	public $shared_session = '0';

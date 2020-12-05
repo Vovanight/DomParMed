@@ -17,3 +17,4 @@
 defined('_JEXEC') or die('Restricted access');
 
 include dirname(__FILE__) . '/category.php';
+//include dirname(__FILE__) . '/teaser_magazin.php';

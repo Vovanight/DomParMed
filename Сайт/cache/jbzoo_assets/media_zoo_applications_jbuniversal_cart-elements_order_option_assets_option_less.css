@@ -1,0 +1,94 @@
+/* cacheid:e0cacb0cedb924b0ece926aaa848e0940 */
+.element .options {
+  overflow: hidden;
+}
+.element .options ul {
+  margin: 0px 0px 10px 0px;
+  padding: 0;
+  list-style-type: none;
+  position: relative;
+}
+.element .options li {
+  padding: 10px 5px;
+  overflow: hidden;
+  border-top: 1px dotted #ccc;
+  position: relative;
+}
+.element .options li:hover {
+  background: #f0f0f0;
+}
+.element .options li:hover label {
+  color: #0b55c4;
+}
+.element .options li:hover .sort-handle {
+  cursor: move;
+}
+.element .options li:hover .sort-handle,
+.element .options li:hover .delete {
+  display: inline-block;
+  margin: 12px 5px 0px 5px;
+  cursor: pointer;
+}
+.element .options li.hidden {
+  display: none;
+}
+.element .options li:first-child,
+.element .options li[style*="absolute"]:first-child + li {
+  border-top: none;
+}
+.element .options li .dragging {
+  border: none;
+}
+.element .options .add {
+  margin: 0px 0px 0px 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAJvSURBVDjLpZPrS5NhGIf9W7YvBYOkhlkoqCklWChv2WyKik7blnNris72bi6dus0DLZ0TDxW1odtopDs4D8MDZuLU0kXq61CijSIIasOvv94VTUfLiB74fXngup7nvrnvJABJ/5PfLnTTdcwOj4RsdYmo5glBWP6iOtzwvIKSWstI0Wgx80SBblpKtE9KQs/We7EaWoT/8wbWP61gMmCH0lMDvokT4j25TiQU/ITFkek9Ow6+7WH2gwsmahCPdwyw75uw9HEO2gUZSkfyI9zBPCJOoJ2SMmg46N61YO/rNoa39Xi41oFuXysMfh36/Fp0b7bAfWAH6RGi0HglWNCbzYgJaFjRv6zGuy+b9It96N3SQvNKiV9HvSaDfFEIxXItnPs23BzJQd6DDEVM0OKsoVwBG/1VMzpXVWhbkUM2K4oJBDYuGmbKIJ0qxsAbHfRLzbjcnUbFBIpx/qH3vQv9b3U03IQ/HfFkERTzfFj8w8jSpR7GBE123uFEYAzaDRIqX/2JAtJbDat/COkd7CNBva2cMvq0MGxp0PRSCPF8BXjWG3FgNHc9XPT71Ojy3sMFdfJRCeKxEsVtKwFHwALZfCUk3tIfNR8XiJwc1LmL4dg141JPKtj3WUdNFJqLGFVPC4OkR4BxajTWsChY64wmCnMxsWPCHcutKBxMVp5mxA1S+aMComToaqTRUQknLTH62kHOVEE+VQnjahscNCy0cMBWsSI0TCQcZc5ALkEYckL5A5noWSBhfm2AecMAjbcRWV0pUTh0HE64TNf0mczcnnQyu/MilaFJCae1nw2fbz1DnVOxyGTlKeZft/Ff8x1BRssfACjTwQAAAABJRU5ErkJggg==") 5px 4px no-repeat;
+  text-indent: 20px;
+  cursor: pointer;
+  float: left;
+}
+.element .options .add:hover {
+  background-color: #f0f0f0;
+}
+.element .options .panel {
+  margin-left: 5px;
+  display: none;
+}
+.element .options .panel.active {
+  display: inline-block;
+}
+.element .options label {
+  display: block;
+  color: #666;
+  font-weight: bold;
+  float: none;
+  margin-bottom: 0px;
+}
+.element .options input {
+  float: none;
+}
+.element .options input.accept {
+  margin: 0 0 0 5px;
+}
+.element .options input[type="text"] {
+  margin-top: 0px;
+}
+.element .options input[name$="[value]"] {
+  border-radius: 3px;
+  width: 200px;
+}
+.element .options a.cancel {
+  margin: 0px 0px 0px 5px;
+  color: #bc0b0b;
+  cursor: pointer;
+}
+.element .options .name-input,
+.element .options .value-input {
+  margin: 0px 5px;
+  float: left;
+}
+.element .options .sort-handle,
+.element .options .delete {
+  display: none;
+}

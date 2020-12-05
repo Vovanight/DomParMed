@@ -1,0 +1,16 @@
+/* cacheid:d4a71e3d1f3604fd2b17a18102dd7ee80 */
+.jbzoo .element-jbgallery a {
+  float: left;
+  display: block;
+  margin-bottom: 1em;
+  padding: 0.5em;
+  margin-right: 1em;
+  border: 1px solid #CCC;
+  border-radius: 4px;
+}
+.jbzoo .element-jbgallery a:hover {
+  border-color: #333;
+}
+.jbzoo .element-jbgallery a:hover img {
+  opacity: 0.8;
+}

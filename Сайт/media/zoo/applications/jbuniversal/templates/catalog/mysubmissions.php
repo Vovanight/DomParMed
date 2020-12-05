@@ -48,7 +48,7 @@ if ((int)$appParams->get('global.jbzoo_cart_config.enable', 0)) {
     <div class="mysubmissions">
         <h1 class="headline"><?php echo JText::_('My Submissions'); ?></h1>
 
-        <p><?php echo sprintf(JText::_('Hi %s, here you can edit your submissions and add new submission.'), $this->user->name); ?></p>
+        <p><?php echo sprintf(JText::_('%s , Здесь вы можете редактировать товар на складе.'), $this->user->name); ?></p>
         <?php echo $this->partial('mysubmissions'); ?>
     </div>
 

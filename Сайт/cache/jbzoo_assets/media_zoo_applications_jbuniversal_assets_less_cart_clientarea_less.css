@@ -1,0 +1,40 @@
+/* cacheid:9b6975207175a494b8d040ddd8a880980 */
+.jbzoo .jbclientarea {
+  margin-bottom: 20px;
+}
+.jbzoo .jbclientarea-order-table,
+.jbzoo .jbclientarea-orderlist {
+  border: none;
+  width: 100%;
+}
+.jbzoo .jbclientarea-order-table tr,
+.jbzoo .jbclientarea-orderlist tr,
+.jbzoo .jbclientarea-order-table td,
+.jbzoo .jbclientarea-orderlist td {
+  border: none;
+  vertical-align: top;
+  padding: 8px 8px;
+  border-bottom: 1px solid #ddd;
+}
+.jbzoo .jbclientarea-order-table th,
+.jbzoo .jbclientarea-orderlist th {
+  text-align: left;
+  padding: 8px 8px;
+}
+.jbzoo .jbclientarea-order-table thead tr,
+.jbzoo .jbclientarea-orderlist thead tr,
+.jbzoo .jbclientarea-order-table thead tr:hover,
+.jbzoo .jbclientarea-orderlist thead tr:hover {
+  background: #E8E8E8;
+}
+.jbzoo .jbclientarea-order-table .row-odd,
+.jbzoo .jbclientarea-orderlist .row-odd {
+  background: #f5f5f5;
+}
+.jbzoo .jbclientarea-order-table tr:hover,
+.jbzoo .jbclientarea-orderlist tr:hover {
+  background: #eeeeee;
+}
+.jbzoo .jbclientarea .jbcartvalue {
+  font-weight: bold;
+}
